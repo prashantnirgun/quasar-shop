@@ -7,7 +7,7 @@
 3. Pincode section is shifted to toolbar with dialog.
 4. Seprate component for carousel.
 5. Use of .env file for site settings such as store name & url to store vaiable such as site_name, default username, password. env.development & .env.production two seprate files are created.
-6. Rename MyLayout with Layout no reason I just like it simple.
+6. Rename layout/MyLayout.vue with layout/Layout.vue no reason I just like to make it simple.
 
 # Feature Request
 
