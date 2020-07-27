@@ -94,11 +94,11 @@
 export default {
   data() {
     return {
-      left: false,
-      menu_cat_elc: false,
-      menu_cat_tvs: false,
-      menu_cat_men: false,
-      text: '',
+      // left: false,
+      // menu_cat_elc: false,
+      // menu_cat_tvs: false,
+      // menu_cat_men: false,
+      // text: '',
       showPincode: false
     };
   },
@@ -116,7 +116,9 @@ export default {
   },
   mounted() {
     /* eslint-disable no-console */
-    console.log(`Dotenv Test: (TEST: ${process.env.SITE_NAME})`);
+    console.log(
+      `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`
+    );
   }
 };
 </script>

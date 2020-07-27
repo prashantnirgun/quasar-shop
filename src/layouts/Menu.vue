@@ -136,3 +136,18 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      left: false,
+      menu_cat_elc: false,
+      menu_cat_tvs: false,
+      menu_cat_men: false,
+      text: '',
+      showPincode: false
+    };
+  }
+};
+</script>
