@@ -1,7 +1,7 @@
 <template>
   <div class="col-12 q-mt-sm">
     <div class="q-pl-md bg-white q-pt-sm ">
-      <span class="text-grey-9 text-h6 text-weight-bold">Sale</span>
+      <span class="text-grey-9 text-h6 text-weight-bold">New Arrivals</span>
       <a class="text-primary q-ml-sm cursor-pointer">[see all]</a>
     </div>
     <q-carousel
@@ -54,6 +54,7 @@
 </template>
 <script>
 import array from 'src/mixins/array_mixin';
+import DataService from 'src/services/DataService';
 export default {
   mixins: [array],
   data() {
@@ -63,14 +64,12 @@ export default {
     };
   },
   mounted() {
-    this.$axios
-      .get('http://localhost:8080/data/newArrival.json')
-      .then(result => {
-        this.lists = this.chunk(result.data, 6);
-        console.log(this.lists);
+    DataService.get('data/newArrival.json')
+      .then(response => {
+        this.lists = this.chunk(response.data, 6);
       })
       .catch(error => {
-        console.error(error);
+        console.log('mixin/ddlb Error', error);
       });
   }
 };

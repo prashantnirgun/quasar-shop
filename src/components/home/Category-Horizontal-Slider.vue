@@ -50,6 +50,8 @@
 </template>
 <script>
 import array from 'src/mixins/array_mixin';
+import DataService from 'src/services/DataService';
+
 export default {
   mixins: [array],
   data() {
@@ -59,13 +61,12 @@ export default {
     };
   },
   mounted() {
-    this.$axios
-      .get('http://localhost:8080/data/category.json')
-      .then(result => {
-        this.lists = this.chunk(result.data, 4);
+    DataService.get('data/category.json')
+      .then(response => {
+        this.lists = this.chunk(response.data, 4);
       })
       .catch(error => {
-        console.error(error);
+        console.log('mixin/ddlb Error', error);
       });
   }
 };
