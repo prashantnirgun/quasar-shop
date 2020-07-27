@@ -1,0 +1,36 @@
+[
+  {
+    "name": "first",
+    "img": "http://saikrupaenterprises.in/images/carousel_image_1.jpg",
+    "captions": [
+      { "text": "First stop", "class": "text-subtitle1" },
+      { "text": "Mountains", "class": "text-caption" }
+    ]
+  },
+
+  {
+    "name": "second",
+    "img": "http://saikrupaenterprises.in/images/carousel_image_2.jpg",
+    "captions": [
+      { "text": "Second stop", "class": "text-subtitle1" },
+      { "text": "Famous City", "class": "text-caption" }
+    ]
+  },
+  {
+    "name": "third",
+    "img": "http://saikrupaenterprises.in/images/carousel_image_3.jpg",
+    "captions": [
+      { "text": "Third stop", "class": "text-subtitle1" },
+      { "text": "Famous Bridge", "class": "text-caption" }
+    ]
+  },
+  {
+    "name": "fourth",
+    "img": "http://saikrupaenterprises.in/images/carousel_image_4.jpg"
+  },
+
+  {
+    "name": "fifth",
+    "img": "http://saikrupaenterprises.in/images/carousel_image_5.jpg"
+  }
+]
