@@ -50,10 +50,10 @@
           Registered Office Address:
         </div>
         <div class="text-caption q-mt-sm">
-          335, Gokhale Wadi, Grant Road
+          M-874, "M" wing, APMC Market, Sector-19, Turbhe,
         </div>
-        <div class="text-caption">Mumbai, Maharashtra</div>
-        <div class="text-caption">412207</div>
+        <div class="text-caption">Navi Mumbai, Maharashtra</div>
+        <div class="text-caption">400 705</div>
         <div class="text-caption">India</div>
       </div>
     </div>
@@ -76,8 +76,8 @@
           target="_blank"
           class="text-blue-1 hover_underline_white"
           style="text-decoration: none"
-          href="https://github.com/mayur091193"
-          >Mayur</a
+          href="https://github.com/prashantnirgun"
+          >Prashant Nirgun</a
         >.
       </div>
     </div>
