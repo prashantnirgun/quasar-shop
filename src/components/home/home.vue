@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-mt-sm">
-    <carousel />
+    <banner />
     <div class="text-grey-9 text-weight-bold">
       <div class="row items-center q-mx-sm">
         <hot-deals />
@@ -149,7 +149,7 @@ import Vue from 'vue';
 
 export default {
   components: {
-    carousel: () => import('src/layouts/Carousel'),
+    banner: () => import('components/home/Banner'),
     'hot-deals': () => import('components/home/Hot-deals')
   },
   data() {

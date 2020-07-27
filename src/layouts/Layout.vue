@@ -103,7 +103,7 @@ export default {
     };
   },
   components: {
-    'search-bar': () => import('components/SearchBar'),
+    'search-bar': () => import('src/layouts/SearchBar'),
     pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
     'nav-bar': () => import('src/layouts/Menu')
