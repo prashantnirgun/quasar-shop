@@ -1,0 +1,120 @@
+[
+  {
+    "label": "Dashboard",
+    "icon": "home",
+    "to": "/dashboard",
+    "level": 1
+  },
+  {
+    "label": "Product Management",
+    "icon": "menu_book",
+    "level": 0.5,
+    "children": [
+      {
+        "label": "Category",
+        "icon": "category",
+        "to": "/category",
+        "level": 5
+      },
+      {
+        "label": "Product",
+        "icon": "redeem",
+        "to": "/product",
+        "level": 1
+      },
+      {
+        "label": "Unit",
+        "icon": "straighten",
+        "to": "/unit",
+        "level": 1
+      },
+      {
+        "label": "Price List",
+        "icon": "playlist_add",
+        "to": "/quotation",
+        "level": 1
+      },
+      {
+        "label": "Party Price List",
+        "icon": "playlist_add_check",
+        "to": "/quotation-party",
+        "level": 1
+      },
+      {
+        "label": "GST Rates",
+        "icon": "content_cut",
+        "to": "/gst-rate",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "label": "Account",
+    "icon": "account_balance",
+    "level": 0.5,
+    "children": [
+      {
+        "label": "General Ledger",
+        "icon": "view_headline",
+        "to": "/general-ledger",
+        "level": 1
+      },
+      {
+        "label": "Account Group",
+        "icon": "view_list",
+        "to": "/account-group",
+        "level": 1
+      },
+      {
+        "label": "Account Head",
+        "icon": "view_module",
+        "to": "/account-head",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "label": "Security",
+    "icon": "security",
+    "level": 0.5,
+    "children": [
+      {
+        "label": "Company",
+        "icon": "business",
+        "to": "/company",
+        "level": 1
+      },
+      {
+        "label": "User",
+        "icon": "person",
+        "to": "/user",
+        "level": 1
+      },
+      {
+        "label": "User Group",
+        "icon": "group",
+        "to": "/user-group",
+        "level": 1
+      }
+    ]
+  },
+  {
+    "label": "Contact Us",
+    "icon": "location_on",
+    "to": "/contact",
+    "level": 1
+  },
+  {
+    "label": "Settings",
+    "icon": "settings",
+    "level": 0.5,
+    "children": [
+      {
+        "label": "Area of Operation",
+        "icon": "add_location",
+        "to": "/delivery-places",
+        "level": 1
+      }
+    ]
+  }
+]

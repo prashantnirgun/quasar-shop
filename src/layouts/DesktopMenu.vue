@@ -2,7 +2,7 @@
   <div class="bg-white text-grey-9 text-weight-bold shadow-transition">
     <div
       class="row text-center items-center"
-      :style="$q.platform.is.desktop ? 'height: 38px' : ''"
+      :style="isDesktop ? 'height: 48px' : ''"
     >
       <div
         class="col-lg-2 col-md-2 col-sm-12 col-xs-12 cursor-pointer hover-blue"
@@ -138,7 +138,9 @@
 </template>
 
 <script>
+import device_mixin from 'src/mixins/device_mixin';
 export default {
+  mixins: [device_mixin],
   data() {
     return {
       left: false,

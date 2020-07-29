@@ -1,10 +1,17 @@
 <template>
-  <q-layout view="lHh LpR lFf" style="font-family: Lato;"
-    ><!-- 
-    <q-header reveal elevated style="background-color: #1f509e;"> -->
-
+  <q-layout view="hHh LpR lFf" style="font-family: Lato;">
     <q-header reveal elevated style="background-color: #1f509e;">
       <q-toolbar class="q-py-sm">
+        <q-btn
+          flat
+          dense
+          round
+          @click="leftDrawerOpen = !leftDrawerOpen"
+          icon="menu"
+          aria-label="Menu"
+          v-if="isMobile"
+        />
+
         <img
           @click="$router.push('/home')"
           class="cursor-pointer"
@@ -17,7 +24,7 @@
             style="font-size: 17px;"
             >{{ siteName }}</span
           >
-          <search-bar />
+          <search-bar v-if="isDesktop" />
         </q-toolbar-title>
 
         <q-btn
@@ -33,7 +40,14 @@
             4
           </q-badge>
         </q-btn>
-        <q-btn flat round dense icon="settings" class="q-mr-md" />
+        <q-btn
+          flat
+          round
+          dense
+          icon="settings"
+          class="q-mr-md"
+          v-if="isDesktop"
+        />
         <q-btn
           flat
           round
@@ -91,8 +105,20 @@
           </q-menu>
         </q-btn>
       </q-toolbar>
-      <nav-bar />
+      <nav-bar v-if="isDesktop" />
     </q-header>
+
+    <q-drawer
+      v-model="leftDrawerOpen"
+      :breakpoint="767"
+      :width="250"
+      bordered
+      content-class="bg-ornage"
+    >
+      <q-list bordered class="rounded-borders">
+        <Sidebar :model="root" depth="0" />
+      </q-list>
+    </q-drawer>
 
     <q-page-container style="background-color:#f1f2f6">
       <router-view />
@@ -108,7 +134,10 @@
 </template>
 
 <script>
+import device_mixin from 'src/mixins/device_mixin';
+import root from 'src/config/menu.json';
 export default {
+  mixins: [device_mixin],
   data() {
     return {
       showMenu1: false,
@@ -116,14 +145,17 @@ export default {
       showMenu3: false,
       showMenu4: false,
       showing: false,
-      showPincode: false
+      showPincode: false,
+      leftDrawerOpen: false,
+      root
     };
   },
   components: {
     'search-bar': () => import('src/layouts/SearchBar'),
     pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
-    'nav-bar': () => import('src/layouts/Menu'),
+    'nav-bar': () => import('src/layouts/DesktopMenu'),
+    Sidebar: () => import('./Drawer'),
     login1: () => import('src/pages/login'),
     login2: () => import('src/pages/loginAccordian'),
     login3: () => import('src/pages/loginHorizontalTab'),
