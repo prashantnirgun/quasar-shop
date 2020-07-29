@@ -4,48 +4,6 @@
     <q-header reveal elevated style="background-color: #1f509e;"> -->
 
     <q-header reveal elevated style="background-color: #1f509e;">
-      <!-- <q-toolbar v-if="!$q.platform.is.desktop" class="q-py-sm">
-        <div class="row">
-          <div class="col-sm-12 col-xs-12">
-            <q-toolbar-title>
-              <img
-                @click="$router.push('/home')"
-                class="cursor-pointer float-left"
-                src="/images/logo.png"
-                style="width: 12%"
-              />
-              <span
-                class="float-left q-mt-xs q-ml-md text-h6 text-weight-bold"
-                style="font-size: 17px;"
-              >
-                {{ siteName }}
-              </span>
-            </q-toolbar-title>
-          </div>
-          <div class="col-sm-12 col-xs-12 q-mt-md">
-            <q-input
-              class="float-left q-mx-md full-width"
-              bg-color="white"
-              v-model="text"
-              rounded
-              outlined
-              label="Search for products, brands and more..."
-            />
-          </div>
-          <div class="col-sm-12 col-xs-12 q-mt-md">
-            <div>
-              <q-btn class="q-mr-md" dense round flat icon="shopping_cart">
-                <q-badge color="red" class="text-bold" floating transparent>
-                  4
-                </q-badge>
-              </q-btn>
-              <q-btn flat round dense icon="settings" class="q-mr-md" />
-              <q-btn flat round dense icon="fas fa-sign-out-alt" to="/" />
-            </div>
-          </div>
-        </div>
-      </q-toolbar> -->
-
       <q-toolbar v-if="$q.platform.is.desktop" class="q-py-sm">
         <img
           @click="$router.push('/home')"
@@ -76,7 +34,62 @@
           </q-badge>
         </q-btn>
         <q-btn flat round dense icon="settings" class="q-mr-md" />
-        <q-btn flat round dense icon="fas fa-sign-out-alt" to="/" />
+        <q-btn
+          flat
+          round
+          dense
+          icon="fas fa-sign-out-alt"
+          @mouseover="showing = true"
+        >
+          <q-menu
+            v-model="showing"
+            auto-close
+            class="q-mt-none"
+            @mouseleave="showing = false"
+          >
+            <q-list>
+              <q-item clickable @click="showMenu1 = true">
+                <q-item-section>
+                  <q-item-label>Login</q-item-label>
+                  <q-item-label caption
+                    >Standard Login Dialog with image</q-item-label
+                  >
+                </q-item-section>
+              </q-item>
+
+              <q-separator spaced inset />
+
+              <q-item clickable @click="showMenu2 = true">
+                <q-item-section>
+                  <q-item-label>Accordian</q-item-label>
+                  <q-item-label caption>Accordian / Collapsiblee</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-separator spaced inset />
+
+              <q-item clickable @click="showMenu3 = true">
+                <q-item-section>
+                  <q-item-label>Horizontal Tab</q-item-label>
+                  <q-item-label caption
+                    >Horizontal Tabs Login Dialog</q-item-label
+                  >
+                </q-item-section>
+              </q-item>
+
+              <q-separator spaced inset />
+
+              <q-item clickable @click="showMenu4 = true">
+                <q-item-section>
+                  <q-item-label>Vertical Tab</q-item-label>
+                  <q-item-label caption
+                    >Vertical Tabs Login Dialog</q-item-label
+                  >
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
       </q-toolbar>
       <nav-bar />
     </q-header>
@@ -87,6 +100,10 @@
       <site-footer />
     </q-page-container>
     <pincode :showPincode="showPincode" @close="showPincode = false" />
+    <login1 :show="showMenu1" @close="close" />
+    <login2 :show="showMenu2" @close="close" />
+    <login3 :show="showMenu3" @close="close" />
+    <login4 :show="showMenu4" @close="close" />
   </q-layout>
 </template>
 
@@ -94,11 +111,11 @@
 export default {
   data() {
     return {
-      // left: false,
-      // menu_cat_elc: false,
-      // menu_cat_tvs: false,
-      // menu_cat_men: false,
-      // text: '',
+      showMenu1: false,
+      showMenu2: false,
+      showMenu3: false,
+      showMenu4: false,
+      showing: false,
       showPincode: false
     };
   },
@@ -106,7 +123,19 @@ export default {
     'search-bar': () => import('src/layouts/SearchBar'),
     pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
-    'nav-bar': () => import('src/layouts/Menu')
+    'nav-bar': () => import('src/layouts/Menu'),
+    login1: () => import('src/pages/login'),
+    login2: () => import('src/pages/loginAccordian'),
+    login3: () => import('src/pages/loginHorizontalTab'),
+    login4: () => import('src/pages/loginVerticalTab')
+  },
+  methods: {
+    close() {
+      this.showMenu1 = false;
+      this.showMenu2 = false;
+      this.showMenu3 = false;
+      this.showMenu4 = false;
+    }
   },
   computed: {
     siteName() {
