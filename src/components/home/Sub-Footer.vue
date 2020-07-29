@@ -1,12 +1,23 @@
 <template>
-  <div class="row q-mt-sm q-mx-sm bg-white text-center">
+  <div class="row">
     <div
-      class="col-lg-2 col-md-2 col-sm-12 col-xs-12"
-      style="border-right: 1px solid lightgrey"
-      v-for="(obj, index) in [1, 2, 3, 4, 5, 6]"
-      :key="index"
+      id="parent"
+      class="row wrap justify-evenly  "
+      style="overflow: hidden;"
     >
-      <img src="/brands/tss.png" width="100" height="100" />
+      <div
+        class="column col-6col-lg-2 col-md- 2 q-ma-sm items-center content-center"
+        style="overflow: auto;"
+        v-for="no in [1, 2, 3, 4, 5, 6, 7, 8]"
+        :key="no"
+      >
+        <q-img
+          class="col "
+          src="/brands/tss.png"
+          height="200px"
+          width="200px"
+        />
+      </div>
     </div>
   </div>
 </template>
