@@ -4,7 +4,7 @@
     <q-header reveal elevated style="background-color: #1f509e;"> -->
 
     <q-header reveal elevated style="background-color: #1f509e;">
-      <q-toolbar v-if="$q.platform.is.desktop" class="q-py-sm">
+      <q-toolbar class="q-py-sm">
         <img
           @click="$router.push('/home')"
           class="cursor-pointer"
