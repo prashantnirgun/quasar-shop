@@ -5,7 +5,7 @@
         <q-card-section class="row items-center q-pb-none">
           <div class="text-h6">Welcome {{ siteName }}</div>
           <q-space />
-          <q-btn icon="close" flat round dense v-close-popup />
+          <q-btn icon="close" flat round dense @click="close" />
         </q-card-section>
       </q-card>
 

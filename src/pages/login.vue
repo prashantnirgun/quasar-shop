@@ -51,7 +51,7 @@
           <div>
             <q-separator inset></q-separator>
             <div class="q-pa-sm">
-              <q-btn flat label="Login" v-close-popup></q-btn>
+              <q-btn flat label="Login" @click="close"></q-btn>
               <q-btn
                 flat
                 class="float-right text-blue-9 text-capitalize"
