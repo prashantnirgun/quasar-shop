@@ -13,7 +13,7 @@
         />
 
         <img
-          @click="$router.push('/home')"
+          @click="$router.push('/')"
           class="cursor-pointer"
           src="/images/logo.png"
           style="width: 38px"
@@ -105,7 +105,7 @@
           </q-menu>
         </q-btn>
       </q-toolbar>
-      <nav-bar v-if="isDesktop" />
+      <desktop-menu v-if="isDesktop" />
     </q-header>
 
     <q-drawer
@@ -154,12 +154,12 @@ export default {
     'search-bar': () => import('src/layouts/SearchBar'),
     pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
-    'nav-bar': () => import('src/layouts/DesktopMenu'),
+    'desktop-menu': () => import('src/layouts/DesktopMenu'),
     Sidebar: () => import('./Drawer'),
-    login1: () => import('src/pages/login'),
-    login2: () => import('src/pages/loginAccordian'),
-    login3: () => import('src/pages/loginHorizontalTab'),
-    login4: () => import('src/pages/loginVerticalTab')
+    login1: () => import('components/auth/login'),
+    login2: () => import('components/auth/loginAccordian'),
+    login3: () => import('components/auth/loginHorizontalTab'),
+    login4: () => import('components/auth/loginVerticalTab')
   },
   methods: {
     close() {

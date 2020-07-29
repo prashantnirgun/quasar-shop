@@ -8,8 +8,8 @@ const routes = [
         path: '/',
         component: () => import('components/home/Index.vue')
       },
-      { path: '/login', component: () => import('pages/login.vue') },
-      { path: '/login2', component: () => import('pages/loginAccordian.vue') },
+      // { path: '/login', component: () => import('pages/login.vue') },
+      // { path: '/login2', component: () => import('pages/loginAccordian.vue') },
 
       { path: '/details', component: () => import('pages/details.vue') },
       {

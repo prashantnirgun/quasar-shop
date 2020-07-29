@@ -8,10 +8,14 @@ Its forked from [quasar-shoping](https://github.com/mayur091193/quasar-shopping)
 
 ## Files Created / Moved / Split :
 
-| Object  | File Name    | Description                                                                                                                               |
-| ------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| layouts | MyLayout.vue | (1) Layout.vue no reason I just like to make it simple & split the code into seprate files. (2) Menu.vue (3) Footer.vue (4) SearchBar.vue |
-| pages   | home.vue     | (1) Moved and renamed component/home/Index.vue folder & created two sepate files (2) Hot-deal.vue (3) banner.vue                          |
+| #   | Features        | Completed | Description                                                                                                                                      |
+| --- | --------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | .htaccess       | Yes       | Prevent SPA refresh issue                                                                                                                        |
+| 2   | .env            | Yes       | Configuration files for development & Production. Used Extension [app-extension-dotenv](https://github.com/quasarframework/app-extension-dotenv) |
+| 3   | Axios           | Yes       | Not an hardcoded data its fetching from .json from files /public/data                                                                            |
+| 4   | Vue Store       | Yes       | .                                                                                                                                                |
+| 5   | Responsive      | WIP       | Menu, Sidebar is under process                                                                                                                   |
+| 6   | Payment Gateway | No        | Pending feature surely build it on priority                                                                                                      |
 
 ## General Information :
 
