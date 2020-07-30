@@ -31,7 +31,7 @@ export default {
         this.lists = response.data;
       })
       .catch(error => {
-        console.log('mixin/ddlb Error', error);
+        console.log('DataService.get Error', error);
       });
   }
 };
