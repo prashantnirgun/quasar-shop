@@ -6,7 +6,13 @@
       class="rounded-borders cursor-pointer shadow-8"
     >
       <q-card-section>
-        <q-img class="" :src="data.image_filename" height="200px" width="200px">
+        <q-img
+          class=""
+          :src="data.image_filename"
+          :height="getSize"
+          :width="getSize"
+        >
+          >
           <div class="absolute-bottom text-subtitle2 text-center">
             {{ data.category_name }}
           </div>
@@ -18,8 +24,10 @@
 
 <script>
 import DataService from 'src/services/DataService';
+import device_mixin from 'src/mixins/device_mixin';
 
 export default {
+  mixins: [device_mixin],
   data() {
     return {
       lists: []
@@ -33,6 +41,11 @@ export default {
       .catch(error => {
         console.log('DataService.get Error', error);
       });
+  },
+  computed: {
+    getSize() {
+      return this.isDesktop ? '200px' : '100px';
+    }
   }
 };
 </script>
