@@ -1,22 +1,22 @@
 <template>
-  <div class=" row wrap justify-evenly q-pa-sm items-start q-gutter-xs">
+  <div class=" row wrap justify-evenly q-pa-sm items-start q-gutter-md">
     <q-card
       v-for="data in lists"
       :key="data.category_id"
       class="rounded-borders cursor-pointer shadow-8"
     >
-      <q-card-section>
-        <q-img
-          class=""
-          :src="data.image_filename"
-          :height="getSize"
-          :width="getSize"
-        >
-          <div class="absolute-bottom text-subtitle2 text-center">
-            {{ data.category_name }}
-          </div>
-        </q-img>
-      </q-card-section>
+      <q-img
+        class=""
+        :src="data.image_filename"
+        :height="getSize"
+        :width="getSize"
+        @click="$router.push('/category')"
+      >
+        <div class="absolute-bottom text-subtitle2 text-center">
+          {{ data.category_name }}
+        </div>
+      </q-img>
+      <!-- <q-card-section> </q-card-section> -->
     </q-card>
   </div>
 </template>
