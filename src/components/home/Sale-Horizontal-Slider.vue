@@ -64,7 +64,7 @@ export default {
     };
   },
   mounted() {
-    DataService.get('data/sale.json')
+    DataService.get('data/productSale.json')
       .then(response => {
         this.lists = this.chunk(response.data, 6);
       })

@@ -4,14 +4,14 @@
     "sale_rate": 175.0,
     "product_id": 1,
     "product_name": "Non Brand Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-packaging-bag-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chakki-Fresh-Atta-1.jpg"
   },
   {
     "mrp": 420.0,
     "sale_rate": 340.0,
     "product_id": 2,
     "product_name": "Non Brand Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/8908001296038_f.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200729_184546.JPG"
   },
   {
     "mrp": 1950.0,
@@ -33,6 +33,13 @@
     "product_id": 7,
     "product_name": "Aashirvaad Atta 5 kgs",
     "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-ashrivad-5kg.jpg"
+  },
+  {
+    "mrp": 2100.0,
+    "sale_rate": 1800.0,
+    "product_id": 15,
+    "product_name": "Samrat Maida 50 kgs",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-maida-samrat--688.jpg"
   },
   {
     "mrp": 85.0,
@@ -70,11 +77,32 @@
     "image_filename": "https://api.cloudapmc.com:5000/product/1/sopan-15-kg-tin-pure-buffalo-ghee-500x500.jpg"
   },
   {
+    "mrp": 450.0,
+    "sale_rate": 220.0,
+    "product_id": 163,
+    "product_name": "Glass Noodls ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/mung-bean-vermicelli.jpg"
+  },
+  {
     "mrp": 860.0,
     "sale_rate": 850.0,
     "product_id": 195,
     "product_name": "Red Label 950 gm",
     "image_filename": "https://api.cloudapmc.com:5000/product/1/6168OmyDv6L._SX569_.jpg"
+  },
+  {
+    "mrp": 240.0,
+    "sale_rate": 160.0,
+    "product_id": 301,
+    "product_name": "Mustard Powder 500 gm",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-mustard-powder-500x500.jpg"
+  },
+  {
+    "mrp": 100.0,
+    "sale_rate": 90.0,
+    "product_id": 316,
+    "product_name": "Real Mango 1 Box",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (5).jpg"
   },
   {
     "mrp": 200.0,

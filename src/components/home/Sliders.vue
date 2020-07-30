@@ -3,7 +3,8 @@
     <div class="row items-center q-mx-sm">
       <sale-slider />
       <new-arrivals-slider />
-      <category-slider />
+      <!-- <category-slider /> -->
+      <category />
     </div>
   </div>
 </template>
@@ -14,8 +15,9 @@ export default {
     'sale-slider': () => import('components/home/Sale-Horizontal-Slider'),
     'new-arrivals-slider': () =>
       import('components/home/New-Arrivals-Horizontal-Slider'),
-    'category-slider': () =>
-      import('components/home/Category-Horizontal-Slider')
+    // 'category-slider': () =>
+    //   import('components/home/Category-Horizontal-Slider'),
+    category: () => import('components/home/Category')
   }
 };
 </script>
