@@ -11,7 +11,11 @@ const routes = [
       // { path: '/login', component: () => import('pages/login.vue') },
       // { path: '/login2', component: () => import('pages/loginAccordian.vue') },
 
-      { path: '/details', component: () => import('pages/details.vue') },
+      {
+        name: 'product-details',
+        path: '/product-details/:product_id',
+        component: () => import('pages/product_details.vue')
+      },
       {
         path: '/customer_management',
         component: () => import('pages/customer_management.vue')
@@ -21,7 +25,16 @@ const routes = [
         component: () => import('pages/change_request.vue')
       },
       { path: '/my_profile', component: () => import('pages/my_profile.vue') },
-      { path: '/category', component: () => import('pages/category.vue') }
+      {
+        name: 'products',
+        path: '/products/:category_id',
+        component: () => import('pages/Products.vue')
+      },
+      {
+        name: 'card',
+        path: '/card',
+        component: () => import('pages/Card.vue')
+      }
     ]
   }
 ];

@@ -1,3103 +1,3962 @@
 [
   {
     "mrp": 220.0,
+    "tag": "Sale",
     "sale_rate": 175.0,
     "product_id": 1,
+    "category_id": 1,
     "product_name": "Non Brand Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chakki-Fresh-Atta-1.jpg"
-  },
-  {
-    "mrp": 420.0,
-    "sale_rate": 340.0,
-    "product_id": 2,
-    "product_name": "Non Brand Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200729_184546.JPG"
-  },
-  {
-    "mrp": 1950.0,
-    "sale_rate": 1600.0,
-    "product_id": 3,
-    "product_name": "Non Brand  Atta 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Ganesh-Whole-Wheat-Chakki-Atta-1549101750-10056145-1.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chakki-Fresh-Atta-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 260.0,
+    "tag": "New Arrivals,Sale",
     "sale_rate": 200.0,
     "product_id": 4,
+    "category_id": 1,
     "product_name": "Samrat Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg"
-  },
-  {
-    "mrp": 500.0,
-    "sale_rate": 380.0,
-    "product_id": 5,
-    "product_name": "Samrat Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg"
-  },
-  {
-    "mrp": 2200.0,
-    "sale_rate": 1800.0,
-    "product_id": 6,
-    "product_name": "Samrat Atta 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/samrat-chakki-atta.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 260.0,
+    "tag": "Hot Deals,Sale,New Arrivals",
     "sale_rate": 220.0,
     "product_id": 7,
+    "category_id": 1,
     "product_name": "Aashirvaad Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-ashrivad-5kg.jpg"
-  },
-  {
-    "mrp": 480.0,
-    "sale_rate": 420.0,
-    "product_id": 8,
-    "product_name": "Aashirvaad Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/aashirvaad-select-atta-5kg-550x550.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-ashrivad-5kg.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 305.0,
+    "tag": null,
     "sale_rate": 275.0,
     "product_id": 9,
+    "category_id": 1,
     "product_name": "Aashirvaad Multigrain Atta  5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71gcOblCdcL._SX569_.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71gcOblCdcL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 180.0,
     "product_id": 10,
+    "category_id": 1,
     "product_name": "Non Brand Maida 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Arjun-Maida-1kg-SDL487966891-1-30082.jpg"
-  },
-  {
-    "mrp": 380.0,
-    "sale_rate": 340.0,
-    "product_id": 11,
-    "product_name": "Non Brand Maida 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/flour-polyester-printed-packaging-pouch-500x500.jpg"
-  },
-  {
-    "mrp": 1950.0,
-    "sale_rate": 1700.0,
-    "product_id": 12,
-    "product_name": "Non Brand Maida 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/high-protien-maida-flour-500x500.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Arjun-Maida-1kg-SDL487966891-1-30082.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 280.0,
+    "tag": null,
     "sale_rate": 200.0,
     "product_id": 13,
+    "category_id": 1,
     "product_name": "Samrat Maida 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/maida.jpg"
-  },
-  {
-    "mrp": 450.0,
-    "sale_rate": 380.0,
-    "product_id": 14,
-    "product_name": "Samrat Maida 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SAMRAT-MAIDA.jpg"
-  },
-  {
-    "mrp": 2100.0,
-    "sale_rate": 1800.0,
-    "product_id": 15,
-    "product_name": "Samrat Maida 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-maida-samrat--688.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/maida.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 60.0,
+    "tag": null,
     "sale_rate": 40.0,
     "product_id": 16,
+    "category_id": 1,
     "product_name": "Rice Atta 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/rice-flour-500x500.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/rice-flour-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 50.0,
     "product_id": 17,
+    "category_id": 1,
     "product_name": "Makai Atta 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Makai-Atta.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Makai-Atta.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 40.0,
+    "tag": null,
     "sale_rate": 30.0,
     "product_id": 18,
+    "category_id": 16,
     "product_name": "Staff Rice 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Basmati-Rice-Tukda.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Basmati-Rice-Tukda.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 45.0,
+    "tag": null,
     "sale_rate": 36.0,
     "product_id": 19,
+    "category_id": 16,
     "product_name": "Rice Masoori 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/6278Basmati Rice - Tukda.jpg"
-  },
-  {
-    "mrp": 60.0,
-    "sale_rate": 50.0,
-    "product_id": 20,
-    "product_name": "Rice Masoori 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1200px-Sona-masuri.jpg"
-  },
-  {
-    "mrp": 70.0,
-    "sale_rate": 60.0,
-    "product_id": 21,
-    "product_name": "Boiled Rice 5  kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SQ111128.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6278Basmati Rice - Tukda.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 50.0,
+    "tag": "New Arrivals",
     "sale_rate": 45.0,
     "product_id": 22,
+    "category_id": 16,
     "product_name": "Boiled Rice 25  kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1579028237595.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1579028237595.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 75.0,
     "product_id": 23,
+    "category_id": 16,
     "product_name": "Basmati Mini Dubar 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/long-grain-basmati-rice-722.jpg"
-  },
-  {
-    "mrp": 95.0,
-    "sale_rate": 85.0,
-    "product_id": 24,
-    "product_name": "Basmati Mini Dubar 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1121-long-grain-basmati-rice-730.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/long-grain-basmati-rice-722.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 135.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 25,
+    "category_id": 16,
     "product_name": "Brown Rice Basmati 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/A1n8pNjJBXL._SY679_.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/A1n8pNjJBXL._SY679_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 75.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 26,
+    "category_id": 16,
     "product_name": "Kani Rice 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kanirice_1kg.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kanirice_1kg.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": "Hot Deals",
     "sale_rate": 280.0,
     "product_id": 27,
+    "category_id": 16,
     "product_name": "Arbori Rice 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/GUEST_261fd926-40a8-4570-8c05-e09b46ba6238.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/GUEST_261fd926-40a8-4570-8c05-e09b46ba6238.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 28,
+    "category_id": 16,
     "product_name": "Sushi Rice 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51m7aAERzyL.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51m7aAERzyL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 400.0,
+    "tag": null,
     "sale_rate": 260.0,
     "product_id": 29,
+    "category_id": 16,
     "product_name": "Jasmin Rice 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Certified-VIETNAM-BEST-PRICE-JASMINE-RICE.jpg_640x640.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Certified-VIETNAM-BEST-PRICE-JASMINE-RICE.jpg_640x640.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 500.0,
+    "tag": "New Arrivals",
     "sale_rate": 360.0,
     "product_id": 30,
+    "category_id": 16,
     "product_name": "Jasmin Rice Gold 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51m5-Mywo4L.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51m5-Mywo4L.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 80.0,
     "product_id": 31,
+    "category_id": 1,
     "product_name": "Non Brand Besan 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 72.0,
     "product_id": 32,
+    "category_id": 2,
     "product_name": "Black Chana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-chana-250x250.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-chana-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 78.0,
     "product_id": 33,
+    "category_id": 2,
     "product_name": "Chana Dal 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chana-dal2.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chana-dal2.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 78.0,
     "product_id": 34,
+    "category_id": 2,
     "product_name": "Chavli Big 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/chavali_600x.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/chavali_600x.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 90.0,
+    "tag": null,
     "sale_rate": 80.0,
     "product_id": 35,
+    "category_id": 2,
     "product_name": "Kabuli Chana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/KABULI-CHANA-SMALL-500G.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/KABULI-CHANA-SMALL-500G.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 36,
+    "category_id": 2,
     "product_name": "Kabuli Chana Bold 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Kabuli-Chana.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Kabuli-Chana.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": "Sale",
     "sale_rate": 75.0,
     "product_id": 37,
+    "category_id": 2,
     "product_name": "Masoor Dal  1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51quiPzxLQL._AC_.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51quiPzxLQL._AC_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 75.0,
+    "tag": null,
     "sale_rate": 68.0,
     "product_id": 38,
+    "category_id": 2,
     "product_name": "Masoor Whole 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-masoor-dal-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-masoor-dal-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 39,
+    "category_id": 2,
     "product_name": "Matki 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Turkish-Dew-Gram-Beans-Matki-.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Turkish-Dew-Gram-Beans-Matki-.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 140.0,
     "product_id": 40,
+    "category_id": 2,
     "product_name": "Moong Dal 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/moong-dhuli-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/moong-dhuli-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 145.0,
+    "tag": null,
     "sale_rate": 130.0,
     "product_id": 41,
+    "category_id": 2,
     "product_name": "Moong Whole 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Sa_green_gram.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Sa_green_gram.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 42,
+    "category_id": 2,
     "product_name": "Rajma Red 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/red-kidney-beans-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/red-kidney-beans-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 130.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 43,
+    "category_id": 2,
     "product_name": "Rajma White 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/images-products-14-250x250.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/images-products-14-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 98.0,
     "product_id": 44,
+    "category_id": 2,
     "product_name": "Kashmiri Rajma  1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/26491-10000476-3_1-bb-royal-rajma-kashmiri.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/26491-10000476-3_1-bb-royal-rajma-kashmiri.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 95.0,
+    "tag": null,
     "sale_rate": 88.0,
     "product_id": 45,
+    "category_id": 2,
     "product_name": "Sabudana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/effective-health-benefits-of-sabudana.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/effective-health-benefits-of-sabudana.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 46,
+    "category_id": 2,
     "product_name": "Daliya 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/UT82VtKXHXXXXagOFbXB.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/UT82VtKXHXXXXagOFbXB.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 140.0,
+    "tag": null,
     "sale_rate": 125.0,
     "product_id": 47,
+    "category_id": 2,
     "product_name": "Singdana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-groundnut-seed-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-groundnut-seed-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 95.0,
     "product_id": 48,
+    "category_id": 2,
     "product_name": "Toor Dal 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Toordaal_1600x1250_6af14104-2911-4228-a7c2-9131faae8aaa_1600x.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Toordaal_1600x1250_6af14104-2911-4228-a7c2-9131faae8aaa_1600x.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 49,
+    "category_id": 2,
     "product_name": "Toor Dal  Spl 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/arhar daal2.jpg3-800x800.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/arhar daal2.jpg3-800x800.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 140.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 50,
+    "category_id": 2,
     "product_name": "Urad Dal 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/30010377-3_1-bb-popular-urad-dal-split.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/30010377-3_1-bb-popular-urad-dal-split.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 130.0,
+    "tag": null,
     "sale_rate": 110.0,
     "product_id": 51,
+    "category_id": 2,
     "product_name": "Urad Whole 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-gram-bean-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-gram-bean-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 52,
+    "category_id": 2,
     "product_name": "Urad Dal Chilta 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/13297-1230473292.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/13297-1230473292.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 135.0,
     "product_id": 53,
+    "category_id": 2,
     "product_name": "Green Vatana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/9-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/9-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 54,
+    "category_id": 2,
     "product_name": "White Vatana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-peas-500x500.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-peas-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 55,
+    "category_id": 2,
     "product_name": "Black Vatana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/download.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/download.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
+    "tag": "Hot Deals",
     "sale_rate": 900.0,
     "product_id": 56,
+    "category_id": 3,
     "product_name": "Kaju Whole 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cashew-nuts-w180-rs-11550-per-10-kg-500x500.jpg"
-  },
-  {
-    "mrp": 950.0,
-    "sale_rate": 900.0,
-    "product_id": 57,
-    "product_name": "Kaju Whole 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/w180-cashew-nut-500x500.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cashew-nuts-w180-rs-11550-per-10-kg-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 900.0,
+    "tag": null,
     "sale_rate": 850.0,
     "product_id": 58,
+    "category_id": 3,
     "product_name": "Kaju Broken 2 pcs 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/images (2).jpg"
-  },
-  {
-    "mrp": 550.0,
-    "sale_rate": 480.0,
-    "product_id": 59,
-    "product_name": "Kaju Broken 2 pcs 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/download (1).jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/images (2).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 600.0,
+    "tag": null,
     "sale_rate": 520.0,
     "product_id": 60,
+    "category_id": 3,
     "product_name": "Kaju Broken 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/P11190_1601YY053012.jpg"
-  },
-  {
-    "mrp": 200.0,
-    "sale_rate": 160.0,
-    "product_id": 61,
-    "product_name": "Kaju Broken 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/P11190_1601YY053012.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/P11190_1601YY053012.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 62,
+    "category_id": 3,
     "product_name": "Kaju Kani 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kaju-kani-baby-bits-bb2-500x500.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kaju-kani-baby-bits-bb2-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 320.0,
+    "tag": null,
     "sale_rate": 210.0,
     "product_id": 63,
+    "category_id": 3,
     "product_name": "Kaju Shahi Kani 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cashew-tukda-500x500.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cashew-tukda-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 64,
+    "category_id": 3,
     "product_name": "Dates / Khajoor Red 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1526907084.jpg"
-  },
-  {
-    "mrp": 1000.0,
-    "sale_rate": 950.0,
-    "product_id": 65,
-    "product_name": "Dates / Khajoor Red 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1526907084.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1526907084.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 850.0,
+    "tag": null,
     "sale_rate": 780.0,
     "product_id": 66,
+    "category_id": 3,
     "product_name": "Dates / Khajoor Black 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/41u-E0aUgXL.jpg"
-  },
-  {
-    "mrp": 1450.0,
-    "sale_rate": 1280.0,
-    "product_id": 67,
-    "product_name": "Dates / Khajoor Black 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/712-500x500.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41u-E0aUgXL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 68,
+    "category_id": 3,
     "product_name": "Dry Dates / Khajoor Red 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71JPfi9UpAL._SL1200_.jpg"
-  },
-  {
-    "mrp": 2200.0,
-    "sale_rate": 1950.0,
-    "product_id": 69,
-    "product_name": "Dry Dates / Khajoor Red 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/DF_03-02_2048x.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71JPfi9UpAL._SL1200_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1450.0,
+    "tag": null,
     "sale_rate": 1280.0,
     "product_id": 70,
+    "category_id": 3,
     "product_name": "Magaz 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/watermelon-seeds-tarbooz-magaz--500x500.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/watermelon-seeds-tarbooz-magaz--500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 320.0,
+    "tag": null,
     "sale_rate": 300.0,
     "product_id": 71,
+    "category_id": 4,
     "product_name": "Anardana 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/bimg5aebdfafe6a84.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/bimg5aebdfafe6a84.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 150.0,
     "product_id": 72,
+    "category_id": 4,
     "product_name": "Badi Saunf 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/360272882-H.jpg"
-  },
-  {
-    "mrp": 220.0,
-    "sale_rate": 180.0,
-    "product_id": 73,
-    "product_name": "Badi Saunf 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/360272882-H.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/360272882-H.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 320.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 74,
+    "category_id": 4,
     "product_name": "Bedki Mirchi / Chilly 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Bedki-Mirchi-501x501.jpg"
-  },
-  {
-    "mrp": 300.0,
-    "sale_rate": 260.0,
-    "product_id": 75,
-    "product_name": "Bedki Mirchi  / Chilly 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Bedki-Mirchi-501x501.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Bedki-Mirchi-501x501.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 76,
+    "category_id": 4,
     "product_name": "Pandi Mirchi / Chilly 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250.jpg"
-  },
-  {
-    "mrp": 300.0,
-    "sale_rate": 260.0,
-    "product_id": 77,
-    "product_name": "Pandi Mirchi  / Chilly 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 400.0,
+    "tag": null,
     "sale_rate": 360.0,
     "product_id": 78,
+    "category_id": 4,
     "product_name": "Kashmiri Mirchi / Chilly 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2019-09-23.jpg"
-  },
-  {
-    "mrp": 300.0,
-    "sale_rate": 240.0,
-    "product_id": 79,
-    "product_name": "Kashmiri Mirchi  / Chilly 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/hafus-mangoes-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/2019-09-23.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 280.0,
+    "tag": null,
     "sale_rate": 240.0,
     "product_id": 80,
+    "category_id": 4,
     "product_name": "Bori Mirchi / Chilly 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg"
-  },
-  {
-    "mrp": 35.0,
-    "sale_rate": 25.0,
-    "product_id": 81,
-    "product_name": "Bori Mirchi / Chilly 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/BOR-MIRCH-ROUND-CHILLY-Image-2.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 165.0,
+    "tag": null,
     "sale_rate": 145.0,
     "product_id": 82,
+    "category_id": 4,
     "product_name": "Dhania Whole / Corinder Seed test",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/coriander-seeds-1S-670.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/coriander-seeds-1S-670.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 180.0,
     "product_id": 83,
+    "category_id": 4,
     "product_name": "Madras Mirchi / Chilly 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/madrasmirchi_1kg.jpg"
-  },
-  {
-    "mrp": 280.0,
-    "sale_rate": 230.0,
-    "product_id": 84,
-    "product_name": "Madras Mirchi / Chilly 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/madrasmirchi_100gm.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/madrasmirchi_1kg.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 380.0,
+    "tag": null,
     "sale_rate": 320.0,
     "product_id": 85,
+    "category_id": 4,
     "product_name": "Coconut Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/50kg-coconut-powder-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/50kg-coconut-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 950.0,
+    "tag": null,
     "sale_rate": 840.0,
     "product_id": 86,
+    "category_id": 4,
     "product_name": "Coconut / Sukha khopra 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sukha_nariyal1_4709022_835x547-m.jpg"
-  },
-  {
-    "mrp": 100.0,
-    "sale_rate": 80.0,
-    "product_id": 87,
-    "product_name": "Coconut / Sukha khopra  250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pic.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sukha_nariyal1_4709022_835x547-m.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1700.0,
+    "tag": "Sale,Hot Deals",
     "sale_rate": 1450.0,
     "product_id": 88,
+    "category_id": 4,
     "product_name": "Coconut 1 pc",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717u9zWb36L._AC_SX569_.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/717u9zWb36L._AC_SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 550.0,
+    "tag": null,
     "sale_rate": 470.0,
     "product_id": 89,
+    "category_id": 4,
     "product_name": "Dhania Whole 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/coriander-seeds-1S-670.jpg"
-  },
-  {
-    "mrp": 200.0,
-    "sale_rate": 160.0,
-    "product_id": 90,
-    "product_name": "Dhania Whole 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-coriander-seed-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/coriander-seeds-1S-670.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1100.0,
+    "tag": null,
     "sale_rate": 950.0,
     "product_id": 91,
+    "category_id": 4,
     "product_name": "Tamarind / Imli  1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/6000199754091.jpg"
-  },
-  {
-    "mrp": 550.0,
-    "sale_rate": 450.0,
-    "product_id": 92,
-    "product_name": "Tamarind / Imli  500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81E8ePbfSfL._SL1500_.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6000199754091.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 245.0,
     "product_id": 93,
+    "category_id": 4,
     "product_name": "Cumin Seeds /Jeera 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/66179752.jpg"
-  },
-  {
-    "mrp": 320.0,
-    "sale_rate": 265.0,
-    "product_id": 94,
-    "product_name": "Cumin Seeds /Jeera 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cumin-seed-jeera-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/66179752.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 550.0,
+    "tag": null,
     "sale_rate": 480.0,
     "product_id": 95,
+    "category_id": 4,
     "product_name": "Carom Seeds / Ajwain 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/400__23520.1429520862.1280.1280.jpg"
-  },
-  {
-    "mrp": 85.0,
-    "sale_rate": 68.0,
-    "product_id": 96,
-    "product_name": "Carom Seeds / Ajwain 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/ajwin-seed-oil.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/400__23520.1429520862.1280.1280.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 750.0,
+    "tag": null,
     "sale_rate": 680.0,
     "product_id": 97,
+    "category_id": 4,
     "product_name": "Black Pepper / Kali Miri 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71asMvnKkML._AC_SL1024_.jpg"
-  },
-  {
-    "mrp": 150.0,
-    "sale_rate": 128.0,
-    "product_id": 98,
-    "product_name": "Black Pepper / Kali Miri 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81Lh-8pu27L._SL1500_.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71asMvnKkML._AC_SL1024_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
+    "tag": null,
     "sale_rate": 890.0,
     "product_id": 99,
+    "category_id": 4,
     "product_name": "Khus Khus 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/khakas-seed-500x500.jpg"
-  },
-  {
-    "mrp": 450.0,
-    "sale_rate": 380.0,
-    "product_id": 100,
-    "product_name": "Khus Khus 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51ZVS1bCBkL._SX425_.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/khakas-seed-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 650.0,
+    "tag": null,
     "sale_rate": 550.0,
     "product_id": 101,
+    "category_id": 4,
     "product_name": "Onion Seed / Kalonji 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalonji-seed-1559715222-4937291.jpg"
-  },
-  {
-    "mrp": 1650.0,
-    "sale_rate": 1450.0,
-    "product_id": 102,
-    "product_name": "Onion Seed / Kalonji 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalonji-seeds-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalonji-seed-1559715222-4937291.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 4850.0,
+    "tag": null,
     "sale_rate": 4680.0,
     "product_id": 103,
+    "category_id": 4,
     "product_name": "Shahi Jeera 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Shahi-Jeera.jpg"
-  },
-  {
-    "mrp": 950.0,
-    "sale_rate": 880.0,
-    "product_id": 104,
-    "product_name": "Shahi Jeera 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Shahi-Jeera.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Shahi-Jeera.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2600.0,
+    "tag": null,
     "sale_rate": 2280.0,
     "product_id": 105,
+    "category_id": 4,
     "product_name": "Triphala 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/80542889-triphala-ayurvedic-fruits-on-white-background.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/80542889-triphala-ayurvedic-fruits-on-white-background.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 850.0,
+    "tag": null,
     "sale_rate": 680.0,
     "product_id": 106,
+    "category_id": 4,
     "product_name": "Black  Til 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2018-best-black-seasame-seed-500x500.jpg"
-  },
-  {
-    "mrp": 100.0,
-    "sale_rate": 80.0,
-    "product_id": 107,
-    "product_name": "Black  Til 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Sesame-Seeds-black.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/2018-best-black-seasame-seed-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 108,
+    "category_id": 4,
     "product_name": "White Til 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sesame-seeds-500x500.jpg"
-  },
-  {
-    "mrp": 250.0,
-    "sale_rate": 200.0,
-    "product_id": 109,
-    "product_name": "White Til 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sesame-seeds-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sesame-seeds-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 850.0,
+    "tag": null,
     "sale_rate": 780.0,
     "product_id": 110,
+    "category_id": 4,
     "product_name": "Dry Ginger / Saunth 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/zingiber-officinale-dry-matter-220-rs-kg-500x500.jpg"
-  },
-  {
-    "mrp": 150.0,
-    "sale_rate": 120.0,
-    "product_id": 111,
-    "product_name": "Dry Ginger / Saunth 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dry-ginger-28sunth-29-2c-zingiber-officinale-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/zingiber-officinale-dry-matter-220-rs-kg-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 600.0,
+    "tag": null,
     "sale_rate": 530.0,
     "product_id": 112,
+    "category_id": 4,
     "product_name": "Mustard Seeds / Rai 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/V1A5473.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/V1A5473.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 180.0,
     "product_id": 113,
+    "category_id": 5,
     "product_name": "Haldi Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717Gegl2IbL._SX466_.jpg"
-  },
-  {
-    "mrp": 280.0,
-    "sale_rate": 180.0,
-    "product_id": 114,
-    "product_name": "Haldi Powder 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/HALDI-POWDER-copy.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/717Gegl2IbL._SX466_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 440.0,
+    "tag": null,
     "sale_rate": 340.0,
     "product_id": 115,
+    "category_id": 5,
     "product_name": "Chilly Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/02-2.jpg"
-  },
-  {
-    "mrp": 250.0,
-    "sale_rate": 160.0,
-    "product_id": 116,
-    "product_name": "Chilly Powder 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/02-2.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/02-2.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 117,
+    "category_id": 5,
     "product_name": "Kashmiri Chilly Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81gnj7bziFL.jpg"
-  },
-  {
-    "mrp": 580.0,
-    "sale_rate": 480.0,
-    "product_id": 118,
-    "product_name": "Kashmiri Chilly Powder 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81gnj7bziFL.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81gnj7bziFL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 380.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 119,
+    "category_id": 5,
     "product_name": "Dhania Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1693190f-4e3d-4d30-901b-11fb71d8d299.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1693190f-4e3d-4d30-901b-11fb71d8d299.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 450.0,
-    "sale_rate": 360.0,
-    "product_id": 120,
-    "product_name": "Dhania Powder 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1693190f-4e3d-4d30-901b-11fb71d8d299.jpg"
-  },
-  {
-    "mrp": 450.0,
+    "tag": null,
     "sale_rate": 360.0,
     "product_id": 121,
+    "category_id": 5,
     "product_name": "Jeera Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jeera-Powder.jpg"
-  },
-  {
-    "mrp": 450.0,
-    "sale_rate": 380.0,
-    "product_id": 122,
-    "product_name": "Jeera Powder 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jeera-Powder.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jeera-Powder.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 123,
+    "category_id": 6,
     "product_name": "Chat Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211000.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211000.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 124,
-    "product_name": "Chat Masala 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223023.JPG"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 125,
+    "category_id": 6,
     "product_name": "Chana Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223107.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223107.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 126,
+    "category_id": 6,
     "product_name": "Chana Masala 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_222952.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_222952.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 127,
+    "category_id": 6,
     "product_name": "Garam Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223140.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223140.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 128,
+    "category_id": 6,
     "product_name": "Garam Masala 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223224.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223224.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 129,
+    "category_id": 6,
     "product_name": "Kitchen King 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_210520.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_210520.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 130,
+    "category_id": 6,
     "product_name": "Kitchen King 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_210520.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_210520.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 131,
+    "category_id": 6,
     "product_name": "Deggi Mirch 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223654.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223654.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 132,
+    "category_id": 6,
     "product_name": "Deggi Mirch 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223724.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_223724.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 133,
+    "category_id": 6,
     "product_name": "Kasuri Methi 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211146.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211146.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 134,
+    "category_id": 6,
     "product_name": "Kasuri Methi 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211132.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211132.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 135,
+    "category_id": 6,
     "product_name": "Chicken Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211000.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211000.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 136,
+    "category_id": 6,
     "product_name": "Jaljira Powder 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211109.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211109.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 137,
+    "category_id": 6,
     "product_name": "Pani Puri Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_210919.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_210919.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 138,
+    "category_id": 6,
     "product_name": "Biryani Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_224152.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_224152.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 139,
+    "category_id": 6,
     "product_name": "Pavbhaji Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_224123.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_224123.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 140,
+    "category_id": 6,
     "product_name": "Sambhar Masala 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211226.JPG"
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200420_211226.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 560.0,
+    "tag": null,
     "sale_rate": 540.0,
     "product_id": 141,
+    "category_id": 7,
     "product_name": "Sagar Ghee Tin 1 kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sagar-pure-ghee-1-ltr-170473416-cykcg.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sagar-pure-ghee-1-ltr-170473416-cykcg.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 550.0,
+    "tag": null,
     "sale_rate": 530.0,
     "product_id": 142,
+    "category_id": 7,
     "product_name": "Sagar Ghee Pouch 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sagar_gheepouch_500ml.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sagar_gheepouch_500ml.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 570.0,
+    "tag": null,
     "sale_rate": 520.0,
     "product_id": 143,
+    "category_id": 7,
     "product_name": "Gowardhan Ghee 1 kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/7b68b513aa44633a41f2a38486aa6f02.jpg"
-  },
-  {
-    "mrp": 310.0,
-    "sale_rate": 280.0,
-    "product_id": 144,
-    "product_name": "Gowardhan Ghee 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/gowardhan_ghee_500ml_jar__1100.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/7b68b513aa44633a41f2a38486aa6f02.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 505.0,
+    "tag": null,
     "sale_rate": 490.0,
     "product_id": 145,
+    "category_id": 7,
     "product_name": "Amul Pure Ghee Pouch 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/619wH4STHaL._SL1280_.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/619wH4STHaL._SL1280_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 540.0,
+    "tag": null,
     "sale_rate": 500.0,
     "product_id": 146,
+    "category_id": 7,
     "product_name": "Amul Pure Ghee Tin 1 Kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/amul-ghee-tin.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/amul-ghee-tin.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2100.0,
+    "tag": null,
     "sale_rate": 1700.0,
     "product_id": 147,
+    "category_id": 7,
     "product_name": "Vijaya Pure Cow Ghee 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/LCOWGHEE1LVija14xx20919_1_B.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/LCOWGHEE1LVija14xx20919_1_B.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2000.0,
+    "tag": null,
     "sale_rate": 1600.0,
     "product_id": 148,
+    "category_id": 7,
     "product_name": "Premia Cow Ghee 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pure-cow-ghee-448.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pure-cow-ghee-448.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2100.0,
+    "tag": "Sale",
     "sale_rate": 1600.0,
     "product_id": 149,
+    "category_id": 7,
     "product_name": "Vanaspati Ghee 15 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sopan-15-kg-tin-pure-buffalo-ghee-500x500.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sopan-15-kg-tin-pure-buffalo-ghee-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2000.0,
+    "tag": null,
     "sale_rate": 1650.0,
     "product_id": 150,
+    "category_id": 7,
     "product_name": "Madhuram Sunflower Oil 15 Ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2075.0,
+    "tag": "Hot Deals",
     "sale_rate": 1700.0,
     "product_id": 151,
+    "category_id": 7,
     "product_name": "Fortune Sunflower Oil 15 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/304.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/304.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 152,
+    "category_id": 7,
     "product_name": "Gemini Sunflower Oil 15 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/GEMINI-SUNFLOWER-OIL-15LTR-TIN-Image-1-1.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/GEMINI-SUNFLOWER-OIL-15LTR-TIN-Image-1-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 153,
+    "category_id": 7,
     "product_name": "Rivo Sunflower Oil 15 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/15-Ltr-Tin-Sunflower-Oil.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/15-Ltr-Tin-Sunflower-Oil.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 560.0,
+    "tag": null,
     "sale_rate": 380.0,
     "product_id": 154,
+    "category_id": 7,
     "product_name": "Sunday Sunflower Oil 15 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/40140353_1-sunday-sunflower-oil-imported-refined.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/40140353_1-sunday-sunflower-oil-imported-refined.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 155,
+    "category_id": 7,
     "product_name": "Palm  Oil 15 ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/3251251474976314.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/3251251474976314.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 65.0,
+    "tag": null,
     "sale_rate": 45.0,
     "product_id": 156,
+    "category_id": 8,
     "product_name": "Orange Red Bush 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/bush-red-orange-food-color-powder-100g.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/bush-red-orange-food-color-powder-100g.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 65.0,
+    "tag": null,
     "sale_rate": 45.0,
     "product_id": 157,
+    "category_id": 8,
     "product_name": "Lemon Yellow Bush 100 gm  ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/lemon_1.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/lemon_1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 158,
+    "category_id": 8,
     "product_name": "Tomato Red Bush 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dbb4b307ad9b4cc0df284c185038fa6bc203a353.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dbb4b307ad9b4cc0df284c185038fa6bc203a353.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 159,
+    "category_id": 8,
     "product_name": "Apple Green Bush 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51cevBvPFtL (1).jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51cevBvPFtL (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 30.0,
+    "tag": null,
     "sale_rate": 20.0,
     "product_id": 160,
+    "category_id": 8,
     "product_name": "Vanilla Essance  ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/49660_LXL1.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/49660_LXL1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 40.0,
+    "tag": null,
     "sale_rate": 25.0,
     "product_id": 161,
+    "category_id": 8,
     "product_name": "Faluda Sev ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/TOPOP-FALOODA-YELLOW-10X100G.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/TOPOP-FALOODA-YELLOW-10X100G.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": "New Arrivals",
     "sale_rate": 60.0,
     "product_id": 162,
+    "category_id": 8,
     "product_name": "Noodles ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/3266399.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/3266399.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 450.0,
+    "tag": "Sale",
     "sale_rate": 220.0,
     "product_id": 163,
+    "category_id": 8,
     "product_name": "Glass Noodls ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/mung-bean-vermicelli.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/mung-bean-vermicelli.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": "Hot Deals,New Arrivals",
     "sale_rate": 210.0,
     "product_id": 164,
+    "category_id": 9,
     "product_name": "Tata Agni Tea Powdar 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tatatea1.jpg"
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tatatea1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 45.0,
+    "tag": null,
     "sale_rate": 25.0,
     "product_id": 165,
+    "category_id": 34,
     "product_name": "Black Salt Whole 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1200px-Black_Salt_(crystals).jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1200px-Black_Salt_(crystals).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 45.0,
+    "tag": null,
     "sale_rate": 25.0,
     "product_id": 166,
+    "category_id": 34,
     "product_name": "Black Salt Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/711e+pvQgOL._SX679_.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/711e+pvQgOL._SX679_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 285.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 167,
+    "category_id": 8,
     "product_name": "Lijjat papad Big 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Ta3sPjw4L._AC_SL1500_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Ta3sPjw4L._AC_SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 285.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 168,
+    "category_id": 8,
     "product_name": "Lijjat papad Mid 1 kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Ta3sPjw4L._AC_SL1500_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Ta3sPjw4L._AC_SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 285.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 169,
+    "category_id": 8,
     "product_name": "Lijjat papad Mini 1 kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/lijjat-udid-mini-papad-1-kg-164370718-neq1l.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/lijjat-udid-mini-papad-1-kg-164370718-neq1l.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 145.0,
     "product_id": 170,
+    "category_id": 8,
     "product_name": "Mukhwas White 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71tuuhltK6L._SL1024_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71tuuhltK6L._SL1024_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 171,
+    "category_id": 8,
     "product_name": "Mukhwas Green 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Oq+EpJcZL._AC_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Oq+EpJcZL._AC_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 240.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 172,
+    "category_id": 8,
     "product_name": "Mukhwas Red 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717nNIU4SVL._SX522_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/717nNIU4SVL._SX522_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 135.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 173,
+    "category_id": 8,
     "product_name": "L G Hing Khada 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lg_Hing_Khada-500x500.jpg"
-  },
-  {
-    "mrp": 160.0,
-    "sale_rate": 115.0,
-    "product_id": 174,
-    "product_name": "Mukhwas Green 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Oq+EpJcZL._AC_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lg_Hing_Khada-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 135.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 175,
+    "category_id": 8,
     "product_name": "L G Hing Powder 100 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81L+hZqFqTL._SY550_.jpg"
-  },
-  {
-    "mrp": 750.0,
-    "sale_rate": 600.0,
-    "product_id": 176,
-    "product_name": "Mukhwas White 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71tuuhltK6L._SL1024_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81L+hZqFqTL._SY550_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 75.0,
     "product_id": 177,
+    "category_id": 8,
     "product_name": "Gulabjamun 200 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71G-NeDLgzL._SX569_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71G-NeDLgzL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 178,
+    "category_id": 34,
     "product_name": "Milk Pwoder 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71ZokusBHvL._SL1500_.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71ZokusBHvL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 550.0,
+    "tag": null,
     "sale_rate": 440.0,
     "product_id": 179,
+    "category_id": 34,
     "product_name": "Pickle Mix Reg 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/5kg-mix-pickle-500x500.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/5kg-mix-pickle-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 20.0,
+    "tag": null,
     "sale_rate": 15.0,
     "product_id": 180,
+    "category_id": 34,
     "product_name": "Jada Salt 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/JADA-NAMAK-ROCK-SALT-Image-1.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/JADA-NAMAK-ROCK-SALT-Image-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 20.0,
+    "tag": null,
     "sale_rate": 19.0,
     "product_id": 181,
+    "category_id": 34,
     "product_name": "Tata Salt 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tatasalt_og.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tatasalt_og.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 165.0,
+    "tag": null,
     "sale_rate": 140.0,
     "product_id": 182,
+    "category_id": 34,
     "product_name": "Pravin Pickle 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71py2aygMRL._SL1500_.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71py2aygMRL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 183,
+    "category_id": 34,
     "product_name": "Pickle Mango Reg 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/5kg-mix-pickle-500x500.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/5kg-mix-pickle-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 240.0,
     "product_id": 184,
+    "category_id": 34,
     "product_name": "Pickle Mix Spl 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dhamaka-lemon-pickle-500x500.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dhamaka-lemon-pickle-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 45.0,
+    "tag": null,
     "sale_rate": 42.0,
     "product_id": 185,
+    "category_id": 34,
     "product_name": "Sugar 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/GettyImages_157541706-sugar.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/GettyImages_157541706-sugar.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 55.0,
+    "tag": null,
     "sale_rate": 48.0,
     "product_id": 186,
+    "category_id": 34,
     "product_name": "Sugar Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_7428.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_7428.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 70.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 187,
+    "category_id": 34,
     "product_name": "Gud / Jaggery 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/HTB1JP6sJFXXXXXRXFXXq6xXFXXXU.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/HTB1JP6sJFXXXXXRXFXXq6xXFXXXU.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1.2,
+    "tag": null,
     "sale_rate": 0.9,
     "product_id": 188,
+    "category_id": 34,
     "product_name": "Sugar Schts 5 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Hm43wVv3L.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Hm43wVv3L.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 60.0,
     "product_id": 189,
+    "category_id": 34,
     "product_name": "Sugar Cubes 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sugar-cubes-science-photo-library.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sugar-cubes-science-photo-library.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 60.0,
     "product_id": 190,
+    "category_id": 34,
     "product_name": "Icing Sugar 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/icing-sugar-500x500.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/icing-sugar-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 191,
+    "category_id": 34,
     "product_name": "Daimond Sugar 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/91VxU-ylS-L._SY606_.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/91VxU-ylS-L._SY606_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 60.0,
+    "tag": null,
     "sale_rate": 44.0,
     "product_id": 192,
+    "category_id": 34,
     "product_name": "Cooking Soda 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cooking-soda-453.jpg"
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cooking-soda-453.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 193,
+    "category_id": 9,
     "product_name": "Sunrise Extra 200 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71u7BvHpk2L._SX425_.jpg"
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71u7BvHpk2L._SX425_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 960.0,
+    "tag": null,
     "sale_rate": 860.0,
     "product_id": 194,
+    "category_id": 9,
     "product_name": "Classic Nescafe 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71lEETnSPcL._SX569_.jpg"
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71lEETnSPcL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 860.0,
+    "tag": "Sale,Hot Deals",
     "sale_rate": 850.0,
     "product_id": 195,
+    "category_id": 9,
     "product_name": "Red Label 950 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/6168OmyDv6L._SX569_.jpg"
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6168OmyDv6L._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
+    "tag": null,
     "sale_rate": 900.0,
     "product_id": 196,
+    "category_id": 9,
     "product_name": "Taj Mahal 985 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed.jpg"
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 197,
+    "category_id": 9,
     "product_name": "Tea Powdar ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71FZACNlTxL._SL1500_.jpg"
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71FZACNlTxL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 165.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 198,
+    "category_id": 10,
     "product_name": "Mushroom Indian 800 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/in mushroom.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/in mushroom.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 190.0,
+    "tag": null,
     "sale_rate": 125.0,
     "product_id": 199,
+    "category_id": 10,
     "product_name": "Mushroom Import 800 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mushroom.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mushroom.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 70.0,
     "product_id": 200,
+    "category_id": 10,
     "product_name": "Pineapple Slice 850 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pine.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pine.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 55.0,
     "product_id": 201,
+    "category_id": 10,
     "product_name": "Sweet Corn 850 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sweet corn 1.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sweet corn 1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 110.0,
+    "tag": null,
     "sale_rate": 70.0,
     "product_id": 202,
+    "category_id": 10,
     "product_name": "Bamboo Shoot 550 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/bambu shoot.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/bambu shoot.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 130.0,
+    "tag": null,
     "sale_rate": 70.0,
     "product_id": 203,
+    "category_id": 10,
     "product_name": "Fruit Cocoktail 840 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Fruit.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Fruit.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 58.0,
     "product_id": 204,
+    "category_id": 10,
     "product_name": "Tomato Puree 850 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato puri.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato puri.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 225.0,
+    "tag": null,
     "sale_rate": 140.0,
     "product_id": 205,
+    "category_id": 10,
     "product_name": "Red Cherries 850 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/canned-red-cherries-500x500.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/canned-red-cherries-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 130.0,
+    "tag": null,
     "sale_rate": 68.0,
     "product_id": 206,
+    "category_id": 10,
     "product_name": "Baby Corn 800 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/baby corn.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/baby corn.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 195.0,
+    "tag": null,
     "sale_rate": 125.0,
     "product_id": 207,
+    "category_id": 10,
     "product_name": "Mango Pulp 850 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/mango.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/mango.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 70.0,
+    "tag": null,
     "sale_rate": 55.0,
     "product_id": 208,
+    "category_id": 10,
     "product_name": "Sarso Ka Saag 450 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarson-ka-sag-500x500.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarson-ka-sag-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 130.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 209,
+    "category_id": 10,
     "product_name": "Gherkins 850 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/product-jpeg-250x250.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/product-jpeg-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 105.0,
+    "tag": null,
     "sale_rate": 50.0,
     "product_id": 210,
+    "category_id": 10,
     "product_name": "Baked Beans 415 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1727350121(Baked Beans - AG (Easy Open Lids) 420g)-391x606.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1727350121(Baked Beans - AG (Easy Open Lids) 420g)-391x606.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 145.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 211,
+    "category_id": 10,
     "product_name": "Water Chestnuts 560 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Watar chesnut.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Watar chesnut.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 140.0,
+    "tag": null,
     "sale_rate": 70.0,
     "product_id": 212,
+    "category_id": 10,
     "product_name": "Coconut Milk 550 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Coconut Milk.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Coconut Milk.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 140.0,
+    "tag": null,
     "sale_rate": 80.0,
     "product_id": 213,
+    "category_id": 10,
     "product_name": "Coconut Cream 400 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/creem.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/creem.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 214,
+    "category_id": 10,
     "product_name": "Amarican Corn",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/americun corn.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/americun corn.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 185.0,
+    "tag": null,
     "sale_rate": 140.0,
     "product_id": 215,
+    "category_id": 10,
     "product_name": "Litchi Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/litchi.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/litchi.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 140.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 216,
+    "category_id": 10,
     "product_name": "Jalapeno Slice 670 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/jalapeno-slices-500x500.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/jalapeno-slices-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 450.0,
+    "tag": null,
     "sale_rate": 260.0,
     "product_id": 217,
+    "category_id": 10,
     "product_name": "Jalapeno Slice  2.9 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71uYRbsHNsL._SX569_.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71uYRbsHNsL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 165.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 218,
+    "category_id": 10,
     "product_name": "Green Olive Whole 450 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/35_Green-Whole-Olives-600g_EN-1-1.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/35_Green-Whole-Olives-600g_EN-1-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 219,
+    "category_id": 10,
     "product_name": "Green Oliv Slice ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/11975_0.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/11975_0.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 220,
+    "category_id": 10,
     "product_name": "Black Olive Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Olicoop-Black-Whole-Olives-450g-SDL886798009-1-2f9b8.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Olicoop-Black-Whole-Olives-450g-SDL886798009-1-2f9b8.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 115.0,
     "product_id": 221,
+    "category_id": 10,
     "product_name": "Black Olive Slice ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1Olicoop_1.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1Olicoop_1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 70.0,
+    "tag": null,
     "sale_rate": 50.0,
     "product_id": 222,
+    "category_id": 10,
     "product_name": "Cooking Vinigar ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51es9DCNycL._SL1000_.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51es9DCNycL._SL1000_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 45.0,
+    "tag": null,
     "sale_rate": 25.0,
     "product_id": 223,
+    "category_id": 10,
     "product_name": "White Venigar",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/9 (1).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/9 (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 40.0,
+    "tag": null,
     "sale_rate": 28.0,
     "product_id": 224,
+    "category_id": 10,
     "product_name": "Kewra Water 500 ml ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/10 (2).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/10 (2).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 40.0,
+    "tag": null,
     "sale_rate": 28.0,
     "product_id": 225,
+    "category_id": 10,
     "product_name": "Rose Water 500 ml ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/9 (2).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/9 (2).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 240.0,
     "product_id": 226,
+    "category_id": 10,
     "product_name": "Magi Seasoning ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71X5ymHpUdL._SX425_.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71X5ymHpUdL._SX425_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 650.0,
+    "tag": null,
     "sale_rate": 550.0,
     "product_id": 227,
+    "category_id": 10,
     "product_name": "Guruji Thandai",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/619XPQDAcLL._SX569_.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/619XPQDAcLL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 150.0,
     "product_id": 228,
+    "category_id": 10,
     "product_name": "Mix Friute jaam 1kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mix Fruit Jam.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mix Fruit Jam.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1.0,
+    "tag": null,
     "sale_rate": 0.85,
     "product_id": 229,
+    "category_id": 11,
     "product_name": "Tomato Ketchup Sachet 8 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/8gm-tomato-ketup-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8gm-tomato-ketup-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 120.0,
+    "tag": null,
     "sale_rate": 78.0,
     "product_id": 230,
+    "category_id": 11,
     "product_name": "Tomato Ketchup 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato-ketchup-sauce-500x500 (1).jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato-ketchup-sauce-500x500 (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 95.0,
+    "tag": null,
     "sale_rate": 66.0,
     "product_id": 231,
+    "category_id": 11,
     "product_name": "Dip Sauce 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ny1CPttLL._SL1000_.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ny1CPttLL._SL1000_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 285.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 232,
+    "category_id": 11,
     "product_name": "Sauce Maker",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200621_142421.JPG"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200621_142421.JPG",
+    "primary_product_id": 0
   },
   {
     "mrp": 325.0,
+    "tag": null,
     "sale_rate": 285.0,
     "product_id": 233,
+    "category_id": 10,
     "product_name": "Honey Dabur 1 kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (1).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 160.0,
+    "tag": null,
     "sale_rate": 130.0,
     "product_id": 234,
+    "category_id": 11,
     "product_name": "Peanut Butter ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/000126219.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/000126219.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 155.0,
+    "tag": null,
     "sale_rate": 125.0,
     "product_id": 235,
+    "category_id": 11,
     "product_name": "Mayonnaise Sauce 1 kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/delmonte-mayo-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/delmonte-mayo-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 65.0,
+    "tag": null,
     "sale_rate": 58.0,
     "product_id": 236,
+    "category_id": 11,
     "product_name": "Capsico Sauce 60 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dabur-capsico-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dabur-capsico-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 145.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 237,
+    "category_id": 11,
     "product_name": "Tabasco Sauce 60 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/bea4faa159abd6484f74bf524e71c2f0_350x350.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/bea4faa159abd6484f74bf524e71c2f0_350x350.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 238,
+    "category_id": 11,
     "product_name": "H P Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81hl8E1s0fL._SL1500_.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81hl8E1s0fL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 239,
+    "category_id": 11,
     "product_name": "Barbecue Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/41HbjUkaOdL.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41HbjUkaOdL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 185.0,
+    "tag": null,
     "sale_rate": 155.0,
     "product_id": 240,
+    "category_id": 10,
     "product_name": "Chocolate Sauce / Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/hershey-syrup.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/hershey-syrup.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 241,
+    "category_id": 11,
     "product_name": "Oyster Sauce 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/518ODwms4PL._SL1217_.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/518ODwms4PL._SL1217_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 242,
+    "category_id": 11,
     "product_name": "Black Bean Sauce 340 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SPICY BVLACKBEAN-550x445.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/SPICY BVLACKBEAN-550x445.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 230.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 243,
+    "category_id": 11,
     "product_name": "Hoisin Sauce 340 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/woh-hup-hoisin-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/woh-hup-hoisin-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 175.0,
     "product_id": 244,
+    "category_id": 11,
     "product_name": "Yellow Bean Sauce 340 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/a671483e126012bda5e210d9beddff130b561100.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/a671483e126012bda5e210d9beddff130b561100.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 245,
+    "category_id": 11,
     "product_name": "Plum Sauce 400 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/woh-hup-plum-sauce-400g-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/woh-hup-plum-sauce-400g-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 70.0,
+    "tag": null,
     "sale_rate": 50.0,
     "product_id": 246,
+    "category_id": 11,
     "product_name": "Worchestershire Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/worcestershire-chinese-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/worcestershire-chinese-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 75.0,
+    "tag": null,
     "sale_rate": 50.0,
     "product_id": 247,
+    "category_id": 11,
     "product_name": "8-9 Sauce 200 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/70-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/70-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 248,
+    "category_id": 11,
     "product_name": "Carmal Sauce 500",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-caramel-sauce-kings-cupboard-500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-caramel-sauce-kings-cupboard-500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 480.0,
+    "tag": null,
     "sale_rate": 380.0,
     "product_id": 249,
+    "category_id": 11,
     "product_name": "Kikoman Soya Sauce ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kikoman-soyabean-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kikoman-soyabean-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 240.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 250,
+    "category_id": 11,
     "product_name": "Light Soya Sauce ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/31dAErvShdL.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/31dAErvShdL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 155.0,
     "product_id": 251,
+    "category_id": 11,
     "product_name": "Sriracha Hot Chilly Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/810vYPS0kcL._SY550_.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/810vYPS0kcL._SY550_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 252,
+    "category_id": 11,
     "product_name": "Chilly Bean sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/leekumkee_chillibeansauce_226gm.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/leekumkee_chillibeansauce_226gm.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 185.0,
+    "tag": null,
     "sale_rate": 125.0,
     "product_id": 253,
+    "category_id": 11,
     "product_name": "Hot And Sweet Souce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/500-hot-sweet.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/500-hot-sweet.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 254,
+    "category_id": 11,
     "product_name": "Sweet Chili Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sweet-chilli-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sweet-chilli-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 600.0,
+    "tag": null,
     "sale_rate": 490.0,
     "product_id": 256,
+    "category_id": 11,
     "product_name": "Oyster Sauce 2.8",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (2).jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (2).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 240.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 257,
+    "category_id": 11,
     "product_name": "Sambal Oelek Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sambal-oelek-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sambal-oelek-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1350.0,
+    "tag": null,
     "sale_rate": 950.0,
     "product_id": 258,
+    "category_id": 1,
     "product_name": "Besan Samrat 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/samrat-chana-besan-500x500.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/samrat-chana-besan-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 170.0,
     "product_id": 260,
+    "category_id": 10,
     "product_name": "Drinking Choclet 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-drinking-chocolate-250x250.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-drinking-chocolate-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 260.0,
     "product_id": 261,
+    "category_id": 11,
     "product_name": "Peri Peri Hot Sauce",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/19597-0w600h600_Peri_Peri_Nando_Sauce.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/19597-0w600h600_Peri_Peri_Nando_Sauce.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 75.0,
+    "tag": null,
     "sale_rate": 45.0,
     "product_id": 262,
+    "category_id": 11,
     "product_name": "Green Chilly Sauce 700 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/hot-green-chilli-sauce-250x250.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/hot-green-chilli-sauce-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 45.0,
     "product_id": 263,
+    "category_id": 11,
     "product_name": "Red Chilly Sauce 700 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/red-chilli-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/red-chilli-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 70.0,
+    "tag": null,
     "sale_rate": 45.0,
     "product_id": 264,
+    "category_id": 11,
     "product_name": "Soya Sauce 700 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1-l-hillers-dark-soy-sauce-500x500.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1-l-hillers-dark-soy-sauce-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 285.0,
+    "tag": null,
     "sale_rate": 195.0,
     "product_id": 265,
+    "category_id": 11,
     "product_name": "Soya Sauce 5 ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1e2c71eab5a92f0bb210c1bb371ca381.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1e2c71eab5a92f0bb210c1bb371ca381.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 195.0,
     "product_id": 266,
+    "category_id": 11,
     "product_name": "Red Chilly Sauce 5 ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/5-Ltr-Continental-Sauce.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/5-Ltr-Continental-Sauce.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 230.0,
     "product_id": 267,
+    "category_id": 11,
     "product_name": "Tomato Sauce 5 ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato-ketchup-petjar-1-copy-1.jpg"
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato-ketchup-petjar-1-copy-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 185.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 268,
+    "category_id": 12,
     "product_name": "Orenge Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/817haT90LGL._SL1500_.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/817haT90LGL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 185.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 269,
+    "category_id": 12,
     "product_name": "Mango Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/manama-mango-fruit-crush-500x5001.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/manama-mango-fruit-crush-500x5001.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 270,
+    "category_id": 12,
     "product_name": "Strawberry Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/strawberry-crush-500x500.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/strawberry-crush-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 271,
+    "category_id": 12,
     "product_name": "Pineapple Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/PINEAPPLE-550x445.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/PINEAPPLE-550x445.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 272,
+    "category_id": 12,
     "product_name": "Mix Fruit Cursh 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/mixed-fruit-crush-500x500 (1).jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/mixed-fruit-crush-500x500 (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 230.0,
     "product_id": 273,
+    "category_id": 12,
     "product_name": "Kiwi Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/40011954_2-manama-kiwi-crush.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/40011954_2-manama-kiwi-crush.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 274,
+    "category_id": 12,
     "product_name": "Pich & Apricout Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/passion-fruit-crush-250x250.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/passion-fruit-crush-250x250.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 275,
+    "category_id": 12,
     "product_name": "Lichi Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/414KEafC+GL.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/414KEafC+GL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 300.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 276,
+    "category_id": 12,
     "product_name": "Blue Curacao Cordial",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/manama_bluecuracao_750ml.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/manama_bluecuracao_750ml.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 277,
+    "category_id": 13,
     "product_name": "Rose Syrap",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Rose.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Rose.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 278,
+    "category_id": 13,
     "product_name": "Khus Syrap",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/khas.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/khas.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 279,
+    "category_id": 13,
     "product_name": "Kokam Syrap",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kokam.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kokam.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 280,
+    "category_id": 13,
     "product_name": "Mango Syrap",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mango.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mango.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 281,
+    "category_id": 13,
     "product_name": "Pomogranate Syrap",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Pomgre.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Pomgre.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 282,
+    "category_id": 13,
     "product_name": "Orenge Syrap",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Oreng.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Oreng.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 283,
+    "category_id": 13,
     "product_name": "Vanilla Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Vanilla.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Vanilla.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 284,
+    "category_id": 13,
     "product_name": "Chocolaet Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/choco.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/choco.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 200.0,
+    "tag": null,
     "sale_rate": 150.0,
     "product_id": 285,
+    "category_id": 13,
     "product_name": "Mint Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mint.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mint.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 286,
+    "category_id": 13,
     "product_name": "blue Curacao Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/blue.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/blue.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 287,
+    "category_id": 13,
     "product_name": "Sikanjbi Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/shikanja.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/shikanja.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 288,
+    "category_id": 13,
     "product_name": "Litchi Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Litchi.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Litchi.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 289,
+    "category_id": 13,
     "product_name": "kalakhatta Syrup ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kala.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kala.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 450.0,
+    "tag": null,
     "sale_rate": 200.0,
     "product_id": 290,
+    "category_id": 13,
     "product_name": "kalakhatta Syrup  5 ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalakhtta.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalakhtta.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 550.0,
+    "tag": null,
     "sale_rate": 460.0,
     "product_id": 291,
+    "category_id": 14,
     "product_name": "Tom Yum Paste",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/190002-2.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/190002-2.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 380.0,
+    "tag": null,
     "sale_rate": 340.0,
     "product_id": 292,
+    "category_id": 14,
     "product_name": "Green Curry Paste 1kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51nwArs-IOL.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51nwArs-IOL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 280.0,
+    "tag": null,
     "sale_rate": 340.0,
     "product_id": 293,
+    "category_id": 14,
     "product_name": "Red Curry Paste 1kg ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/23-1.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/23-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 380.0,
+    "tag": null,
     "sale_rate": 340.0,
     "product_id": 294,
+    "category_id": 14,
     "product_name": "Yellow Curry Paste 1kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/190006-1.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/190006-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 75.0,
+    "tag": null,
     "sale_rate": 50.0,
     "product_id": 295,
+    "category_id": 14,
     "product_name": "Msuterd Paste",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mustad pest.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Mustad pest.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 296,
+    "category_id": 14,
     "product_name": "Tahina Paste",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/al-ameera-tahina-1kg-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/al-ameera-tahina-1kg-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 165.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 297,
+    "category_id": 14,
     "product_name": "Kasundi Mustard Paste",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/734Golden_Crown_Kasundi_Mustard_580x.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/734Golden_Crown_Kasundi_Mustard_580x.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 298,
+    "category_id": 14,
     "product_name": "Dijon Mustard Paste",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/41bUsaQvGGL.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41bUsaQvGGL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 299,
+    "category_id": 14,
     "product_name": "Madras Curry Powder 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51V-qSXWhcL.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51V-qSXWhcL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 660.0,
+    "tag": null,
     "sale_rate": 595.0,
     "product_id": 300,
+    "category_id": 14,
     "product_name": "Coconut Milk Powder",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81HaevvMAsL._SL1500_.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81HaevvMAsL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 240.0,
+    "tag": "Sale",
     "sale_rate": 160.0,
     "product_id": 301,
+    "category_id": 14,
     "product_name": "Mustard Powder 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-mustard-powder-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-mustard-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 680.0,
+    "tag": null,
     "sale_rate": 580.0,
     "product_id": 302,
+    "category_id": 14,
     "product_name": "Gelatone Powder 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-jellos-gelatone-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-jellos-gelatone-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 550.0,
+    "tag": null,
     "sale_rate": 460.0,
     "product_id": 303,
+    "category_id": 14,
     "product_name": "Coco Powder 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cocoa-powder-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cocoa-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 304,
+    "category_id": 14,
     "product_name": "Beking Powder 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/baking-powder-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/baking-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 305,
+    "category_id": 14,
     "product_name": "Custred Powder 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cooking-custard-powder-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cooking-custard-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 45.0,
+    "tag": null,
     "sale_rate": 34.0,
     "product_id": 306,
+    "category_id": 14,
     "product_name": "Jelly Powder 100 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/strawberry-crystal-veg-jelly-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/strawberry-crystal-veg-jelly-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 185.0,
     "product_id": 307,
+    "category_id": 14,
     "product_name": "Aromatic Mix 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/aromatic-mix-powder-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/aromatic-mix-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 280.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 308,
+    "category_id": 14,
     "product_name": "Demi Glace Powder 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71fkKETFmEL._SL1500_.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71fkKETFmEL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 280.0,
+    "tag": null,
     "sale_rate": 240.0,
     "product_id": 309,
+    "category_id": 14,
     "product_name": "Chikan broth powder 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/knorr-chicken-broth-powder-500g-500x500.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/knorr-chicken-broth-powder-500g-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 240.0,
+    "tag": null,
     "sale_rate": 165.0,
     "product_id": 310,
+    "category_id": 14,
     "product_name": "Tempura Powder",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/190020-1.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/190020-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 50.0,
+    "tag": null,
     "sale_rate": 36.0,
     "product_id": 311,
+    "category_id": 14,
     "product_name": "Carmal Custad Powdae",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/bakers_caramel_pudding_mix_65g_1.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/bakers_caramel_pudding_mix_65g_1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 312,
+    "category_id": 14,
     "product_name": "Lime seasoning Powder",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/617U19KXdEL._SL1222_.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/617U19KXdEL._SL1222_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 240.0,
     "product_id": 313,
+    "category_id": 14,
     "product_name": "Peri Peri Sprinkler",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/AP-2_Peri_Peri_714x.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/AP-2_Peri_Peri_714x.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 130.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 314,
+    "category_id": 14,
     "product_name": "Five Spice Powder",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71e37MbZrKL._SX569_.jpg"
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71e37MbZrKL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 315,
+    "category_id": 15,
     "product_name": "Real Orange 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (4).jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (4).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": "Sale",
     "sale_rate": 90.0,
     "product_id": 316,
+    "category_id": 15,
     "product_name": "Real Mango 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (5).jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (5).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 317,
+    "category_id": 15,
     "product_name": "Real Pineapple 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Real-Fruit-Power-Pineapple-Juice-SDL239815150-1-8f151.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Real-Fruit-Power-Pineapple-Juice-SDL239815150-1-8f151.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 318,
+    "category_id": 15,
     "product_name": "Real Mix-Fruit  1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81WpUSHCuHL._SL1500_.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81WpUSHCuHL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 319,
+    "category_id": 15,
     "product_name": "Real Guava 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/download (2).jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/download (2).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 320,
+    "category_id": 15,
     "product_name": "Real Grape 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81f4J8ooS6L._SY550_.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81f4J8ooS6L._SY550_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 321,
+    "category_id": 15,
     "product_name": "Real Activ Apple 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/3ca30d8a-f755-4a46-9fde-0560178ca596_425x425.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/3ca30d8a-f755-4a46-9fde-0560178ca596_425x425.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 322,
+    "category_id": 15,
     "product_name": "Real Litchi Nectar 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81rCkwWY2xL._SY550_.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81rCkwWY2xL._SY550_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 90.0,
     "product_id": 323,
+    "category_id": 15,
     "product_name": "Real Tomato  1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/91ISxaSd3GL._SL1500_.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/91ISxaSd3GL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 110.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 324,
+    "category_id": 15,
     "product_name": "Real Pomegranate 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/REAL-FRUIT-POWER-POMEGRANATE-BEVERAGE-1450076537-10022481.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/REAL-FRUIT-POWER-POMEGRANATE-BEVERAGE-1450076537-10022481.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 110.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 325,
+    "category_id": 15,
     "product_name": "Real Craneberry 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Real-Fruit-Juice---Cranberry-Juice-1l-500x500.jpg"
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Real-Fruit-Juice---Cranberry-Juice-1l-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 326,
+    "category_id": 17,
     "product_name": "Penne Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71w7nxBPenL._SX679_.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71w7nxBPenL._SX679_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 327,
+    "category_id": 17,
     "product_name": "Fussilli Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/reggia-fusilli_580x.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/reggia-fusilli_580x.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 328,
+    "category_id": 17,
     "product_name": "Spaghetti Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/panzani-spaghetti.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/panzani-spaghetti.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 329,
+    "category_id": 17,
     "product_name": "Macroni Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/73479011_0_640x640.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/73479011_0_640x640.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 330,
+    "category_id": 17,
     "product_name": "Farflle Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/farfalle-pasta-bow-tie-pasta-6-640x433.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/farfalle-pasta-bow-tie-pasta-6-640x433.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 200.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 331,
+    "category_id": 17,
     "product_name": "Fettucinni Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Make-Fettuccine-Alfredo-Step-1-Version-4.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Make-Fettuccine-Alfredo-Step-1-Version-4.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 200.0,
+    "tag": null,
     "sale_rate": 145.0,
     "product_id": 332,
+    "category_id": 17,
     "product_name": "Lasange Pasta 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Dried-lasagne-lasagna-pasta-001-3-640x433.jpg"
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Dried-lasagne-lasagna-pasta-001-3-640x433.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 333,
+    "category_id": 10,
     "product_name": "Pinko Bread Crumb",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/panko-breadcrumbs.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/panko-breadcrumbs.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 160.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 334,
+    "category_id": 13,
     "product_name": "Pineapple Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Pine.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Pine.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 160.0,
     "product_id": 335,
+    "category_id": 10,
     "product_name": "Blackben Seed ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/progresso-black-beans.jpg"
-  },
-  {
-    "mrp": 68.0,
-    "sale_rate": 50.0,
-    "product_id": 336,
-    "product_name": "Kolum Rice 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/indian-kolam-rice-500x500-500x500.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/progresso-black-beans.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 600.0,
+    "tag": null,
     "sale_rate": 500.0,
     "product_id": 337,
+    "category_id": 10,
     "product_name": "Farmusan chees ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/00865403.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/00865403.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 360.0,
+    "tag": null,
     "sale_rate": 260.0,
     "product_id": 338,
+    "category_id": 10,
     "product_name": "Balsanic Vinigar",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/22798.jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/22798.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 340.0,
+    "tag": null,
     "sale_rate": 240.0,
     "product_id": 339,
+    "category_id": 10,
     "product_name": "Chilly Flackes 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/13 (4).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/13 (4).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 260.0,
     "product_id": 340,
+    "category_id": 10,
     "product_name": "Basil 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1 (7).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1 (7).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 280.0,
     "product_id": 341,
+    "category_id": 10,
     "product_name": "oregno 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/15 (1).jpg"
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/15 (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 55.0,
+    "tag": null,
     "sale_rate": 47.0,
     "product_id": 342,
+    "category_id": 1,
     "product_name": "Corn Flour 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Corn-Flour-1.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Corn-Flour-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 367,
+    "category_id": 13,
     "product_name": "Peach Apricot 700 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pich.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pich.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 160.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 368,
+    "category_id": 13,
     "product_name": "Pista Syrup 700 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pista.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 369,
+    "category_id": 13,
     "product_name": "Lemon Syrup",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/leman.jpg"
-  },
-  {
-    "mrp": 80.0,
-    "sale_rate": 60.0,
-    "product_id": 377,
-    "product_name": "Vada Kolum Rice 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/JKOLamRice5kgPRMING46XX50717_1_B (1).jpg"
-  },
-  {
-    "mrp": 150.0,
-    "sale_rate": 105.0,
-    "product_id": 378,
-    "product_name": "Sunday Sunflower Oil 1 Ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/ISunflowerOil1LSNDYXX040220_5_B.jpg"
-  },
-  {
-    "mrp": 230.0,
-    "sale_rate": 150.0,
-    "product_id": 379,
-    "product_name": "Fortune Sunflower Oil 1 Ltr  ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51TH5xE+2sL._SX425_.jpg"
-  },
-  {
-    "mrp": 1800.0,
-    "sale_rate": 1450.0,
-    "product_id": 380,
-    "product_name": "Rivo Oil Sunflower 1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Organic-Groundnut-Oil.jpg"
-  },
-  {
-    "mrp": 200.0,
-    "sale_rate": 150.0,
-    "product_id": 381,
-    "product_name": "Gemini Sunflower Oil  1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Gemini-oil.jpg"
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/leman.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 382,
+    "category_id": 12,
     "product_name": "Mojito Mint",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/41OvUTEVeSL.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41OvUTEVeSL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 384,
+    "category_id": 12,
     "product_name": "Black Currant Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-currant-crush-500x500.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-currant-crush-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 385,
+    "category_id": 12,
     "product_name": "Banana Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/banana-fruit-crush-500x500.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/banana-fruit-crush-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 380.0,
+    "tag": null,
     "sale_rate": 3000.0,
     "product_id": 386,
+    "category_id": 12,
     "product_name": "Cranberry Crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cranberry-fruit-crush-500x500.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cranberry-fruit-crush-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": null,
     "sale_rate": 250.0,
     "product_id": 387,
+    "category_id": 12,
     "product_name": "Passion Fruit crush 750 ml",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/passion-fruit-crush-500x500.jpg"
-  },
-  {
-    "mrp": 2500.0,
-    "sale_rate": 2250.0,
-    "product_id": 389,
-    "product_name": "Corn Flour 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/White-Printed-10kg-25kg-50kg-Rice-Corn-Flour-Plastic-Bag.jpg"
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/passion-fruit-crush-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 50.0,
+    "tag": null,
     "sale_rate": 40.0,
     "product_id": 390,
+    "category_id": 1,
     "product_name": "Idli Rava 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Idli-Rava-Coarse.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Idli-Rava-Coarse.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 60.0,
+    "tag": null,
     "sale_rate": 40.0,
     "product_id": 391,
+    "category_id": 1,
     "product_name": "Sheera Rava 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/411IsDcCLXL.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/411IsDcCLXL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 65.0,
+    "tag": null,
     "sale_rate": 55.0,
     "product_id": 392,
+    "category_id": 1,
     "product_name": "Poha 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jada-Poha501x501.jpg"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jada-Poha501x501.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 500.0,
+    "tag": null,
     "sale_rate": 200.0,
     "product_id": 393,
+    "category_id": 16,
     "product_name": "Kolum Rice 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/WADA-KOLAM-RICE-Premium-Image-1.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/WADA-KOLAM-RICE-Premium-Image-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 394,
+    "category_id": 16,
     "product_name": "Vada Kolum Rice 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/KKOLAMRICE25kg132XX120318_1_B.jpg"
-  },
-  {
-    "mrp": 80.0,
-    "sale_rate": 65.0,
-    "product_id": 395,
-    "product_name": "HMT Kolum Rice 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/KRICE1kg04xx30619_1_B.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/KKOLAMRICE25kg132XX120318_1_B.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 70.0,
     "product_id": 396,
+    "category_id": 16,
     "product_name": "HMT Kolum Rice 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/indian-kolam-rice-500x500-500x500.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/indian-kolam-rice-500x500-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 397,
+    "category_id": 16,
     "product_name": "Kolum Rice Spl 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/WADA-KOLAM-RICE-Premium-Image-1.jpg"
-  },
-  {
-    "mrp": 75.0,
-    "sale_rate": 60.0,
-    "product_id": 398,
-    "product_name": "Kolum Rice Spl 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/WADA-KOLAM-RICE-Premium-Image-1.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/WADA-KOLAM-RICE-Premium-Image-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 85.0,
+    "tag": null,
     "sale_rate": 65.0,
     "product_id": 404,
+    "category_id": 16,
     "product_name": "Basmati Sella Rice 25 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1121-golden-sella-rice-500x500.jpg"
-  },
-  {
-    "mrp": 85.0,
-    "sale_rate": 65.0,
-    "product_id": 405,
-    "product_name": "Basmati Sella Rice 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1121-golden-sella-rice-500x500.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1121-golden-sella-rice-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 125.0,
     "product_id": 408,
+    "category_id": 16,
     "product_name": "India Gate Basmati Rice 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/91-hJ23RdTL._SY550_.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/91-hJ23RdTL._SY550_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 130.0,
     "product_id": 409,
+    "category_id": 16,
     "product_name": "Daawat Basmati Rice 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51d-iwD+2vL.jpg"
-  },
-  {
-    "mrp": 35.0,
-    "sale_rate": 28.0,
-    "product_id": 410,
-    "product_name": "Wheat 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/wheat-seeds-500x500.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51d-iwD+2vL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 40.0,
+    "tag": null,
     "sale_rate": 32.0,
     "product_id": 411,
+    "category_id": 16,
     "product_name": "Wheat  30 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/wheat-seeds-500x500.jpg"
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/wheat-seeds-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 100.0,
+    "tag": null,
     "sale_rate": 85.0,
     "product_id": 412,
+    "category_id": 2,
     "product_name": "Methi Seeds 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/ad014.jpg"
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/ad014.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 250.0,
+    "tag": null,
     "sale_rate": 210.0,
     "product_id": 413,
+    "category_id": 3,
     "product_name": "Kesar Pure 1 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SERAVALI-KESAR-Halg-gm-Image-1.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/SERAVALI-KESAR-Halg-gm-Image-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 450.0,
+    "tag": null,
     "sale_rate": 180.0,
     "product_id": 414,
+    "category_id": 3,
     "product_name": "Kishmish Golden 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2421d1875129b6780fd8b47451c7de1c.jpg"
-  },
-  {
-    "mrp": 450.0,
-    "sale_rate": 190.0,
-    "product_id": 415,
-    "product_name": "Kishmish Golden 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2421d1875129b6780fd8b47451c7de1c.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/2421d1875129b6780fd8b47451c7de1c.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
+    "tag": null,
     "sale_rate": 2000.0,
     "product_id": 416,
+    "category_id": 3,
     "product_name": "Charoli Bold 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Charoli-50-gm-chironji.jpg"
-  },
-  {
-    "mrp": 2500.0,
-    "sale_rate": 2000.0,
-    "product_id": 417,
-    "product_name": "Charoli Bold 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Charoli-50-gm-chironji.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Charoli-50-gm-chironji.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
+    "tag": null,
     "sale_rate": 800.0,
     "product_id": 418,
+    "category_id": 3,
     "product_name": "Almonds / Badam 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/badam_pappu_warangal_hyderabad_shopitsoon-800x800.jpg"
-  },
-  {
-    "mrp": 1000.0,
-    "sale_rate": 800.0,
-    "product_id": 419,
-    "product_name": "Almonds / Badam 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/badam_pappu_warangal_hyderabad_shopitsoon-800x800.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/badam_pappu_warangal_hyderabad_shopitsoon-800x800.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1500.0,
+    "tag": null,
     "sale_rate": 1200.0,
     "product_id": 420,
+    "category_id": 3,
     "product_name": "Anjeer 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51nXwEIQ4HL.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51nXwEIQ4HL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
-    "sale_rate": 120.0,
-    "product_id": 421,
-    "product_name": "Anjeer 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Anjir.jpg"
-  },
-  {
-    "mrp": 150.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 422,
+    "category_id": 3,
     "product_name": "Tuti Fruti 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/HXM3KR-866x578.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/HXM3KR-866x578.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
+    "tag": null,
     "sale_rate": 2000.0,
     "product_id": 423,
+    "category_id": 3,
     "product_name": "Pista Without shell 1 kgs ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
-    "sale_rate": 2000.0,
-    "product_id": 424,
-    "product_name": "Pista Without shell 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pishori-pista-plain-500x500.jpg"
-  },
-  {
-    "mrp": 2500.0,
+    "tag": null,
     "sale_rate": 2000.0,
     "product_id": 425,
+    "category_id": 3,
     "product_name": "Pista Green 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/91h8Y4yEYOL._SL1500_.jpg"
-  },
-  {
-    "mrp": 2500.0,
-    "sale_rate": 2000.0,
-    "product_id": 426,
-    "product_name": "Pista Green 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/91h8Y4yEYOL._SL1500_ (1).jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_2.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1500.0,
+    "tag": null,
     "sale_rate": 1200.0,
     "product_id": 427,
+    "category_id": 3,
     "product_name": "Walnut /Akrot Broken 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61EW2iOvd6L._SL1000_.jpg"
-  },
-  {
-    "mrp": 1500.0,
-    "sale_rate": 1200.0,
-    "product_id": 428,
-    "product_name": "Walnut /Akrot Broken 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61EW2iOvd6L._SL1000_.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61EW2iOvd6L._SL1000_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 500.0,
+    "tag": null,
     "sale_rate": 400.0,
     "product_id": 429,
+    "category_id": 3,
     "product_name": "Kishmish black 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/_650x_2019082917160148.jpg"
-  },
-  {
-    "mrp": 500.0,
-    "sale_rate": 450.0,
-    "product_id": 430,
-    "product_name": "Kishmish black 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cat-seedless-afgan.jpg"
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/_650x_2019082917160148.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 431,
-    "product_name": "Mustard Seeds  / Rai 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/24424677-brassica-nigra-black-mustard-seeds-the-background.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 432,
+    "category_id": 4,
     "product_name": "Phool Makhana 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/indian-phool-makhana-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/indian-phool-makhana-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 130.0,
     "product_id": 433,
+    "category_id": 4,
     "product_name": "Ajino Moto MSG 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Zi5xbHS4L._SX679_.jpg"
-  },
-  {
-    "mrp": 180.0,
-    "sale_rate": 140.0,
-    "product_id": 434,
-    "product_name": "Ajino Moto MSG 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/715RUuIN1jL._SL1200_.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Zi5xbHS4L._SX679_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 435,
+    "category_id": 4,
     "product_name": "Cloves  / Lavang 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lavang-Clove-in-a-Bowl.jpg"
-  },
-  {
-    "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 436,
-    "product_name": "Cloves  / Lavang 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lavang-501x501.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lavang-Clove-in-a-Bowl.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 900.0,
+    "tag": "Hot Deals,Sale,New Arrivals",
     "sale_rate": 750.0,
     "product_id": 437,
+    "category_id": 4,
     "product_name": "Cinnamon / Dalchini 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500.jpg"
-  },
-  {
-    "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 438,
-    "product_name": "Cinnamon / Dalchini 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-cinnamon.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 750.0,
+    "tag": null,
     "sale_rate": 600.0,
     "product_id": 439,
+    "category_id": 4,
     "product_name": "Dagdi Phool 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/DAGDI-PHOH-1.jpg"
-  },
-  {
-    "mrp": 750.0,
-    "sale_rate": 600.0,
-    "product_id": 440,
-    "product_name": "Dagdi Phool 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/DAGDI-PHOH-1.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/DAGDI-PHOH-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1600.0,
+    "tag": null,
     "sale_rate": 1350.0,
     "product_id": 441,
+    "category_id": 4,
     "product_name": "Black Elaichi 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Black-Cardamom-Pods.jpg"
-  },
-  {
-    "mrp": 1600.0,
-    "sale_rate": 1400.0,
-    "product_id": 442,
-    "product_name": "Black Elaichi 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Black-Cardamom-Pods.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Black-Cardamom-Pods.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 4500.0,
+    "tag": null,
     "sale_rate": 3800.0,
     "product_id": 443,
+    "category_id": 4,
     "product_name": "Green Elaichi 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Green-Elaychi-501x501.jpg"
-  },
-  {
-    "mrp": 4800.0,
-    "sale_rate": 4000.0,
-    "product_id": 444,
-    "product_name": "Green Elaichi 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Green-Elaychi-501x501.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Green-Elaychi-501x501.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 950.0,
+    "tag": "Hot Deals",
     "sale_rate": 750.0,
     "product_id": 445,
+    "category_id": 4,
     "product_name": "Jaiphal 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1533108495_gallery_image_urljayfal.jpg"
-  },
-  {
-    "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 446,
-    "product_name": "Jaiphal 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1533108495_gallery_image_urljayfal.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1533108495_gallery_image_urljayfal.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 3500.0,
+    "tag": null,
     "sale_rate": 3200.0,
     "product_id": 447,
+    "category_id": 4,
     "product_name": "Mace / Javintri 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/javitri-mace-yellow-flower-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/javitri-mace-yellow-flower-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 448,
-    "product_name": "Mace / Javintri 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/javitri-mace-yellow-flower-500x500.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 449,
+    "category_id": 4,
     "product_name": "Soya Chunks 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/healthy-soya-chunks-500x500.jpg"
-  },
-  {
-    "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 450,
-    "product_name": "Soya Chunks 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/healthy-soya-chunks-500x500.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/healthy-soya-chunks-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 900.0,
+    "tag": null,
     "sale_rate": 780.0,
     "product_id": 451,
+    "category_id": 4,
     "product_name": "Star Phool 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51J9veIcGXL.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51J9veIcGXL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 452,
-    "product_name": "Star Phool 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51J9veIcGXL.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 453,
+    "category_id": 4,
     "product_name": "Bay Leaf / Tej Patta 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61kziUgkOTL._SX679_.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61kziUgkOTL._SX679_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 454,
-    "product_name": "Bay Leaf / Tej Patta 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61kziUgkOTL._SX679_.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 455,
+    "category_id": 4,
     "product_name": "Sabja 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51NzBAQS8DL.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51NzBAQS8DL.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 456,
-    "product_name": "Sabja 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51NzBAQS8DL.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 457,
+    "category_id": 4,
     "product_name": "Badisaunf Rosted 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/8803-03.jpg"
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8803-03.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 458,
-    "product_name": "Badisaunf Rosted 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/8803-03.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 459,
+    "category_id": 5,
     "product_name": "Black Peppper Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-pepper-powder-500x500.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-pepper-powder-500x500.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 460,
-    "product_name": "Black Peppper Powder 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/GI-Tagged-Malabar-Black-Pepper-Powder-1.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 461,
+    "category_id": 5,
     "product_name": "White Pepper Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1-11-600x600.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1-11-600x600.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 462,
-    "product_name": "White Pepper Powder 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81qTGclPnNL._SL1500_.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 463,
+    "category_id": 5,
     "product_name": "Aamchur Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Xhl4zCJfL._SL1339_.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Xhl4zCJfL._SL1339_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
-    "sale_rate": 0.0,
-    "product_id": 464,
-    "product_name": "Aamchur Powder 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Xhl4zCJfL._SL1339_.jpg"
-  },
-  {
-    "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 465,
+    "category_id": 5,
     "product_name": "Goda Masala Powder 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81+n8FGljiL._SX569_.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81+n8FGljiL._SX569_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 466,
+    "category_id": 5,
     "product_name": "Sunth Powder 500  gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/21-Sunth-Powder.jpg"
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/21-Sunth-Powder.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 220.0,
+    "tag": null,
     "sale_rate": 150.0,
     "product_id": 467,
+    "category_id": 7,
     "product_name": "Salad Oil 1ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/b0759cmdrx_sarwar_salad_oil_500gm_58397727_1.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/b0759cmdrx_sarwar_salad_oil_500gm_58397727_1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 180.0,
+    "tag": null,
     "sale_rate": 120.0,
     "product_id": 468,
+    "category_id": 7,
     "product_name": "Mustard Oil Hati 1 Ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/817Tn1gSX9L._SL1500_.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/817Tn1gSX9L._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 190.0,
+    "tag": null,
     "sale_rate": 135.0,
     "product_id": 469,
+    "category_id": 7,
     "product_name": "Mustard Oil Rivo 1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Kachi-Ghani-Mustard-Oil.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Kachi-Ghani-Mustard-Oil.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 185.0,
+    "tag": null,
     "sale_rate": 135.0,
     "product_id": 470,
+    "category_id": 7,
     "product_name": "Mustard Oil Tez 1 Ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SPICE_EMPORIUM_TEZ_MUSTARD_OIL_1litre.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/SPICE_EMPORIUM_TEZ_MUSTARD_OIL_1litre.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 450.0,
+    "tag": null,
     "sale_rate": 350.0,
     "product_id": 471,
+    "category_id": 7,
     "product_name": "Olive Oil  1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/rs-oilive-oil-1-litre-1.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/rs-oilive-oil-1-litre-1.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 720.0,
+    "tag": null,
     "sale_rate": 550.0,
     "product_id": 472,
+    "category_id": 7,
     "product_name": "Olive Oil Extra Virgin 1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/41kd+Hlo2mL (1).jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41kd+Hlo2mL (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 580.0,
+    "tag": null,
     "sale_rate": 480.0,
     "product_id": 473,
+    "category_id": 7,
     "product_name": "Sesame Oil 600 ml ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/17_14.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/17_14.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 280.0,
+    "tag": null,
     "sale_rate": 220.0,
     "product_id": 474,
+    "category_id": 7,
     "product_name": "Til Oil 1 ltr",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71HDeh1yQZL._SL1500_.jpg"
-  },
-  {
-    "mrp": 150.0,
-    "sale_rate": 125.0,
-    "product_id": 475,
-    "product_name": "Mukhwas Red 250 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717nNIU4SVL._SX522_.jpg"
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71HDeh1yQZL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 80.0,
+    "tag": null,
     "sale_rate": 70.0,
     "product_id": 476,
+    "category_id": 8,
     "product_name": "Rabdi 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71E5mG8Md+L._SL1500_.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71E5mG8Md+L._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 0.0,
+    "tag": null,
     "sale_rate": 0.0,
     "product_id": 477,
+    "category_id": 8,
     "product_name": "Basundi 100 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61pJx6IhcVL._SL1000_.jpg"
-  },
-  {
-    "mrp": 6700.0,
-    "sale_rate": 4250.0,
-    "product_id": 484,
-    "product_name": "Beasn Samrat 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Samrat_Besan_500g_NashikGrocery.Com_JPG80.jpg"
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61pJx6IhcVL._SL1000_.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 350.0,
+    "tag": "Hot Deals",
     "sale_rate": 250.0,
     "product_id": 500,
+    "category_id": 39,
     "product_name": "Onion 10  kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/bigstock-red-onions-46097662.jpg"
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/bigstock-red-onions-46097662.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1750.0,
+    "tag": null,
     "sale_rate": 1150.0,
     "product_id": 501,
+    "category_id": 39,
     "product_name": "Onion 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (1).jpg"
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 500.0,
+    "tag": "Hot Deals",
     "sale_rate": 400.0,
     "product_id": 502,
+    "category_id": 39,
     "product_name": "Potato 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/potatoes-1787138.jpg"
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/potatoes-1787138.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
+    "tag": null,
     "sale_rate": 1900.0,
     "product_id": 503,
+    "category_id": 39,
     "product_name": "Potato 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/images (1).jpg"
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/images (1).jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 150.0,
+    "tag": null,
     "sale_rate": 100.0,
     "product_id": 504,
+    "category_id": 39,
     "product_name": "Garlic 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/6000200094587.jpg"
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6000200094587.jpg",
+    "primary_product_id": 0
   },
   {
     "mrp": 1500.0,
+    "tag": "Sale,New Arrivals",
     "sale_rate": 950.0,
     "product_id": 505,
+    "category_id": 39,
     "product_name": "Garlic 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ISKQLF1oL._SL1500_.jpg"
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ISKQLF1oL._SL1500_.jpg",
+    "primary_product_id": 0
   },
   {
-    "mrp": null,
-    "sale_rate": null,
+    "mrp": 0.0,
+    "tag": null,
+    "sale_rate": 0.0,
     "product_id": 506,
+    "category_id": 1,
     "product_name": "Test-15",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato.JPG"
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tomato.JPG",
+    "primary_product_id": 0
   }
 ]

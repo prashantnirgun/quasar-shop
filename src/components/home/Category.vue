@@ -1,5 +1,5 @@
 <template>
-  <div class=" row wrap justify-evenly q-pa-sm items-start q-gutter-md">
+  <div class="row wrap justify-evenly q-pa-sm items-start q-gutter-md">
     <q-card
       v-for="data in lists"
       :key="data.category_id"
@@ -10,7 +10,7 @@
         :src="data.image_filename"
         :height="getSize"
         :width="getSize"
-        @click="$router.push('/category')"
+        @click="$router.push(`/products/${data.category_id}`)"
       >
         <div class="absolute-bottom text-subtitle2 text-center">
           {{ data.category_name }}
@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     getSize() {
-      return this.isDesktop ? '200px' : '130px';
+      return this.isDesktop ? '200px' : '150px';
     }
   }
 };

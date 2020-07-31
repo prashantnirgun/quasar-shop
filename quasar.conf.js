@@ -79,7 +79,14 @@ module.exports = function(/* ctx */) {
     framework: {
       iconSet: 'material-icons', // Quasar icon set
       lang: 'en-us', // Quasar language pack
-      config: {},
+      config: {
+        loading: {
+          spinnerSize: 140,
+          spinner: 'QSpinnerFacebook',
+          spinnerColor: 'purple',
+          delay: 100
+        }
+      },
 
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
@@ -87,12 +94,12 @@ module.exports = function(/* ctx */) {
       importStrategy: 'auto',
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Loading']
     },
 
-    // animations: 'all', // --- includes all animations
+    animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    //animations: [],
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
