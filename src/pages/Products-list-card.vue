@@ -33,51 +33,47 @@
               </q-badge>
             </q-img>
 
-            <!-- horizontal Section card Begin -->
             <q-card-section v-if="horizontal" class="col-8">
-              <div class="row wrap">
-                <div class="col">
-                  <q-item class="text-h6 ellipsis-2-lines text-grey-10">
-                    {{ props.row.product_name }}
-                  </q-item>
+              <!-- <q-card-action> -->
+              <q-item-section>
+                <q-item class="text-h6 ellipsis-2-lines text-grey-10">
+                  {{ props.row.product_name }}
+                </q-item>
 
-                  <q-item
-                    ><q-rating
-                      v-model="stars"
-                      color="orange"
-                      :max="5"
-                      readonly
-                      size="17px"
-                    ></q-rating
-                  ></q-item>
-                  <q-item><span class="veg-food"></span></q-item>
-                </div>
+                <q-item
+                  ><q-rating
+                    v-model="stars"
+                    color="orange"
+                    :max="5"
+                    readonly
+                    size="17px"
+                  ></q-rating
+                ></q-item>
+                <q-item><span class="veg-food"></span></q-item>
+              </q-item-section>
 
-                <div class="col">
-                  <q-item>
-                    <div class="text-h6 text-grey-6 text-weight-bolder">
-                      MRP&nbsp;&nbsp;
-                    </div>
-                    <span class="text-h6 text-strike">
-                      ₹{{ props.row.mrp }}</span
-                    >
-                  </q-item>
-                  <q-item class="text-h6 text-weight-bolder text-green-6">
-                    <div>
-                      Our Price&nbsp;&nbsp;
-                    </div>
-                    <span>₹{{ props.row.sale_rate }}</span>
-                  </q-item>
-                  <q-item class="text-h6 text-orange-6 text-weight-bolder">
-                    <div>
-                      Saving&nbsp;&nbsp;
-                    </div>
-                    <span>20% off</span>
-                  </q-item>
-                </div>
-              </div>
+              <q-item-section>
+                <q-item>
+                  <div class="text-h6 text-grey-6 text-weight-bolder">
+                    MRP&nbsp;&nbsp;
+                  </div>
+                  <span class="text-h6 text-strike"> ₹{{ props.row.mrp }}</span>
+                </q-item>
+                <q-item class="text-h6 text-weight-bolder text-green-6">
+                  <div>
+                    Our Price&nbsp;&nbsp;
+                  </div>
+                  <span>₹{{ props.row.sale_rate }}</span>
+                </q-item>
+                <q-item class="text-h6 text-orange-6 text-weight-bolder">
+                  <div>
+                    Saving&nbsp;&nbsp;
+                  </div>
+                  <span>20% off</span>
+                </q-item>
+              </q-item-section>
+              <!-- </q-card-action> -->
             </q-card-section>
-            <!-- vertical card End -->
 
             <!-- vertical card Begin -->
             <q-card-section v-if="!horizontal">
@@ -105,13 +101,13 @@
             <!-- vertical card End Here-->
           </q-card-section>
 
-          <div class="q-pa-sm">
-            <div class="row wrap">
+          <q-card-section>
+            <q-card-action class="row wrap">
               <q-select dense outline v-model="variety" :options="options" />
               <q-space />
               <q-btn color="green" icon="shopping_cart" label="Add to Cart" />
-            </div>
-          </div>
+            </q-card-action>
+          </q-card-section>
         </q-card>
       </div>
     </template>

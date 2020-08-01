@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white text-grey-9 text-weight-bold shadow-transition">
-    <div
+    <!-- <div
       class="row text-center items-center"
       :style="isDesktop ? 'height: 48px' : ''"
     >
@@ -26,7 +26,7 @@
             <q-item @click="$router.push('/category')" clickable>
               <q-item-section>Health Care Appliances</q-item-section>
             </q-item>
-            <!--<q-separator/>-->
+           
             <q-item @click="$router.push('/category')" clickable>
               <q-item-section>Speakers</q-item-section>
             </q-item>
@@ -63,7 +63,7 @@
             <q-item @click="$router.push('/category')" clickable>
               <q-item-section>Health Care Appliances</q-item-section>
             </q-item>
-            <!--<q-separator/>-->
+           
             <q-item @click="$router.push('/category')" clickable>
               <q-item-section>Shop By Screen Size</q-item-section>
             </q-item>
@@ -133,7 +133,7 @@
       >
         Offers
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
