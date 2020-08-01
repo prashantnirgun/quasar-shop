@@ -1,7 +1,6 @@
 <template>
   <div class="bg-primary text-white" style="overflow: hidden;">
-    <!-- <div class="col-10"> -->
-    <div class="row wrap justify-center items-center" style="overflow: hidden;">
+    <div class="row wrap justify-center items-start" style="overflow: hidden;">
       <div class="col-6 col-md-2 col-lg-2 col-xl-12 q-pa-sm">
         <div class="text-subtitle1 text-weight-bold">About</div>
         <div class="text-caption hover_underline_white">About Us</div>

@@ -28,13 +28,12 @@ const routes = [
       {
         name: 'products',
         path: '/products/:category_id',
-        component: () => import('pages/Products.vue')
-      },
-      {
-        name: 'card',
-        path: '/card',
-        component: () => import('pages/Card.vue')
+        component: () => import('pages/Products1.vue')
       }
+      // {
+      //   path: '/dashboard',
+      //   component: () => import('pages/dashboard.vue')
+      // }
     ]
   }
 ];
