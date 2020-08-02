@@ -12,108 +12,31 @@
       </q-btn>
     </template>
     <template v-slot:item="props">
-      <!-- <div class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-6"> -->
-      <div :class="getClass">
-        <q-card>
-          <q-card-section :horizontal="horizontal">
-            <q-img
-              class="col-4"
-              spinner-color="primary"
-              spinner-size="82px"
-              :src="props.row.image_filename"
-              placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
-            >
-              <q-badge
-                v-if="!horizontal && props.row.tag"
-                class="transparent no-margin no-padding"
-              >
-                <q-chip icon="star" color="yellow" text-color="black">{{
-                  props.row.tag
-                }}</q-chip>
-              </q-badge>
-            </q-img>
-
-            <!-- horizontal Section card Begin -->
-            <q-card-section v-if="horizontal" class="col-8">
-              <div class="row wrap">
-                <div class="col">
-                  <q-item class="text-h6 ellipsis-2-lines text-grey-10">
-                    {{ props.row.product_name }}
-                  </q-item>
-
-                  <q-item
-                    ><q-rating
-                      v-model="stars"
-                      color="orange"
-                      :max="5"
-                      readonly
-                      size="17px"
-                    ></q-rating
-                  ></q-item>
-                  <q-item><span class="veg-food"></span></q-item>
-                </div>
-
-                <div class="col">
-                  <q-item>
-                    <div class="text-h6 text-grey-6 text-weight-bolder">
-                      MRP&nbsp;&nbsp;
-                    </div>
-                    <span class="text-h6 text-strike">
-                      ₹{{ props.row.mrp }}</span
-                    >
-                  </q-item>
-                  <q-item class="text-h6 text-weight-bolder text-green-6">
-                    <div>
-                      Our Price&nbsp;&nbsp;
-                    </div>
-                    <span>₹{{ props.row.sale_rate }}</span>
-                  </q-item>
-                  <q-item class="text-h6 text-orange-6 text-weight-bolder">
-                    <div>
-                      Saving&nbsp;&nbsp;
-                    </div>
-                    <span>20% off</span>
-                  </q-item>
-                </div>
-              </div>
-            </q-card-section>
-            <!-- vertical card End -->
-
-            <!-- vertical card Begin -->
-            <q-card-section v-if="!horizontal">
-              <div class="text-h6 ellipsis-2-lines text-grey-10">
+      <q-card :class="outer">
+        <div>
+          <div class="row wrap">
+            <div :class="[horizontal ? 'col-4' : 'col-12']">
+              <img :src="props.row.image_filename" />
+            </div>
+            <div :class="[horizontal ? 'col-8' : 'col-12']">
+              <div class="">
                 {{ props.row.product_name }}
               </div>
-
-              <q-rating
-                v-model="stars"
-                color="orange"
-                :max="5"
-                readonly
-                size="17px"
-              ></q-rating>
-              <div class="text-caption text-green-8 text-weight-bolder">
-                Special Price
+              <div :class="[!horizontal ? 'hidden' : 'row']">
+                <div class="col-4">Info</div>
+                <div class="col-4">Label</div>
+                <div class="col-4">Rate</div>
               </div>
-              <span class="text-h6">₹{{ props.row.sale_rate }}</span
-              ><span
-                class="q-ml-sm text-grey-6"
-                style="text-decoration: line-through"
-                >₹{{ props.row.mrp }}</span
-              >
-            </q-card-section>
-            <!-- vertical card End Here-->
-          </q-card-section>
-
-          <div class="q-pa-sm">
-            <div class="row wrap">
-              <q-select dense outline v-model="variety" :options="options" />
-              <q-space />
-              <q-btn color="green" icon="shopping_cart" label="Add to Cart" />
             </div>
           </div>
-        </q-card>
-      </div>
+          <div :class="{ hidden: !!horizontal }">
+            Verticle product info
+          </div>
+          <div>
+            call for Action
+          </div>
+        </div>
+      </q-card>
     </template>
   </q-table>
 </template>
@@ -123,6 +46,7 @@ import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
 
 export default {
+  mixins: [device_mixin],
   data() {
     return {
       stars: 4,
@@ -142,8 +66,15 @@ export default {
     getClass() {
       return (
         'q-pa-xs col-xs-12 col-sm-12 ' +
-        (!!this.horizontal ? 'hr col-lg-6 col-md-6' : 'vr col-lg-3 col-md-4')
+        (!!this.horizontal ? 'hr col-lg-6 col-md-6' : 'vr col-lg-3 col-md-3')
       );
+    },
+    outer() {
+      let c =
+        '' +
+        (!!this.isDesktop ? (!!this.horizontal ? 'col-3' : 'col-3') : 'col-12');
+      console.log('class', this.isDesktop, this.horizontal, c);
+      return c;
     }
   },
   mounted() {
@@ -176,4 +107,14 @@ export default {
   display: inline-block
   width: 18px
   height: 17px !important
+
+.border
+  border : 1px solid #6dad5c
+
+div
+  border : 1px solid #6dad5c
+
+img
+    max-width: 100%
+    max-height: 100%
 </style>
