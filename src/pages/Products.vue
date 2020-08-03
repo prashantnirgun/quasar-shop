@@ -8,8 +8,8 @@
     hide-bottom
     :pagination="initialPagination"
   >
-    <template v-slot:top="props">
-      <q-btn
+    <template v-slot:top>
+      <!-- <q-btn
         flat
         round
         dense
@@ -17,7 +17,19 @@
         @click="horizontal = !horizontal"
         v-if="!props.inFullscreen"
       >
-      </q-btn>
+      </q-btn> -->
+
+      <q-btn-group rounded>
+        <q-btn
+          rounded
+          color="primary"
+          icon="grid_on"
+          @click="horizontal = false"
+        />
+
+        <q-btn rounded color="primary" icon="list" @click="horizontal = true" />
+        <q-btn rounded color="primary" icon="filter_alt" />
+      </q-btn-group>
     </template>
     <template v-slot:item="props">
       <!-- <div class="col-xs-12 col-sm-6 col-md-3 q-pa-xs"> -->
@@ -119,7 +131,7 @@ export default {
     return {
       stars: 4,
       mode: 'grid',
-      horizontal: false,
+      horizontal: this.isMobile ? true : false,
       loading: true,
       lists: [],
       variety: 1,
@@ -146,7 +158,9 @@ export default {
   },
   mounted() {
     const category_id = parseInt(this.$route.params.category_id);
-    //this.$q.loading.show();
+    this.horizontal = !!this.isMobile;
+    console.log('Is Mobile ?', this.isMobile);
+    console.log('horizontal ?', this.horizontal);
     //console.time('Timer name');
     DataService.get('data/product.json')
       .then(response => {
