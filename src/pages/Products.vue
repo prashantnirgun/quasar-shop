@@ -22,9 +22,19 @@
     <template v-slot:item="props">
       <!-- <div class="col-xs-12 col-sm-6 col-md-3 q-pa-xs"> -->
       <div :class="outer">
-        <q-card class="shadow-8">
+        <q-card
+          @click="$router.push(`/product-details/${props.row.product_id}`)"
+          class="cursor-pointer shadow-8"
+          transition-show="“flip-up”"
+          transition-hide="“flip-down”"
+        >
           <div class="row">
-            <div :class="[horizontal ? 'col-4' : 'col-12']">
+            <div
+              :class="[
+                horizontal ? 'col-4' : 'col-12',
+                { 'q-pt-md': !!horizontal }
+              ]"
+            >
               <q-img
                 :src="props.row.image_filename"
                 spinner-color="primary"
@@ -108,10 +118,9 @@ export default {
   data() {
     return {
       stars: 4,
-      mode: 'list',
+      mode: 'grid',
       horizontal: false,
       loading: true,
-      class_val: 'shadow-1 my-card',
       lists: [],
       variety: 1,
       options: [1, 2, 3],
@@ -125,15 +134,6 @@ export default {
     };
   },
   computed: {
-    getSize() {
-      return this.horizontal ? '30%' : '400px';
-    },
-    getClass() {
-      return (
-        'col-xs-12 col-sm-6 ' +
-        (!!this.horizontal ? 'hr col-lg-6 col-md-6' : 'vr col-lg-3 col-md-3')
-      );
-    },
     outer() {
       let c =
         'outer col-xs-12 col-sm-6 q-pa-xs ' +
