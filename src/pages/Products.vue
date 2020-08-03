@@ -18,30 +18,38 @@
         v-if="!props.inFullscreen"
       >
       </q-btn> -->
-
+      <q-space />
       <q-btn-group rounded>
         <q-btn
+          dense
+          rounded
+          color="primary"
+          icon="list"
+          @click="horizontal = true"
+        />
+
+        <q-btn
+          dense
           rounded
           color="primary"
           icon="grid_on"
           @click="horizontal = false"
         />
 
-        <q-btn rounded color="primary" icon="list" @click="horizontal = true" />
-        <q-btn rounded color="primary" icon="filter_alt" />
+        <q-btn dense rounded color="primary" icon="filter_alt" />
       </q-btn-group>
     </template>
     <template v-slot:item="props">
-      <!-- <div class="col-xs-12 col-sm-6 col-md-3 q-pa-xs"> -->
       <div :class="outer">
         <q-card
-          @click="$router.push(`/product-details/${props.row.product_id}`)"
-          class="cursor-pointer shadow-8"
+          class="shadow-8"
           transition-show="“flip-up”"
           transition-hide="“flip-down”"
         >
           <div class="row">
             <div
+              @click="$router.push(`/product-details/${props.row.product_id}`)"
+              class="cursor-pointer"
               :class="[
                 horizontal ? 'col-4' : 'col-12',
                 { 'q-pt-md': !!horizontal }
@@ -56,7 +64,7 @@
             </div>
 
             <div :class="[horizontal ? 'col-8' : 'col-12']">
-              <div class="q-pa-sm">
+              <div class="q-pa-sm text-h6">
                 {{ props.row.product_name }}
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
@@ -70,12 +78,12 @@
                     size="17px"
                   ></q-rating>
                 </div>
-                <div class="col-4">MRP</div>
-                <div class="col-4">{{ props.row.mrp }}</div>
+                <div class="col-4 text-grey-10">MRP</div>
+                <div class="col-4 text-strike">{{ props.row.mrp }}</div>
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
                 <div class="col-4"></div>
-                <div class="col-4">Our Price</div>
+                <div class="col-4 text-green-10">Our Price</div>
                 <div class="col-4">{{ props.row.sale_rate }}</div>
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
@@ -89,9 +97,9 @@
                   class="col-6 text-weight-bold text-capitalize"
                   dense
                   color="positive"
-                >
-                  Add to Cart
-                </q-btn>
+                  icon="add_shopping_cart"
+                  label="Add to Cart"
+                />
               </div>
             </div>
           </div>
@@ -111,9 +119,9 @@
               class="col-6 text-weight-bold text-capitalize"
               dense
               color="positive"
-            >
-              Add to Cart
-            </q-btn>
+              icon="add_shopping_cart"
+              label="Add to Cart"
+            />
           </div>
         </q-card>
       </div>
@@ -150,28 +158,55 @@ export default {
       let c =
         'outer col-xs-12 col-sm-6 q-pa-xs ' +
         (!!this.horizontal ? 'hr col-lg-4 col-md-4' : 'vr col-lg-3 col-md-3');
-      // 'outer ' +
-      // (!!this.isDesktop ? (!!this.horizontal ? 'col-3' : 'col-3') : 'col-12');
-      console.log('class', this.isDesktop, this.horizontal, c);
+      //console.log('class', this.isDesktop, this.horizontal, c);
       return c;
     }
   },
   mounted() {
     const category_id = parseInt(this.$route.params.category_id);
     this.horizontal = !!this.isMobile;
-    console.log('Is Mobile ?', this.isMobile);
-    console.log('horizontal ?', this.horizontal);
+    //console.log('Is Mobile ?', this.isMobile);
+    //console.log('horizontal ?', this.horizontal);
     //console.time('Timer name');
     DataService.get('data/product.json')
       .then(response => {
-        this.lists = response.data.filter(
+        response = response.data.filter(
           row => parseInt(row.category_id) === category_id
 
           // && parseInt(row.primary_product_id) === 0
         );
         this.loading = false;
+        let data = [];
+        response.map(row => {
+          if (row.primary_product_id === 0) {
+            let found = data.filter(
+              record => record.product_id === row.primary_product_id
+            );
+
+            if (found.length === 0) {
+              row.children = [];
+              //console.log('row beore insert', row);
+              data.push(row);
+            }
+          } else {
+            //sub product then find the key
+            let found = data.filter(
+              record => record.product_id === row.primary_product_id
+            );
+            console.log('else/found', found, found.length);
+            if (found.length === 0) {
+              let c = { product_id: row.primary_product_id, children: [row] };
+              data.push(c);
+            } else {
+              console.log('row before inserting children', row, found);
+              //!!found.children ? null : (found.children = []);
+              found[0].children.push(row);
+            }
+          }
+        });
         //this.$q.loading.hide();
-        console.log('data', this.lists);
+        console.log('data', response, data);
+        this.lists = data;
         //console.timeEnd('Timer name');
       })
       .catch(error => {

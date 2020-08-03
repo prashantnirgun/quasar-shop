@@ -95,16 +95,6 @@
     "image_filename": "https://api.cloudapmc.com:5000/category/1/picl.jpg"
   },
   {
-    "category_id": 35,
-    "category_name": "Software",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/Software-icon.png"
-  },
-  {
-    "category_id": 36,
-    "category_name": "Hardware",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/Motherboard-icon.png"
-  },
-  {
     "category_id": 39,
     "category_name": "Onion & Potato",
     "image_filename": "https://api.cloudapmc.com:5000/category/1/HTB126egdBGE3KVjSZFhq6AkaFXaU.jpg"

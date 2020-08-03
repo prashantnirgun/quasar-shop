@@ -23,9 +23,7 @@
         :key="index"
         class="column no-wrap"
       >
-        <div
-          class="row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap"
-        >
+        <div class="row fit justify-start items-center q-pa-xs no-wrap">
           <q-img
             v-for="row in rows"
             :key="row.category_id"

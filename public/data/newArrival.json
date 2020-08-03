@@ -4,7 +4,7 @@
     "sale_rate": 340.0,
     "product_id": 2,
     "product_name": "Non Brand Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/IMG_20200729_184546.JPG"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/california-almond-nut-500x500.jpg"
   },
   {
     "mrp": 260.0,
@@ -60,7 +60,7 @@
     "sale_rate": 210.0,
     "product_id": 164,
     "product_name": "Tata Agni Tea Powdar 1 kg",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/tatatea1.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61GK-Y4nV-L._SL1000_.jpg"
   },
   {
     "mrp": 200.0,
