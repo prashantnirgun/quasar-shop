@@ -1,0 +1,112 @@
+[
+  {
+    "category_id": 1,
+    "category_name": "Atta & Maida ",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/Best-Wheat-flour-Atta-Brands-in-India.jpg"
+  },
+  {
+    "category_id": 2,
+    "category_name": "Pulses & Lentils ",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/intro-legumes-photo2.jpg"
+  },
+  {
+    "category_id": 3,
+    "category_name": "Dry Fruits",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/ea0d3cf3f1929943a0e22f4e0b7bc2c0.jpg"
+  },
+  {
+    "category_id": 4,
+    "category_name": "Spices Whole",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/spice.png"
+  },
+  {
+    "category_id": 5,
+    "category_name": "Masala Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/60945_15-in-1-Masala.jpg"
+  },
+  {
+    "category_id": 6,
+    "category_name": "MDH Masala",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/mktgmx-mdhspices.jpg"
+  },
+  {
+    "category_id": 7,
+    "category_name": "Oil & Ghee",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/oil-ghee-banner-200x200.jpg"
+  },
+  {
+    "category_id": 8,
+    "category_name": "Provions.",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/103657_1542371537.jpg"
+  },
+  {
+    "category_id": 9,
+    "category_name": "Tea & coffee",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/TTR-TEA-COFFEE.jpg"
+  },
+  {
+    "category_id": 10,
+    "category_name": "Tin & Canned",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/FOOD_0.jpg"
+  },
+  {
+    "category_id": 11,
+    "category_name": "Sauces",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/hot-sauce.jpg"
+  },
+  {
+    "category_id": 12,
+    "category_name": "Manama Crush",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/81TQZAmtIEL._SL1500_.jpg"
+  },
+  {
+    "category_id": 13,
+    "category_name": "Sarwar Syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/group.jpg"
+  },
+  {
+    "category_id": 14,
+    "category_name": "Paste & Powdar",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/20091007-mustard-honeys.jpg"
+  },
+  {
+    "category_id": 15,
+    "category_name": "Real juice ",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/Real-Juice-5-in-1.jpg"
+  },
+  {
+    "category_id": 16,
+    "category_name": "Rice & What ",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/bopp-woven-bags-500x500.jpg"
+  },
+  {
+    "category_id": 17,
+    "category_name": "Pasta",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/91NPsBSesBL._AC_SX569_.jpg"
+  },
+  {
+    "category_id": 18,
+    "category_name": "Marim Bulla syrup",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/marimbula-syrup-500x500.jpg"
+  },
+  {
+    "category_id": 34,
+    "category_name": "sugar & Picke",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/picl.jpg"
+  },
+  {
+    "category_id": 35,
+    "category_name": "Software",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/Software-icon.png"
+  },
+  {
+    "category_id": 36,
+    "category_name": "Hardware",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/Motherboard-icon.png"
+  },
+  {
+    "category_id": 39,
+    "category_name": "Onion & Potato",
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/HTB126egdBGE3KVjSZFhq6AkaFXaU.jpg"
+  }
+]

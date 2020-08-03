@@ -20,25 +20,34 @@
       </q-btn>
     </template>
     <template v-slot:item="props">
-      <!-- <div class="row wrap justify-evenly q-gutter-md"> -->
-      <q-card :class="outer">
-        <div>
-          <div class="row wrap">
+      <!-- <div class="col-xs-12 col-sm-6 col-md-3 q-pa-xs"> -->
+      <div :class="outer">
+        <q-card class="shadow-8">
+          <div class="row">
             <div :class="[horizontal ? 'col-4' : 'col-12']">
               <q-img
-                :class="{ 'q-mt-md': !!horizontal }"
                 :src="props.row.image_filename"
                 spinner-color="primary"
                 spinner-size="82px"
                 placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
               />
             </div>
+
             <div :class="[horizontal ? 'col-8' : 'col-12']">
-              <div class="">
+              <div class="q-pa-sm">
                 {{ props.row.product_name }}
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
-                <div class="col-4">Info</div>
+                <div class="col-4">
+                  <q-rating
+                    class="col"
+                    v-model="stars"
+                    color="orange"
+                    :max="5"
+                    readonly
+                    size="17px"
+                  ></q-rating>
+                </div>
                 <div class="col-4">MRP</div>
                 <div class="col-4">{{ props.row.mrp }}</div>
               </div>
@@ -52,24 +61,40 @@
                 <div class="col-4">Saving</div>
                 <div class="col-4">22% off</div>
               </div>
-              <div class="row">
+              <div :class="[{ hidden: !horizontal }, 'row', 'q-pa-sm']">
                 <div class="col-6">Size</div>
                 <q-btn
                   class="col-6 text-weight-bold text-capitalize"
                   dense
-                  color="primary"
+                  color="positive"
                 >
                   Add to Cart
                 </q-btn>
               </div>
             </div>
           </div>
-          <div :class="{ hidden: !!horizontal }">
-            Verticle product info
+          <div :class="['row', 'q-pa-sm', { hidden: horizontal }]">
+            <div class="col-12">
+              <q-rating
+                class="col"
+                v-model="stars"
+                color="orange"
+                :max="5"
+                readonly
+                size="17px"
+              ></q-rating>
+            </div>
+            <div class="col-6">Size</div>
+            <q-btn
+              class="col-6 text-weight-bold text-capitalize"
+              dense
+              color="positive"
+            >
+              Add to Cart
+            </q-btn>
           </div>
-        </div>
-      </q-card>
-      <!-- </div> -->
+        </q-card>
+      </div>
     </template>
   </q-table>
 </template>
@@ -111,8 +136,8 @@ export default {
     },
     outer() {
       let c =
-        'outer q-pa-sm col-xs-12 col-sm-6 ' +
-        (!!this.horizontal ? 'hr col-lg-3 col-md-4' : 'vr col-lg-3 col-md-3');
+        'outer col-xs-12 col-sm-6 q-pa-xs ' +
+        (!!this.horizontal ? 'hr col-lg-4 col-md-4' : 'vr col-lg-3 col-md-3');
       // 'outer ' +
       // (!!this.isDesktop ? (!!this.horizontal ? 'col-3' : 'col-3') : 'col-12');
       console.log('class', this.isDesktop, this.horizontal, c);
@@ -147,4 +172,7 @@ export default {
 img
     max-width: 100%
     max-height: 100%
+
+.q-table__grid-content row q-gutter-xs
+  q-gutter-sm : true
 </style>
