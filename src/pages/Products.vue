@@ -9,9 +9,12 @@
   >
     <template v-slot:top>
       <q-chip color="primary" text-color="white" size="md" class="q-py-md">
-        <q-avatar icon="star" color="black" text-color="white" />
+        <q-avatar color="black" text-color="white">
+          {{ totalProducts }}
+        </q-avatar>
         {{ categoryName }}
       </q-chip>
+
       <q-space />
       <q-btn-group rounded>
         <q-btn
@@ -169,9 +172,8 @@
                 {{ props.row.product_name }}
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
-                <div class="col-4">
+                <div class="col-6">
                   <q-rating
-                    class="col"
                     v-model="stars"
                     color="orange"
                     :max="5"
@@ -179,27 +181,31 @@
                     size="17px"
                   ></q-rating>
                 </div>
-                <div class="col-4 text-grey-10">MRP</div>
-                <div class="col-4 text-strike">{{ props.row.mrp }}</div>
+                <div class="col-3 text-grey-10">MRP</div>
+                <div class="col-3 text-strike text-right q-pr-sm">
+                  {{ props.row.mrp }}
+                </div>
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
-                <div class="col-4">
-                  <q-badge
+                <div class="col-6">
+                  <!-- <q-badge
                     v-if="horizontal && props.row.tag"
                     class="transparent no-margin no-padding"
                   >
                     <q-chip icon="star" color="yellow" text-color="black">{{
                       props.row.tag
                     }}</q-chip>
-                  </q-badge>
+                  </q-badge> -->
                 </div>
-                <div class="col-4 text-green-10">Our Price</div>
-                <div class="col-4">{{ props.row.sale_rate }}</div>
+                <div class="col-3 text-green text-bold">Our Price</div>
+                <div class="col-3 text-right text-green text-bold q-pr-sm">
+                  {{ props.row.sale_rate }}
+                </div>
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
-                <div class="col-4"></div>
-                <div class="col-4">Saving</div>
-                <div class="col-4">22% off</div>
+                <div class="col-6"></div>
+                <div class="col-3">Saving</div>
+                <div class="col-3 text-right q-pr-sm">22% off</div>
               </div>
               <!-- <div :class="[{ hidden: !horizontal }, 'row', 'q-pa-sm']">
                 <div class="col-6">Size</div>
@@ -215,14 +221,14 @@
           </div>
           <div :class="['row', 'q-pa-sm', { hidden: horizontal }]">
             <div class="col-12">
-              <q-rating
+              <!-- <q-rating
                 class="col"
                 v-model="stars"
                 color="orange"
                 :max="5"
                 readonly
                 size="17px"
-              ></q-rating>
+              ></q-rating> -->
             </div>
             <!-- <div class="col-6">Size</div>
             <q-btn
@@ -234,23 +240,43 @@
             /> -->
           </div>
 
-          <div class="row q-pa-sm items-center">
-            <div class="col-1">Qty</div>
-            <q-select outlined v-model="qty" dense :options="options" />
+          <div class="row q-pa-sm items-evenly">
+            <q-rating
+              v-if="props.row.product_id % 2 === 0"
+              class="col-6"
+              v-model="stars"
+              color="orange"
+              :max="5"
+              readonly
+              size="17px"
+            ></q-rating>
+
+            <q-badge v-else class="transparent no-margin no-padding">
+              <q-chip
+                icon="star"
+                color="yellow"
+                text-color="black"
+                class="col-6 ellipsis"
+                >{{ props.row.tag }}</q-chip
+              >
+            </q-badge>
+
+            <!--<div class="col-1">Qty</div>
+             <q-select outlined v-model="qty" dense :options="options" /> -->
             <q-space />
             <q-btn
-              class="text-weight-bold "
+              class="text-weight-bold col-4"
               dense
               color="positive"
               icon="add_shopping_cart"
-              label="Add to Cart"
+              label="Add"
             />
           </div>
 
           <div class="row wrap justify-start q-pa-sm q-gutter-sm">
-            <q-btn color="green" unelevated label="1.5 KG" />
-            <q-btn outline label="5 KG" />
-            <q-btn outline unelevated label="15 KG" />
+            <q-btn dense color="green" unelevated label="1.5 KG" />
+            <q-btn dense outline label="5 KG" />
+            <q-btn dense outline unelevated label="15 KG" />
           </div>
         </q-card>
       </div>
@@ -275,6 +301,7 @@ export default {
       variety: 1,
       qty: 1,
       options: [1, 2, 3],
+      totalProducts: 0,
       initialPagination: {
         sortBy: 'desc',
         descending: false,
@@ -293,13 +320,9 @@ export default {
       return c;
     },
     categoryName() {
-      // let b =
-      //   this.lists[0].children.length === 0
-      //     ? this.lists[0].category_name
-      //     : this.lists[0].children[0].category_name;
-      // console.log('category', b);
-      console.log('category', this.lists[0]);
-      return this.lists.length > 0 ? this.lists[0].category_name : 'Category';
+      return this.lists.length > 0
+        ? `${this.lists[0].category_name}`
+        : 'Category';
     }
   },
   mounted() {
@@ -317,6 +340,7 @@ export default {
         );
         this.loading = false;
         let data = [];
+        this.totalProducts = response.length;
         response.map(row => {
           if (row.primary_product_id === 0) {
             let found = data.filter(
