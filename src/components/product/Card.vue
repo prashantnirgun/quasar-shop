@@ -97,7 +97,13 @@
       />
     </div> -->
     <card-info :data="current" :horizontal="horizontal" />
-    <card-options :data="data.children" @updatedItem="runme" />
+    <div class="bg-grey-3">
+      <card-options
+        :data="data.children"
+        @updatedItem="runme"
+        v-if="data.children.length > 1"
+      />
+    </div>
     <!-- <div class="row wrap justify-start q-pa-sm q-gutter-sm">
       <q-btn dense color="green" unelevated label="1.5 KG" />
       <q-btn dense outline label="5 KG" />
@@ -122,7 +128,7 @@ export default {
   methods: {
     runme(item) {
       this.current = item;
-      //console.log('item recieved', item.size, this.current.size);
+      console.log('item recieved', item.product_id, this.current.product_id);
     }
   },
   mounted() {

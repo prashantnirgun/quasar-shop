@@ -62,10 +62,25 @@
       </div>
     </div>
     <div :class="['row', 'q-pa-sm', { hidden: horizontal }]">
-      <div class="col-12"></div>
+      <div class="col-12 row ">
+        <div class="col-4">
+          <div class="text-green-8 text-h7 text-bold">Price</div>
+          <div class="text-green-8 text-h7 text-bold">
+            ₹{{ data.sale_rate }}
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="text-grey-10 text-h7 text-bold">MRP</div>
+          <div class="text-grey-10 text-h7 text-strike">₹{{ data.mrp }}</div>
+        </div>
+        <div class="col-4">
+          <div class="text-h7 text-bold">Saving</div>
+          <div class="text-h7">22% off</div>
+        </div>
+      </div>
     </div>
 
-    <div class="row q-pa-sm items-evenly">
+    <div class="row q-pa-sm q-mb-sm items-evenly">
       <q-rating
         v-if="data.product_id % 2 === 0"
         class="col-6"
@@ -100,7 +115,11 @@
 <script>
 export default {
   props: ['data', 'horizontal'],
-
+  watch: {
+    data: function(val) {
+      console.log(val.product_id);
+    }
+  },
   data() {
     return {
       stars: 4

@@ -1,16 +1,29 @@
 <template>
-  <div class="row wrap justify-start q-pa-sm q-gutter-sm">
-    <q-btn
-      v-for="item in data"
-      :key="item.size"
-      dense
-      :outline="item.size !== current.size"
-      unelevated
-      :class="[item.size !== current.size ? '' : 'bg-green', 'bg-white']"
-      @click="selcted(item)"
-    >
-      {{ item.size }}
-    </q-btn>
+  <div class="row wrap justify-start q-pt-non q-px-sm q-pb-sm q-gutter-sm">
+    <div v-for="item in data" :key="item.size">
+      <q-btn
+        v-if="item.size === current.size"
+        dense
+        unelevated
+        color="green"
+        class="col-auto"
+        @click="selcted(item)"
+      >
+        {{ item.size }}
+      </q-btn>
+
+      <q-btn
+        v-else
+        dense
+        unelevated
+        class="col-auto"
+        outline
+        color="green"
+        @click="selcted(item)"
+      >
+        {{ item.size }}
+      </q-btn>
+    </div>
   </div>
 </template>
 <script>
@@ -23,7 +36,8 @@ export default {
   },
   methods: {
     selcted(item) {
-      //console.log('item selected', item);
+      this.current = item;
+      console.log('item selected', item);
       this.$emit('updatedItem', item);
     }
   },
@@ -32,3 +46,4 @@ export default {
   }
 };
 </script>
+<style lang="sass" scoped></style>
