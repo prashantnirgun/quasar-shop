@@ -2,105 +2,115 @@
   {
     "mrp": 220.0,
     "tag": "Sale",
+    "size": "5 KGS",
     "sale_rate": 175.0,
     "product_id": 1,
     "category_id": 1,
     "product_name": "Non Brand Atta 5 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Arjun-Maida-1kg-SDL487966891-1-30082.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-packaging-pouch-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 420.0,
     "tag": "Sale,New Arrivals",
+    "size": "10 KGS",
     "sale_rate": 340.0,
     "product_id": 2,
     "category_id": 1,
     "product_name": "Non Brand Atta 10 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/california-almond-nut-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8908001296038_new 1.jpg",
     "primary_product_id": 1
   },
   {
     "mrp": 1950.0,
     "tag": "Sale",
+    "size": "50 KGS",
     "sale_rate": 1600.0,
     "product_id": 3,
     "category_id": 1,
     "product_name": "Non Brand  Atta 50 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Ganesh-Whole-Wheat-Chakki-Atta-1549101750-10056145-1.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Non Atta.jpg",
     "primary_product_id": 1
   },
   {
     "mrp": 260.0,
     "tag": "New Arrivals,Sale",
+    "size": "5 KGS",
     "sale_rate": 200.0,
     "product_id": 4,
     "category_id": 1,
     "product_name": "Samrat Atta 5 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 500.0,
     "tag": null,
+    "size": "10 KGS",
     "sale_rate": 380.0,
     "product_id": 5,
     "category_id": 1,
     "product_name": "Samrat Atta 10 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/91TlNBj5UhL._SL1500_new.jpg",
     "primary_product_id": 4
   },
   {
     "mrp": 2200.0,
     "tag": null,
+    "size": "50 KGS",
     "sale_rate": 1800.0,
     "product_id": 6,
     "category_id": 1,
     "product_name": "Samrat Atta 50 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/samrat-chakki-atta.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/samrat-chakki-atta_new.jpg",
     "primary_product_id": 4
   },
   {
     "mrp": 260.0,
     "tag": "Hot Deals,Sale,New Arrivals",
+    "size": "5 KGS",
     "sale_rate": 220.0,
     "product_id": 7,
     "category_id": 1,
     "product_name": "Aashirvaad Atta 5 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-ashrivad-5kg.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8180XWMifzL._SX425_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 480.0,
     "tag": "New Arrivals",
+    "size": "10 KGS",
     "sale_rate": 420.0,
     "product_id": 8,
     "category_id": 1,
     "product_name": "Aashirvaad Atta 10 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/aashirvaad-select-atta-5kg-550x550.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/aashirvaad-select-atta-5kg-550x550_new.jpg",
     "primary_product_id": 7
   },
   {
     "mrp": 305.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 275.0,
     "product_id": 9,
     "category_id": 1,
     "product_name": "Aashirvaad Multigrain Atta  5 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71gcOblCdcL._SX569_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Hl6In13kL._SX425_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 180.0,
     "product_id": 10,
     "category_id": 1,
@@ -112,28 +122,31 @@
   {
     "mrp": 380.0,
     "tag": "Hot Deals",
+    "size": "10 KGS",
     "sale_rate": 340.0,
     "product_id": 11,
     "category_id": 1,
     "product_name": "Non Brand Maida 10 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/flour-polyester-printed-packaging-pouch-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/flour-polyester-printed-500x500_new.jpg",
     "primary_product_id": 10
   },
   {
     "mrp": 1950.0,
     "tag": null,
+    "size": "50 KGS",
     "sale_rate": 1700.0,
     "product_id": 12,
     "category_id": 1,
     "product_name": "Non Brand Maida 50 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/high-protien-maida-flour-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/fl014a1g.jpg",
     "primary_product_id": 10
   },
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 200.0,
     "product_id": 13,
     "category_id": 1,
@@ -145,50 +158,55 @@
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "10 KGS",
     "sale_rate": 380.0,
     "product_id": 14,
     "category_id": 1,
     "product_name": "Samrat Maida 10 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SAMRAT-MAIDA.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-maida-samrat_new.jpg",
     "primary_product_id": 13
   },
   {
     "mrp": 2100.0,
     "tag": "Sale",
+    "size": "50 KGS",
     "sale_rate": 1800.0,
     "product_id": 15,
     "category_id": 1,
     "product_name": "Samrat Maida 50 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-maida-samrat--688.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/SAMRAT-MAIDA.jpg",
     "primary_product_id": 13
   },
   {
     "mrp": 60.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 40.0,
     "product_id": 16,
     "category_id": 1,
     "product_name": "Rice Atta 1 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/rice-flour-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/wheat-flour-bowl-isolated-white-background-35930587.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 50.0,
     "product_id": 17,
     "category_id": 1,
     "product_name": "Makai Atta 1 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Makai-Atta.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/corn flour-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 40.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 30.0,
     "product_id": 18,
     "category_id": 16,
@@ -200,6 +218,7 @@
   {
     "mrp": 45.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 36.0,
     "product_id": 19,
     "category_id": 16,
@@ -211,6 +230,7 @@
   {
     "mrp": 60.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 50.0,
     "product_id": 20,
     "category_id": 16,
@@ -222,6 +242,7 @@
   {
     "mrp": 70.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 60.0,
     "product_id": 21,
     "category_id": 16,
@@ -233,6 +254,7 @@
   {
     "mrp": 50.0,
     "tag": "New Arrivals",
+    "size": "25 KGS",
     "sale_rate": 45.0,
     "product_id": 22,
     "category_id": 16,
@@ -244,6 +266,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 75.0,
     "product_id": 23,
     "category_id": 16,
@@ -255,6 +278,7 @@
   {
     "mrp": 95.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 85.0,
     "product_id": 24,
     "category_id": 16,
@@ -266,6 +290,7 @@
   {
     "mrp": 135.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 115.0,
     "product_id": 25,
     "category_id": 16,
@@ -277,6 +302,7 @@
   {
     "mrp": 75.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 65.0,
     "product_id": 26,
     "category_id": 16,
@@ -288,6 +314,7 @@
   {
     "mrp": 350.0,
     "tag": "Hot Deals",
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 27,
     "category_id": 16,
@@ -299,6 +326,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 28,
     "category_id": 16,
@@ -310,6 +338,7 @@
   {
     "mrp": 400.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 260.0,
     "product_id": 29,
     "category_id": 16,
@@ -321,6 +350,7 @@
   {
     "mrp": 500.0,
     "tag": "New Arrivals",
+    "size": "1 KGS",
     "sale_rate": 360.0,
     "product_id": 30,
     "category_id": 16,
@@ -332,50 +362,55 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 80.0,
     "product_id": 31,
     "category_id": 1,
     "product_name": "Non Brand Besan 1 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (3).jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/images.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 72.0,
     "product_id": 32,
     "category_id": 2,
     "product_name": "Black Chana 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-chana-250x250.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71hBEcMkxbL._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 78.0,
     "product_id": 33,
     "category_id": 2,
     "product_name": "Chana Dal 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chana-dal2.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/chana-dal-split-500x500.png",
     "primary_product_id": 0
   },
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 78.0,
     "product_id": 34,
     "category_id": 2,
     "product_name": "Chavli Big 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/chavali_600x.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41Q5LsTONnL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 90.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 80.0,
     "product_id": 35,
     "category_id": 2,
@@ -387,270 +422,295 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 90.0,
     "product_id": 36,
     "category_id": 2,
     "product_name": "Kabuli Chana Bold 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Kabuli-Chana.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1514805751_Chickpeas.png",
     "primary_product_id": 0
   },
   {
     "mrp": 85.0,
     "tag": "Sale",
+    "size": "1 KGS",
     "sale_rate": 75.0,
     "product_id": 37,
     "category_id": 2,
     "product_name": "Masoor Dal  1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51quiPzxLQL._AC_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-masoor-dal-1-kg-2-20200628.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 75.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 68.0,
     "product_id": 38,
     "category_id": 2,
     "product_name": "Masoor Whole 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-masoor-dal-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pick-n-cook-whole-masoor-1-kg-2-20200522.jpeg",
     "primary_product_id": 0
   },
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 85.0,
     "product_id": 39,
     "category_id": 2,
     "product_name": "Matki 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Turkish-Dew-Gram-Beans-Matki-.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41sE77XWLML.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 140.0,
     "product_id": 40,
     "category_id": 2,
     "product_name": "Moong Dal 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/moong-dhuli-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/moong-dal-1534500180-4204415.png",
     "primary_product_id": 0
   },
   {
     "mrp": 145.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 130.0,
     "product_id": 41,
     "category_id": 2,
     "product_name": "Moong Whole 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Sa_green_gram.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Green-Mung-dana.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 100.0,
     "product_id": 42,
     "category_id": 2,
     "product_name": "Rajma Red 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/red-kidney-beans-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kidney-beans-rajma-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 130.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 115.0,
     "product_id": 43,
     "category_id": 2,
     "product_name": "Rajma White 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/images-products-14-250x250.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/10000565-2_2-bb-royal-rajma-whitechitra.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 98.0,
     "product_id": 44,
     "category_id": 2,
     "product_name": "Kashmiri Rajma  1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/26491-10000476-3_1-bb-royal-rajma-kashmiri.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/4180jC-A-mL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 95.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 88.0,
     "product_id": 45,
     "category_id": 2,
     "product_name": "Sabudana 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/effective-health-benefits-of-sabudana.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sago-pearls-white-background_55610-464.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 85.0,
     "product_id": 46,
     "category_id": 2,
     "product_name": "Daliya 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/UT82VtKXHXXXXagOFbXB.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-roasted-chana-dal-bengal-gram-200-g-2-20200628.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 140.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 125.0,
     "product_id": 47,
     "category_id": 2,
     "product_name": "Singdana 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-groundnut-seed-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Senagalu.png",
     "primary_product_id": 0
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 95.0,
     "product_id": 48,
     "category_id": 2,
     "product_name": "Toor Dal 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Toordaal_1600x1250_6af14104-2911-4228-a7c2-9131faae8aaa_1600x.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kanpuri-arhar-dal-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 120.0,
     "product_id": 49,
     "category_id": 2,
     "product_name": "Toor Dal  Spl 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/arhar daal2.jpg3-800x800.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/loose-toor-dal-value-1-kg-0-20200522.png",
     "primary_product_id": 0
   },
   {
     "mrp": 140.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 120.0,
     "product_id": 50,
     "category_id": 2,
     "product_name": "Urad Dal 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/30010377-3_1-bb-popular-urad-dal-split.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41n4OCtddxL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 130.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 110.0,
     "product_id": 51,
     "category_id": 2,
     "product_name": "Urad Whole 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/black-gram-bean-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-urad-whole-500-g-2-20200628.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 100.0,
     "product_id": 52,
     "category_id": 2,
     "product_name": "Urad Dal Chilta 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/13297-1230473292.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-urad-dal-chilka-500-g-2-20200628.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 135.0,
     "product_id": 53,
     "category_id": 2,
     "product_name": "Green Vatana 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/9-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/800px_COLOURBOX4383369.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 85.0,
     "product_id": 54,
     "category_id": 2,
     "product_name": "White Vatana 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-peas-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41gcvhUFhnL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 100.0,
     "product_id": 55,
     "category_id": 2,
     "product_name": "Black Vatana 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/download.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/V7saEPg4Uc2vtkTI6RvrVuuNiUwghtrEQTyX9kry.jpeg",
     "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
     "tag": "Hot Deals",
+    "size": "1 KGS",
     "sale_rate": 900.0,
     "product_id": 56,
     "category_id": 3,
     "product_name": "Kaju Whole 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cashew-nuts-w180-rs-11550-per-10-kg-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/616p8XE5XxL._SL1280_new 2.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 950.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 900.0,
     "product_id": 57,
     "category_id": 3,
     "product_name": "Kaju Whole 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/w180-cashew-nut-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cashew-250x250 (1).jpg",
     "primary_product_id": 56
   },
   {
     "mrp": 900.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 850.0,
     "product_id": 58,
     "category_id": 3,
     "product_name": "Kaju Broken 2 pcs 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/images (2).jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/31IS7Ve2REL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 480.0,
     "product_id": 59,
     "category_id": 3,
     "product_name": "Kaju Broken 2 pcs 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/download (1).jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41ahlNC09lL.jpg",
     "primary_product_id": 58
   },
   {
     "mrp": 600.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 520.0,
     "product_id": 60,
     "category_id": 3,
@@ -662,6 +722,7 @@
   {
     "mrp": 200.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 160.0,
     "product_id": 61,
     "category_id": 3,
@@ -673,17 +734,19 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 185.0,
     "product_id": 62,
     "category_id": 3,
     "product_name": "Kaju Kani 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kaju-kani-baby-bits-bb2-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/KAJUKANI-Image-1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 320.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 210.0,
     "product_id": 63,
     "category_id": 3,
@@ -695,28 +758,31 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 64,
     "category_id": 3,
     "product_name": "Dates / Khajoor Red 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1526907084.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51CPnZFpmWL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
     "tag": "Sale",
+    "size": "500 KGS",
     "sale_rate": 950.0,
     "product_id": 65,
     "category_id": 3,
     "product_name": "Dates / Khajoor Red 500 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1526907084.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/b9065132522f9085127a030f64b804bc--islamic-studies-delicious-fruit.jpg",
     "primary_product_id": 64
   },
   {
     "mrp": 850.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 780.0,
     "product_id": 66,
     "category_id": 3,
@@ -728,17 +794,19 @@
   {
     "mrp": 1450.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 1280.0,
     "product_id": 67,
     "category_id": 3,
     "product_name": "Dates / Khajoor Black 500 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/712-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71eqttnaO7L._SL1178_new.jpg",
     "primary_product_id": 66
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 100.0,
     "product_id": 68,
     "category_id": 3,
@@ -750,6 +818,7 @@
   {
     "mrp": 2200.0,
     "tag": "Sale,Hot Deals",
+    "size": "500 KGS",
     "sale_rate": 1950.0,
     "product_id": 69,
     "category_id": 3,
@@ -761,17 +830,19 @@
   {
     "mrp": 1450.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 1280.0,
     "product_id": 70,
     "category_id": 3,
     "product_name": "Magaz 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/watermelon-seeds-tarbooz-magaz--500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71oC5Ggs-3L._SL1500_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 320.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 300.0,
     "product_id": 71,
     "category_id": 4,
@@ -783,17 +854,19 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 150.0,
     "product_id": 72,
     "category_id": 4,
     "product_name": "Badi Saunf 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/360272882-H.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Moti-Saunf-Fennel.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 180.0,
     "product_id": 73,
     "category_id": 4,
@@ -805,61 +878,67 @@
   {
     "mrp": 320.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 74,
     "category_id": 4,
     "product_name": "Bedki Mirchi / Chilly 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Bedki-Mirchi-501x501.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/BEDKI-CHILLYMIRCH-II-Image-1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 260.0,
     "product_id": 75,
     "category_id": 4,
     "product_name": "Bedki Mirchi  / Chilly 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Bedki-Mirchi-501x501.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/BEDKI-CHILLYMIRCH-II-Image-1.jpg",
     "primary_product_id": 74
   },
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 250.0,
     "product_id": 76,
     "category_id": 4,
     "product_name": "Pandi Mirchi / Chilly 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 260.0,
     "product_id": 77,
     "category_id": 4,
     "product_name": "Pandi Mirchi  / Chilly 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pandi-chilli-250x250_new.jpg",
     "primary_product_id": 76
   },
   {
     "mrp": 400.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 360.0,
     "product_id": 78,
     "category_id": 4,
     "product_name": "Kashmiri Mirchi / Chilly 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2019-09-23.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81RUXOsfZVL._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 240.0,
     "product_id": 79,
     "category_id": 4,
@@ -871,6 +950,7 @@
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 240.0,
     "product_id": 80,
     "category_id": 4,
@@ -882,6 +962,7 @@
   {
     "mrp": 35.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 25.0,
     "product_id": 81,
     "category_id": 4,
@@ -893,17 +974,19 @@
   {
     "mrp": 165.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 145.0,
     "product_id": 82,
     "category_id": 4,
     "product_name": "Dhania Whole / Corinder Seed test",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/coriander-seeds-1S-670.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 180.0,
     "product_id": 83,
     "category_id": 4,
@@ -915,6 +998,7 @@
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 230.0,
     "product_id": 84,
     "category_id": 4,
@@ -926,72 +1010,79 @@
   {
     "mrp": 380.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 320.0,
     "product_id": 85,
     "category_id": 4,
     "product_name": "Coconut Powder 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/50kg-coconut-powder-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/U2142a105c4bb4d138421f379826c65928.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 950.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 840.0,
     "product_id": 86,
     "category_id": 4,
     "product_name": "Coconut / Sukha khopra 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sukha_nariyal1_4709022_835x547-m.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41NX04RHOjL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 80.0,
     "product_id": 87,
     "category_id": 4,
     "product_name": "Coconut / Sukha khopra  250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/pic.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41sGf8YkbjL.jpg",
     "primary_product_id": 86
   },
   {
     "mrp": 1700.0,
     "tag": "Sale,Hot Deals",
+    "size": "1 KGS",
     "sale_rate": 1450.0,
     "product_id": 88,
     "category_id": 4,
     "product_name": "Coconut 1 pc",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717u9zWb36L._AC_SX569_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/717u9zWb36L._AC_SX569_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 470.0,
     "product_id": 89,
     "category_id": 4,
     "product_name": "Dhania Whole 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/coriander-seeds-1S-670.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 200.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 160.0,
     "product_id": 90,
     "category_id": 4,
     "product_name": "Dhania Whole 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/organic-coriander-seed-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/images.jpg",
     "primary_product_id": 89
   },
   {
     "mrp": 1100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 950.0,
     "product_id": 91,
     "category_id": 4,
@@ -1003,6 +1094,7 @@
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 450.0,
     "product_id": 92,
     "category_id": 4,
@@ -1014,138 +1106,151 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 245.0,
     "product_id": 93,
     "category_id": 4,
     "product_name": "Cumin Seeds /Jeera 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/66179752.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/pile-dried-cumin-seeds-white-background_55610-1363.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 320.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 265.0,
     "product_id": 94,
     "category_id": 4,
     "product_name": "Cumin Seeds /Jeera 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cumin-seed-jeera-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jeera-Cumin-in-a-Bowl_new.jpg",
     "primary_product_id": 93
   },
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 480.0,
     "product_id": 95,
     "category_id": 4,
     "product_name": "Carom Seeds / Ajwain 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/400__23520.1429520862.1280.1280.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6-Important-Ways-Carom-Seeds-Can-Benefit-You.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 68.0,
     "product_id": 96,
     "category_id": 4,
     "product_name": "Carom Seeds / Ajwain 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/ajwin-seed-oil.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/download_new.jpg",
     "primary_product_id": 95
   },
   {
     "mrp": 750.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 680.0,
     "product_id": 97,
     "category_id": 4,
     "product_name": "Black Pepper / Kali Miri 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71asMvnKkML._AC_SL1024_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71asMvnKkML._AC_SL1024_ew.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 128.0,
     "product_id": 98,
     "category_id": 4,
     "product_name": "Black Pepper / Kali Miri 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/81Lh-8pu27L._SL1500_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81Lh-8pu27L._SL1500_new.jpg",
     "primary_product_id": 97
   },
   {
     "mrp": 1000.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 890.0,
     "product_id": 99,
     "category_id": 4,
     "product_name": "Khus Khus 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/khakas-seed-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/khakas-seed-500x500_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 380.0,
     "product_id": 100,
     "category_id": 4,
     "product_name": "Khus Khus 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51ZVS1bCBkL._SX425_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51ZVS1bCBkL._SX425_new.jpg",
     "primary_product_id": 99
   },
   {
     "mrp": 650.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 550.0,
     "product_id": 101,
     "category_id": 4,
     "product_name": "Onion Seed / Kalonji 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalonji-seed-1559715222-4937291.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Nigella-Seeds-Kalonji-Farm2Kitchen.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 1650.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 1450.0,
     "product_id": 102,
     "category_id": 4,
     "product_name": "Onion Seed / Kalonji 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/kalonji-seeds-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/UTB84m0EXnzIXKJkSafVq6yWgXXaS.jpg_350x350_new.jpg",
     "primary_product_id": 101
   },
   {
     "mrp": 4850.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 4680.0,
     "product_id": 103,
     "category_id": 4,
     "product_name": "Shahi Jeera 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Shahi-Jeera.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51bmZgtKS2L._SX466_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 950.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 880.0,
     "product_id": 104,
     "category_id": 4,
     "product_name": "Shahi Jeera 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Shahi-Jeera.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Cumin-Black-Seed-Whole-Kala-Jeera-4560.jpg",
     "primary_product_id": 103
   },
   {
     "mrp": 2600.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 2280.0,
     "product_id": 105,
     "category_id": 4,
@@ -1157,105 +1262,115 @@
   {
     "mrp": 850.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 680.0,
     "product_id": 106,
     "category_id": 4,
     "product_name": "Black  Til 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2018-best-black-seasame-seed-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed_new1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 80.0,
     "product_id": 107,
     "category_id": 4,
     "product_name": "Black  Til 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Sesame-Seeds-black.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/31ZmNVYYtPL._QL70_ML2_.jpg",
     "primary_product_id": 106
   },
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 90.0,
     "product_id": 108,
     "category_id": 4,
     "product_name": "White Til 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sesame-seeds-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sesame-seed-bowl-white-background-new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 200.0,
     "product_id": 109,
     "category_id": 4,
     "product_name": "White Til 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/white-sesame-seeds-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71QYrURv3lL._SX569_new.jpg",
     "primary_product_id": 108
   },
   {
     "mrp": 850.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 780.0,
     "product_id": 110,
     "category_id": 4,
     "product_name": "Dry Ginger / Saunth 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/zingiber-officinale-dry-matter-220-rs-kg-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Dry-Ginger-Sukku.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 120.0,
     "product_id": 111,
     "category_id": 4,
     "product_name": "Dry Ginger / Saunth 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dry-ginger-28sunth-29-2c-zingiber-officinale-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41fnBxLzKgL.jpg",
     "primary_product_id": 110
   },
   {
     "mrp": 600.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 530.0,
     "product_id": 112,
     "category_id": 4,
     "product_name": "Mustard Seeds / Rai 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/V1A5473.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/brown-mustard-seeds-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 180.0,
     "product_id": 113,
     "category_id": 5,
     "product_name": "Haldi Powder 1 kgs",
     "category_name": "Masala Powdar",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717Gegl2IbL._SX466_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/717Gegl2IbL._SX466_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 180.0,
     "product_id": 114,
     "category_id": 5,
     "product_name": "Haldi Powder 250 gms",
     "category_name": "Masala Powdar",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/HALDI-POWDER-copy.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/BHATAR-HALDI-POWDER-500GM_new.jpg",
     "primary_product_id": 113
   },
   {
     "mrp": 440.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 340.0,
     "product_id": 115,
     "category_id": 5,
@@ -1267,6 +1382,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 160.0,
     "product_id": 116,
     "category_id": 5,
@@ -1278,6 +1394,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 117,
     "category_id": 5,
@@ -1289,6 +1406,7 @@
   {
     "mrp": 580.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 480.0,
     "product_id": 118,
     "category_id": 5,
@@ -1300,6 +1418,7 @@
   {
     "mrp": 380.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 119,
     "category_id": 5,
@@ -1311,6 +1430,7 @@
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 360.0,
     "product_id": 120,
     "category_id": 5,
@@ -1322,6 +1442,7 @@
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 360.0,
     "product_id": 121,
     "category_id": 5,
@@ -1333,6 +1454,7 @@
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 380.0,
     "product_id": 122,
     "category_id": 5,
@@ -1344,6 +1466,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 0.0,
     "product_id": 123,
     "category_id": 6,
@@ -1355,6 +1478,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 0.0,
     "product_id": 124,
     "category_id": 6,
@@ -1366,6 +1490,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 125,
     "category_id": 6,
@@ -1377,6 +1502,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 0.0,
     "product_id": 126,
     "category_id": 6,
@@ -1388,6 +1514,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 127,
     "category_id": 6,
@@ -1399,6 +1526,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 0.0,
     "product_id": 128,
     "category_id": 6,
@@ -1410,6 +1538,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 129,
     "category_id": 6,
@@ -1421,6 +1550,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 130,
     "category_id": 6,
@@ -1432,6 +1562,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 131,
     "category_id": 6,
@@ -1443,6 +1574,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 0.0,
     "product_id": 132,
     "category_id": 6,
@@ -1454,6 +1586,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 133,
     "category_id": 6,
@@ -1465,6 +1598,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 134,
     "category_id": 6,
@@ -1476,6 +1610,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 135,
     "category_id": 6,
@@ -1487,6 +1622,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 136,
     "category_id": 6,
@@ -1498,6 +1634,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 137,
     "category_id": 6,
@@ -1509,6 +1646,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 138,
     "category_id": 6,
@@ -1520,6 +1658,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 139,
     "category_id": 6,
@@ -1531,6 +1670,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 140,
     "category_id": 6,
@@ -1542,6 +1682,7 @@
   {
     "mrp": 560.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 540.0,
     "product_id": 141,
     "category_id": 7,
@@ -1553,6 +1694,7 @@
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 530.0,
     "product_id": 142,
     "category_id": 7,
@@ -1564,6 +1706,7 @@
   {
     "mrp": 570.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 520.0,
     "product_id": 143,
     "category_id": 7,
@@ -1575,6 +1718,7 @@
   {
     "mrp": 310.0,
     "tag": "New Arrivals",
+    "size": "500 TIN",
     "sale_rate": 280.0,
     "product_id": 144,
     "category_id": 7,
@@ -1586,6 +1730,7 @@
   {
     "mrp": 505.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 490.0,
     "product_id": 145,
     "category_id": 7,
@@ -1597,6 +1742,7 @@
   {
     "mrp": 540.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 500.0,
     "product_id": 146,
     "category_id": 7,
@@ -1608,6 +1754,7 @@
   {
     "mrp": 2100.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 1700.0,
     "product_id": 147,
     "category_id": 7,
@@ -1619,6 +1766,7 @@
   {
     "mrp": 2000.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 1600.0,
     "product_id": 148,
     "category_id": 7,
@@ -1630,6 +1778,7 @@
   {
     "mrp": 2100.0,
     "tag": "Sale",
+    "size": "15 TIN",
     "sale_rate": 1600.0,
     "product_id": 149,
     "category_id": 7,
@@ -1641,6 +1790,7 @@
   {
     "mrp": 2000.0,
     "tag": null,
+    "size": "15 BTL ",
     "sale_rate": 1650.0,
     "product_id": 150,
     "category_id": 7,
@@ -1652,6 +1802,7 @@
   {
     "mrp": 2075.0,
     "tag": "Hot Deals",
+    "size": "15 BTL ",
     "sale_rate": 1700.0,
     "product_id": 151,
     "category_id": 7,
@@ -1663,6 +1814,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "15 BTL ",
     "sale_rate": 120.0,
     "product_id": 152,
     "category_id": 7,
@@ -1674,6 +1826,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "15 PKT ",
     "sale_rate": 120.0,
     "product_id": 153,
     "category_id": 7,
@@ -1685,6 +1838,7 @@
   {
     "mrp": 560.0,
     "tag": null,
+    "size": "15 BTL ",
     "sale_rate": 380.0,
     "product_id": 154,
     "category_id": 7,
@@ -1696,6 +1850,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "15 BTL ",
     "sale_rate": 250.0,
     "product_id": 155,
     "category_id": 7,
@@ -1707,6 +1862,7 @@
   {
     "mrp": 65.0,
     "tag": null,
+    "size": "100 TIN",
     "sale_rate": 45.0,
     "product_id": 156,
     "category_id": 8,
@@ -1718,6 +1874,7 @@
   {
     "mrp": 65.0,
     "tag": null,
+    "size": "100 TIN",
     "sale_rate": 45.0,
     "product_id": 157,
     "category_id": 8,
@@ -1729,6 +1886,7 @@
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "100 TIN",
     "sale_rate": 65.0,
     "product_id": 158,
     "category_id": 8,
@@ -1740,6 +1898,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "100 TIN",
     "sale_rate": 65.0,
     "product_id": 159,
     "category_id": 8,
@@ -1751,6 +1910,7 @@
   {
     "mrp": 30.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 20.0,
     "product_id": 160,
     "category_id": 8,
@@ -1762,6 +1922,7 @@
   {
     "mrp": 40.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 25.0,
     "product_id": 161,
     "category_id": 8,
@@ -1773,6 +1934,7 @@
   {
     "mrp": 85.0,
     "tag": "New Arrivals",
+    "size": "1 PKT ",
     "sale_rate": 60.0,
     "product_id": 162,
     "category_id": 8,
@@ -1784,6 +1946,7 @@
   {
     "mrp": 450.0,
     "tag": "Sale",
+    "size": "1 PKT ",
     "sale_rate": 220.0,
     "product_id": 163,
     "category_id": 8,
@@ -1795,6 +1958,7 @@
   {
     "mrp": 220.0,
     "tag": "Hot Deals,New Arrivals",
+    "size": "1 PKT ",
     "sale_rate": 210.0,
     "product_id": 164,
     "category_id": 9,
@@ -1806,6 +1970,7 @@
   {
     "mrp": 45.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 25.0,
     "product_id": 165,
     "category_id": 34,
@@ -1817,6 +1982,7 @@
   {
     "mrp": 45.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 25.0,
     "product_id": 166,
     "category_id": 34,
@@ -1828,6 +1994,7 @@
   {
     "mrp": 285.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 250.0,
     "product_id": 167,
     "category_id": 8,
@@ -1839,6 +2006,7 @@
   {
     "mrp": 285.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 250.0,
     "product_id": 168,
     "category_id": 8,
@@ -1850,6 +2018,7 @@
   {
     "mrp": 285.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 250.0,
     "product_id": 169,
     "category_id": 8,
@@ -1861,6 +2030,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 145.0,
     "product_id": 170,
     "category_id": 8,
@@ -1872,6 +2042,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 165.0,
     "product_id": 171,
     "category_id": 8,
@@ -1883,6 +2054,7 @@
   {
     "mrp": 240.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 185.0,
     "product_id": 172,
     "category_id": 8,
@@ -1894,6 +2066,7 @@
   {
     "mrp": 135.0,
     "tag": null,
+    "size": "100 BTL ",
     "sale_rate": 115.0,
     "product_id": 173,
     "category_id": 8,
@@ -1905,6 +2078,7 @@
   {
     "mrp": 160.0,
     "tag": null,
+    "size": "250 BTL ",
     "sale_rate": 115.0,
     "product_id": 174,
     "category_id": 8,
@@ -1916,6 +2090,7 @@
   {
     "mrp": 135.0,
     "tag": null,
+    "size": "100 BTL ",
     "sale_rate": 115.0,
     "product_id": 175,
     "category_id": 8,
@@ -1927,6 +2102,7 @@
   {
     "mrp": 750.0,
     "tag": null,
+    "size": "250 BTL ",
     "sale_rate": 600.0,
     "product_id": 176,
     "category_id": 8,
@@ -1938,6 +2114,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "200 PKT ",
     "sale_rate": 75.0,
     "product_id": 177,
     "category_id": 8,
@@ -1949,6 +2126,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 185.0,
     "product_id": 178,
     "category_id": 34,
@@ -1960,6 +2138,7 @@
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 440.0,
     "product_id": 179,
     "category_id": 34,
@@ -1971,6 +2150,7 @@
   {
     "mrp": 20.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 15.0,
     "product_id": 180,
     "category_id": 34,
@@ -1982,6 +2162,7 @@
   {
     "mrp": 20.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 19.0,
     "product_id": 181,
     "category_id": 34,
@@ -1993,6 +2174,7 @@
   {
     "mrp": 165.0,
     "tag": null,
+    "size": "1 JAR",
     "sale_rate": 140.0,
     "product_id": 182,
     "category_id": 34,
@@ -2004,6 +2186,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "5 JAR",
     "sale_rate": 220.0,
     "product_id": 183,
     "category_id": 34,
@@ -2015,6 +2198,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "5 JAR",
     "sale_rate": 240.0,
     "product_id": 184,
     "category_id": 34,
@@ -2026,6 +2210,7 @@
   {
     "mrp": 45.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 42.0,
     "product_id": 185,
     "category_id": 34,
@@ -2037,6 +2222,7 @@
   {
     "mrp": 55.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 48.0,
     "product_id": 186,
     "category_id": 34,
@@ -2048,6 +2234,7 @@
   {
     "mrp": 70.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 65.0,
     "product_id": 187,
     "category_id": 34,
@@ -2059,6 +2246,7 @@
   {
     "mrp": 1.2,
     "tag": null,
+    "size": "5 PKT ",
     "sale_rate": 0.9,
     "product_id": 188,
     "category_id": 34,
@@ -2070,6 +2258,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 60.0,
     "product_id": 189,
     "category_id": 34,
@@ -2081,6 +2270,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 60.0,
     "product_id": 190,
     "category_id": 34,
@@ -2092,6 +2282,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 85.0,
     "product_id": 191,
     "category_id": 34,
@@ -2103,6 +2294,7 @@
   {
     "mrp": 60.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 44.0,
     "product_id": 192,
     "category_id": 34,
@@ -2114,6 +2306,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "200 PKT ",
     "sale_rate": 220.0,
     "product_id": 193,
     "category_id": 9,
@@ -2125,6 +2318,7 @@
   {
     "mrp": 960.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 860.0,
     "product_id": 194,
     "category_id": 9,
@@ -2136,6 +2330,7 @@
   {
     "mrp": 860.0,
     "tag": "Sale,Hot Deals",
+    "size": "950 KGS",
     "sale_rate": 850.0,
     "product_id": 195,
     "category_id": 9,
@@ -2147,6 +2342,7 @@
   {
     "mrp": 1000.0,
     "tag": null,
+    "size": "985 KGS",
     "sale_rate": 900.0,
     "product_id": 196,
     "category_id": 9,
@@ -2158,6 +2354,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 220.0,
     "product_id": 197,
     "category_id": 9,
@@ -2169,6 +2366,7 @@
   {
     "mrp": 165.0,
     "tag": null,
+    "size": "800 TIN",
     "sale_rate": 100.0,
     "product_id": 198,
     "category_id": 10,
@@ -2180,6 +2378,7 @@
   {
     "mrp": 190.0,
     "tag": null,
+    "size": "800 TIN",
     "sale_rate": 125.0,
     "product_id": 199,
     "category_id": 10,
@@ -2191,6 +2390,7 @@
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "850 TIN",
     "sale_rate": 70.0,
     "product_id": 200,
     "category_id": 10,
@@ -2202,6 +2402,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "850 TIN",
     "sale_rate": 55.0,
     "product_id": 201,
     "category_id": 10,
@@ -2213,6 +2414,7 @@
   {
     "mrp": 110.0,
     "tag": null,
+    "size": "550 TIN",
     "sale_rate": 70.0,
     "product_id": 202,
     "category_id": 10,
@@ -2224,6 +2426,7 @@
   {
     "mrp": 130.0,
     "tag": null,
+    "size": "840 TIN",
     "sale_rate": 70.0,
     "product_id": 203,
     "category_id": 10,
@@ -2235,6 +2438,7 @@
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "850 TIN",
     "sale_rate": 58.0,
     "product_id": 204,
     "category_id": 10,
@@ -2246,6 +2450,7 @@
   {
     "mrp": 225.0,
     "tag": null,
+    "size": "850 TIN",
     "sale_rate": 140.0,
     "product_id": 205,
     "category_id": 10,
@@ -2257,6 +2462,7 @@
   {
     "mrp": 130.0,
     "tag": null,
+    "size": "800 TIN",
     "sale_rate": 68.0,
     "product_id": 206,
     "category_id": 10,
@@ -2268,6 +2474,7 @@
   {
     "mrp": 195.0,
     "tag": null,
+    "size": "850 TIN",
     "sale_rate": 125.0,
     "product_id": 207,
     "category_id": 10,
@@ -2279,6 +2486,7 @@
   {
     "mrp": 70.0,
     "tag": null,
+    "size": "450 TIN",
     "sale_rate": 55.0,
     "product_id": 208,
     "category_id": 10,
@@ -2290,6 +2498,7 @@
   {
     "mrp": 130.0,
     "tag": null,
+    "size": "850 TIN",
     "sale_rate": 85.0,
     "product_id": 209,
     "category_id": 10,
@@ -2301,17 +2510,19 @@
   {
     "mrp": 105.0,
     "tag": null,
+    "size": "415 TIN",
     "sale_rate": 50.0,
     "product_id": 210,
     "category_id": 10,
     "product_name": "Baked Beans 415 gm",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71IrazQm1qL._SL1400_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71zJoFuDdSL._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 145.0,
     "tag": null,
+    "size": "560 TIN",
     "sale_rate": 85.0,
     "product_id": 211,
     "category_id": 10,
@@ -2323,6 +2534,7 @@
   {
     "mrp": 140.0,
     "tag": null,
+    "size": "550 TIN",
     "sale_rate": 70.0,
     "product_id": 212,
     "category_id": 10,
@@ -2334,6 +2546,7 @@
   {
     "mrp": 140.0,
     "tag": null,
+    "size": "400 TIN",
     "sale_rate": 80.0,
     "product_id": 213,
     "category_id": 10,
@@ -2345,6 +2558,7 @@
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 85.0,
     "product_id": 214,
     "category_id": 10,
@@ -2356,6 +2570,7 @@
   {
     "mrp": 185.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 140.0,
     "product_id": 215,
     "category_id": 10,
@@ -2367,72 +2582,79 @@
   {
     "mrp": 140.0,
     "tag": null,
+    "size": "670 BTL ",
     "sale_rate": 85.0,
     "product_id": 216,
     "category_id": 10,
     "product_name": "Jalapeno Slice 670 gm",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/jalapeno-slices-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61RsEvJ5eoL._SL1000_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "2.9 TIN",
     "sale_rate": 260.0,
     "product_id": 217,
     "category_id": 10,
     "product_name": "Jalapeno Slice  2.9 kg",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71uYRbsHNsL._SX569_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71uYRbsHNsL._SX569_ (1).jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 165.0,
     "tag": null,
+    "size": "450 BTL ",
     "sale_rate": 115.0,
     "product_id": 218,
     "category_id": 10,
     "product_name": "Green Olive Whole 450 gm",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/35_Green-Whole-Olives-600g_EN-1-1.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/715u3UGe+BL._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 115.0,
     "product_id": 219,
     "category_id": 10,
     "product_name": "Green Oliv Slice ",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/11975_0.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71N73tXsPgL._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 115.0,
     "product_id": 220,
     "category_id": 10,
     "product_name": "Black Olive Whole",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Olicoop-Black-Whole-Olives-450g-SDL886798009-1-2f9b8.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Z6E09QisL._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 115.0,
     "product_id": 221,
     "category_id": 10,
     "product_name": "Black Olive Slice ",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1Olicoop_1.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ml7N94A7L._SX569_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 70.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 50.0,
     "product_id": 222,
     "category_id": 10,
@@ -2444,6 +2666,7 @@
   {
     "mrp": 45.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 25.0,
     "product_id": 223,
     "category_id": 10,
@@ -2455,6 +2678,7 @@
   {
     "mrp": 40.0,
     "tag": null,
+    "size": "500 BTL ",
     "sale_rate": 28.0,
     "product_id": 224,
     "category_id": 10,
@@ -2466,6 +2690,7 @@
   {
     "mrp": 40.0,
     "tag": null,
+    "size": "500 BTL ",
     "sale_rate": 28.0,
     "product_id": 225,
     "category_id": 10,
@@ -2477,28 +2702,31 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 240.0,
     "product_id": 226,
     "category_id": 10,
     "product_name": "Magi Seasoning ",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71X5ymHpUdL._SX425_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71Q3mUb+f8L._SL1500_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 650.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 325.0,
     "product_id": 227,
     "category_id": 10,
     "product_name": "Guruji Thandai",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/619XPQDAcLL._SX569_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Guruji-thandai-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 JAR",
     "sale_rate": 150.0,
     "product_id": 228,
     "category_id": 10,
@@ -2510,6 +2738,7 @@
   {
     "mrp": 1.0,
     "tag": null,
+    "size": "8 PKT ",
     "sale_rate": 0.85,
     "product_id": 229,
     "category_id": 11,
@@ -2521,6 +2750,7 @@
   {
     "mrp": 120.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 78.0,
     "product_id": 230,
     "category_id": 11,
@@ -2532,6 +2762,7 @@
   {
     "mrp": 95.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 66.0,
     "product_id": 231,
     "category_id": 11,
@@ -2543,6 +2774,7 @@
   {
     "mrp": 285.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 220.0,
     "product_id": 232,
     "category_id": 11,
@@ -2554,6 +2786,7 @@
   {
     "mrp": 325.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 285.0,
     "product_id": 233,
     "category_id": 10,
@@ -2565,6 +2798,7 @@
   {
     "mrp": 160.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 130.0,
     "product_id": 234,
     "category_id": 11,
@@ -2576,6 +2810,7 @@
   {
     "mrp": 155.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 125.0,
     "product_id": 235,
     "category_id": 11,
@@ -2587,6 +2822,7 @@
   {
     "mrp": 65.0,
     "tag": null,
+    "size": "60 BTL ",
     "sale_rate": 58.0,
     "product_id": 236,
     "category_id": 11,
@@ -2598,6 +2834,7 @@
   {
     "mrp": 145.0,
     "tag": null,
+    "size": "60 BTL ",
     "sale_rate": 120.0,
     "product_id": 237,
     "category_id": 11,
@@ -2609,6 +2846,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 165.0,
     "product_id": 238,
     "category_id": 11,
@@ -2620,6 +2858,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 220.0,
     "product_id": 239,
     "category_id": 11,
@@ -2631,6 +2870,7 @@
   {
     "mrp": 185.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 155.0,
     "product_id": 240,
     "category_id": 10,
@@ -2642,6 +2882,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "500 BTL ",
     "sale_rate": 165.0,
     "product_id": 241,
     "category_id": 11,
@@ -2653,6 +2894,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "340 BTL ",
     "sale_rate": 165.0,
     "product_id": 242,
     "category_id": 11,
@@ -2664,6 +2906,7 @@
   {
     "mrp": 230.0,
     "tag": null,
+    "size": "340 BTL ",
     "sale_rate": 165.0,
     "product_id": 243,
     "category_id": 11,
@@ -2675,6 +2918,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "340 BTL ",
     "sale_rate": 175.0,
     "product_id": 244,
     "category_id": 11,
@@ -2686,6 +2930,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "400 BTL ",
     "sale_rate": 165.0,
     "product_id": 245,
     "category_id": 11,
@@ -2697,6 +2942,7 @@
   {
     "mrp": 70.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 50.0,
     "product_id": 246,
     "category_id": 11,
@@ -2708,6 +2954,7 @@
   {
     "mrp": 75.0,
     "tag": null,
+    "size": "200 BTL ",
     "sale_rate": 50.0,
     "product_id": 247,
     "category_id": 11,
@@ -2719,6 +2966,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 BTL ",
     "sale_rate": 0.0,
     "product_id": 248,
     "category_id": 11,
@@ -2730,6 +2978,7 @@
   {
     "mrp": 480.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 380.0,
     "product_id": 249,
     "category_id": 11,
@@ -2741,6 +2990,7 @@
   {
     "mrp": 240.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 165.0,
     "product_id": 250,
     "category_id": 11,
@@ -2752,6 +3002,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 155.0,
     "product_id": 251,
     "category_id": 11,
@@ -2763,6 +3014,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 185.0,
     "product_id": 252,
     "category_id": 11,
@@ -2774,6 +3026,7 @@
   {
     "mrp": 185.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 125.0,
     "product_id": 253,
     "category_id": 11,
@@ -2785,6 +3038,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 165.0,
     "product_id": 254,
     "category_id": 11,
@@ -2796,6 +3050,7 @@
   {
     "mrp": 600.0,
     "tag": null,
+    "size": "2.8 TIN",
     "sale_rate": 490.0,
     "product_id": 256,
     "category_id": 11,
@@ -2807,6 +3062,7 @@
   {
     "mrp": 240.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 165.0,
     "product_id": 257,
     "category_id": 11,
@@ -2818,6 +3074,7 @@
   {
     "mrp": 1350.0,
     "tag": null,
+    "size": "10 KGS",
     "sale_rate": 950.0,
     "product_id": 258,
     "category_id": 1,
@@ -2829,6 +3086,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "500 BTL ",
     "sale_rate": 170.0,
     "product_id": 260,
     "category_id": 10,
@@ -2840,6 +3098,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 260.0,
     "product_id": 261,
     "category_id": 11,
@@ -2851,6 +3110,7 @@
   {
     "mrp": 75.0,
     "tag": null,
+    "size": "700 BTL ",
     "sale_rate": 45.0,
     "product_id": 262,
     "category_id": 11,
@@ -2862,6 +3122,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "700 BTL ",
     "sale_rate": 45.0,
     "product_id": 263,
     "category_id": 11,
@@ -2873,6 +3134,7 @@
   {
     "mrp": 70.0,
     "tag": null,
+    "size": "700 BTL ",
     "sale_rate": 45.0,
     "product_id": 264,
     "category_id": 11,
@@ -2884,6 +3146,7 @@
   {
     "mrp": 285.0,
     "tag": null,
+    "size": "5 CAN",
     "sale_rate": 195.0,
     "product_id": 265,
     "category_id": 11,
@@ -2895,6 +3158,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "5 CAN",
     "sale_rate": 195.0,
     "product_id": 266,
     "category_id": 11,
@@ -2906,6 +3170,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "5 CAN",
     "sale_rate": 230.0,
     "product_id": 267,
     "category_id": 11,
@@ -2917,6 +3182,7 @@
   {
     "mrp": 185.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 165.0,
     "product_id": 268,
     "category_id": 12,
@@ -2928,6 +3194,7 @@
   {
     "mrp": 185.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 165.0,
     "product_id": 269,
     "category_id": 12,
@@ -2939,6 +3206,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 185.0,
     "product_id": 270,
     "category_id": 12,
@@ -2950,6 +3218,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 185.0,
     "product_id": 271,
     "category_id": 12,
@@ -2961,6 +3230,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 220.0,
     "product_id": 272,
     "category_id": 12,
@@ -2972,6 +3242,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 230.0,
     "product_id": 273,
     "category_id": 12,
@@ -2983,6 +3254,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 220.0,
     "product_id": 274,
     "category_id": 12,
@@ -2994,6 +3266,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 220.0,
     "product_id": 275,
     "category_id": 12,
@@ -3005,6 +3278,7 @@
   {
     "mrp": 300.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 220.0,
     "product_id": 276,
     "category_id": 12,
@@ -3016,6 +3290,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 85.0,
     "product_id": 277,
     "category_id": 13,
@@ -3027,6 +3302,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 85.0,
     "product_id": 278,
     "category_id": 13,
@@ -3038,6 +3314,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 100.0,
     "product_id": 279,
     "category_id": 13,
@@ -3049,6 +3326,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 100.0,
     "product_id": 280,
     "category_id": 13,
@@ -3060,6 +3338,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 281,
     "category_id": 13,
@@ -3071,6 +3350,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 85.0,
     "product_id": 282,
     "category_id": 13,
@@ -3082,6 +3362,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 283,
     "category_id": 13,
@@ -3093,6 +3374,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 284,
     "category_id": 13,
@@ -3104,6 +3386,7 @@
   {
     "mrp": 200.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 150.0,
     "product_id": 285,
     "category_id": 13,
@@ -3115,6 +3398,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 286,
     "category_id": 13,
@@ -3126,6 +3410,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 CAN",
     "sale_rate": 120.0,
     "product_id": 287,
     "category_id": 13,
@@ -3137,6 +3422,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 85.0,
     "product_id": 288,
     "category_id": 13,
@@ -3148,6 +3434,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 85.0,
     "product_id": 289,
     "category_id": 13,
@@ -3159,6 +3446,7 @@
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "5 CAN",
     "sale_rate": 200.0,
     "product_id": 290,
     "category_id": 13,
@@ -3170,6 +3458,7 @@
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 460.0,
     "product_id": 291,
     "category_id": 14,
@@ -3181,6 +3470,7 @@
   {
     "mrp": 380.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 340.0,
     "product_id": 292,
     "category_id": 14,
@@ -3192,6 +3482,7 @@
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 340.0,
     "product_id": 293,
     "category_id": 14,
@@ -3203,6 +3494,7 @@
   {
     "mrp": 380.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 340.0,
     "product_id": 294,
     "category_id": 14,
@@ -3214,6 +3506,7 @@
   {
     "mrp": 75.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 50.0,
     "product_id": 295,
     "category_id": 14,
@@ -3225,6 +3518,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 TIN",
     "sale_rate": 280.0,
     "product_id": 296,
     "category_id": 14,
@@ -3236,6 +3530,7 @@
   {
     "mrp": 165.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 297,
     "category_id": 14,
@@ -3247,6 +3542,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 298,
     "category_id": 14,
@@ -3258,6 +3554,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "500 TIN",
     "sale_rate": 165.0,
     "product_id": 299,
     "category_id": 14,
@@ -3269,6 +3566,7 @@
   {
     "mrp": 660.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 595.0,
     "product_id": 300,
     "category_id": 14,
@@ -3280,6 +3578,7 @@
   {
     "mrp": 240.0,
     "tag": "Sale",
+    "size": "500 TIN",
     "sale_rate": 160.0,
     "product_id": 301,
     "category_id": 14,
@@ -3291,6 +3590,7 @@
   {
     "mrp": 680.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 580.0,
     "product_id": 302,
     "category_id": 14,
@@ -3302,6 +3602,7 @@
   {
     "mrp": 550.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 460.0,
     "product_id": 303,
     "category_id": 14,
@@ -3313,6 +3614,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 TIN",
     "sale_rate": 65.0,
     "product_id": 304,
     "category_id": 14,
@@ -3324,6 +3626,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 85.0,
     "product_id": 305,
     "category_id": 14,
@@ -3335,6 +3638,7 @@
   {
     "mrp": 45.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 34.0,
     "product_id": 306,
     "category_id": 14,
@@ -3346,6 +3650,7 @@
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 185.0,
     "product_id": 307,
     "category_id": 14,
@@ -3357,6 +3662,7 @@
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "500 BTL ",
     "sale_rate": 220.0,
     "product_id": 308,
     "category_id": 14,
@@ -3368,6 +3674,7 @@
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 240.0,
     "product_id": 309,
     "category_id": 14,
@@ -3379,6 +3686,7 @@
   {
     "mrp": 240.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 165.0,
     "product_id": 310,
     "category_id": 14,
@@ -3390,6 +3698,7 @@
   {
     "mrp": 50.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 36.0,
     "product_id": 311,
     "category_id": 14,
@@ -3401,6 +3710,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 280.0,
     "product_id": 312,
     "category_id": 14,
@@ -3412,6 +3722,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 240.0,
     "product_id": 313,
     "category_id": 14,
@@ -3423,6 +3734,7 @@
   {
     "mrp": 130.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 100.0,
     "product_id": 314,
     "category_id": 14,
@@ -3434,17 +3746,19 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 315,
     "category_id": 15,
     "product_name": "Real Orange 1 Box",
     "category_name": "Real juice ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (4).jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81qzLh51sRL._SY606_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 100.0,
     "tag": "Sale",
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 316,
     "category_id": 15,
@@ -3456,6 +3770,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 317,
     "category_id": 15,
@@ -3467,6 +3782,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 318,
     "category_id": 15,
@@ -3478,6 +3794,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 319,
     "category_id": 15,
@@ -3489,6 +3806,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 320,
     "category_id": 15,
@@ -3500,6 +3818,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 321,
     "category_id": 15,
@@ -3511,6 +3830,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 322,
     "category_id": 15,
@@ -3522,6 +3842,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 90.0,
     "product_id": 323,
     "category_id": 15,
@@ -3533,6 +3854,7 @@
   {
     "mrp": 110.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 100.0,
     "product_id": 324,
     "category_id": 15,
@@ -3544,6 +3866,7 @@
   {
     "mrp": 110.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 100.0,
     "product_id": 325,
     "category_id": 15,
@@ -3555,6 +3878,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 65.0,
     "product_id": 326,
     "category_id": 17,
@@ -3566,6 +3890,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 65.0,
     "product_id": 327,
     "category_id": 17,
@@ -3577,6 +3902,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 65.0,
     "product_id": 328,
     "category_id": 17,
@@ -3588,6 +3914,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 65.0,
     "product_id": 329,
     "category_id": 17,
@@ -3599,6 +3926,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 65.0,
     "product_id": 330,
     "category_id": 17,
@@ -3610,6 +3938,7 @@
   {
     "mrp": 200.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 0.0,
     "product_id": 331,
     "category_id": 17,
@@ -3621,6 +3950,7 @@
   {
     "mrp": 200.0,
     "tag": null,
+    "size": "500 PKT ",
     "sale_rate": 145.0,
     "product_id": 332,
     "category_id": 17,
@@ -3632,17 +3962,19 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 PKT ",
     "sale_rate": 220.0,
     "product_id": 333,
     "category_id": 10,
     "product_name": "Pinko Bread Crumb",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/panko-breadcrumbs.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/panko-breadcrumbs (1).jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 160.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 100.0,
     "product_id": 334,
     "category_id": 13,
@@ -3654,17 +3986,19 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 160.0,
     "product_id": 335,
     "category_id": 10,
     "product_name": "Blackben Seed ",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/progresso-black-beans.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/GUEST_75ede16d-431c-47f4-b62a-d72b93f317a8.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 68.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 50.0,
     "product_id": 336,
     "category_id": 16,
@@ -3676,6 +4010,7 @@
   {
     "mrp": 600.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 500.0,
     "product_id": 337,
     "category_id": 10,
@@ -3687,17 +4022,19 @@
   {
     "mrp": 360.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 260.0,
     "product_id": 338,
     "category_id": 10,
     "product_name": "Balsanic Vinigar",
     "category_name": "Tin & Canned",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/22798.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/21061-1w470h470_Balsamic.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 340.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 240.0,
     "product_id": 339,
     "category_id": 10,
@@ -3709,6 +4046,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 260.0,
     "product_id": 340,
     "category_id": 10,
@@ -3720,6 +4058,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 280.0,
     "product_id": 341,
     "category_id": 10,
@@ -3731,6 +4070,7 @@
   {
     "mrp": 55.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 47.0,
     "product_id": 342,
     "category_id": 1,
@@ -3742,6 +4082,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "700 BTL ",
     "sale_rate": 100.0,
     "product_id": 367,
     "category_id": 13,
@@ -3753,6 +4094,7 @@
   {
     "mrp": 160.0,
     "tag": null,
+    "size": "700 BTL ",
     "sale_rate": 100.0,
     "product_id": 368,
     "category_id": 13,
@@ -3764,6 +4106,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 100.0,
     "product_id": 369,
     "category_id": 13,
@@ -3775,6 +4118,7 @@
   {
     "mrp": 80.0,
     "tag": "Hot Deals",
+    "size": "5 KGS",
     "sale_rate": 60.0,
     "product_id": 377,
     "category_id": 16,
@@ -3786,6 +4130,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 105.0,
     "product_id": 378,
     "category_id": 7,
@@ -3797,6 +4142,7 @@
   {
     "mrp": 230.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 150.0,
     "product_id": 379,
     "category_id": 7,
@@ -3808,6 +4154,7 @@
   {
     "mrp": 1800.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 1450.0,
     "product_id": 380,
     "category_id": 7,
@@ -3819,6 +4166,7 @@
   {
     "mrp": 200.0,
     "tag": "Hot Deals,Sale,New Arrivals",
+    "size": "1 BTL ",
     "sale_rate": 150.0,
     "product_id": 381,
     "category_id": 7,
@@ -3830,6 +4178,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 250.0,
     "product_id": 382,
     "category_id": 12,
@@ -3841,6 +4190,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 250.0,
     "product_id": 384,
     "category_id": 12,
@@ -3852,6 +4202,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 250.0,
     "product_id": 385,
     "category_id": 12,
@@ -3863,6 +4214,7 @@
   {
     "mrp": 380.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 3000.0,
     "product_id": 386,
     "category_id": 12,
@@ -3874,6 +4226,7 @@
   {
     "mrp": 350.0,
     "tag": null,
+    "size": "750 BTL ",
     "sale_rate": 250.0,
     "product_id": 387,
     "category_id": 12,
@@ -3885,6 +4238,7 @@
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "50 KGS",
     "sale_rate": 2250.0,
     "product_id": 389,
     "category_id": 1,
@@ -3896,17 +4250,19 @@
   {
     "mrp": 50.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 40.0,
     "product_id": 390,
     "category_id": 1,
     "product_name": "Idli Rava 1 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Idli-Rava-Coarse.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81PsPlxi0eL._SL1500_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 60.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 40.0,
     "product_id": 391,
     "category_id": 1,
@@ -3918,17 +4274,19 @@
   {
     "mrp": 65.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 55.0,
     "product_id": 392,
     "category_id": 1,
     "product_name": "Poha 1 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Jada-Poha501x501.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/818FNNnOK2L._SX569_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 500.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 200.0,
     "product_id": 393,
     "category_id": 16,
@@ -3940,6 +4298,7 @@
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 65.0,
     "product_id": 394,
     "category_id": 16,
@@ -3951,6 +4310,7 @@
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 65.0,
     "product_id": 395,
     "category_id": 16,
@@ -3962,6 +4322,7 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 70.0,
     "product_id": 396,
     "category_id": 16,
@@ -3973,6 +4334,7 @@
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 65.0,
     "product_id": 397,
     "category_id": 16,
@@ -3984,6 +4346,7 @@
   {
     "mrp": 75.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 60.0,
     "product_id": 398,
     "category_id": 16,
@@ -3995,6 +4358,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "25 KGS",
     "sale_rate": 65.0,
     "product_id": 404,
     "category_id": 16,
@@ -4006,6 +4370,7 @@
   {
     "mrp": 85.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 65.0,
     "product_id": 405,
     "category_id": 16,
@@ -4017,6 +4382,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 125.0,
     "product_id": 408,
     "category_id": 16,
@@ -4028,6 +4394,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 130.0,
     "product_id": 409,
     "category_id": 16,
@@ -4039,6 +4406,7 @@
   {
     "mrp": 35.0,
     "tag": null,
+    "size": "5 KGS",
     "sale_rate": 28.0,
     "product_id": 410,
     "category_id": 16,
@@ -4050,6 +4418,7 @@
   {
     "mrp": 40.0,
     "tag": null,
+    "size": "30 KGS",
     "sale_rate": 32.0,
     "product_id": 411,
     "category_id": 16,
@@ -4061,138 +4430,151 @@
   {
     "mrp": 100.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 85.0,
     "product_id": 412,
     "category_id": 2,
     "product_name": "Methi Seeds 1 kgs",
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/ad014.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/METHI-DANA-1KG.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 250.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 210.0,
     "product_id": 413,
     "category_id": 3,
     "product_name": "Kesar Pure 1 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/SERAVALI-KESAR-Halg-gm-Image-1.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/SERAVALI-KESAR-Halg-gm-Image_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 180.0,
     "product_id": 414,
     "category_id": 3,
     "product_name": "Kishmish Golden 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2421d1875129b6780fd8b47451c7de1c.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/kismis-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 190.0,
     "product_id": 415,
     "category_id": 3,
     "product_name": "Kishmish Golden 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/2421d1875129b6780fd8b47451c7de1c.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Kismis-750x750.jpg",
     "primary_product_id": 414
   },
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 2000.0,
     "product_id": 416,
     "category_id": 3,
     "product_name": "Charoli Bold 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Charoli-50-gm-chironji.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61cthn9i06L._SX569_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "100 KGS",
     "sale_rate": 2000.0,
     "product_id": 417,
     "category_id": 3,
     "product_name": "Charoli Bold 100 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Charoli-50-gm-chironji.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/charoli-chironji-001.jpg",
     "primary_product_id": 416
   },
   {
     "mrp": 1000.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 800.0,
     "product_id": 418,
     "category_id": 3,
     "product_name": "Almonds / Badam 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/badam_pappu_warangal_hyderabad_shopitsoon-800x800.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51Jz-Tl5wCL._SX425_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 1000.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 800.0,
     "product_id": 419,
     "category_id": 3,
     "product_name": "Almonds / Badam 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/badam_pappu_warangal_hyderabad_shopitsoon-800x800.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/3245593e-9730-43a6-bea2-7d2732ddf475._CR0,0,300,300_PT0_SX300__.jpg",
     "primary_product_id": 418
   },
   {
     "mrp": 1500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 1200.0,
     "product_id": 420,
     "category_id": 3,
     "product_name": "Anjeer 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51nXwEIQ4HL.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/anjeer-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 120.0,
     "product_id": 421,
     "category_id": 3,
     "product_name": "Anjeer 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Anjir.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41yqllCK1yL.jpg",
     "primary_product_id": 420
   },
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 120.0,
     "product_id": 422,
     "category_id": 3,
     "product_name": "Tuti Fruti 500 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/HXM3KR-866x578.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/HXN23D-768x768.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 2000.0,
     "product_id": 423,
     "category_id": 3,
     "product_name": "Pista Without shell 1 kgs ",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 2000.0,
     "product_id": 424,
     "category_id": 3,
@@ -4204,226 +4586,247 @@
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 2000.0,
     "product_id": 425,
     "category_id": 3,
     "product_name": "Pista Green 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_2.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Vinod-Pistachio-Nut-Pista-250-SDL690277364-3-a7878.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 2000.0,
     "product_id": 426,
     "category_id": 3,
     "product_name": "Pista Green 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/71nJQBBwiDL._SL1000_4.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81TPrY9F19L._SX569_.jpg",
     "primary_product_id": 425
   },
   {
     "mrp": 1500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 1200.0,
     "product_id": 427,
     "category_id": 3,
     "product_name": "Walnut /Akrot Broken 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61EW2iOvd6L._SL1000_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/201505081431064948.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 1500.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 1200.0,
     "product_id": 428,
     "category_id": 3,
     "product_name": "Walnut /Akrot Broken 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61EW2iOvd6L._SL1000_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/chile-walnuts-500x500.jpg",
     "primary_product_id": 427
   },
   {
     "mrp": 500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 400.0,
     "product_id": 429,
     "category_id": 3,
     "product_name": "Kishmish black 1 kgs",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/_650x_2019082917160148.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61l1OTWCJtL._SL1280_new 1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 500.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 450.0,
     "product_id": 430,
     "category_id": 3,
     "product_name": "Kishmish black 250 gms",
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/cat-seedless-afgan.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Nutz-and-Spize-Raisin-Kishmish-SDL948265445-3-7ba80.jpg",
     "primary_product_id": 429
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 431,
     "category_id": 4,
     "product_name": "Mustard Seeds  / Rai 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/24424677-brassica-nigra-black-mustard-seeds-the-background.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/brown-mustard-seeds-wood-spoon-white-background_42942-281.jpg",
     "primary_product_id": 112
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 432,
     "category_id": 4,
     "product_name": "Phool Makhana 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/indian-phool-makhana-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41zHluP0efL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 130.0,
     "product_id": 433,
     "category_id": 4,
     "product_name": "Ajino Moto MSG 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Zi5xbHS4L._SX679_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Zi5xbHS4L._SX679_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 140.0,
     "product_id": 434,
     "category_id": 4,
     "product_name": "Ajino Moto MSG 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/715RUuIN1jL._SL1200_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61Zi5xbHS4L._SX679_new.jpg",
     "primary_product_id": 433
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 435,
     "category_id": 4,
     "product_name": "Cloves  / Lavang 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lavang-Clove-in-a-Bowl.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lavang-Clove-in-a-Bowl_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 436,
     "category_id": 4,
     "product_name": "Cloves  / Lavang 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Lavang-501x501.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41Qd0bwomcL._SR600,315_lavang.jpg",
     "primary_product_id": 435
   },
   {
     "mrp": 900.0,
     "tag": "Hot Deals,Sale,New Arrivals",
+    "size": "1 KGS",
     "sale_rate": 750.0,
     "product_id": 437,
     "category_id": 4,
     "product_name": "Cinnamon / Dalchini 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500_new.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 438,
     "category_id": 4,
     "product_name": "Cinnamon / Dalchini 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-cinnamon.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81OW9EgDq7L._SX569_new.jpg",
     "primary_product_id": 437
   },
   {
     "mrp": 750.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 600.0,
     "product_id": 439,
     "category_id": 4,
     "product_name": "Dagdi Phool 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/DAGDI-PHOH-1.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/DAGADPHOOL-PATTHARPHOOL-Image-1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 750.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 600.0,
     "product_id": 440,
     "category_id": 4,
     "product_name": "Dagdi Phool 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/DAGDI-PHOH-1.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (8).jpg",
     "primary_product_id": 439
   },
   {
     "mrp": 1600.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 1350.0,
     "product_id": 441,
     "category_id": 4,
     "product_name": "Black Elaichi 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Black-Cardamom-Pods.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/81W7KZnCIaL._SX569_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 1600.0,
     "tag": null,
+    "size": "100 KGS",
     "sale_rate": 1400.0,
     "product_id": 442,
     "category_id": 4,
     "product_name": "Black Elaichi 100 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Black-Cardamom-Pods.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Black-Cardamom-Pods_new.jpg",
     "primary_product_id": 441
   },
   {
     "mrp": 4500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 3800.0,
     "product_id": 443,
     "category_id": 4,
     "product_name": "Green Elaichi 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Green-Elaychi-501x501.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/cardamom-21_new1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 4800.0,
     "tag": null,
+    "size": "100 KGS",
     "sale_rate": 4000.0,
     "product_id": 444,
     "category_id": 4,
     "product_name": "Green Elaichi 100 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Green-Elaychi-501x501.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/1528620-main_new.jpg",
     "primary_product_id": 443
   },
   {
     "mrp": 950.0,
     "tag": "Hot Deals",
+    "size": "1 KGS",
     "sale_rate": 750.0,
     "product_id": 445,
     "category_id": 4,
@@ -4435,6 +4838,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 446,
     "category_id": 4,
@@ -4446,116 +4850,127 @@
   {
     "mrp": 3500.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 3200.0,
     "product_id": 447,
     "category_id": 4,
     "product_name": "Mace / Javintri 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/javitri-mace-yellow-flower-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/mace-javitri-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 448,
     "category_id": 4,
     "product_name": "Mace / Javintri 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/javitri-mace-yellow-flower-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Ceylon-Mace1.jpg",
     "primary_product_id": 447
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 449,
     "category_id": 4,
     "product_name": "Soya Chunks 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/healthy-soya-chunks-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/412rFhtrtJL.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 0.0,
     "product_id": 450,
     "category_id": 4,
     "product_name": "Soya Chunks 500 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/healthy-soya-chunks-500x500.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61nrMnLbdLL._SL1500_.jpg",
     "primary_product_id": 449
   },
   {
     "mrp": 900.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 780.0,
     "product_id": 451,
     "category_id": 4,
     "product_name": "Star Phool 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51J9veIcGXL.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/71DIQgeQMpL._SL1042_.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 KGS",
     "sale_rate": 0.0,
     "product_id": 452,
     "category_id": 4,
     "product_name": "Star Phool 100 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51J9veIcGXL.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Chakra-Phool.jpg",
     "primary_product_id": 451
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 453,
     "category_id": 4,
     "product_name": "Bay Leaf / Tej Patta 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61kziUgkOTL._SX679_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/318584c_1.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 454,
     "category_id": 4,
     "product_name": "Bay Leaf / Tej Patta 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61kziUgkOTL._SX679_.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/41bIVU3IYKL.jpg",
     "primary_product_id": 453
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 455,
     "category_id": 4,
     "product_name": "Sabja 1 kgs",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51NzBAQS8DL.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/tukmaria-basil-seeds-500x500.jpg",
     "primary_product_id": 0
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 456,
     "category_id": 4,
     "product_name": "Sabja 250 gms",
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51NzBAQS8DL.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sweet-basil-seed-500x500.jpg",
     "primary_product_id": 455
   },
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 457,
     "category_id": 4,
@@ -4567,6 +4982,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 458,
     "category_id": 4,
@@ -4578,6 +4994,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 459,
     "category_id": 5,
@@ -4589,6 +5006,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 0.0,
     "product_id": 460,
     "category_id": 5,
@@ -4600,6 +5018,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 461,
     "category_id": 5,
@@ -4611,6 +5030,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 0.0,
     "product_id": 462,
     "category_id": 5,
@@ -4622,6 +5042,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 463,
     "category_id": 5,
@@ -4633,6 +5054,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 0.0,
     "product_id": 464,
     "category_id": 5,
@@ -4644,6 +5066,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 465,
     "category_id": 5,
@@ -4655,6 +5078,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "500 KGS",
     "sale_rate": 0.0,
     "product_id": 466,
     "category_id": 5,
@@ -4666,6 +5090,7 @@
   {
     "mrp": 220.0,
     "tag": null,
+    "size": "1 JAR",
     "sale_rate": 150.0,
     "product_id": 467,
     "category_id": 7,
@@ -4677,6 +5102,7 @@
   {
     "mrp": 180.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 120.0,
     "product_id": 468,
     "category_id": 7,
@@ -4688,6 +5114,7 @@
   {
     "mrp": 190.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 135.0,
     "product_id": 469,
     "category_id": 7,
@@ -4699,6 +5126,7 @@
   {
     "mrp": 185.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 135.0,
     "product_id": 470,
     "category_id": 7,
@@ -4710,6 +5138,7 @@
   {
     "mrp": 450.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 350.0,
     "product_id": 471,
     "category_id": 7,
@@ -4721,6 +5150,7 @@
   {
     "mrp": 720.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 550.0,
     "product_id": 472,
     "category_id": 7,
@@ -4732,6 +5162,7 @@
   {
     "mrp": 580.0,
     "tag": null,
+    "size": "600 BTL ",
     "sale_rate": 480.0,
     "product_id": 473,
     "category_id": 7,
@@ -4743,6 +5174,7 @@
   {
     "mrp": 280.0,
     "tag": null,
+    "size": "1 BTL ",
     "sale_rate": 220.0,
     "product_id": 474,
     "category_id": 7,
@@ -4754,6 +5186,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "250 KGS",
     "sale_rate": 125.0,
     "product_id": 475,
     "category_id": 8,
@@ -4765,6 +5198,7 @@
   {
     "mrp": 80.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 70.0,
     "product_id": 476,
     "category_id": 8,
@@ -4776,6 +5210,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "100 PKT ",
     "sale_rate": 0.0,
     "product_id": 477,
     "category_id": 8,
@@ -4787,17 +5222,19 @@
   {
     "mrp": 6700.0,
     "tag": null,
+    "size": "50 KGS",
     "sale_rate": 4250.0,
     "product_id": 484,
     "category_id": 1,
     "product_name": "Beasn Samrat 50 kgs",
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Samrat_Besan_500g_NashikGrocery.Com_JPG80.jpg",
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/samrat_gramflour_10kg.jpg",
     "primary_product_id": 258
   },
   {
     "mrp": 350.0,
     "tag": "Hot Deals",
+    "size": "10 KGS",
     "sale_rate": 250.0,
     "product_id": 500,
     "category_id": 39,
@@ -4809,6 +5246,7 @@
   {
     "mrp": 1750.0,
     "tag": null,
+    "size": "50 KGS",
     "sale_rate": 1150.0,
     "product_id": 501,
     "category_id": 39,
@@ -4820,6 +5258,7 @@
   {
     "mrp": 500.0,
     "tag": "Hot Deals",
+    "size": "10 KGS",
     "sale_rate": 400.0,
     "product_id": 502,
     "category_id": 39,
@@ -4831,6 +5270,7 @@
   {
     "mrp": 2500.0,
     "tag": null,
+    "size": "50 KGS",
     "sale_rate": 1900.0,
     "product_id": 503,
     "category_id": 39,
@@ -4842,6 +5282,7 @@
   {
     "mrp": 150.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 100.0,
     "product_id": 504,
     "category_id": 39,
@@ -4853,6 +5294,7 @@
   {
     "mrp": 1500.0,
     "tag": "Sale,New Arrivals",
+    "size": "10 KGS",
     "sale_rate": 950.0,
     "product_id": 505,
     "category_id": 39,
@@ -4864,6 +5306,7 @@
   {
     "mrp": 0.0,
     "tag": null,
+    "size": "1 KGS",
     "sale_rate": 0.0,
     "product_id": 506,
     "category_id": 1,
