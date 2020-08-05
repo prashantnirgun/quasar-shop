@@ -1,6 +1,5 @@
 <template>
   <q-table
-    title="Treats"
     :data="lists"
     hide-header
     row-key="name"
@@ -9,15 +8,10 @@
     :pagination="initialPagination"
   >
     <template v-slot:top>
-      <!-- <q-btn
-        flat
-        round
-        dense
-        :icon="horizontal ? 'list' : 'grid_on'"
-        @click="horizontal = !horizontal"
-        v-if="!props.inFullscreen"
-      >
-      </q-btn> -->
+      <q-chip color="primary" text-color="white" size="md" class="q-py-md">
+        <q-avatar icon="star" color="black" text-color="white" />
+        {{ categoryName }}
+      </q-chip>
       <q-space />
       <q-btn-group rounded>
         <q-btn
@@ -37,12 +31,108 @@
         />
 
         <q-btn dense rounded color="primary" icon="filter_alt" />
+
+        <q-btn-dropdown dense auto-close rounded color="primary" icon="sort">
+          <!-- dropdown content goes here -->
+          <q-list
+            dense
+            bordered
+            padding
+            class="rounded-borders"
+            style="width: 200px"
+          >
+            <q-item>
+              <q-item-section>
+                <q-toggle
+                  dense
+                  left-label
+                  color="blue"
+                  label="Price Low to High"
+                  v-model="selection"
+                  val="blue"
+                  checked-icon="check"
+                  unchecked-icon="clear"
+                />
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-toggle
+                  dense
+                  left-label
+                  color="blue"
+                  label="Price High to Low"
+                  v-model="selection"
+                  val="blue"
+                  checked-icon="check"
+                  unchecked-icon="clear"
+                />
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-toggle
+                  dense
+                  left-label
+                  color="blue"
+                  label="Popularity"
+                  v-model="selection"
+                  val="blue"
+                  checked-icon="check"
+                  unchecked-icon="clear"
+                />
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-toggle
+                  dense
+                  left-label
+                  color="blue"
+                  label="Saving Low to High"
+                  v-model="selection"
+                  val="blue"
+                  checked-icon="check"
+                  unchecked-icon="clear"
+                />
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-toggle
+                  dense
+                  left-label
+                  color="blue"
+                  label="Saving High to Low"
+                  v-model="selection"
+                  val="blue"
+                  checked-icon="check"
+                  unchecked-icon="clear"
+                />
+              </q-item-section>
+            </q-item>
+            <q-item>
+              <q-item-section>
+                <q-toggle
+                  dense
+                  left-label
+                  color="blue"
+                  label="Price Low to High"
+                  v-model="selection"
+                  val="blue"
+                  checked-icon="check"
+                  unchecked-icon="clear"
+                />
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
       </q-btn-group>
     </template>
     <template v-slot:item="props">
       <div :class="outer">
         <q-card
-          class="shadow-8"
+          class=""
           transition-show="“flip-up”"
           transition-hide="“flip-down”"
         >
@@ -64,7 +154,7 @@
                 placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
               >
                 <q-badge
-                  v-if="props.row.tag"
+                  v-if="!horizontal && props.row.tag"
                   class="transparent no-margin no-padding"
                 >
                   <q-chip icon="star" color="yellow" text-color="black">{{
@@ -93,7 +183,16 @@
                 <div class="col-4 text-strike">{{ props.row.mrp }}</div>
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">
-                <div class="col-4"></div>
+                <div class="col-4">
+                  <q-badge
+                    v-if="horizontal && props.row.tag"
+                    class="transparent no-margin no-padding"
+                  >
+                    <q-chip icon="star" color="yellow" text-color="black">{{
+                      props.row.tag
+                    }}</q-chip>
+                  </q-badge>
+                </div>
                 <div class="col-4 text-green-10">Our Price</div>
                 <div class="col-4">{{ props.row.sale_rate }}</div>
               </div>
@@ -102,7 +201,7 @@
                 <div class="col-4">Saving</div>
                 <div class="col-4">22% off</div>
               </div>
-              <div :class="[{ hidden: !horizontal }, 'row', 'q-pa-sm']">
+              <!-- <div :class="[{ hidden: !horizontal }, 'row', 'q-pa-sm']">
                 <div class="col-6">Size</div>
                 <q-btn
                   class="col-6 text-weight-bold text-capitalize"
@@ -111,7 +210,7 @@
                   icon="add_shopping_cart"
                   label="Add to Cart"
                 />
-              </div>
+              </div> -->
             </div>
           </div>
           <div :class="['row', 'q-pa-sm', { hidden: horizontal }]">
@@ -125,14 +224,33 @@
                 size="17px"
               ></q-rating>
             </div>
-            <div class="col-6">Size</div>
+            <!-- <div class="col-6">Size</div>
             <q-btn
               class="col-6 text-weight-bold text-capitalize"
               dense
               color="positive"
               icon="add_shopping_cart"
               label="Add to Cart"
+            /> -->
+          </div>
+
+          <div class="row q-pa-sm items-center">
+            <div class="col-1">Qty</div>
+            <q-select outlined v-model="qty" dense :options="options" />
+            <q-space />
+            <q-btn
+              class="text-weight-bold "
+              dense
+              color="positive"
+              icon="add_shopping_cart"
+              label="Add to Cart"
             />
+          </div>
+
+          <div class="row wrap justify-start q-pa-sm q-gutter-sm">
+            <q-btn color="green" unelevated label="1.5 KG" />
+            <q-btn outline label="5 KG" />
+            <q-btn outline unelevated label="15 KG" />
           </div>
         </q-card>
       </div>
@@ -148,12 +266,14 @@ export default {
   mixins: [device_mixin],
   data() {
     return {
+      selection: [],
       stars: 4,
       mode: 'grid',
       horizontal: this.isMobile ? true : false,
       loading: true,
       lists: [],
       variety: 1,
+      qty: 1,
       options: [1, 2, 3],
       initialPagination: {
         sortBy: 'desc',
@@ -171,6 +291,15 @@ export default {
         (!!this.horizontal ? 'hr col-lg-4 col-md-4' : 'vr col-lg-3 col-md-3');
       //console.log('class', this.isDesktop, this.horizontal, c);
       return c;
+    },
+    categoryName() {
+      // let b =
+      //   this.lists[0].children.length === 0
+      //     ? this.lists[0].category_name
+      //     : this.lists[0].children[0].category_name;
+      // console.log('category', b);
+      console.log('category', this.lists[0]);
+      return this.lists.length > 0 ? this.lists[0].category_name : 'Category';
     }
   },
   mounted() {

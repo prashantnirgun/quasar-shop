@@ -1,6 +1,7 @@
 <template>
   <q-layout view="hHh LpR lFf" style="font-family: Lato;">
     <q-header reveal elevated style="background-color: #1f509e;">
+      <!-- <q-header reveal elevated class="bg-green"> -->
       <q-toolbar class="q-py-sm">
         <q-btn
           flat
