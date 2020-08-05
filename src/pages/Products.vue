@@ -9,10 +9,22 @@
   >
     <template v-slot:top>
       <q-chip color="primary" text-color="white" size="md" class="q-py-md">
-        <q-avatar color="black" text-color="white">
+        <q-avatar color="black" text-color="white" class="text-bold">
           {{ totalProducts }}
         </q-avatar>
         {{ categoryName }}
+      </q-chip>
+      <q-chip
+        v-if="isDesktop"
+        size="md"
+        class="q-py-md"
+        removable
+        v-model="eclair"
+        color="teal"
+        text-color="white"
+        icon="bookmark"
+      >
+        Hot Deals
       </q-chip>
 
       <q-space />
@@ -292,7 +304,7 @@ export default {
   mixins: [device_mixin],
   data() {
     return {
-      selection: [],
+      eclair: true,
       stars: 4,
       mode: 'grid',
       horizontal: this.isMobile ? true : false,
