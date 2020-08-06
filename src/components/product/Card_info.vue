@@ -12,6 +12,7 @@
         ]"
       >
         <q-img
+          :height="[horizontal ? '116px' : '300px']"
           :src="data.image_filename"
           spinner-color="primary"
           spinner-size="82px"
@@ -33,31 +34,31 @@
           {{ data.product_name }}
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
-          <div class="col-6">
+          <div class="col-4">
             <q-rating
               v-model="stars"
               color="orange"
               :max="5"
               readonly
-              size="17px"
+              size="14px"
             ></q-rating>
           </div>
-          <div class="col-3 text-grey-10">MRP</div>
-          <div class="col-3 text-strike text-right q-pr-sm">
+          <div class="col-4 text-grey-10">MRP</div>
+          <div class="col-4 text-strike text-right q-pr-sm">
             {{ data.mrp }}
           </div>
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
-          <div class="col-6"></div>
-          <div class="col-3 text-green text-bold">Our Price</div>
-          <div class="col-3 text-right text-green text-bold q-pr-sm">
+          <div class="col-4"></div>
+          <div class="col-4 text-green text-bold">Our Price</div>
+          <div class="col-4 text-right text-green text-bold q-pr-sm">
             {{ data.sale_rate }}
           </div>
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
-          <div class="col-6"></div>
-          <div class="col-3">Saving</div>
-          <div class="col-3 text-right q-pr-sm">22% off</div>
+          <div class="col-4"></div>
+          <div class="col-4">Saving</div>
+          <div class="col-4 text-right q-pr-sm">22% off</div>
         </div>
       </div>
     </div>
@@ -103,27 +104,61 @@
 
       <q-space />
       <q-btn
+        v-if="orderQty === 0"
         class="text-weight-bold col-4"
         dense
         color="positive"
         icon="add_shopping_cart"
         label="Add"
+        @click="increment"
       />
+
+      <q-input
+        v-else
+        dense
+        v-model="orderQty"
+        outlined
+        mask="#####"
+        color="green"
+        class="col-4 q-pa-none q-ma-none"
+      >
+        <template v-slot:prepend class="q-pa-none q-ma-none">
+          <q-icon
+            name="add_box"
+            @click="increment"
+            class="text-green q-pa-none q-ma-none"
+            size="md"
+          />
+        </template>
+        <template v-slot:append>
+          <q-icon
+            name="indeterminate_check_box"
+            @click="decrement"
+            class="text-green"
+            size="md"
+          />
+        </template>
+      </q-input>
     </div>
   </div>
 </template>
 <script>
 export default {
   props: ['data', 'horizontal'],
-  watch: {
-    data: function(val) {
-      console.log(val.product_id);
-    }
-  },
+
   data() {
     return {
-      stars: 4
+      stars: 4,
+      orderQty: 0
     };
+  },
+  methods: {
+    increment() {
+      this.orderQty++;
+    },
+    decrement() {
+      this.orderQty--;
+    }
   }
 };
 </script>

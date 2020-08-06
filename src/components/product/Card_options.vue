@@ -1,12 +1,12 @@
 <template>
-  <div class="row wrap justify-start q-pt-non q-px-sm q-pb-sm q-gutter-sm">
+  <div class="row wrap justify-start q-pa-sm">
     <div v-for="item in data" :key="item.size">
       <q-btn
         v-if="item.size === current.size"
         dense
         unelevated
         color="green"
-        class="col-auto"
+        class="col-auto q-mr-md"
         @click="selcted(item)"
       >
         {{ item.size }}
@@ -16,9 +16,9 @@
         v-else
         dense
         unelevated
-        class="col-auto"
+        class="col-auto q-mr-md bg-white"
         outline
-        color="green"
+        color="black"
         @click="selcted(item)"
       >
         {{ item.size }}

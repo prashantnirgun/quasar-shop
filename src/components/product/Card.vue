@@ -97,7 +97,7 @@
       />
     </div> -->
     <card-info :data="current" :horizontal="horizontal" />
-    <div class="bg-grey-3">
+    <div class="bg-grey-4">
       <card-options
         :data="data.children"
         @updatedItem="runme"
