@@ -115,27 +115,34 @@
 
       <q-input
         v-else
+        v-model.number="orderQty"
+        color="green-6"
+        style="width: 135px; height : 30px;"
         dense
-        v-model="orderQty"
         outlined
-        mask="#####"
-        color="green"
-        class="col-4 q-pa-none q-ma-none"
+        class="custom-control col-4"
       >
-        <template v-slot:prepend class="q-pa-none q-ma-none">
-          <q-icon
-            name="add_box"
-            @click="increment"
-            class="text-green q-pa-none q-ma-none"
+        <template v-slot:prepend>
+          <q-btn
+            @click="decrement"
+            color="green-6"
+            icon="remove"
             size="md"
+            round
+            unelevated
+            class="rounded-borders full-height"
           />
         </template>
+
         <template v-slot:append>
-          <q-icon
-            name="indeterminate_check_box"
-            @click="decrement"
-            class="text-green"
+          <q-btn
+            @click="increment"
+            color="green-6"
+            icon="add"
             size="md"
+            round
+            unelevated
+            class="rounded-borders full-height"
           />
         </template>
       </q-input>
@@ -162,3 +169,12 @@ export default {
   }
 };
 </script>
+
+<style lang="sass" scoped>
+::v-deep .custom-control
+  & .q-field__control
+    padding: 0
+
+  input
+    text-align: center
+</style>
