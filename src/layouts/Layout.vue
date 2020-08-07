@@ -38,8 +38,9 @@
         />
         <q-btn class="q-mr-md" dense round flat icon="shopping_cart">
           <q-badge color="red" class="text-bold" floating transparent>
-            4
+            {{ cartCount }}
           </q-badge>
+          <mini-cart />
         </q-btn>
         <q-btn
           flat
@@ -137,6 +138,8 @@
 <script>
 import device_mixin from 'src/mixins/device_mixin';
 import root from 'src/config/menu.json';
+import { mapGetters } from 'vuex';
+
 export default {
   mixins: [device_mixin],
   data() {
@@ -153,6 +156,7 @@ export default {
   },
   components: {
     'search-bar': () => import('src/layouts/SearchBar'),
+    'mini-cart': () => import('components/cart/Mini_cart'),
     pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
     'desktop-menu': () => import('src/layouts/DesktopMenu'),
@@ -171,6 +175,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('cart', ['cartCount']),
     siteName() {
       //console.log('site', `${process.env.SITE_NAME`);
       return process.env.SITE_NAME;

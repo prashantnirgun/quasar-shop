@@ -1,9 +1,12 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
+import { LocalStorage } from 'quasar';
+import cart from './modules/cart';
 
 // import example from './module-example'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 /*
  * If not building with SSR mode, you can
@@ -14,16 +17,35 @@ Vue.use(Vuex)
  * with the Store instance.
  */
 
-export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
-    modules: {
-      // example
-    },
+const dataState = new createPersistedState({
+  paths: ['cart'],
+  storage: {
+    getItem: key => LocalStorage.getItem(key),
+    setItem: (key, value) => LocalStorage.set(key, value),
+    removeItem: key => LocalStorage.remove(key)
+  }
+});
 
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEV
-  })
+//export default function(/* { ssrContext } */) {
+const Store = new Vuex.Store({
+  plugins: [dataState],
+  state: {
+    token: null,
+    user: null,
+    rememberMe: false,
+    version: '0.0.1'
+  },
+  modules: {
+    cart
+  },
 
-  return Store
+  // enable strict mode (adds overhead!)
+  // for dev mode only
+  strict: process.env.DEV
+});
+
+export default function(/* { ssrContext } */) {
+  return Store;
 }
+
+export { Store };

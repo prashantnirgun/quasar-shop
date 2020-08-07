@@ -12,7 +12,7 @@
         ]"
       >
         <q-img
-          :height="[horizontal ? '116px' : '300px']"
+          :height="setHeigh"
           :src="data.image_filename"
           spinner-color="primary"
           spinner-size="82px"
@@ -150,6 +150,7 @@
   </div>
 </template>
 <script>
+import { mapActions, mapState } from 'vuex';
 export default {
   props: ['data', 'horizontal'],
 
@@ -160,13 +161,36 @@ export default {
     };
   },
   methods: {
+    ...mapActions('cart', ['addProductToCart', 'removeFromCart']),
     increment() {
       this.orderQty++;
+      console.log('going to add', this.data.product_id, this.orderQty);
+      this.addProductToCart({
+        product_id: this.data.product_id,
+        product_name: this.data.product_name,
+        rate: this.data.sale_rate,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate
+      });
+      //console.log('store', this.$store.state.cart.cart);
     },
     decrement() {
       this.orderQty--;
+      this.removeFromCart({
+        product_id: this.data.product_id,
+        quantity: this.orderQty
+      });
+    }
+  },
+  computed: {
+    ...mapState(['cart']),
+    setHeigh() {
+      return this.horizontal ? '116px' : '300px';
     }
   }
+  // mounted() {
+  //   console.log('mounted', this.cart);
+  // }
 };
 </script>
 

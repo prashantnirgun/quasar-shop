@@ -8,14 +8,15 @@ Its forked from [quasar-shoping](https://github.com/mayur091193/quasar-shopping)
 
 ## Files Created / Moved / Split :
 
-| #   | Features        | Completed | Description                                                                                                                                      |
-| --- | --------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | .htaccess       | Yes       | Prevent SPA refresh issue                                                                                                                        |
-| 2   | .env            | Yes       | Configuration files for development & Production. Used Extension [app-extension-dotenv](https://github.com/quasarframework/app-extension-dotenv) |
-| 3   | Axios           | Yes       | Not an hardcoded data its fetching from .json from files /public/data                                                                            |
-| 4   | Vue Store       | Yes       | .                                                                                                                                                |
-| 5   | Responsive      | WIP       | Menu, Sidebar is under process                                                                                                                   |
-| 6   | Payment Gateway | No        | Pending feature surely build it on priority                                                                                                      |
+| #   | Features          | Completed | Description                                                                                                                                      |
+| --- | ----------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | .htaccess         | Yes       | Prevent SPA refresh issue                                                                                                                        |
+| 2   | .env              | Yes       | Configuration files for development & Production. Used Extension [app-extension-dotenv](https://github.com/quasarframework/app-extension-dotenv) |
+| 3   | Axios             | Yes       | Not an hardcoded data its fetching from .json from files /public/data                                                                            |
+| 4   | Vue Store         | Yes       | Vue Store is used to save cart information                                                                                                       |
+| 5   | Persistance State | Yes       | LocalStorage used to save state                                                                                                                  |
+| 6   | Responsive        | WIP       | Menu, Sidebar is under process                                                                                                                   |
+| 7   | Payment Gateway   | No        | Pending feature surely build it on priority                                                                                                      |
 
 ## General Information :
 

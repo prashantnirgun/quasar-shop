@@ -133,7 +133,7 @@ export default {
   },
   mounted() {
     this.current = this.data;
-    console.log('data', this.data);
+    //console.log('data', this.data);
   }
 };
 </script>
