@@ -150,7 +150,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapGetters } from 'vuex';
 export default {
   props: ['data', 'horizontal'],
 
@@ -159,6 +159,15 @@ export default {
       stars: 4,
       orderQty: 0
     };
+  },
+  watch: {
+    'data.product_id'(NewItem) {
+      let cartItem = this.findItem(this.data.product_id);
+      if (cartItem) {
+        this.orderQty = cartItem.quantity;
+      }
+      //console.log('inside watch', NewItem);
+    }
   },
   methods: {
     ...mapActions('cart', ['addProductToCart', 'removeFromCart']),
@@ -178,19 +187,24 @@ export default {
       this.orderQty--;
       this.removeFromCart({
         product_id: this.data.product_id,
+        product_name: this.data.product_name,
         quantity: this.orderQty
       });
     }
   },
   computed: {
     ...mapState(['cart']),
+    ...mapGetters('cart', ['findItem']),
     setHeigh() {
       return this.horizontal ? '116px' : '300px';
     }
+  },
+  mounted() {
+    let cartItem = this.findItem(this.data.product_id);
+    if (cartItem) {
+      this.orderQty = cartItem.quantity;
+    }
   }
-  // mounted() {
-  //   console.log('mounted', this.cart);
-  // }
 };
 </script>
 

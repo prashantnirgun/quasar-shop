@@ -5,6 +5,7 @@
 // }
 
 import DataService from 'src/services/DataService';
+import { Notify } from 'quasar';
 
 export default {
   namespaced: true,
@@ -18,6 +19,17 @@ export default {
     },
     allItems: state => {
       return state.cart;
+    },
+    findItem: state => product_id => {
+      //console.log('inside findItem', product_id);
+      return state.cart.find(item => {
+        if (item.product_id === product_id) {
+          console.log('found item in cart', product_id, item);
+          return true;
+        } else {
+          return false;
+        }
+      });
     }
   },
 
@@ -33,16 +45,15 @@ export default {
       } else {
         state.cart.push({ ...payload });
       }
+
+      Notify.create({
+        type: 'positive',
+        message: `${payload.product_name} was added to cart.`
+      });
     },
 
     REMOVE_FROM_CART(state, payload) {
-      let index;
-      // let productInCart = state.cart.find(item => {
-      //   index++;
-      //   return item.product_id === payload.product_id;
-      // });
-
-      index = state.cart.findIndex(
+      let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
       if (payload.quantity > 0) {
@@ -51,12 +62,11 @@ export default {
       } else {
         state.cart.splice(index, 1);
       }
-      // productInCart.quantity = payload.quantity;
-      // if (productInCart.quantity === 0) {
-      //   delete state.cart[productInCart];
-      //   console.log('going to delte');
-      // }
-      console.log('found and removing', payload, index);
+
+      Notify.create({
+        type: 'warning',
+        message: `${payload.product_name} was removed from cart.`
+      });
     },
 
     CLEAR_CART_ITEMS(state) {

@@ -4,7 +4,7 @@
     transition-hide="scale"
     v-if="allItems.length > 0"
   >
-    <q-list style="min-width: 100px">
+    <q-list style="min-width: 150px">
       <q-item clickable v-for="item in allItems" :key="item.product_id" dense>
         <q-item-section>
           <q-item-label
@@ -13,18 +13,24 @@
         </q-item-section>
 
         <q-item-section side>
-          <q-item-label class="text-right">{{ item.amount }} </q-item-label>
+          <q-item-label class="text-right">₹ {{ item.amount }} </q-item-label>
         </q-item-section>
       </q-item>
     </q-list>
     <q-separator />
-    <q-item>
+    <q-item class="text-primary text-bold">
       <q-item-section>
         <q-item-label>Total</q-item-label>
       </q-item-section>
 
-      <q-item-section side>
-        <q-item-label class="text-right">{{ getTotal }} </q-item-label>
+      <q-item-section>
+        <q-item-label class="text-right">₹ {{ getTotal }} </q-item-label>
+      </q-item-section>
+    </q-item>
+
+    <q-item class="text-primary text-bold">
+      <q-item-section>
+        <q-btn color="green" label="Go To Cart" />
       </q-item-section>
     </q-item>
   </q-menu>
