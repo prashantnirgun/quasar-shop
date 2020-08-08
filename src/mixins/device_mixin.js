@@ -15,11 +15,11 @@ export default {
         case width <= 375:
           return 1;
           break;
-        case width >= 640 && width <= 768:
+        case width >= 400 && width <= 768:
           return 2;
           break;
         case width <= 1024:
-          return 4;
+          return 3;
           break;
         default:
           return 6;

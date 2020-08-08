@@ -17,6 +17,18 @@
               :name="4"
               img-src="https://cdn.quasar.dev/img/quasar.jpg"
             />
+
+            <!-- <div class="row justify-center">
+              <q-btn-toggle
+                glossy
+                v-model="slide"
+                :options="[
+                  { label: 'Soft Jazz', value: 'soft-jazz' },
+                  { label: 'Rihanna', value: 'Rihanna' },
+                  { label: 'Chill Mix', value: 'chill-mix' }
+                ]"
+              />
+            </div> -->
           </q-carousel>
         </div>
       </div>

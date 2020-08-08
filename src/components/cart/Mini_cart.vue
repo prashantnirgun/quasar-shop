@@ -30,7 +30,11 @@
 
     <q-item class="text-primary text-bold">
       <q-item-section>
-        <q-btn color="green" label="Go To Cart" />
+        <q-btn
+          color="green"
+          label="Go To Cart"
+          @click="$router.push(`/cart`)"
+        />
       </q-item-section>
     </q-item>
   </q-menu>

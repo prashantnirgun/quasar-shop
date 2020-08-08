@@ -12,7 +12,6 @@
       swipeable
       animated
       control-color="primary"
-      autoplay
       infinite
       height="350px"
     >
@@ -21,11 +20,11 @@
         :name="index"
         :key="index"
       >
-        <div class="row justify-evenly items-center wrap">
+        <div class="row justify-evenly items-center no-wrap">
           <q-card
             v-for="row in rows"
             :key="row.product_id"
-            class="q-ma-sm bg-green-13 rounded-borders hover_border_grey text-center cursor-pointer"
+            class="q-mx-xs  bg-green-13 rounded-borders hover_border_grey text-center cursor-pointer"
             @click="$router.push(`/product-details/${row.product_id}`)"
           >
             <q-item>
@@ -37,8 +36,8 @@
             <q-img
               class="rounded-borders cursor-pointer"
               :src="row.image_filename"
-              height="200px"
-              width="200px"
+              :height="getSize"
+              :width="getSize"
               placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
             />
 
@@ -115,8 +114,14 @@ export default {
       column: 1
     };
   },
+  computed: {
+    getSize() {
+      return this.column === 2 ? '180px' : '200px';
+    }
+  },
   mounted() {
     this.column = parseInt(this.displaySize);
+    console.log('column =>', this.column);
     DataService.get('data/productSale.json')
       .then(response => {
         if (this.column < response.data.length) {
