@@ -165,15 +165,15 @@ export default {
       let cartItem = this.findItem(this.data.product_id);
       if (cartItem) {
         this.orderQty = cartItem.quantity;
+      } else {
+        this.orderQty = 0;
       }
-      //console.log('inside watch', NewItem);
     }
   },
   methods: {
     ...mapActions('cart', ['addProductToCart', 'removeFromCart']),
     increment() {
       this.orderQty++;
-      console.log('going to add', this.data.product_id, this.orderQty);
       this.addProductToCart({
         product_id: this.data.product_id,
         product_name: this.data.product_name,
@@ -181,7 +181,6 @@ export default {
         quantity: this.orderQty,
         amount: this.orderQty * this.data.sale_rate
       });
-      //console.log('store', this.$store.state.cart.cart);
     },
     decrement() {
       this.orderQty--;

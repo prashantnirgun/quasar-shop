@@ -56,6 +56,7 @@
 import array from 'src/mixins/array_mixin';
 import DataService from 'src/services/DataService';
 export default {
+  props: ['device'],
   mixins: [array],
   data() {
     return {

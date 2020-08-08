@@ -23,31 +23,29 @@
         :key="index"
         class="column no-wrap"
       >
+        <!-- <div class="row fit justify-start items-center no-wrap"> -->
         <div
-          class="row fit justify-start items-center q-gutter-xs q-col-gutter no-wrap"
+          v-for="row in rows"
+          :key="row.product_id"
+          @click="$router.push('/details')"
+          class="column hover_border_grey text-center"
+          :class="columnSize"
         >
-          <div
-            v-for="row in rows"
-            :key="row.product_id"
-            @click="$router.push('/details')"
-            class="col-lg-2 col-md-2 col-sm-12 col-xs-12 hover_border_grey text-center full-height"
-          >
-            <q-img style="" class="rounded-borders" :src="row.image_filename">
-            </q-img>
-            <div>{{ row.product_name }}</div>
-            <div class="text-caption text-weight-bold text-green">
-              {{ row.product_name }}
-            </div>
-            <div>
-              <span>₹{{ row.sale_rate }}</span
-              ><span
-                class="q-ml-sm text-grey-6"
-                style="text-decoration: line-through"
-                >₹{{ row.mrp }}</span
-              >
-            </div>
+          <q-img class="rounded-borders" :src="row.image_filename"> </q-img>
+          <div>{{ row.product_name }}</div>
+          <div class="text-caption text-weight-bold text-green">
+            {{ row.product_name }}
+          </div>
+          <div>
+            <span>₹{{ row.sale_rate }}</span
+            ><span
+              class="q-ml-sm text-grey-6"
+              style="text-decoration: line-through"
+              >₹{{ row.mrp }}</span
+            >
           </div>
         </div>
+        <!-- </div> -->
       </q-carousel-slide>
     </q-carousel>
   </div>
@@ -56,17 +54,55 @@
 import array from 'src/mixins/array_mixin';
 import DataService from 'src/services/DataService';
 export default {
+  props: ['device'],
   mixins: [array],
   data() {
     return {
       latest_slide: 1,
-      lists: []
+      lists: [],
+      column: 1
     };
   },
+  computed: {
+    columnSize() {
+      console.log('class = col-' + this.column);
+      return 'col-' + this.column;
+    }
+  },
+  methods: {
+    displaySize() {
+      const width = this.$q.screen.width;
+
+      switch (true) {
+        case width <= 320:
+          this.column = 1;
+          return this.column;
+          break;
+        case width <= 375:
+          this.column = 2;
+          return this.column;
+          break;
+        case width >= 640 && width <= 768:
+          this.column = 3;
+          return this.column;
+          break;
+        case width <= 1024:
+          this.column = 5;
+          return this.column;
+          break;
+        default:
+          this.column = 7;
+          return this.column;
+          break;
+      }
+    }
+  },
   mounted() {
+    this.displaySize();
+    console.log('chunk', this.column);
     DataService.get('data/newArrival.json')
       .then(response => {
-        this.lists = this.chunk(response.data, 6);
+        this.lists = this.chunk(response.data, this.displaySize);
       })
       .catch(error => {
         console.log('mixin/ddlb Error', error);
@@ -74,3 +110,8 @@ export default {
   }
 };
 </script>
+<style lang="sass" scoped>
+div
+  border-style: solid
+  border-width: 5px
+</style>

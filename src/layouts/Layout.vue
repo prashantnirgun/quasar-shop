@@ -186,6 +186,9 @@ export default {
     console.log(
       `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`
     );
+  },
+  created() {
+    this.$q.addressbarColor.set('#228b22');
   }
 };
 </script>

@@ -27,6 +27,7 @@ import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
 
 export default {
+  props: ['device'],
   mixins: [device_mixin],
   data() {
     return {

@@ -24,7 +24,6 @@ export default {
       //console.log('inside findItem', product_id);
       return state.cart.find(item => {
         if (item.product_id === product_id) {
-          console.log('found item in cart', product_id, item);
           return true;
         } else {
           return false;
