@@ -4,28 +4,28 @@
     "sale_rate": 340.0,
     "product_id": 2,
     "product_name": "Non Brand Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/california-almond-nut-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8908001296038_new 1.jpg"
   },
   {
     "mrp": 260.0,
     "sale_rate": 200.0,
     "product_id": 4,
     "product_name": "Samrat Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat_new1.jpg"
   },
   {
     "mrp": 260.0,
     "sale_rate": 220.0,
     "product_id": 7,
     "product_name": "Aashirvaad Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-ashrivad-5kg.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8180XWMifzL._SX425_.jpg"
   },
   {
     "mrp": 480.0,
     "sale_rate": 420.0,
     "product_id": 8,
     "product_name": "Aashirvaad Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/aashirvaad-select-atta-5kg-550x550.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/aashirvaad-select-atta-5kg-550x550_new.jpg"
   },
   {
     "mrp": 50.0,
@@ -74,7 +74,7 @@
     "sale_rate": 750.0,
     "product_id": 437,
     "product_name": "Cinnamon / Dalchini 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500_new.jpg"
   },
   {
     "mrp": 1500.0,

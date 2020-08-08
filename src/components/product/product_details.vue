@@ -7,7 +7,7 @@
             <q-carousel-slide :name="1" :img-src="lists[0].image_filename" />
             <q-carousel-slide
               :name="2"
-              img-src="https://cdn.quasar.dev/img/parallax1.jpg"
+              img-src="https://placeimg.com/500/300/nature"
             />
             <q-carousel-slide
               :name="3"

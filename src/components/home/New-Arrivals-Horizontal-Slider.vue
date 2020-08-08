@@ -1,61 +1,109 @@
 <template>
-  <div class="col-12 q-mt-sm">
-    <div class="q-pl-md bg-white q-pt-sm ">
+  <div class="col-12">
+    <div class="q-pl-md bg-yellow-5 ">
       <span class="text-grey-9 text-h6 text-weight-bold">New Arrivals</span>
       <a class="text-primary q-ml-sm cursor-pointer">[see all]</a>
     </div>
     <q-carousel
       v-model="latest_slide"
+      ref="new_arival_carousel"
       transition-prev="slide-right"
       transition-next="slide-left"
       swipeable
       animated
-      control-color="primary"
-      navigation
-      padding
-      arrows
-      height="260px"
-      class="rounded-borders"
+      autoplay
+      infinite
+      height="350px"
     >
       <q-carousel-slide
         v-for="(rows, index) in lists"
         :name="index"
         :key="index"
-        class="column no-wrap"
       >
-        <!-- <div class="row fit justify-start items-center no-wrap"> -->
-        <div
-          v-for="row in rows"
-          :key="row.product_id"
-          @click="$router.push('/details')"
-          class="column hover_border_grey text-center"
-          :class="columnSize"
-        >
-          <q-img class="rounded-borders" :src="row.image_filename"> </q-img>
-          <div>{{ row.product_name }}</div>
-          <div class="text-caption text-weight-bold text-green">
-            {{ row.product_name }}
-          </div>
-          <div>
-            <span>₹{{ row.sale_rate }}</span
-            ><span
-              class="q-ml-sm text-grey-6"
-              style="text-decoration: line-through"
-              >₹{{ row.mrp }}</span
-            >
-          </div>
+        <div class="row justify-evenly items-center wrap">
+          <q-card
+            v-for="row in rows"
+            :key="row.product_id"
+            class="q-ma-sm bg-yellow-5 rounded-borders hover_border_grey text-center cursor-pointer"
+            @click="$router.push(`/product-details/${row.product_id}`)"
+          >
+            <q-item>
+              <q-item-section>
+                <q-item-label>{{ row.product_name }}</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-img
+              class="rounded-borders cursor-pointer"
+              :src="row.image_filename"
+              height="200px"
+              width="200px"
+              placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
+            />
+
+            <!-- <div>{{ row.product_name }}</div> -->
+
+            <!-- <div>
+              <span>₹{{ row.sale_rate }}</span
+              ><span
+                class="q-ml-sm text-grey-6"
+                style="text-decoration: line-through"
+                >₹{{ row.mrp }}</span
+              >
+            </div> -->
+
+            <q-item>
+              <q-item-section>
+                <q-item-label
+                  >₹{{ row.sale_rate
+                  }}<span
+                    class="q-ml-sm text-grey-6"
+                    style="text-decoration: line-through"
+                    >₹{{ row.mrp }}</span
+                  ></q-item-label
+                >
+              </q-item-section>
+            </q-item>
+          </q-card>
         </div>
-        <!-- </div> -->
       </q-carousel-slide>
+
+      <template v-slot:control>
+        <q-carousel-control
+          position="bottom-right"
+          :offset="[18, 18]"
+          class="q-gutter-xs"
+        >
+          <q-btn
+            push
+            round
+            dense
+            color="orange"
+            text-color="black"
+            icon="arrow_left"
+            @click="$refs.new_arival_carousel.previous()"
+          />
+          <q-btn
+            push
+            round
+            dense
+            color="orange"
+            text-color="black"
+            icon="arrow_right"
+            @click="$refs.new_arival_carousel.next()"
+          />
+        </q-carousel-control>
+      </template>
     </q-carousel>
   </div>
 </template>
 <script>
 import array from 'src/mixins/array_mixin';
 import DataService from 'src/services/DataService';
+import device_mixin from 'src/mixins/device_mixin';
+
 export default {
   props: ['device'],
-  mixins: [array],
+  mixins: [array, device_mixin],
   data() {
     return {
       latest_slide: 1,
@@ -63,46 +111,43 @@ export default {
       column: 1
     };
   },
-  computed: {
-    columnSize() {
-      console.log('class = col-' + this.column);
-      return 'col-' + this.column;
-    }
-  },
+  computed: {},
   methods: {
-    displaySize() {
-      const width = this.$q.screen.width;
-
-      switch (true) {
-        case width <= 320:
-          this.column = 1;
-          return this.column;
-          break;
-        case width <= 375:
-          this.column = 2;
-          return this.column;
-          break;
-        case width >= 640 && width <= 768:
-          this.column = 3;
-          return this.column;
-          break;
-        case width <= 1024:
-          this.column = 5;
-          return this.column;
-          break;
-        default:
-          this.column = 7;
-          return this.column;
-          break;
-      }
-    }
+    // displaySize() {
+    //   const width = this.$q.screen.width;
+    //   switch (true) {
+    //     case width <= 320:
+    //       this.column = 1;
+    //       return this.column;
+    //       break;
+    //     case width <= 375:
+    //       this.column = 1;
+    //       return this.column;
+    //       break;
+    //     case width >= 640 && width <= 768:
+    //       this.column = 2;
+    //       return this.column;
+    //       break;
+    //     case width <= 1024:
+    //       this.column = 4;
+    //       return this.column;
+    //       break;
+    //     default:
+    //       this.column = 6;
+    //       return this.column;
+    //       break;
+    //   }
+    // }
   },
   mounted() {
-    this.displaySize();
-    console.log('chunk', this.column);
+    this.column = parseInt(this.displaySize);
     DataService.get('data/newArrival.json')
       .then(response => {
-        this.lists = this.chunk(response.data, this.displaySize);
+        if (this.column < response.data.length) {
+          this.lists = this.chunk(response.data, this.column);
+        } else {
+          this.lists = response.data;
+        }
       })
       .catch(error => {
         console.log('mixin/ddlb Error', error);
@@ -110,8 +155,4 @@ export default {
   }
 };
 </script>
-<style lang="sass" scoped>
-div
-  border-style: solid
-  border-width: 5px
-</style>
+<style lang="sass" scoped></style>

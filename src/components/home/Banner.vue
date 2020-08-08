@@ -5,6 +5,8 @@
         :class="$q.platform.is.desktop ? 'q-ml-sm' : ''"
         arrows
         animated
+        autoplay
+        infinite
         v-model="slide"
         height="250px"
       >

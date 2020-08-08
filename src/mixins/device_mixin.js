@@ -6,25 +6,25 @@ export default {
     isMobile() {
       return this.$q.platform.is.mobile ? true : false;
     },
-    screenWidth() {
+    displaySize() {
       const width = this.$q.screen.width;
-      //      const heigth = this.$q.screen.height;
-      // let orientation = 'Portrait'
-      // switch (true) {
-      //   case (width <= 360):
-
-      //     return 'xs';
-      //     break;
-      //   case '360':
-      //     return 'sm';
-      //     break;
-      //   case '360':
-      //     return 'md';
-      //     break;
-      //   default:
-      //     return 'lg';
-      //     break;
-      // }
+      switch (true) {
+        case width <= 320:
+          return 1;
+          break;
+        case width <= 375:
+          return 1;
+          break;
+        case width >= 640 && width <= 768:
+          return 2;
+          break;
+        case width <= 1024:
+          return 4;
+          break;
+        default:
+          return 6;
+          break;
+      }
     }
   }
 };

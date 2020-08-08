@@ -4,56 +4,56 @@
     "sale_rate": 175.0,
     "product_id": 1,
     "product_name": "Non Brand Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Arjun-Maida-1kg-SDL487966891-1-30082.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-packaging-pouch-500x500.jpg"
   },
   {
     "mrp": 420.0,
     "sale_rate": 340.0,
     "product_id": 2,
     "product_name": "Non Brand Atta 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/california-almond-nut-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8908001296038_new 1.jpg"
   },
   {
     "mrp": 1950.0,
     "sale_rate": 1600.0,
     "product_id": 3,
     "product_name": "Non Brand  Atta 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Ganesh-Whole-Wheat-Chakki-Atta-1549101750-10056145-1.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Non Atta.jpg"
   },
   {
     "mrp": 260.0,
     "sale_rate": 200.0,
     "product_id": 4,
     "product_name": "Samrat Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat--779.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat_new1.jpg"
   },
   {
     "mrp": 260.0,
     "sale_rate": 220.0,
     "product_id": 7,
     "product_name": "Aashirvaad Atta 5 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/atta-ashrivad-5kg.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/8180XWMifzL._SX425_.jpg"
   },
   {
     "mrp": 2100.0,
     "sale_rate": 1800.0,
     "product_id": 15,
     "product_name": "Samrat Maida 50 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-maida-samrat--688.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/SAMRAT-MAIDA.jpg"
   },
   {
     "mrp": 85.0,
     "sale_rate": 75.0,
     "product_id": 37,
     "product_name": "Masoor Dal  1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51quiPzxLQL._AC_.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-masoor-dal-1-kg-2-20200628.jpg"
   },
   {
     "mrp": 1000.0,
     "sale_rate": 950.0,
     "product_id": 65,
     "product_name": "Dates / Khajoor Red 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1526907084.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/b9065132522f9085127a030f64b804bc--islamic-studies-delicious-fruit.jpg"
   },
   {
     "mrp": 2200.0,
@@ -67,7 +67,7 @@
     "sale_rate": 1450.0,
     "product_id": 88,
     "product_name": "Coconut 1 pc",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/717u9zWb36L._AC_SX569_.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/717u9zWb36L._AC_SX569_new.jpg"
   },
   {
     "mrp": 2100.0,
@@ -95,14 +95,14 @@
     "sale_rate": 160.0,
     "product_id": 301,
     "product_name": "Mustard Powder 500 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-mustard-powder-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sarwar-mustard-powder-500x500_new.jpg"
   },
   {
     "mrp": 100.0,
     "sale_rate": 90.0,
     "product_id": 316,
     "product_name": "Real Mango 1 Box",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/unnamed (5).jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dabur-real-mango.jpg"
   },
   {
     "mrp": 200.0,
@@ -116,7 +116,7 @@
     "sale_rate": 750.0,
     "product_id": 437,
     "product_name": "Cinnamon / Dalchini 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500_new.jpg"
   },
   {
     "mrp": 1500.0,
