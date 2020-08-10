@@ -4,7 +4,7 @@
     transition-hide="scale"
     v-if="allItems.length > 0"
   >
-    <q-list style="min-width: 150px">
+    <q-list>
       <q-item clickable v-for="item in allItems" :key="item.product_id" dense>
         <q-item-section>
           <q-item-label
@@ -33,7 +33,7 @@
         <q-btn
           color="green"
           label="Go To Cart"
-          @click="$router.push(`/cart`)"
+          @click="$router.push(`/shopping-cart`)"
         />
       </q-item-section>
     </q-item>

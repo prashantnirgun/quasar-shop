@@ -179,7 +179,8 @@ export default {
         product_name: this.data.product_name,
         rate: this.data.sale_rate,
         quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate
+        amount: this.orderQty * this.data.sale_rate,
+        mrp: this.data.mrp
       });
     },
     decrement() {

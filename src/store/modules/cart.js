@@ -10,7 +10,13 @@ import { Notify } from 'quasar';
 export default {
   namespaced: true,
   state: {
-    cart: []
+    cart: [],
+    productAmount: 0,
+    productQuantity: 0,
+    shippingCharges: 0,
+    savingAmount: 0,
+    taxAmount: 0,
+    cartTotal: 0
   },
 
   getters: {
@@ -29,6 +35,16 @@ export default {
           return false;
         }
       });
+    },
+    cartsummary: state => {
+      return {
+        productAmount: state.productAmount,
+        productQuantity: state.productQuantity,
+        shippingCharges: state.shippingCharges,
+        savingAmount: state.savingAmount,
+        taxAmount: state.taxAmount,
+        cartTotal: state.cartTotal
+      };
     }
   },
 
@@ -74,15 +90,30 @@ export default {
 
     SET_CART(state, cartItems) {
       state.cart = cartItems;
+    },
+
+    UPDATE_TOTALS(state) {
+      state.cart.map(item => {
+        state.productAmount += item.amount;
+        state.productQuantity += item.quantity;
+        //state.shippingCharges:
+        state.savingAmount += item.quantity * item.mrp - item.amount;
+        //state.taxAmount: 0
+      });
+
+      state.cartTotal =
+        state.productAmount + state.shippingCharges + state.taxAmount;
     }
   },
 
   actions: {
     addProductToCart({ commit }, payload) {
       commit('ADD_TO_CART', payload);
+      commit('UPDATE_TOTALS');
     },
     removeFromCart({ commit }, payload) {
       commit('REMOVE_FROM_CART', payload);
+      commit('UPDATE_TOTALS');
     }
 
     // fetchProduct({ context, commit }, payload) {
