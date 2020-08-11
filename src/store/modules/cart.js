@@ -36,6 +36,17 @@ export default {
         }
       });
     },
+    findItemByCategory: state => category_id => {
+      console.log('filter products by category');
+      //let cartList = []
+      return state.cart.filter(item => {
+        if (item.category_id === category_id) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    },
     cartsummary: state => {
       return {
         productAmount: state.productAmount,
@@ -45,6 +56,24 @@ export default {
         taxAmount: state.taxAmount,
         cartTotal: state.cartTotal
       };
+    },
+    categoryList: state => {
+      let caregory = [];
+      state.cart.map(item => {
+        let found = caregory.find(obj => obj.category_id === item.category_id);
+        if (found) {
+          found.amount += item.amount;
+          found.totalItems += 1;
+        } else {
+          caregory.push({
+            category_id: item.category_id,
+            category_name: item.category_name,
+            totalItems: 1,
+            total: item.amount
+          });
+        }
+      });
+      return caregory;
     }
   },
 
@@ -71,10 +100,8 @@ export default {
       let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
-      if (payload.quantity > 0) {
-        state.cart[index].quantity = payload.quantity;
-        state.cart[index].amount = payload.rate * payload.quantity;
-      } else {
+
+      if (index <= -1) {
         state.cart.splice(index, 1);
       }
 
@@ -88,8 +115,21 @@ export default {
       state.cart = [];
     },
 
-    SET_CART(state, cartItems) {
-      state.cart = cartItems;
+    UPDATE_PRODUCT_QUANTITY(state, cartItems) {
+      let index = state.cart.findIndex(
+        item => item.product_id === payload.product_id
+      );
+      if (payload.quantity > 0) {
+        state.cart[index].quantity = payload.quantity;
+        state.cart[index].amount = payload.rate * payload.quantity;
+      } else {
+        state.cart.splice(index, 1);
+      }
+
+      Notify.create({
+        type: 'warning',
+        message: `${payload.product_name} was removed from cart.`
+      });
     },
 
     UPDATE_TOTALS(state) {
@@ -113,6 +153,10 @@ export default {
     },
     removeFromCart({ commit }, payload) {
       commit('REMOVE_FROM_CART', payload);
+      commit('UPDATE_TOTALS');
+    },
+    updateProductQuantity({ commit }, payload) {
+      commit('UPDATE_PRODUCT_QUANTITY', payload);
       commit('UPDATE_TOTALS');
     }
 

@@ -21,8 +21,8 @@
     "image_filename": "https://api.cloudapmc.com:5000/product/1/Non Atta.jpg"
   },
   {
-    "mrp": 260.0,
-    "sale_rate": 200.0,
+    "mrp": 200.0,
+    "sale_rate": 180.0,
     "product_id": 4,
     "product_name": "Samrat Atta 5 kgs",
     "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat_new1.jpg"
@@ -46,21 +46,21 @@
     "sale_rate": 75.0,
     "product_id": 37,
     "product_name": "Masoor Dal  1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-masoor-dal-1-kg-2-20200628.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/good-life-masoor-dal-1-kg_new.jpg"
   },
   {
     "mrp": 1000.0,
     "sale_rate": 950.0,
     "product_id": 65,
     "product_name": "Dates / Khajoor Red 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/b9065132522f9085127a030f64b804bc--islamic-studies-delicious-fruit.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Red Khajur.jpg"
   },
   {
     "mrp": 2200.0,
     "sale_rate": 1950.0,
     "product_id": 69,
     "product_name": "Dry Dates / Khajoor Red 500 gms",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/DF_03-02_2048x.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/DF_03-02_2048x_new.jpg"
   },
   {
     "mrp": 1700.0,
@@ -74,21 +74,21 @@
     "sale_rate": 1600.0,
     "product_id": 149,
     "product_name": "Vanaspati Ghee 15 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/sopan-15-kg-tin-pure-buffalo-ghee-500x500.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/sopan-15-kg-ghee-500x500_new.jpg"
   },
   {
     "mrp": 450.0,
     "sale_rate": 220.0,
     "product_id": 163,
     "product_name": "Glass Noodls ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/mung-bean-vermicelli.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/mung-bean-vermicelli_new.jpg"
   },
   {
     "mrp": 860.0,
     "sale_rate": 850.0,
     "product_id": 195,
     "product_name": "Red Label 950 gm",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/6168OmyDv6L._SX569_.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/61+8e+4FnDL._SL1000_new.jpg"
   },
   {
     "mrp": 240.0,
@@ -109,7 +109,7 @@
     "sale_rate": 150.0,
     "product_id": 381,
     "product_name": "Gemini Sunflower Oil  1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Gemini-oil.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Gemini-oil_new.jpg"
   },
   {
     "mrp": 900.0,
@@ -119,10 +119,10 @@
     "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500_new.jpg"
   },
   {
-    "mrp": 1500.0,
-    "sale_rate": 950.0,
+    "mrp": 2000.0,
+    "sale_rate": 1700.0,
     "product_id": 505,
     "product_name": "Garlic 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ISKQLF1oL._SL1500_.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6000200094587.jpg"
   }
 ]

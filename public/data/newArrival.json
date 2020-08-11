@@ -7,8 +7,8 @@
     "image_filename": "https://api.cloudapmc.com:5000/product/1/8908001296038_new 1.jpg"
   },
   {
-    "mrp": 260.0,
-    "sale_rate": 200.0,
+    "mrp": 200.0,
+    "sale_rate": 180.0,
     "product_id": 4,
     "product_name": "Samrat Atta 5 kgs",
     "image_filename": "https://api.cloudapmc.com:5000/product/1/100-pure-wheat-chakki-atta-samrat_new1.jpg"
@@ -32,28 +32,28 @@
     "sale_rate": 45.0,
     "product_id": 22,
     "product_name": "Boiled Rice 25  kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/1579028237595.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/25kg-mmg-boiled-rice.jpg"
   },
   {
     "mrp": 500.0,
     "sale_rate": 360.0,
     "product_id": 30,
     "product_name": "Jasmin Rice Gold 1 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/51m5-Mywo4L.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/51m5-Mywo4L_new.jpg"
   },
   {
     "mrp": 310.0,
     "sale_rate": 280.0,
     "product_id": 144,
     "product_name": "Gowardhan Ghee 500 gm ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/gowardhan_ghee_500ml_jar__1100.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/gowardhan_ghee_500ml_new.jpg"
   },
   {
     "mrp": 85.0,
     "sale_rate": 60.0,
     "product_id": 162,
     "product_name": "Noodles ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/3266399.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/HILLER-NOODLES_new.jpg"
   },
   {
     "mrp": 220.0,
@@ -67,7 +67,7 @@
     "sale_rate": 150.0,
     "product_id": 381,
     "product_name": "Gemini Sunflower Oil  1 Ltr ",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/Gemini-oil.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/Gemini-oil_new.jpg"
   },
   {
     "mrp": 900.0,
@@ -77,10 +77,10 @@
     "image_filename": "https://api.cloudapmc.com:5000/product/1/dalchini-500x500_new.jpg"
   },
   {
-    "mrp": 1500.0,
-    "sale_rate": 950.0,
+    "mrp": 2000.0,
+    "sale_rate": 1700.0,
     "product_id": 505,
     "product_name": "Garlic 10 kgs",
-    "image_filename": "https://api.cloudapmc.com:5000/product/1/61ISKQLF1oL._SL1500_.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/product/1/6000200094587.jpg"
   }
 ]

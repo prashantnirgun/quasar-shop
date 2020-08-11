@@ -2,27 +2,27 @@
   {
     "category_id": 1,
     "category_name": "Atta & Maida ",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/main-banner.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/main-banner.png"
   },
   {
     "category_id": 2,
     "category_name": "Pulses & Lentils ",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/organic-pulses_new1.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/organic-pulses_new.jpg"
   },
   {
     "category_id": 3,
     "category_name": "Dry Fruits",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/ea0d3cf3f19299_new.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/ea0d3cf3f1929943_new.jpg"
   },
   {
     "category_id": 4,
     "category_name": "Spices Whole",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/Spices Whole.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/Spices Whole_new.jpg"
   },
   {
     "category_id": 5,
     "category_name": "Masala Powdar",
-    "image_filename": "https://api.cloudapmc.com:5000/category/1/how-to-properly_new2.jpg"
+    "image_filename": "https://api.cloudapmc.com:5000/category/1/blended-spices-500x500_new.jpg"
   },
   {
     "category_id": 6,

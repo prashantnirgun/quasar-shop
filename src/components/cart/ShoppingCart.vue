@@ -12,11 +12,46 @@
           <div class="col-8">
             <q-card class="q-ma-sm">
               <q-card-section>
-                <div class="text-h6">Shopping Cart</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                exercitationem laborum voluptates aut vero quibusdam, deserunt
-                pariatur quaerat atque ipsa consectetur ipsam obcaecati
-                laudantium tenetur ut excepturi eum expedita iusto.
+                <div>
+                  <q-splitter v-model="splitterModel" style="height: 400px">
+                    <template v-slot:before>
+                      <!-- <div class="q-pa-md"> -->
+                      <q-list bordered separator class="q-mr-md">
+                        <q-item
+                          clickable
+                          v-ripple
+                          v-for="category in categoryList"
+                          :key="category.category_id"
+                          @click="getcartList(category.category_id)"
+                        >
+                          <q-item-section>
+                            <q-item-label>{{
+                              category.category_name
+                            }}</q-item-label>
+                            <q-item-label caption>Caption</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-list>
+                      <!-- </div> -->
+                    </template>
+
+                    <template v-slot:after>
+                      <q-list bordered separator class="q-mr-md">
+                        <q-item
+                          clickable
+                          v-ripple
+                          v-for="cart in cartList"
+                          :key="cart.product_id"
+                        >
+                          <q-item-section>
+                            <q-item-label>{{ cart.product_name }}</q-item-label>
+                            <q-item-label caption>Caption</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-list>
+                    </template>
+                  </q-splitter>
+                </div>
               </q-card-section>
             </q-card>
           </div>
@@ -124,16 +159,28 @@ export default {
   data() {
     return {
       //totalAmount: 0,
-      step: 1
+      step: 1,
+      splitterModel: 50,
+      cartList: []
     };
   },
   computed: {
-    // ...mapGetters('cart', ['allItems']),
+    ...mapGetters('cart', ['categoryList', 'findItemByCategory'])
+
     // getTotal() {
     //   return this.allItems.reduce((total, item) => {
     //     return total + item.amount;
     //   }, 0);
     // }
+  },
+  methods: {
+    getcartList(category_id) {
+      this.cartList = this.findItemByCategory(category_id);
+      console.log('look what i found', this.cartList, this.cartList.length);
+    }
+  },
+  mounted() {
+    console.log('list', this.categoryList);
   }
 };
 </script>

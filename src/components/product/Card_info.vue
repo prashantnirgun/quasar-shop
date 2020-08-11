@@ -171,12 +171,14 @@ export default {
     }
   },
   methods: {
-    ...mapActions('cart', ['addProductToCart', 'removeFromCart']),
+    ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
     increment() {
       this.orderQty++;
       this.addProductToCart({
         product_id: this.data.product_id,
+        category_id: this.data.category_id,
         product_name: this.data.product_name,
+        category_name: this.data.category_name,
         rate: this.data.sale_rate,
         quantity: this.orderQty,
         amount: this.orderQty * this.data.sale_rate,
@@ -185,7 +187,7 @@ export default {
     },
     decrement() {
       this.orderQty--;
-      this.removeFromCart({
+      this.updateProductQuantity({
         product_id: this.data.product_id,
         product_name: this.data.product_name,
         quantity: this.orderQty
