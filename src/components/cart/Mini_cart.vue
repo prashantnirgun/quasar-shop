@@ -8,7 +8,7 @@
       <div v-for="item in allItems" :key="item.product_id">
         <q-slide-item
           @left="onLeft(item)"
-          @right="onRight"
+          @right="onRight(item)"
           left-color="green"
           right-color="red"
         >
@@ -61,12 +61,17 @@
     </q-item>
 
     <!-- <q-item class=""> -->
-    <q-card-actions class="q-pt-none">
-      <q-btn flat round color="red" icon="favorite">Slide Left</q-btn>
-      <q-btn flat round color="teal" icon="remove_shopping_cart"
-        >Slide Right</q-btn
-      >
-    </q-card-actions>
+    <q-item>
+      <q-item-section avatar>
+        <q-avatar text-color="green" icon="favorite" />
+      </q-item-section>
+
+      <q-item-section>Swipe Left Swipe Right</q-item-section>
+
+      <q-item-section avatar>
+        <q-avatar text-color="red" icon="remove_shopping_cart" />
+      </q-item-section>
+    </q-item>
     <!-- </q-item> -->
   </q-menu>
 </template>

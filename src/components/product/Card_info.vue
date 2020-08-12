@@ -174,6 +174,7 @@ export default {
     ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
     increment() {
       this.orderQty++;
+
       this.addProductToCart({
         product_id: this.data.product_id,
         category_id: this.data.category_id,
@@ -182,7 +183,10 @@ export default {
         rate: this.data.sale_rate,
         quantity: this.orderQty,
         amount: this.orderQty * this.data.sale_rate,
-        mrp: this.data.mrp
+        mrp: this.data.mrp,
+        image_filename: this.data.image_filename,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
       });
     },
     decrement() {

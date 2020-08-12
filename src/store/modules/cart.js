@@ -1,9 +1,3 @@
-// export default function () {
-//   return {
-//     //
-//   }
-// }
-
 import DataService from 'src/services/DataService';
 import { Notify } from 'quasar';
 
@@ -27,27 +21,13 @@ export default {
       return state.cart;
     },
     findItem: state => product_id => {
-      //console.log('inside findItem', product_id);
-      return state.cart.find(item => {
-        if (item.product_id === product_id) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+      return state.cart.find(item => item.product_id === product_id);
     },
     findItemByCategory: state => category_id => {
-      console.log('filter products by category');
-      //let cartList = []
-      return state.cart.filter(item => {
-        if (item.category_id === category_id) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+      return state.cart.filter(item => item.category_id === category_id);
     },
     cartsummary: state => {
+      console.log('cart summary is changed');
       return {
         productAmount: state.productAmount,
         productQuantity: state.productQuantity,
@@ -58,18 +38,21 @@ export default {
       };
     },
     categoryList: state => {
+      console.log('cart Category List is updated');
       let caregory = [];
       state.cart.map(item => {
         let found = caregory.find(obj => obj.category_id === item.category_id);
         if (found) {
-          found.amount += item.amount;
-          found.totalItems += 1;
+          found.totalAmount += item.amount;
+          found.totalItem += 1;
+          found.totalSaving += item.saving;
         } else {
           caregory.push({
             category_id: item.category_id,
             category_name: item.category_name,
-            totalItems: 1,
-            total: item.amount
+            totalItem: 1,
+            totalAmount: item.amount,
+            totalSaving: item.saving
           });
         }
       });
@@ -85,7 +68,8 @@ export default {
 
       if (productInCart) {
         productInCart.quantity = payload.quantity;
-        productInCart.amount = productInCart.rate * payload.quantity;
+        productInCart.amount = payload.amount;
+        productInCart.saving = payload.saving;
       } else {
         state.cart.push({ ...payload });
       }
@@ -101,7 +85,7 @@ export default {
         item => item.product_id === payload.product_id
       );
 
-      if (index <= -1) {
+      if (index != -1) {
         state.cart.splice(index, 1);
       }
 
@@ -133,6 +117,11 @@ export default {
     },
 
     UPDATE_TOTALS(state) {
+      //empty the toals first
+      state.productAmount = 0;
+      state.productQuantity = 0;
+      state.savingAmount = 0;
+
       state.cart.map(item => {
         state.productAmount += item.amount;
         state.productQuantity += item.quantity;

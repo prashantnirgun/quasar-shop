@@ -10,55 +10,10 @@
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
           <div class="col-8">
-            <q-card class="q-ma-sm">
-              <q-card-section>
-                <div>
-                  <q-splitter v-model="splitterModel" style="height: 400px">
-                    <template v-slot:before>
-                      <!-- <div class="q-pa-md"> -->
-                      <q-list bordered separator class="q-mr-md">
-                        <q-item
-                          clickable
-                          v-ripple
-                          v-for="category in categoryList"
-                          :key="category.category_id"
-                          @click="getcartList(category.category_id)"
-                        >
-                          <q-item-section>
-                            <q-item-label>{{
-                              category.category_name
-                            }}</q-item-label>
-                            <q-item-label caption>Caption</q-item-label>
-                          </q-item-section>
-                        </q-item>
-                      </q-list>
-                      <!-- </div> -->
-                    </template>
-
-                    <template v-slot:after>
-                      <q-list bordered separator class="q-mr-md">
-                        <q-item
-                          clickable
-                          v-ripple
-                          v-for="cart in cartList"
-                          :key="cart.product_id"
-                        >
-                          <q-item-section>
-                            <q-item-label>{{ cart.product_name }}</q-item-label>
-                            <q-item-label caption>Caption</q-item-label>
-                          </q-item-section>
-                        </q-item>
-                      </q-list>
-                    </template>
-                  </q-splitter>
-                </div>
-              </q-card-section>
-            </q-card>
+            <cart-list />
           </div>
           <div class="col-4 ">
-            <q-card class="q-ma-sm">
-              <cart-overview />
-            </q-card>
+            <cart-overview />
           </div>
         </div>
       </q-step>
@@ -66,7 +21,6 @@
       <q-step
         :name="2"
         title="Billing Information"
-        caption="Optional"
         icon="receipt"
         :done="step > 2"
         style="min-height: 200px;"
@@ -151,36 +105,16 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
 export default {
   components: {
-    'cart-overview': () => import('./CartOverview')
+    'cart-overview': () => import('./CartOverview'),
+    'cart-list': () => import('./CartList')
   },
   data() {
     return {
-      //totalAmount: 0,
-      step: 1,
-      splitterModel: 50,
-      cartList: []
+      step: 1
     };
-  },
-  computed: {
-    ...mapGetters('cart', ['categoryList', 'findItemByCategory'])
-
-    // getTotal() {
-    //   return this.allItems.reduce((total, item) => {
-    //     return total + item.amount;
-    //   }, 0);
-    // }
-  },
-  methods: {
-    getcartList(category_id) {
-      this.cartList = this.findItemByCategory(category_id);
-      console.log('look what i found', this.cartList, this.cartList.length);
-    }
-  },
-  mounted() {
-    console.log('list', this.categoryList);
   }
 };
 </script>
+<style lang="sass"></style>
