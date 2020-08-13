@@ -194,7 +194,11 @@ export default {
       this.updateProductQuantity({
         product_id: this.data.product_id,
         product_name: this.data.product_name,
-        quantity: this.orderQty
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+        message: false
       });
     }
   },

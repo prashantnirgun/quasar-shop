@@ -35,3 +35,7 @@ var Vue2FiltersConfig = {
   }
 };
 Vue.use(Vue2Filters, Vue2FiltersConfig);
+
+import vueAwesomeCountdown from 'vue-awesome-countdown';
+
+Vue.use(vueAwesomeCountdown, 'vac'); // Component name, `countdown` and `vac` by default

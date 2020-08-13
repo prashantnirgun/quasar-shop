@@ -9,18 +9,18 @@
 </template>
 
 <script>
+//import vueAwesomeCountdown from 'vue-awesome-countdown';
+
 export default {
   props: ['device'],
   components: {
     'sale-slider': () => import('components/home/Sale-Horizontal-Slider'),
     'new-arrivals-slider': () =>
       import('components/home/New-Arrivals-Horizontal-Slider'),
-    // 'category-slider': () =>
-    //   import('components/home/Category-Horizontal-Slider'),
     category: () => import('components/home/Category')
+    //countdown: vueAwesomeCountdown
   },
   mounted() {
-    //console.log('props recived', this.device);
     console.log('screen width', this.$q.screen.width);
   }
 };

@@ -1,19 +1,28 @@
 <template>
-  <div class="q-ma-lg">
-    <!-- <div class="q-pl-md bg-green-13 rounded-borders">
-      <span class="text-grey-9 text-h6 text-weight-bold">Sale</span>
-      <a class="text-primary q-ml-sm cursor-pointer">[see all]</a>
-    </div> -->
-
+  <div class="col-12 q-pa-md">
     <q-ribbon
       position="left"
-      color="#000000"
-      background-color="#a2e320"
+      color="#ffffff"
+      background-color="#027BE3"
       leaf-position="top"
-      glow
       size="full"
     >
-      Sales Ends on : 15th Aguust 2020 12:00 PM
+      Sales Ends on
+      <countdown :end-time="new Date('2020-08-15')">
+        <template v-slot:process="anyYouWantedScopName">
+          <span>
+            {{
+              `Day's: ${anyYouWantedScopName.timeObj.d}
+           Time : ${anyYouWantedScopName.timeObj.h} :
+            ${anyYouWantedScopName.timeObj.m} :
+           ${anyYouWantedScopName.timeObj.s}`
+            }}</span
+          >
+        </template>
+        <template v-slot:finish>
+          <span>Done!</span>
+        </template>
+      </countdown>
     </q-ribbon>
 
     <q-carousel
@@ -116,6 +125,7 @@
 import array from 'src/mixins/array_mixin';
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
+
 export default {
   props: ['device'],
   mixins: [array, device_mixin],

@@ -1,12 +1,11 @@
 <template>
-  <div class="q-mx-lg">
+  <div class="col-12 q-pa-sm">
     <q-ribbon
       position="left"
       color="#000000"
       background-color="#e3df02"
       leaf-position="bottom"
       size="full"
-      glow
     >
       New Arrivals
     </q-ribbon>
