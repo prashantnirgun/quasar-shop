@@ -7,22 +7,7 @@
       leaf-position="top"
       size="full"
     >
-      Sales Ends on
-      <countdown :end-time="new Date('2020-08-15')">
-        <template v-slot:process="anyYouWantedScopName">
-          <span>
-            {{
-              `Day's: ${anyYouWantedScopName.timeObj.d}
-           Time : ${anyYouWantedScopName.timeObj.h} :
-            ${anyYouWantedScopName.timeObj.m} :
-           ${anyYouWantedScopName.timeObj.s}`
-            }}</span
-          >
-        </template>
-        <template v-slot:finish>
-          <span>Done!</span>
-        </template>
-      </countdown>
+      Sales
     </q-ribbon>
 
     <q-carousel
@@ -59,22 +44,9 @@
               :src="row.image_filename"
               :height="getSize"
               :width="getSize"
+              transition="scale"
               placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
             />
-
-            <!-- <div>{{ row.product_name }}</div> 
-            <div class="text-caption text-weight-bold text-green">
-              {{ row.product_name }}
-            </div>
-            <div>
-              <span>₹{{ row.sale_rate }}</span
-              ><span
-                class="q-ml-sm text-grey-6"
-                style="text-decoration: line-through"
-                >₹{{ row.mrp }}</span
-              >
-            </div>
-            -->
 
             <q-item>
               <q-item-section>
@@ -86,7 +58,43 @@
                     >{{ row.mrp | currency }}</span
                   ></q-item-label
                 >
+                <q-item-label class="text-deep-purple">
+                  <countdown :end-time="new Date('2020-08-15')">
+                    <template v-slot:process="anyYouWantedScopName">
+                      <span>
+                        {{
+                          `Day's: ${anyYouWantedScopName.timeObj.d}
+           Time : ${anyYouWantedScopName.timeObj.h} :
+            ${anyYouWantedScopName.timeObj.m} :
+           ${anyYouWantedScopName.timeObj.s}`
+                        }}</span
+                      >
+                    </template>
+                    <template v-slot:finish>
+                      <span>Done!</span>
+                    </template>
+                  </countdown>
+                </q-item-label>
               </q-item-section>
+              <!-- <q-card-section> -->
+              <!-- <q-item-label>
+                <countdown :end-time="new Date('2020-08-15')">
+                  <template v-slot:process="anyYouWantedScopName">
+                    <span>
+                      {{
+                        `Day's: ${anyYouWantedScopName.timeObj.d}
+           Time : ${anyYouWantedScopName.timeObj.h} :
+            ${anyYouWantedScopName.timeObj.m} :
+           ${anyYouWantedScopName.timeObj.s}`
+                      }}</span
+                    >
+                  </template>
+                  <template v-slot:finish>
+                    <span>Done!</span>
+                  </template>
+                </countdown>
+              </q-item-label> -->
+              <!-- </q-card-section> -->
             </q-item>
           </q-card>
         </div>

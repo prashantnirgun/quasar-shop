@@ -88,22 +88,10 @@ export default {
     increment() {
       this.orderQty++;
       this.setProduct();
-      //   this.addProductToCart({
-      //     product_id: this.data.product_id,
-      //     quantity: this.orderQty,
-      //     amount: this.orderQty * this.data.rate,
-      //     saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-      //   });
     },
     decrement() {
       this.orderQty++;
       this.setProduct();
-      //   this.addProductToCart({
-      //     product_id: this.data.product_id,
-      //     quantity: this.orderQty,
-      //     amount: this.orderQty * this.data.rate,
-      //     saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-      //   });
     },
     setProduct() {
       this.updateProductQuantity({
@@ -121,7 +109,4 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-div
-  border : 1pm sold green
-</style>
+<style lang="sass" scoped></style>
