@@ -84,14 +84,14 @@ export default {
       let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
-
+      let name = state.cart[index].product_name;
       if (index != -1) {
         state.cart.splice(index, 1);
       }
 
       Notify.create({
         type: 'warning',
-        message: `${payload.product_name} was removed from cart.`
+        message: `${name} was removed from cart.`
       });
     },
 
@@ -99,21 +99,23 @@ export default {
       state.cart = [];
     },
 
-    UPDATE_PRODUCT_QUANTITY(state, cartItems) {
+    UPDATE_PRODUCT_QUANTITY(state, payload) {
       let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
       if (payload.quantity > 0) {
         state.cart[index].quantity = payload.quantity;
-        state.cart[index].amount = payload.rate * payload.quantity;
+        state.cart[index].amount = payload.amount;
+        state.cart[index].saving = payload.saving;
       } else {
         state.cart.splice(index, 1);
       }
-
-      Notify.create({
-        type: 'warning',
-        message: `${payload.product_name} was removed from cart.`
-      });
+      if (!!payload.message) {
+        Notify.create({
+          type: 'warning',
+          message: `${payload.product_name} was removed from cart.`
+        });
+      }
     },
 
     UPDATE_TOTALS(state) {

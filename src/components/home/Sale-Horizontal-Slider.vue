@@ -1,9 +1,21 @@
 <template>
-  <div class="col-12 q-my-sm ">
-    <div class="q-pl-md bg-green-13 rounded-borders">
+  <div class="q-ma-lg">
+    <!-- <div class="q-pl-md bg-green-13 rounded-borders">
       <span class="text-grey-9 text-h6 text-weight-bold">Sale</span>
       <a class="text-primary q-ml-sm cursor-pointer">[see all]</a>
-    </div>
+    </div> -->
+
+    <q-ribbon
+      position="left"
+      color="#000000"
+      background-color="#a2e320"
+      leaf-position="top"
+      glow
+      size="full"
+    >
+      Sales Ends on : 15th Aguust 2020 12:00 PM
+    </q-ribbon>
+
     <q-carousel
       v-model="latest_slide"
       ref="sale_carousel"
@@ -58,11 +70,11 @@
             <q-item>
               <q-item-section>
                 <q-item-label
-                  >₹{{ row.sale_rate
+                  >{{ row.sale_rate | currency
                   }}<span
-                    class="q-ml-sm text-grey-6"
+                    class="q-ml-sm text-blue-6"
                     style="text-decoration: line-through"
-                    >₹{{ row.mrp }}</span
+                    >{{ row.mrp | currency }}</span
                   ></q-item-label
                 >
               </q-item-section>

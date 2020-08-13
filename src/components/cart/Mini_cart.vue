@@ -32,7 +32,7 @@
 
             <q-item-section side>
               <q-item-label class="text-right"
-                >₹ {{ item.amount }}
+                >{{ item.amount | currency }}
               </q-item-label>
             </q-item-section>
           </q-item>
@@ -46,7 +46,9 @@
       </q-item-section>
 
       <q-item-section>
-        <q-item-label class="text-right">₹ {{ getTotal }} </q-item-label>
+        <q-item-label class="text-right"
+          >{{ cartsummary.cartTotal | currency }}
+        </q-item-label>
       </q-item-section>
     </q-item>
 
@@ -78,18 +80,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 export default {
-  data() {
-    return {
-      //totalAmount: 0
-    };
-  },
   computed: {
-    ...mapGetters('cart', ['allItems']),
-    getTotal() {
-      return this.allItems.reduce((total, item) => {
-        return total + item.amount;
-      }, 0);
-    }
+    ...mapGetters('cart', ['allItems', 'cartsummary'])
   },
   methods: {
     ...mapActions('cart', ['removeFromCart']),

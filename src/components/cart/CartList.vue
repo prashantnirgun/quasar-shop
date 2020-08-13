@@ -4,11 +4,11 @@
       <div>
         <q-splitter v-model="splitterModel" style="height: 400px">
           <template v-slot:before>
-            <cart-category-list @categorySelected="category_id = $event" />
+            <cart-category-list />
           </template>
 
           <template v-slot:after>
-            <cart-product-list :category_id="category_id" />
+            <cart-product-list />
           </template>
         </q-splitter>
       </div>
@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      splitterModel: 40,
-      category_id: 0
+      splitterModel: 40
+      //category_id: 0
     };
   }
 };

@@ -1,9 +1,16 @@
 <template>
-  <div class="col-12">
-    <div class="q-pl-md bg-yellow-5 ">
-      <span class="text-grey-9 text-h6 text-weight-bold">New Arrivals</span>
-      <a class="text-primary q-ml-sm cursor-pointer">[see all]</a>
-    </div>
+  <div class="q-mx-lg">
+    <q-ribbon
+      position="left"
+      color="#000000"
+      background-color="#e3df02"
+      leaf-position="bottom"
+      size="full"
+      glow
+    >
+      New Arrivals
+    </q-ribbon>
+    <!-- <div> -->
     <q-carousel
       v-model="latest_slide"
       ref="new_arival_carousel"
@@ -53,11 +60,11 @@
             <q-item>
               <q-item-section>
                 <q-item-label
-                  >₹{{ row.sale_rate
+                  >{{ row.sale_rate | currency
                   }}<span
                     class="q-ml-sm text-grey-6"
                     style="text-decoration: line-through"
-                    >₹{{ row.mrp }}</span
+                    >{{ row.mrp | currency }}</span
                   ></q-item-label
                 >
               </q-item-section>
@@ -94,6 +101,7 @@
       </template>
     </q-carousel>
   </div>
+  <!-- </div> -->
 </template>
 <script>
 import array from 'src/mixins/array_mixin';

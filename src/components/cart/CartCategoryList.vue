@@ -5,12 +5,14 @@
       v-ripple
       v-for="category in categoryList"
       :key="category.category_id"
-      @click="categorySet(category.category_id)"
+      @click="link = category.category_id"
       :active="link === category.category_id"
       active-class="bg-yellow"
     >
       <q-item-section>
-        <q-item-label>{{ category.category_name }}</q-item-label>
+        <q-item-label
+          >{{ category.category_name }} {{ category.category_id }}</q-item-label
+        >
         <q-item-label caption
           >Total
           {{ category.totalAmount | currency }}
@@ -46,24 +48,25 @@ export default {
     ...mapGetters('cart', ['categoryList'])
   },
   methods: {
-    categorySet(category_id) {
-      console.log('categorySelected', this.link);
-      this.link = category_id;
-      this.$emit('categorySelected', category_id);
-      bus.$emit('vue_event_testing');
-    }
+    // categorySet(category_id) {
+    //   this.link = category_id;
+    //   console.log('inside cartCategory categorySet()', this.link);
+    //   //this.$emit('categorySelected', category_id);
+    //   //bus.$emit('vue_event_testing');
+    // }
   },
   mounted() {
-    console.log('inside mounted', this.link);
     if (this.categoryList.length > 0) {
       this.link = this.categoryList[0].category_id;
-      this.$emit('categorySelected', this.link);
+      console.log('inside cartCategory mounted', this.link);
+      bus.$emit('update_product_cart', this.link);
+      //this.$emit('categorySelected', this.link);
     }
   },
   updated() {
-    console.log('inside updated', this.link);
+    //console.log('inside cartCategory updated Event', this.link);
     //this.$emit('categorySelected', this.link);
-    bus.$emit('update_product_cart');
+    bus.$emit('update_product_cart', this.link);
     //this.$ref.productList.foo();
   }
 };

@@ -188,7 +188,7 @@ export default {
     );
   },
   created() {
-    this.$q.addressbarColor.set('#228b22');
+    //this.$q.addressbarColor.set('#228b22');
   }
 };
 </script>

@@ -1,34 +1,68 @@
 <template>
-  <q-list bordered separator class="q-ml-md ">
-    <q-item clickable v-ripple v-for="cart in cartList" :key="cart.product_id">
-      <q-item-section class="col-2">
-        <img :src="cart.image_filename" height="80px" width="80px" />
-      </q-item-section>
+  <q-list class="q-px-sm q-gutter-md">
+    <q-card v-for="cart in cartList" :key="cart.product_id">
+      <cart-product :data="cart" />
+      <!-- <div class="row">
+        <div>
+          <img :src="cart.image_filename" height="116px" width="116px" />
+        </div>
 
-      <q-item-section class="col-10">
-        <q-item-label class="text-subtitle1">{{
-          cart.product_name
-        }}</q-item-label>
-        <q-item-label class="text-weight-regular"
-          >Qunatity : {{ cart.quantity }}</q-item-label
-        >
-        <q-item-label class="text-caption"
-          >MRP : {{ cart.mrp | currency }}</q-item-label
-        >
-        <q-item-label>Our Price : {{ cart.rate | currency }}</q-item-label>
-      </q-item-section>
-    </q-item>
+        <div>
+          <div class="q-pa-sm text-h6">
+            {{ cart.product_name }}
+          </div>
+          <q-item-label class="text-weight-regular"
+            >Qunatity : {{ cart.quantity }}</q-item-label
+          >
+          <q-item-label class="text-caption"
+            >MRP : {{ cart.mrp | currency }}</q-item-label
+          >
+          <q-item-label>Our Price : {{ cart.rate | currency }}</q-item-label>
+        </div>
+        <div>
+          <q-input
+            v-model.number="orderQty"
+            color="green-6"
+            style="width: 135px; height : 30px;"
+            dense
+            outlined
+            class="custom-control col-4"
+          >
+            <template v-slot:prepend>
+              <q-btn
+                @click="decrement"
+                color="green-6"
+                icon="remove"
+                size="md"
+                round
+                unelevated
+                class="rounded-borders full-height"
+              />
+            </template>
+
+            <template v-slot:append>
+              <q-btn
+                @click="increment"
+                color="green-6"
+                icon="add"
+                size="md"
+                round
+                unelevated
+                class="rounded-borders full-height"
+              />
+            </template>
+          </q-input>
+        </div>
+      </div> -->
+    </q-card>
   </q-list>
 </template>
 <script>
 import { mapGetters } from 'vuex';
 import bus from 'src/boot/events';
 export default {
-  props: ['category_id'],
-  watch: {
-    category_id(newVal) {
-      this.getcartList();
-    }
+  components: {
+    'cart-product': () => import('./CartProduct')
   },
   data() {
     return {
@@ -39,21 +73,15 @@ export default {
     ...mapGetters('cart', ['findItemByCategory'])
   },
   methods: {
-    getcartList() {
-      console.log('getCartList...');
-      this.cartList = this.findItemByCategory(this.category_id);
-    },
     event_listner() {
-      bus.$on('update_product_cart', () => {
-        console.log('going to call getcartlist()');
-        this.getcartList();
+      bus.$on('update_product_cart', category_id => {
+        this.cartList = this.findItemByCategory(category_id);
+        console.log('event capture', category_id);
       });
     }
   },
-  // mounted() {
-  //   this.getcartList();
-  // },
   created() {
+    console.log('started listning');
     this.event_listner();
   }
 };
