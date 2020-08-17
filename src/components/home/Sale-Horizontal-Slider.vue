@@ -21,16 +21,12 @@
       infinite
       height="350px"
     >
-      <q-carousel-slide
-        v-for="(rows, index) in lists"
-        :name="index"
-        :key="index"
-      >
+      <q-carousel-slide name="one">
         <div class="row justify-evenly items-center no-wrap">
           <q-card
-            v-for="row in rows"
+            v-for="row in lists"
             :key="row.product_id"
-            class="q-mx-xs  bg-green-13 rounded-borders hover_border_grey text-center cursor-pointer"
+            class="q-mx-xs bg-green-13 rounded-borders hover_border_grey text-center cursor-pointer"
             @click="$router.push(`/product-details/${row.product_id}`)"
           >
             <q-item>
@@ -46,7 +42,18 @@
               :width="getSize"
               transition="scale"
               placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
-            />
+            >
+              <q-badge class="content-start transparent no-margin no-padding">
+                <q-chip
+                  size="12px"
+                  color="primary"
+                  text-color="white"
+                  icon="thumb_up"
+                >
+                  {{ row.saving }} % off
+                </q-chip>
+              </q-badge>
+            </q-img>
 
             <q-item>
               <q-item-section>
@@ -63,7 +70,7 @@
                     <template v-slot:process="anyYouWantedScopName">
                       <span>
                         {{
-                          `Day's: ${anyYouWantedScopName.timeObj.d}
+                          `Day : ${anyYouWantedScopName.timeObj.d}
            Time : ${anyYouWantedScopName.timeObj.h} :
             ${anyYouWantedScopName.timeObj.m} :
            ${anyYouWantedScopName.timeObj.s}`
@@ -76,25 +83,6 @@
                   </countdown>
                 </q-item-label>
               </q-item-section>
-              <!-- <q-card-section> -->
-              <!-- <q-item-label>
-                <countdown :end-time="new Date('2020-08-15')">
-                  <template v-slot:process="anyYouWantedScopName">
-                    <span>
-                      {{
-                        `Day's: ${anyYouWantedScopName.timeObj.d}
-           Time : ${anyYouWantedScopName.timeObj.h} :
-            ${anyYouWantedScopName.timeObj.m} :
-           ${anyYouWantedScopName.timeObj.s}`
-                      }}</span
-                    >
-                  </template>
-                  <template v-slot:finish>
-                    <span>Done!</span>
-                  </template>
-                </countdown>
-              </q-item-label> -->
-              <!-- </q-card-section> -->
             </q-item>
           </q-card>
         </div>
@@ -113,7 +101,7 @@
             color="orange"
             text-color="black"
             icon="arrow_left"
-            @click="$refs.sale_carousel.previous()"
+            @click="goToPage('previous')"
           />
           <q-btn
             push
@@ -122,7 +110,7 @@
             color="orange"
             text-color="black"
             icon="arrow_right"
-            @click="$refs.sale_carousel.next()"
+            @click="goToPage('next')"
           />
         </q-carousel-control>
       </template>
@@ -139,9 +127,12 @@ export default {
   mixins: [array, device_mixin],
   data() {
     return {
-      latest_slide: 1,
+      latest_slide: 'one',
       lists: [],
-      column: 1
+      column: 1,
+      page: 1,
+      pages: 0,
+      offset: 0
     };
   },
   computed: {
@@ -149,20 +140,35 @@ export default {
       return this.column === 2 ? '180px' : '200px';
     }
   },
-  mounted() {
+  methods: {
+    goToPage(direction) {
+      if (direction === 'next') {
+        this.page = this.pages > this.page ? this.page + 1 : 1;
+      } else {
+        this.page = this.page > 1 ? this.page - 1 : this.pages;
+      }
+      this.offset = this.page * this.column;
+      console.log('go to/', direction, this.page, this.offset, this.pages);
+      this.getData();
+    },
+    getData() {
+      DataService.get(
+        `slider?limit=${this.column}&offset=${this.offset}where: tag like {Sale}&total_rows=true`
+      )
+        .then(response => {
+          this.lists = response.data.rows;
+          this.pages = response.data.total_rows / this.column;
+        })
+        .catch(error => {
+          console.log('mixin/ddlb Error', error);
+        });
+    }
+  },
+  created() {
     this.column = parseInt(this.displaySize);
-    console.log('column =>', this.column);
-    DataService.get('data/productSale.json')
-      .then(response => {
-        if (this.column < response.data.length) {
-          this.lists = this.chunk(response.data, this.column);
-        } else {
-          this.lists = response.data;
-        }
-      })
-      .catch(error => {
-        console.log('mixin/ddlb Error', error);
-      });
+    this.getData();
   }
 };
 </script>
+
+<style lang="sass" scoped></style>

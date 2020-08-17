@@ -1,6 +1,7 @@
 [
   {
     "mrp": 420.0,
+    "saving": 80.95,
     "sale_rate": 340.0,
     "product_id": 2,
     "product_name": "Non Brand Atta 10 kgs",
@@ -8,6 +9,7 @@
   },
   {
     "mrp": 200.0,
+    "saving": 90.0,
     "sale_rate": 180.0,
     "product_id": 4,
     "product_name": "Samrat Atta 5 kgs",
@@ -15,6 +17,7 @@
   },
   {
     "mrp": 260.0,
+    "saving": 84.62,
     "sale_rate": 220.0,
     "product_id": 7,
     "product_name": "Aashirvaad Atta 5 kgs",
@@ -22,6 +25,7 @@
   },
   {
     "mrp": 480.0,
+    "saving": 87.5,
     "sale_rate": 420.0,
     "product_id": 8,
     "product_name": "Aashirvaad Atta 10 kgs",
@@ -29,6 +33,7 @@
   },
   {
     "mrp": 50.0,
+    "saving": 90.0,
     "sale_rate": 45.0,
     "product_id": 22,
     "product_name": "Boiled Rice 25  kgs",
@@ -36,6 +41,7 @@
   },
   {
     "mrp": 500.0,
+    "saving": 72.0,
     "sale_rate": 360.0,
     "product_id": 30,
     "product_name": "Jasmin Rice Gold 1 kgs",
@@ -43,13 +49,15 @@
   },
   {
     "mrp": 310.0,
-    "sale_rate": 280.0,
+    "saving": 93.55,
+    "sale_rate": 290.0,
     "product_id": 144,
-    "product_name": "Gowardhan Ghee 500 gm ",
+    "product_name": "Gowardhan Ghee 500 ml",
     "image_filename": "https://api.cloudapmc.com:5000/product/1/gowardhan_ghee_500ml_new.jpg"
   },
   {
     "mrp": 85.0,
+    "saving": 70.59,
     "sale_rate": 60.0,
     "product_id": 162,
     "product_name": "Noodles ",
@@ -57,6 +65,7 @@
   },
   {
     "mrp": 220.0,
+    "saving": 95.45,
     "sale_rate": 210.0,
     "product_id": 164,
     "product_name": "Tata Agni Tea Powdar 1 kg",
@@ -64,6 +73,7 @@
   },
   {
     "mrp": 200.0,
+    "saving": 75.0,
     "sale_rate": 150.0,
     "product_id": 381,
     "product_name": "Gemini Sunflower Oil  1 Ltr ",
@@ -71,6 +81,7 @@
   },
   {
     "mrp": 900.0,
+    "saving": 83.33,
     "sale_rate": 750.0,
     "product_id": 437,
     "product_name": "Cinnamon / Dalchini 1 kgs",
@@ -78,6 +89,7 @@
   },
   {
     "mrp": 2000.0,
+    "saving": 85.0,
     "sale_rate": 1700.0,
     "product_id": 505,
     "product_name": "Garlic 10 kgs",

@@ -4,7 +4,7 @@
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
         <div class="q-pa-md">
           <q-carousel swipeable animated v-model="slide" thumbnails infinite>
-            <q-carousel-slide :name="1" :img-src="lists[0].image_filename" />
+            <q-carousel-slide :name="1" :img-src="lists.image_filename" />
             <q-carousel-slide
               :name="2"
               img-src="https://placeimg.com/500/300/nature"
@@ -40,7 +40,7 @@
             :class="$q.platform.is.desktop ? '' : 'q-px-md'"
           >
             <div class="text-subtitle1 text-grey-10 q-mt-sm q-pt-xs">
-              {{ lists[0].product_name }}
+              {{ lists.product_name }}
             </div>
             <div>
               <q-chip
@@ -61,15 +61,15 @@
               <div class="text-caption text-green-8 text-weight-bolder q-mt-sm">
                 Special Price
               </div>
-              <span class="text-h6">₹3,149</span
+              <span class="text-h6">{{ lists.sale_rate | currency }}</span
               ><span
                 class="q-ml-sm text-grey-6"
                 style="text-decoration: line-through"
-                >₹3,699</span
+                >{{ lists.mrp | currency }}</span
               >
               <span
                 class="q-ml-md text-caption text-green-8 text-weight-bolder q-mt-md"
-                >20% off</span
+                >{{ lists.saving }}</span
               >
             </div>
             <div class="q-mt-sm text-weight-bold">
@@ -580,12 +580,14 @@ export default {
   mounted() {
     const product_id = parseInt(this.$route.params.product_id);
     //console.time('Timer name');
-    DataService.get('data/product.json')
+    //DataService.get('data/product.json')
+    DataService.get(`product/${product_id}`)
       .then(response => {
-        this.lists = response.data.filter(
-          row => parseInt(row.product_id) === product_id
-        );
-        console.log('data', this.lists, response.data);
+        this.lists = response.data.rows[0];
+        // this.lists = response.data.filter(
+        //   row => parseInt(row.product_id) === product_id
+        // )[0];
+        // console.log('data', this.lists, response.data);
         //console.timeEnd('Timer name');
       })
       .catch(error => {

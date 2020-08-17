@@ -1,6 +1,7 @@
 [
   {
     "mrp": 220.0,
+    "saving": 79.55,
     "sale_rate": 175.0,
     "product_id": 1,
     "product_name": "Non Brand Atta 5 kgs",
@@ -8,6 +9,7 @@
   },
   {
     "mrp": 420.0,
+    "saving": 80.95,
     "sale_rate": 340.0,
     "product_id": 2,
     "product_name": "Non Brand Atta 10 kgs",
@@ -15,6 +17,7 @@
   },
   {
     "mrp": 1950.0,
+    "saving": 82.05,
     "sale_rate": 1600.0,
     "product_id": 3,
     "product_name": "Non Brand  Atta 50 kgs",
@@ -22,6 +25,7 @@
   },
   {
     "mrp": 200.0,
+    "saving": 90.0,
     "sale_rate": 180.0,
     "product_id": 4,
     "product_name": "Samrat Atta 5 kgs",
@@ -29,6 +33,7 @@
   },
   {
     "mrp": 260.0,
+    "saving": 84.62,
     "sale_rate": 220.0,
     "product_id": 7,
     "product_name": "Aashirvaad Atta 5 kgs",
@@ -36,6 +41,7 @@
   },
   {
     "mrp": 2100.0,
+    "saving": 85.71,
     "sale_rate": 1800.0,
     "product_id": 15,
     "product_name": "Samrat Maida 50 kgs",
@@ -43,6 +49,7 @@
   },
   {
     "mrp": 85.0,
+    "saving": 88.24,
     "sale_rate": 75.0,
     "product_id": 37,
     "product_name": "Masoor Dal  1 kgs",
@@ -50,6 +57,7 @@
   },
   {
     "mrp": 1000.0,
+    "saving": 95.0,
     "sale_rate": 950.0,
     "product_id": 65,
     "product_name": "Dates / Khajoor Red 500 gms",
@@ -57,6 +65,7 @@
   },
   {
     "mrp": 2200.0,
+    "saving": 88.64,
     "sale_rate": 1950.0,
     "product_id": 69,
     "product_name": "Dry Dates / Khajoor Red 500 gms",
@@ -64,6 +73,7 @@
   },
   {
     "mrp": 1700.0,
+    "saving": 85.29,
     "sale_rate": 1450.0,
     "product_id": 88,
     "product_name": "Coconut 1 pc",
@@ -71,6 +81,7 @@
   },
   {
     "mrp": 2100.0,
+    "saving": 76.19,
     "sale_rate": 1600.0,
     "product_id": 149,
     "product_name": "Vanaspati Ghee 15 kgs",
@@ -78,6 +89,7 @@
   },
   {
     "mrp": 450.0,
+    "saving": 48.89,
     "sale_rate": 220.0,
     "product_id": 163,
     "product_name": "Glass Noodls ",
@@ -85,6 +97,7 @@
   },
   {
     "mrp": 860.0,
+    "saving": 98.84,
     "sale_rate": 850.0,
     "product_id": 195,
     "product_name": "Red Label 950 gm",
@@ -92,6 +105,7 @@
   },
   {
     "mrp": 240.0,
+    "saving": 66.67,
     "sale_rate": 160.0,
     "product_id": 301,
     "product_name": "Mustard Powder 500 gm",
@@ -99,6 +113,7 @@
   },
   {
     "mrp": 100.0,
+    "saving": 90.0,
     "sale_rate": 90.0,
     "product_id": 316,
     "product_name": "Real Mango 1 Box",
@@ -106,6 +121,7 @@
   },
   {
     "mrp": 200.0,
+    "saving": 75.0,
     "sale_rate": 150.0,
     "product_id": 381,
     "product_name": "Gemini Sunflower Oil  1 Ltr ",
@@ -113,6 +129,7 @@
   },
   {
     "mrp": 900.0,
+    "saving": 83.33,
     "sale_rate": 750.0,
     "product_id": 437,
     "product_name": "Cinnamon / Dalchini 1 kgs",
@@ -120,6 +137,7 @@
   },
   {
     "mrp": 2000.0,
+    "saving": 85.0,
     "sale_rate": 1700.0,
     "product_id": 505,
     "product_name": "Garlic 10 kgs",

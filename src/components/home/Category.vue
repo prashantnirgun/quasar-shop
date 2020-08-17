@@ -35,9 +35,9 @@ export default {
     };
   },
   mounted() {
-    DataService.get('data/category.json')
+    DataService.get('category')
       .then(response => {
-        this.lists = response.data;
+        this.lists = response.data.rows;
       })
       .catch(error => {
         console.log('DataService.get Error', error);
