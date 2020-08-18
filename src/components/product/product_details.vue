@@ -597,4 +597,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="sass" scoped>
+.q-panel
+  height: 80%
+  width: 100%
+</style>

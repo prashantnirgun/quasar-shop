@@ -42,7 +42,9 @@ export default {
     }
   },
   mounted() {
-    this.current = this.data[0];
+    let found = this.data.find(item => item.primary_product_id === 0);
+    console.log('what is my data', this.data, found);
+    this.current = found;
   }
 };
 </script>

@@ -205,20 +205,29 @@ export default {
       .then(response => {
         this.loading = false;
         let data = [];
-        this.totalProducts = response.length;
+        this.totalProducts = response.data.total_rows;
+
         response.data.rows.map(row => {
           if (row.primary_product_id === 0) {
             let found = data.filter(
-              record => record.product_id === row.primary_product_id
+              record => record.product_id === row.product_id
             );
             if (found.length === 0) {
               row.children = [row];
               data.push(row);
+            } else {
+              Object.keys(row).map(col => {
+                found[0][col] = row[col];
+              });
+              let child = found[0].children;
+              child.push(row);
+              found[0].children = child;
             }
           } else {
             let found = data.filter(
               record => record.product_id === row.primary_product_id
             );
+
             if (found.length === 0) {
               let c = { product_id: row.primary_product_id, children: [row] };
               data.push(c);
@@ -227,6 +236,7 @@ export default {
             }
           }
         });
+        console.log('data', data);
         this.lists = data;
       })
       .catch(error => {
