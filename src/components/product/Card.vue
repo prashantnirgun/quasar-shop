@@ -24,10 +24,16 @@ export default {
       current: {}
     };
   },
+  watch: {
+    data(newVal, oldVal) {
+      //console.log('something is changed here', newVal, oldVal);
+      this.current = newVal;
+    }
+  },
   methods: {
     runme(item) {
       this.current = item;
-      console.log('item recieved', item.product_id, this.current.product_id);
+      //console.log('item recieved', item.product_id, this.current.product_id);
     }
   },
   mounted() {

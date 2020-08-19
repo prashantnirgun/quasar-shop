@@ -1,6 +1,6 @@
 <template>
   <q-table
-    :data="lists"
+    :data="sortedLists"
     hide-header
     row-key="name"
     grid
@@ -63,10 +63,10 @@
                   color="blue"
                   label="Price Low to High"
                   v-model="selection"
-                  val="Low to High"
+                  val="sale_rate"
                   checked-icon="check"
                   unchecked-icon="clear"
-                  @input="fireme('High to Low')"
+                  @input="sort('sale_rate')"
                 />
               </q-item-section>
             </q-item>
@@ -78,14 +78,14 @@
                   color="blue"
                   label="Price High to Low"
                   v-model="selection"
-                  val="High to Low"
+                  val="sale_rate desc"
                   checked-icon="check"
                   unchecked-icon="clear"
-                  @input="fireme('Low to High')"
+                  @input="sort('sale_rate desc')"
                 />
               </q-item-section>
             </q-item>
-            <q-item>
+            <!-- <q-item>
               <q-item-section>
                 <q-toggle
                   dense
@@ -96,9 +96,10 @@
                   val="Poplarity"
                   checked-icon="check"
                   unchecked-icon="clear"
+                  @input="sort('rating')"
                 />
               </q-item-section>
-            </q-item>
+            </q-item> -->
             <q-item>
               <q-item-section>
                 <q-toggle
@@ -107,10 +108,10 @@
                   color="blue"
                   label="Saving Low to High"
                   v-model="selection"
-                  val="Saving Low to High"
+                  val="saving"
                   checked-icon="check"
                   unchecked-icon="clear"
-                  @input="fireme('Saving High to Low')"
+                  @input="sort('saving')"
                 />
               </q-item-section>
             </q-item>
@@ -122,24 +123,25 @@
                   color="blue"
                   label="Saving High to Low"
                   v-model="selection"
-                  val="Saving High to Low"
+                  val="saving desc"
                   checked-icon="check"
                   unchecked-icon="clear"
-                  @input="fireme('Saving Low to High')"
+                  @input="sort('saving desc')"
                 />
               </q-item-section>
             </q-item>
-            <q-item>
+            <!-- <q-item>
               <q-btn dense color="warning" label="Reset" />
               <q-space />
               <q-btn dense color="secondary" label="Apply" />
-            </q-item>
+            </q-item> -->
           </q-list>
         </q-btn-dropdown>
       </q-btn-group>
     </template>
     <template v-slot:item="props">
       <div :class="outer">
+        <!-- {{ props.row.product_name }} -->
         <card :data="props.row" :horizontal="horizontal" />
       </div>
     </template>
@@ -158,7 +160,8 @@ export default {
   data() {
     return {
       eclair: true,
-      selection: ['Saving High to Low', 'Poplarity'],
+      selection: ['saving desc'],
+      //selection: 'Saving High to Low',
       sortByHighToLow: true,
       sortByLowToHigh: false,
 
@@ -166,6 +169,7 @@ export default {
       horizontal: this.isMobile ? true : false,
       loading: true,
       lists: [],
+      sortedLists: [],
       variety: 1,
       qty: 1,
       totalProducts: 0,
@@ -191,53 +195,85 @@ export default {
     }
   },
   methods: {
-    fireme(value) {
-      const index = this.selection.indexOf(value);
-      if (index > -1) {
-        this.selection.splice(index, 1);
+    sort(value) {
+      this.selection = [];
+      this.selection[0] = value;
+      let data = [];
+      //console.log('sort', value);
+      switch (value) {
+        case 'sale_rate':
+          data = this.lists.sort((a, b) => a.sale_rate - b.sale_rate);
+          break;
+        case 'sale_rate desc':
+          data = this.lists.sort((a, b) => b.sale_rate - a.sale_rate);
+          break;
+        case 'sale_rate':
+          data = this.lists.sort((a, b) => a.saving - b.saving);
+          break;
+        default:
+          data = this.lists.sort((a, b) => b.saving - a.saving);
+          break;
       }
+
+      this.buildList(JSON.parse(JSON.stringify(data)));
+      //console.log('new data', this.sortedLists);
+      //this.sortedLists = data;
+    },
+    buildList(rawData) {
+      let datas = [];
+      let count = 0;
+      rawData.map(row => {
+        if (row.primary_product_id === 0) {
+          let index = datas.findIndex(
+            data => parseInt(data.product_id) === parseInt(row.product_id)
+          );
+          //if not found then insert
+          if (index === -1) {
+            const a = JSON.parse(JSON.stringify(row));
+            a.children = [JSON.parse(JSON.stringify(row))];
+            datas.push(a);
+          }
+          // If found then 01 update and 02 insert himself as child rows
+          else {
+            //01 Updating values
+            Object.keys(row).map(col => {
+              datas[index][col] = row[col];
+            });
+
+            //02 Inserting himself as child row
+            const childRow = JSON.parse(JSON.stringify(row));
+            datas[index].children.push(childRow);
+          }
+        } else {
+          const index = datas.findIndex(
+            data =>
+              parseInt(data.product_id) === parseInt(row.primary_product_id)
+          );
+          if (index === -1) {
+            let c = {
+              product_id: row.primary_product_id,
+              children: [JSON.parse(JSON.stringify(row))]
+            };
+            datas.push(c);
+          } else {
+            datas[index].children.push(JSON.parse(JSON.stringify(row)));
+          }
+        }
+      });
+      this.sortedLists = datas;
     }
   },
-  mounted() {
+  created() {
     const category_id = parseInt(this.$route.params.category_id);
     this.horizontal = !!this.isMobile;
     DataService.get(`product?where=category_id=${category_id}`)
       .then(response => {
         this.loading = false;
         let data = [];
+        //console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));
+        this.lists = JSON.parse(JSON.stringify(response.data.rows));
         this.totalProducts = response.data.total_rows;
-
-        response.data.rows.map(row => {
-          if (row.primary_product_id === 0) {
-            let found = data.filter(
-              record => record.product_id === row.product_id
-            );
-            if (found.length === 0) {
-              row.children = [row];
-              data.push(row);
-            } else {
-              Object.keys(row).map(col => {
-                found[0][col] = row[col];
-              });
-              let child = found[0].children;
-              child.push(row);
-              found[0].children = child;
-            }
-          } else {
-            let found = data.filter(
-              record => record.product_id === row.primary_product_id
-            );
-
-            if (found.length === 0) {
-              let c = { product_id: row.primary_product_id, children: [row] };
-              data.push(c);
-            } else {
-              found[0].children.push(row);
-            }
-          }
-        });
-        console.log('data', data);
-        this.lists = data;
+        this.buildList(this.lists);
       })
       .catch(error => {
         console.log('DataService.get Error', error);

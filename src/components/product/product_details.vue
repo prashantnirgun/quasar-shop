@@ -69,7 +69,7 @@
               >
               <span
                 class="q-ml-md text-caption text-green-8 text-weight-bolder q-mt-md"
-                >{{ lists.saving }}</span
+                >{{ lists.saving }} % off</span
               >
             </div>
             <div class="q-mt-sm text-weight-bold">

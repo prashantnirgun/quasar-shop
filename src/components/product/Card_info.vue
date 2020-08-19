@@ -70,7 +70,7 @@
         <div :class="[!horizontal ? 'hidden' : 'row']">
           <div class="col-4"></div>
           <div class="col-4">Saving</div>
-          <div class="col-4 text-right q-pr-sm">22% off</div>
+          <div class="col-4 text-right q-pr-sm">{{ data.saving }} % off</div>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
         </div>
         <div class="col-4">
           <div class="text-h7 text-bold">Saving</div>
-          <div class="text-h7">22% off</div>
+          <div class="text-h7">{{ data.saving }} % off</div>
         </div>
       </div>
     </div>
