@@ -213,21 +213,29 @@ export default {
       //console.log('sort', value);
       switch (value) {
         case 'sale_rate':
-          data = this.lists.sort((a, b) => a.sale_rate - b.sale_rate);
+          data = this.lists.sort(
+            (a, b) => parseFloat(a.sale_rate) - parseFloat(b.sale_rate)
+          );
           break;
         case 'sale_rate desc':
-          data = this.lists.sort((a, b) => b.sale_rate - a.sale_rate);
+          data = this.lists.sort(
+            (a, b) => parseFloat(b.sale_rate) - parseFloat(a.sale_rate)
+          );
           break;
-        case 'sale_rate':
-          data = this.lists.sort((a, b) => a.saving - b.saving);
+        case 'saving':
+          data = this.lists.sort(
+            (a, b) => parseFloat(a.saving) - parseFloat(b.saving)
+          );
           break;
         default:
-          data = this.lists.sort((a, b) => b.saving - a.saving);
+          data = this.lists.sort(
+            (a, b) => parseFloat(b.saving) - parseFloat(a.saving)
+          );
           break;
       }
 
+      console.log('data is sorted', value, data);
       this.buildList(JSON.parse(JSON.stringify(data)));
-      //console.log('new data', this.sortedLists);
       //this.sortedLists = data;
     },
     buildList(rawData) {
@@ -271,6 +279,7 @@ export default {
           }
         }
       });
+      console.log('sorted DAta', datas);
       this.sortedLists = datas;
     }
   },
@@ -280,8 +289,7 @@ export default {
     DataService.get(`product?where=category_id=${category_id}`)
       .then(response => {
         this.loading = false;
-        let data = [];
-        //console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));
+        console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));
         this.lists = JSON.parse(JSON.stringify(response.data.rows));
         this.totalProducts = response.data.total_rows;
         this.buildList(this.lists);

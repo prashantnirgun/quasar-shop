@@ -34,6 +34,12 @@ export default {
       current: {}
     };
   },
+  watch: {
+    data(newVal) {
+      // console.log('what is new val', newVal);
+      this.current = newVal[0];
+    }
+  },
   methods: {
     selcted(item) {
       this.current = item;

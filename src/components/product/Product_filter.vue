@@ -71,8 +71,9 @@
             Offer
 
             <div class="q-gutter-sm">
-              <q-checkbox v-model="teal" label="Sale" color="teal" />
-              <q-checkbox v-model="red" label="New Arrival" color="red" />
+              <q-toggle v-model="sale" label="Sale" />
+
+              <q-toggle v-model="arrival" color="green" label="New Arrival" />
             </div>
           </q-item-section>
         </q-item>
@@ -95,7 +96,9 @@ export default {
       teal: true,
       orange: false,
       red: false,
-      cyan: true
+      cyan: true,
+      sale: true,
+      arrival: false
     };
   },
 
