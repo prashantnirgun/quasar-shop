@@ -9,30 +9,47 @@
 
       <q-card-section>
         <q-item>
-          <q-item-section avatar>
-            <q-icon name="local_atm" />
-          </q-item-section>
+          Price Range
+        </q-item>
+        <q-item>
+          <!-- <q-item-section avatar>
+           
+          </q-item-section> -->
+
           <q-item-section>
             <q-range
               v-model="standard"
+              :min="options.min"
+              :max="options.max"
+              @input="$emit('rangeUpdate', $event)"
+              drag-range
+              label
               markers
-              step="250"
-              :min="250"
-              :max="2500"
+              color="purple"
               label-always
               :left-label-value="'Rs ' + standard.min + ' Rs'"
               :right-label-value="'Rs ' + standard.max + ' Rs'"
             />
           </q-item-section>
         </q-item>
-        <q-item>
-          <!-- <q-item-section> -->
-          <q-input dense outlined v-model="min" label="Minimum" />
-          <q-input dense outlined v-model="max" label="Maximum" />
-          <!-- </q-item-section> -->
-        </q-item>
+        <!-- <q-item>
+          
+          <q-input
+            dense
+            outlined
+            v-model.number="standard.min"
+            label="Minimum"
+          />
+          <q-input
+            dense
+            outlined
+            v-model.number="standard.max"
+            label="Maximum"
+          />
+          
+        </q-item> -->
 
-        <q-item>
+        <!-- <q-item>
           <q-item-section>
             discount
 
@@ -51,7 +68,7 @@
               />
             </div>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
         <q-item>
           <q-item-section>
@@ -70,10 +87,17 @@
           <q-item-section>
             Offer
 
-            <div class="q-gutter-sm">
-              <q-toggle v-model="sale" label="Sale" />
-
-              <q-toggle v-model="arrival" color="green" label="New Arrival" />
+            <div
+              class="row q-gutter-sm"
+              v-for="(offer, index) in options.offers"
+              :key="index"
+            >
+              <q-toggle
+                v-model="myOffer"
+                :label="offer"
+                :val="offer"
+                @input="offerSelected"
+              />
             </div>
           </q-item-section>
         </q-item>
@@ -84,12 +108,13 @@
 
 <script>
 export default {
-  props: ['show'],
+  props: ['show', 'options'],
   data() {
     return {
       standard: {
         min: 250,
-        max: 2500
+        max: 2500,
+        step: 250
       },
       min: 0,
       max: 0,
@@ -98,15 +123,24 @@ export default {
       red: false,
       cyan: true,
       sale: true,
-      arrival: false
+      arrival: false,
+      myOffer: []
     };
   },
 
   methods: {
     close() {
       this.$emit('close');
+    },
+    offerSelected(abc) {
+      //console.log('selected option', abc);
+      this.$emit('offerUpdate', this.myOffer);
     }
   },
-  computed: {}
+  computed: {},
+  mounted() {
+    this.standard = this.options;
+    console.log('product_filter/mounted', this.options);
+  }
 };
 </script>

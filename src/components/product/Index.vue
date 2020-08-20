@@ -73,7 +73,7 @@
                     val="sale_rate"
                     checked-icon="check"
                     unchecked-icon="clear"
-                    @input="sort('sale_rate')"
+                    @input="applySort('sale_rate')"
                   />
                 </q-item-section>
               </q-item>
@@ -88,7 +88,7 @@
                     val="sale_rate desc"
                     checked-icon="check"
                     unchecked-icon="clear"
-                    @input="sort('sale_rate desc')"
+                    @input="applySort('sale_rate desc')"
                   />
                 </q-item-section>
               </q-item>
@@ -118,7 +118,7 @@
                     val="saving"
                     checked-icon="check"
                     unchecked-icon="clear"
-                    @input="sort('saving')"
+                    @input="applySort('saving')"
                   />
                 </q-item-section>
               </q-item>
@@ -133,7 +133,7 @@
                     val="saving desc"
                     checked-icon="check"
                     unchecked-icon="clear"
-                    @input="sort('saving desc')"
+                    @input="applySort('saving desc')"
                   />
                 </q-item-section>
               </q-item>
@@ -153,7 +153,13 @@
         </div>
       </template>
     </q-table>
-    <product-filter :show="modal" @close="modal = false" />
+    <product-filter
+      :show="modal"
+      @close="modal = false"
+      :options="filterOptions"
+      @rangeUpdate="rangeFilter"
+      @offerUpdate="offerFilter"
+    />
   </div>
 </template>
 
@@ -184,6 +190,13 @@ export default {
       variety: 1,
       qty: 1,
       totalProducts: 0,
+      filterOptions: {
+        min: 0,
+        max: 0,
+        step: 250,
+        offers: [],
+        sizes: []
+      },
       initialPagination: {
         sortBy: 'desc',
         descending: false,
@@ -206,35 +219,62 @@ export default {
     }
   },
   methods: {
-    sort(value) {
+    offerFilter(offerData) {
+      console.log('offer selected', offerData);
+      let data = [];
+      if (offerData.length > 0) {
+        let rawData = JSON.parse(JSON.stringify(this.lists));
+        data = rawData.filter(item => {
+          return offerData.indexOf(item.tag) >= 0;
+        });
+      } else {
+        data = JSON.parse(JSON.stringify(this.lists));
+      }
+
+      //console.log('data', data);
+      this.sort(this.selection[0], data);
+    },
+    rangeFilter(filterData) {
+      let rawData = JSON.parse(JSON.stringify(this.lists));
+      let data = rawData.filter(
+        item =>
+          parseFloat(item.sale_rate) >= parseFloat(filterData.min) &&
+          parseFloat(item.sale_rate) <= parseFloat(filterData.max)
+      );
+      this.sort(this.selection[0], data);
+    },
+    applySort(value) {
       this.selection = [];
       this.selection[0] = value;
+      this.sort(value, JSON.parse(JSON.stringify(this.Lists)));
+    },
+    sort(value, lists) {
       let data = [];
       //console.log('sort', value);
       switch (value) {
         case 'sale_rate':
-          data = this.lists.sort(
+          data = lists.sort(
             (a, b) => parseFloat(a.sale_rate) - parseFloat(b.sale_rate)
           );
           break;
         case 'sale_rate desc':
-          data = this.lists.sort(
+          data = lists.sort(
             (a, b) => parseFloat(b.sale_rate) - parseFloat(a.sale_rate)
           );
           break;
         case 'saving':
-          data = this.lists.sort(
+          data = lists.sort(
             (a, b) => parseFloat(a.saving) - parseFloat(b.saving)
           );
           break;
         default:
-          data = this.lists.sort(
+          data = lists.sort(
             (a, b) => parseFloat(b.saving) - parseFloat(a.saving)
           );
           break;
       }
 
-      console.log('data is sorted', value, data);
+      //console.log('data is sorted', value, data);
       this.buildList(JSON.parse(JSON.stringify(data)));
       //this.sortedLists = data;
     },
@@ -269,17 +309,26 @@ export default {
               parseInt(data.product_id) === parseInt(row.primary_product_id)
           );
           if (index === -1) {
-            let c = {
-              product_id: row.primary_product_id,
-              children: [JSON.parse(JSON.stringify(row))]
-            };
+            let c = {};
+            Object.keys(row).map(col => {
+              c[col] = row[col];
+            });
+
+            //c.product_id = row.primary_product_id
+            c.children = [JSON.parse(JSON.stringify(row))];
+
+            // let c = {
+
+            //   product_id: row.primary_product_id,
+            //   children: [JSON.parse(JSON.stringify(row))]
+            // };
             datas.push(c);
           } else {
             datas[index].children.push(JSON.parse(JSON.stringify(row)));
           }
         }
       });
-      console.log('sorted DAta', datas);
+      //console.log('sorted DAta', datas);
       this.sortedLists = datas;
     }
   },
@@ -289,9 +338,55 @@ export default {
     DataService.get(`product?where=category_id=${category_id}`)
       .then(response => {
         this.loading = false;
-        console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));
+        //console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));
         this.lists = JSON.parse(JSON.stringify(response.data.rows));
         this.totalProducts = response.data.total_rows;
+
+        //Build filter data
+        this.lists.map(data => {
+          this.filterOptions.max =
+            data.sale_rate > this.filterOptions.max
+              ? data.sale_rate
+              : this.filterOptions.max;
+
+          this.filterOptions.min =
+            this.filterOptions.min === 0
+              ? data.sale_rate
+              : this.sales_rate < this.filterOptions.min
+              ? this.sales_rate
+              : this.filterOptions.min;
+
+          if (data.tag != null) {
+            data.tag.split(',').map(item => {
+              this.filterOptions.offers.push(item);
+            });
+          }
+          this.filterOptions.sizes.push(data.size);
+        });
+
+        this.filterOptions.offers = [...new Set(this.filterOptions.offers)];
+        this.filterOptions.sizes = [...new Set(this.filterOptions.sizes)];
+
+        // let len = this.filterOptions.max.toString().length;
+        // len = '1'.padEnd(len, '0');
+        // this.filterOptions.max =
+        //   (parseInt(this.filterOptions.max.toString().substring(0, 1)) + 1) *
+        //   parseInt(len);
+        // len = this.filterOptions.min.toString().length;
+        // len = '1'.padEnd(len, '0');
+        // this.filterOptions.min =
+        //   parseInt(this.filterOptions.min.toString().substring(0, 1)) *
+        //   parseInt(len);
+
+        console.log(
+          //   this.filterOptions.min,
+          //   this.filterOptions.max,
+          //   this.filterOptions.max / 5,
+          this.filterOptions.offers
+          //   this.filterOptions.sizes,
+          //   JSON.parse(JSON.stringify(this.lists))
+        );
+
         this.buildList(this.lists);
       })
       .catch(error => {
