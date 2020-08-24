@@ -16,11 +16,12 @@
     "node-sass": "^4.14.1",
     "quasar": "^1.0.0",
     "vue-awesome-countdown": "^1.1.2",
+    "vue-gtag": "^1.8.0",
     "vue2-filters": "^0.11.0",
     "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0",
+    "@quasar/app": "^2.0.8",
     "@quasar/quasar-app-extension-dotenv": "^1.0.5",
     "@quasar/quasar-app-extension-qribbon": "^1.0.0-beta.15",
     "babel-eslint": "^10.0.1",

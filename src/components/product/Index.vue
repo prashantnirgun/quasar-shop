@@ -16,16 +16,19 @@
           {{ categoryName }}
         </q-chip>
         <q-chip
-          v-if="isDesktop"
+          v-for="offer in filterOptionsSelected.offers"
+          :key="offer"
           size="md"
           class="q-py-md"
+          :value="offer"
           removable
-          v-model="eclair"
+          @remove="removeOffer"
+          v-model="filterOptionsSelected.offers"
           color="teal"
           text-color="white"
           icon="bookmark"
         >
-          Hot Deals
+          {{ offer }}
         </q-chip>
 
         <q-space />
@@ -202,6 +205,9 @@ export default {
         descending: false,
         page: 2,
         rowsPerPage: 0
+      },
+      filterOptionsSelected: {
+        offers: []
       }
     };
   },
@@ -219,7 +225,11 @@ export default {
     }
   },
   methods: {
+    removeOffer(data) {
+      console.log('data to be removed', data);
+    },
     offerFilter(offerData) {
+      this.filterOptionsSelected.offers = offerData;
       console.log('offer selected', offerData);
       let data = [];
       if (offerData.length > 0) {
