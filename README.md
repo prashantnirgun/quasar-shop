@@ -17,6 +17,7 @@ Its forked from [quasar-shoping](https://github.com/mayur091193/quasar-shopping)
 | 5   | Persistance State | Yes       | LocalStorage used to save state                                                                                                                  |
 | 6   | Responsive        | WIP       | Menu, Sidebar is under process                                                                                                                   |
 | 7   | Payment Gateway   | No        | Pending feature surely build it on priority                                                                                                      |
+| 8   | Google Analytics  | Yes       | Added script and events                                                                                                                          |
 
 ## General Information :
 

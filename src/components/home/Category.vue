@@ -12,7 +12,7 @@
         :width="getSize"
         spinner-color="primary"
         spinner-size="82px"
-        @click="$router.push(`/products/${data.category_id}`)"
+        @click="$router.push(`/category/${data.slug}`)"
       >
         <div class="absolute-bottom text-subtitle2 text-center">
           {{ data.category_name }}
@@ -38,6 +38,7 @@ export default {
     DataService.get('category')
       .then(response => {
         this.lists = response.data.rows;
+        console.log('data', this.lists);
       })
       .catch(error => {
         console.log('DataService.get Error', error);

@@ -9,7 +9,7 @@
     > -->
     <div class="row">
       <div
-        @click="$router.push(`/product-details/${data.product_id}`)"
+        @click="$router.push(`/product/${data.slug}`)"
         class="cursor-pointer"
         :class="[
           horizontal ? 'col-4' : 'col-12',

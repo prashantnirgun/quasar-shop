@@ -51,7 +51,7 @@
                 text-color="white"
                 icon-right="star"
               >
-                4.4
+                {{ lists.rating }}
               </q-chip>
               <span class="text-caption text-weight-bold text-grey-6"
                 >6 Ratings & 2 Reviews</span
@@ -96,13 +96,14 @@
                 In stock.
               </div>
               <div class="text-caption q-mt-sm text-grey-8 text-weight-bold">
-                Delivery by: <span class="text-black">Tue, Mar 3</span>
+                Delivery by:
+                <span class="text-black">{{ regularDelivery }} </span>
               </div>
               <div
                 class="text-caption text-subtitle2 text-grey-8 text-weight-bold"
               >
                 Fastest delivery:
-                <span class="text-black">Mon, Mar 2 by 9pm</span>
+                <span class="text-black">{{ fastDelivery }} </span>
               </div>
             </div>
             <div class="q-mt-md">
@@ -124,10 +125,10 @@
             class="col-lg-5 col-md-5 col-sm-12 col-xs-12 q-mt-md q-pt-xs q-pl-lg"
           >
             <div class="text-subtitle2">Customer rating</div>
-            <div class="text-h3">4.2</div>
+            <div class="text-h3">{{ lists.rating }}</div>
             <div>
               <q-rating
-                v-model="rating_point"
+                v-model="lists.rating"
                 max="5"
                 size="2em"
                 color="orange"
@@ -553,6 +554,8 @@
 <script>
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
+import { date } from 'quasar';
+let timeStamp = Date.now();
 
 export default {
   name: 'details.vue',
@@ -575,13 +578,22 @@ export default {
     },
     win_height() {
       return this.$q.screen.height - 0;
+    },
+    fastDelivery() {
+      let newDate = date.addToDate(new Date(), { days: 1 });
+      return date.formatDate(newDate, 'ddd, MMM D ') + 'by 9 PM';
+    },
+    regularDelivery() {
+      let newDate = date.addToDate(new Date(), { days: 2 });
+      return date.formatDate(newDate, 'ddd, MMM D ');
     }
   },
+  methods: {},
   mounted() {
-    const product_id = parseInt(this.$route.params.product_id);
+    const slug = this.$route.params.slug;
     //console.time('Timer name');
     //DataService.get('data/product.json')
-    DataService.get(`product/${product_id}`)
+    DataService.get(`product/${slug}`)
       .then(response => {
         this.lists = response.data.rows[0];
         // this.lists = response.data.filter(

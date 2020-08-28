@@ -343,9 +343,10 @@ export default {
     }
   },
   created() {
-    const category_id = parseInt(this.$route.params.category_id);
+    const category_slug = this.$route.params.category_slug;
+
     this.horizontal = !!this.isMobile;
-    DataService.get(`product?where=category_id=${category_id}`)
+    DataService.get(`category/${category_slug}`)
       .then(response => {
         this.loading = false;
         //console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));

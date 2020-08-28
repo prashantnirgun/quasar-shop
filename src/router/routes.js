@@ -18,13 +18,13 @@ const routes = [
       },
       { path: '/my_profile', component: () => import('pages/my_profile.vue') },
       {
-        name: 'products',
-        path: '/products/:category_id',
+        name: 'category',
+        path: '/category/:category_slug',
         component: () => import('components/product/Index.vue')
       },
       {
         name: 'product-details',
-        path: '/product-details/:product_id',
+        path: '/product/:slug',
         component: () => import('components/product/product_details.vue')
       },
       {
