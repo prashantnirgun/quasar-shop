@@ -20,12 +20,12 @@ const routes = [
       {
         name: 'category',
         path: '/category/:category_slug',
-        component: () => import('components/product/Index.vue')
+        component: () => import('components/category/Index.vue')
       },
       {
-        name: 'product-details',
+        name: 'product',
         path: '/product/:slug',
-        component: () => import('components/product/product_details.vue')
+        component: () => import('components/product/Index.vue')
       },
       {
         name: 'cart',
