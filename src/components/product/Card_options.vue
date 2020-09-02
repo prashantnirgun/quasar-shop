@@ -9,7 +9,7 @@
         class="col-auto q-mr-md"
         @click="selcted(item)"
       >
-        {{ item.size }}
+        {{ item.packing }}
       </q-btn>
 
       <q-btn
@@ -21,7 +21,7 @@
         color="black"
         @click="selcted(item)"
       >
-        {{ item.size }}
+        {{ item.packing }}
       </q-btn>
     </div>
   </div>

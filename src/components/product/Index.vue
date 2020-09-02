@@ -306,41 +306,7 @@
                 </q-list>
               </div>
             </div>
-            <!--<q-list dense bordered class="rounded-borders" style="">-->
-            <!--<q-item-label class="text-grey-10" header>General</q-item-label>-->
-            <!--<q-item v-ripple>-->
-            <!--<q-item-section>-->
-            <!--<div class="row">-->
-            <!--<div class="col-3 text-grey-6">Dial Color</div>-->
-            <!--<div class="col-9">Black</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-            <!--<div class="col-3 text-grey-7">Dial Color</div>-->
-            <!--<div class="col-9">Black</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-            <!--<div class="col-3 text-grey-7">Strap Material</div>-->
-            <!--<div class="col-9">Silicone</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-            <!--<div class="col-3 text-grey-7">Usage</div>-->
-            <!--<div class="col-9">Fitness & Outdoor, Health & Medical, Notifier, Safety & Security, Watchphone-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!--</q-item-section>-->
-            <!--</q-item>-->
-            <!--<q-item-label header>Product Details</q-item-label>-->
-            <!--<q-item-label header>Camera And Display Features</q-item-label>-->
-            <!--<q-item-label header>Dimensions</q-item-label>-->
-            <!--<q-item-label header>Warranty</q-item-label>-->
-            <!--<q-item v-ripple>-->
-
-            <!--&lt;!&ndash;<q-item-section>&ndash;&gt;-->
-            <!--<q-item-label lines="1">6 months warranty</q-item-label>-->
-            <!--&lt;!&ndash;</q-item-section>&ndash;&gt;-->
-            <!--</q-item>-->
-            <!--</q-list>-->
+            
           </q-tab-panel>
 
           <q-tab-panel name="Ratings & Reviews">

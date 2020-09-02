@@ -8,98 +8,53 @@
       </q-card-section>
 
       <q-card-section>
+       
         <q-item>
-          Price Range
-        </q-item>
-        <q-item>
-          <!-- <q-item-section avatar>
-           
-          </q-item-section> -->
-
           <q-item-section>
-            <q-range
-              v-model="standard"
-              :min="options.min"
-              :max="options.max"
-              @input="$emit('rangeUpdate', $event)"
-              drag-range
-              label
-              markers
-              color="purple"
-              label-always
-              :left-label-value="'Rs ' + standard.min + ' Rs'"
-              :right-label-value="'Rs ' + standard.max + ' Rs'"
-            />
-          </q-item-section>
-        </q-item>
-        <!-- <q-item>
-          
-          <q-input
-            dense
-            outlined
-            v-model.number="standard.min"
-            label="Minimum"
-          />
-          <q-input
-            dense
-            outlined
-            v-model.number="standard.max"
-            label="Maximum"
-          />
-          
-        </q-item> -->
-
-        <!-- <q-item>
-          <q-item-section>
-            discount
-
-            <div class="q-gutter-sm">
-              <q-checkbox v-model="teal" label="Rs 250 - Rs 500" color="teal" />
-              <q-checkbox
-                v-model="orange"
-                label="Rs 500 - Rs 750"
-                color="orange"
-              />
-              <q-checkbox v-model="red" label="Rs 750 - Rs 1000" color="red" />
-              <q-checkbox
-                v-model="cyan"
-                label="Rs 1000 - Rs 2500"
-                color="cyan"
-              />
+            Price Range
+            <div class="row wrap">
+              <div v-for="price in selected_range" :key="price.name">
+              <q-checkbox v-if="price.counter > 0" v-model="price.apply"  class="col-4"           
+              @input="applyFilter"
+              :disable="price.disable">{{price.name}} ({{price.counter}}) 
+              </q-checkbox>
+              </div>
             </div>
           </q-item-section>
-        </q-item> -->
+        </q-item>
 
         <q-item>
           <q-item-section>
             Packing
-
-            <div class="q-gutter-sm">
-              <q-checkbox v-model="teal" label="1 KG" color="teal" />
-
-              <q-checkbox v-model="red" label="5 KG" color="red" />
-              <q-checkbox v-model="cyan" label="15 KG" color="cyan" />
+            <div class="row wrap">
+              <q-checkbox v-model="packing.apply" v-for="packing in selected_packings" :key="packing.size" 
+              @input="applyFilter"> {{ packing.size}} {{ packing.unit_name}} 
+              </q-checkbox>
             </div>
           </q-item-section>
         </q-item>
 
         <q-item>
-          <q-item-section>
+          <!-- <q-item-section> -->
+           <q-item-section>
             Offer
-
+            <div  class="row wrap">
             <div
-              class="row q-gutter-sm"
-              v-for="(offer, index) in options.offers"
+              v-for="(offer, index) in selected_offers"
               :key="index"
+             
             >
               <q-toggle
-                v-model="myOffer"
-                :label="offer"
-                :val="offer"
-                @input="offerSelected"
+                v-model="offer.apply"
+                :label="offer.name"
+                :val="offer.name"
+                class="col-4"
+                @input="applyFilter"
               />
             </div>
-          </q-item-section>
+            </div>
+          <!-- </q-item-section> -->
+           </q-item-section>
         </q-item>
       </q-card-section>
     </q-card>
@@ -108,7 +63,7 @@
 
 <script>
 export default {
-  props: ['show', 'options'],
+  props: ['show', 'offers', 'price_range', 'packings'],
   data() {
     return {
       standard: {
@@ -124,10 +79,20 @@ export default {
       cyan: true,
       sale: true,
       arrival: false,
-      myOffer: []
+      selected_offers: this.offers,
+      selected_range : this.price_range,
+      selected_packings : this.packings
     };
   },
-
+  watch :{    
+    offers: {
+       deep: true,
+      handler(oldVal, newVal){
+        //console.log('offer is changed', oldVal, newVal)
+      this.applyFilter()
+    }
+    }
+  },
   methods: {
     close() {
       this.$emit('close');
@@ -135,12 +100,20 @@ export default {
     offerSelected(abc) {
       //console.log('selected option', abc);
       this.$emit('offerUpdate', this.myOffer);
+    },
+    applyFilter(){
+      let payload = {}
+      payload.rates = this.selected_range.filter(rate=> rate.apply)
+      payload.size = this.selected_packings.filter(packing=> packing.apply)
+      payload.offers = this.selected_offers.filter(offer=> offer.apply)
+      //console.log('inside appllyfilter', payload)
+      this.$emit('applyFilter', payload)
     }
   },
   computed: {},
   mounted() {
     this.standard = this.options;
-    console.log('product_filter/mounted', this.options);
+    //console.log('product_filter/mounted', this.options, this.selected_range);
   }
 };
 </script>
