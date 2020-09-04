@@ -90,7 +90,7 @@ export default {
       this.setProduct();
     },
     decrement() {
-      this.orderQty++;
+      this.orderQty--;
       this.setProduct();
     },
     setProduct() {

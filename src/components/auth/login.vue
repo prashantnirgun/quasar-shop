@@ -12,16 +12,17 @@
               <div class="text-weight-bolder text-white text-h6">
                 {{ siteName }}
               </div>
-              <div class="text-caption text-white">
-                some text goes here
-              </div>
+              <div class="text-caption text-white">some text goes here</div>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-md-8">
           <div class="q-pa-sm">
-            <div class="text-h6">Welcome {{ siteName }}</div>
-            <div>Some more text</div>
+            <q-card-section class="row items-center q-py-none">
+              <div class="text-h6 col">Welcome {{ siteName }}</div>
+              <q-btn icon="close" flat round dense @click="close" />
+            </q-card-section>
+            <div class="q-ml-md">Some more text</div>
             <q-separator></q-separator>
 
             <q-input
@@ -44,14 +45,14 @@
             <q-checkbox
               class="text-grey-8"
               dense
-              v-model="remember_me"
+              v-model="rememberMe"
               label="Remember me"
             ></q-checkbox>
           </div>
           <div>
             <q-separator inset></q-separator>
             <div class="q-pa-sm">
-              <q-btn flat label="Login" @click="close"></q-btn>
+              <q-btn flat label="Login" @click="login"></q-btn>
               <q-btn
                 flat
                 class="float-right text-blue-9 text-capitalize"
@@ -66,17 +67,54 @@
 </template>
 
 <script>
+import DataService from 'src/services/DataService';
+import axios from 'axios';
+import { mapActions } from 'vuex';
+
+function setAxiosHeaders(token) {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+}
+
 export default {
   props: ['show', 'closeAction'],
   data() {
     return {
-      username: 'admin',
-      password: 'admin',
-      remember_me: false
+      username: null,
+      password: null,
+      rememberMe: false
     };
   },
 
   methods: {
+    ...mapActions('user', ['setToken', 'setUser']),
+    ...mapActions(['setRememberMe']),
+    login() {
+      this.$q.loading.show();
+      //request to server
+      DataService.post('user/login', {
+        user_name: this.username,
+        password: this.password
+      }).then(response => {
+        //console.log('response', response);
+        this.$q.loading.hide();
+        if (response.data.token) {
+          setAxiosHeaders(response.data.token);
+          this.setToken(response.data.token);
+          this.setUser(response.data.user);
+          this.setRememberMe(this.rememberMe);
+          //this.$store.dispatch('setToken', response.data.token);
+          //this.$store.dispatch('setUser', response.data.user);
+          //this.$store.dispatch('setRememberMe', this.rememberMe);
+          //this.$router.push({ name: 'home' });
+          this.$emit('close');
+        } else {
+          this.$q.notify({
+            type: 'negative',
+            message: `Wrong user Name or Password`
+          });
+        }
+      });
+    },
     close(payload) {
       this.$emit('close');
     }

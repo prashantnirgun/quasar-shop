@@ -1,24 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+
+import cart from './modules/cart';
+import user from './modules/user';
+
 import createPersistedState from 'vuex-persistedstate';
 import { LocalStorage } from 'quasar';
-import cart from './modules/cart';
-
-// import example from './module-example'
 
 Vue.use(Vuex);
 
-/*
- * If not building with SSR mode, you can
- * directly export the Store instantiation;
- *
- * The function below can be async too; either use
- * async/await or return a Promise which resolves
- * with the Store instance.
- */
-
 const dataState = new createPersistedState({
-  paths: ['cart'],
+  paths: ['cart', 'user', 'isUserLoggedIn', 'rememberMe', 'token'],
   storage: {
     getItem: key => LocalStorage.getItem(key),
     setItem: (key, value) => LocalStorage.set(key, value),
@@ -30,15 +22,29 @@ const dataState = new createPersistedState({
 const Store = new Vuex.Store({
   plugins: [dataState],
   state: {
-    token: null,
-    user: null,
     rememberMe: false,
+    isUserLoggedIn: false,
     version: '0.0.1'
   },
   modules: {
-    cart
+    cart,
+    user
   },
-
+  mutations: {
+    SET_REMEMBER_ME(state, rememberMe) {
+      state.rememberMe = rememberMe;
+    }
+  },
+  actions: {
+    setRememberMe({ commit }, rememberMe) {
+      commit('SET_REMEMBER_ME', rememberMe);
+    }
+  },
+  getters: {
+    rememberMe: state => {
+      return !!state.rememberMe ? state.rememberMe : false;
+    }
+  },
   // enable strict mode (adds overhead!)
   // for dev mode only
   strict: process.env.DEV

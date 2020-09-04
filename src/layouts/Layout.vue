@@ -51,13 +51,51 @@
           v-if="isDesktop"
         />
         <q-btn
+          round
+          v-if="!isUserLoggedIn"
+          icon="input"
+          @click="showMenu1 = true"
+          class="q-mr-xs"
+        />
+
+        <q-btn v-if="isUserLoggedIn" flat icon="account_circle">
+          <q-menu auto-close transition-show="scale" transition-hide="scale">
+            <q-item clickable v-ripple>
+              <q-item-section side>
+                <q-avatar rounded size="48px">
+                  <img src="https://cdn.quasar.dev/img/avatar.png" />
+                  <q-badge floating color="teal">new</q-badge>
+                </q-avatar>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ full_name }}</q-item-label>
+                <q-item-label caption>2 new messages</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-list style="min-width: 100px;">
+              <q-item clickable>
+                <q-item-section>Feedback</q-item-section>
+              </q-item>
+              <q-item> Version {{ version }} </q-item>
+              <q-separator />
+              <q-item clickable class="text-purple" @click="logout">
+                <q-item-section>Logout</q-item-section>
+                <q-icon name="cloud_off" size="md"></q-icon>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
+        <!--
+        <q-btn
+          v-if="isUserLoggedIn"
           flat
           round
           dense
           icon="fas fa-sign-out-alt"
-          @mouseover="showing = true"
+          @click="showMenu1 = true"
         >
-          <q-menu
+           <q-menu
             v-model="showing"
             auto-close
             class="q-mt-none"
@@ -104,8 +142,8 @@
                 </q-item-section>
               </q-item>
             </q-list>
-          </q-menu>
-        </q-btn>
+          </q-menu> 
+        </q-btn>-->
       </q-toolbar>
       <desktop-menu v-if="isDesktop" />
     </q-header>
@@ -138,7 +176,7 @@
 <script>
 import device_mixin from 'src/mixins/device_mixin';
 import root from 'src/config/menu.json';
-import { mapGetters } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   mixins: [device_mixin],
@@ -167,24 +205,55 @@ export default {
     login4: () => import('components/auth/loginVerticalTab')
   },
   methods: {
+    ...mapActions('user', ['setToken', 'setUser']),
     close() {
       this.showMenu1 = false;
       this.showMenu2 = false;
       this.showMenu3 = false;
       this.showMenu4 = false;
+    },
+    logout() {
+      this.setToken(null);
+      this.setUser(null);
+      //this.$store.dispatch('setToken', null);
+      //this.$store.dispatch('setUser', null);
+      if (this.rememberMe === false) {
+        localStorage.clear();
+      } else {
+        console.log('storage not cleared', this.rememberMe);
+      }
+
+      //this.$store.dispatch('setCompany', null);
+      //Go to home page
+      //this.$router.replace('/');
+      this.$router.push({ name: 'home' }).catch(err => {});
     }
   },
   computed: {
     ...mapGetters('cart', ['cartCount']),
+    ...mapGetters('user', ['user']),
+    ...mapState(['isUserLoggedIn', 'version', 'rememberMe']),
+
+    //...mapState(['isUserLoggedIn', 'version']),
     siteName() {
       //console.log('site', `${process.env.SITE_NAME`);
       return process.env.SITE_NAME;
+    },
+    full_name() {
+      console.log('this.user', this.user);
+      return !!this.user ? this.user.full_name : 'Guest';
     }
   },
   mounted() {
     /* eslint-disable no-console */
     console.log(
-      `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`
+      `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,
+      'version',
+      this.version,
+      'user',
+      this.user,
+      'isLogedIn',
+      this.isUserLoggedIn
     );
   },
   created() {

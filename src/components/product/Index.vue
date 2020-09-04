@@ -4,7 +4,7 @@
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
         <div class="q-pa-md">
           <q-carousel swipeable animated v-model="slide" thumbnails infinite>
-            <q-carousel-slide :name="1" :img-src="lists.image_filename" />
+            <q-carousel-slide :name="1" :img-src="data.image_filename" />
             <q-carousel-slide
               :name="2"
               img-src="https://placeimg.com/500/300/nature"
@@ -39,8 +39,8 @@
             class="col-lg-7 col-md-7 col-sm-12 col-xs-12"
             :class="$q.platform.is.desktop ? '' : 'q-px-md'"
           >
-            <div class="text-subtitle1 text-grey-10 q-mt-sm q-pt-xs">
-              {{ lists.product_name }}
+            <div class="text-h5 q-mt-sm q-pt-xs">
+              {{ data.product_name }}
             </div>
             <div>
               <q-chip
@@ -51,7 +51,7 @@
                 text-color="white"
                 icon-right="star"
               >
-                {{ lists.rating }}
+                {{ data.rating }}
               </q-chip>
               <span class="text-caption text-weight-bold text-grey-6"
                 >6 Ratings & 2 Reviews</span
@@ -61,33 +61,34 @@
               <div class="text-caption text-green-8 text-weight-bolder q-mt-sm">
                 Special Price
               </div>
-              <span class="text-h6">{{ lists.sale_rate | currency }}</span
+              <span class="text-h6">{{ data.sale_rate | currency }}</span
               ><span
-                class="q-ml-sm text-grey-6"
+                class="q-ml-sm text-subtitle1"
                 style="text-decoration: line-through"
-                >{{ lists.mrp | currency }}</span
+                >{{ data.mrp | currency }}</span
               >
-              <span
-                class="q-ml-md text-caption text-green-8 text-weight-bolder q-mt-md"
-                >{{ lists.saving }} % off</span
+              <span class="q-ml-md text-subtitle1 text-red q-mt-md"
+                >{{ data.saving }} % off</span
               >
             </div>
             <div class="q-mt-sm text-weight-bold">
               Offers
               <ul class="q-pl-sm text-caption" style="list-style-type: none">
                 <li class="q-mt-xs">
-                  <span class="text-weight-bold">Bank Offer</span> 5% Unlimited
+                  <span class="text-weight-bold">Bank Offer</span> 5% Limited
                   Cashback on Axis Bank Credit Card
                   <a class="text-primary text-weight-bolder">T&C</a>
                 </li>
                 <li class="q-mt-xs">
-                  <span class="text-weight-bold">Bank Offer</span> 5% Unlimited
-                  Cashback on Axis Bank Credit Card
+                  <span class="text-weight-bold">Lucky Draw</span>
+                  Every month for customer who purchase more than Rs 2,000/-
                   <a class="text-primary text-weight-bolder">T&C</a>
                 </li>
                 <li class="q-mt-xs">
-                  <span class="text-weight-bold">Bank Offer</span> OfferExtra 5%
-                  off* <a class="text-primary text-weight-bolder">T&C</a>
+                  <span class="text-weight-bold">Redeem Points</span> Every
+                  purchase you earned some points that you can encash on
+                  selected products.
+                  <a class="text-primary text-weight-bolder">T&C</a>
                 </li>
               </ul>
             </div>
@@ -106,18 +107,57 @@
                 <span class="text-black">{{ fastDelivery }} </span>
               </div>
             </div>
+
             <div class="q-mt-md">
               <q-btn
+                v-if="orderQty === 0"
                 class="q-mt-md"
                 color="orange-9"
                 icon="shopping_cart"
                 label="Add to cart"
+                @click="increment"
               />
+
+              <q-input
+                v-else
+                v-model.number="orderQty"
+                color="green-6"
+                style="width: 135px; height : 30px;"
+                dense
+                outlined
+                class="custom-control col-4"
+              >
+                <template v-slot:prepend>
+                  <q-btn
+                    @click="decrement"
+                    color="green-6"
+                    icon="remove"
+                    size="md"
+                    round
+                    unelevated
+                    class="rounded-borders full-height"
+                  />
+                </template>
+
+                <template v-slot:append>
+                  <q-btn
+                    @click="increment"
+                    color="green-6"
+                    icon="add"
+                    size="md"
+                    round
+                    unelevated
+                    class="rounded-borders full-height"
+                  />
+                </template>
+              </q-input>
+
               <q-btn
                 class="q-mt-md q-ml-md"
                 color="orange-8"
                 icon="shopping_cart"
                 label="Buy now"
+                @click="$router.push(`/shopping-cart`)"
               />
             </div>
           </div>
@@ -125,10 +165,10 @@
             class="col-lg-5 col-md-5 col-sm-12 col-xs-12 q-mt-md q-pt-xs q-pl-lg"
           >
             <div class="text-subtitle2">Customer rating</div>
-            <div class="text-h3">{{ lists.rating }}</div>
+            <div class="text-h3">{{ data.rating }}</div>
             <div>
               <q-rating
-                v-model="lists.rating"
+                v-model="data.rating"
                 max="5"
                 size="2em"
                 color="orange"
@@ -236,10 +276,10 @@
           class="bg-primary text-white shadow-2"
           :breakpoint="0"
         >
-          <q-tab name="Specifications" label="Specifications" />
+          <q-tab name="Specifications" label="Description" />
+          <q-tab name="Bought together" label="Benefit" />
+          <q-tab name="Similar products" label="How to Use" />
           <q-tab name="Ratings & Reviews" label="Ratings & Reviews" />
-          <q-tab name="Similar products" label="Similar products" />
-          <q-tab name="Bought together" label="Bought together" />
           <q-tab name="Recently Viewed" label="Recently Viewed" />
         </q-tabs>
         <q-tab-panels style="border: 1px solid lightgrey" v-model="tab">
@@ -248,65 +288,36 @@
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
-                    >General</q-item-label
+                    >Description</q-item-label
                   >
                   <q-item>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Dial Color</span>
-                      <span>Black</span>
-                    </q-item-section>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Strap Material</span>
-                      <span>Silicone</span>
-                    </q-item-section>
-                  </q-item>
-                  <q-item>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Usage</span>
-                      <span
-                        >Fitness & Outdoor, Health & Medical, Notifier, Safety &
-                        Security, Watchphone</span
-                      >
-                    </q-item-section>
+                    <q-item-section v-html="data.description" />
+                    <!-- {{ data.description }}
+                    </q-item-section> -->
                   </q-item>
                 </q-list>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
-                    >Product Details</q-item-label
+                    >Benefit</q-item-label
                   >
                   <q-item>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Dial Color</span>
-                      <span>Black</span>
-                    </q-item-section>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Strap Material</span>
-                      <span>Silicone</span>
-                    </q-item-section>
+                    <q-item-section v-html="data.benefits" />
                   </q-item>
                 </q-list>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
-                    >Camera And Display Features</q-item-label
+                    >How to Use</q-item-label
                   >
                   <q-item>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Dial Color</span>
-                      <span>Black</span>
-                    </q-item-section>
-                    <q-item-section>
-                      <span class="text-caption text-grey">Strap Material</span>
-                      <span>Silicone</span>
-                    </q-item-section>
+                    <q-item-section v-html="data.how_to_use" />
                   </q-item>
                 </q-list>
               </div>
             </div>
-            
           </q-tab-panel>
 
           <q-tab-panel name="Ratings & Reviews">
@@ -522,6 +533,7 @@ import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
 import { date } from 'quasar';
 let timeStamp = Date.now();
+import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'details.vue',
@@ -535,7 +547,8 @@ export default {
       rat_3: 3,
       rat_2: 2,
       rat_1: 1,
-      lists: {}
+      data: {},
+      orderQty: 0
     };
   },
   computed: {
@@ -552,20 +565,54 @@ export default {
     regularDelivery() {
       let newDate = date.addToDate(new Date(), { days: 2 });
       return date.formatDate(newDate, 'ddd, MMM D ');
+    },
+    ...mapState(['cart']),
+    ...mapGetters('cart', ['findItem'])
+  },
+  methods: {
+    ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
+    increment() {
+      this.orderQty++;
+
+      this.addProductToCart({
+        product_id: this.data.product_id,
+        category_id: this.data.category_id,
+        product_name: this.data.product_name,
+        category_name: this.data.category_name,
+        rate: this.data.sale_rate,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        mrp: this.data.mrp,
+        image_filename: this.data.image_filename,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+      });
+    },
+    decrement() {
+      this.orderQty--;
+      this.updateProductQuantity({
+        product_id: this.data.product_id,
+        product_name: this.data.product_name,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+        message: false
+      });
     }
   },
-  methods: {},
   mounted() {
     const slug = this.$route.params.slug;
     //console.time('Timer name');
     //DataService.get('data/product.json')
     DataService.get(`product/${slug}`)
       .then(response => {
-        this.lists = response.data.rows[0];
-        // this.lists = response.data.filter(
+        this.data = response.data.rows[0];
+        console.log('dadata', this.data);
+        // this.data = response.data.filter(
         //   row => parseInt(row.product_id) === product_id
         // )[0];
-        // console.log('data', this.lists, response.data);
+        // console.log('data', this.data, response.data);
         //console.timeEnd('Timer name');
       })
       .catch(error => {

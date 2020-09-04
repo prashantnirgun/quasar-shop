@@ -25,6 +25,22 @@ export default {
           return 6;
           break;
       }
-    }
+    },
+    deviceWidth(){
+      return this.$q.screen.width;
+    },
+    deviceHeight(){      
+      return this.$q.screen.height;
+    },
+    deviceType(){
+      return this.isDesktop ? 'Desktop' : 'Mobile'
+   },
+   osVersion(){     
+    if (navigator.userAgent.indexOf("Win") != -1) return "Windows";
+    if (navigator.userAgent.indexOf("Mac") != -1) return "Macintosh";
+    if (navigator.userAgent.indexOf("Linux") != -1) return "Linux";
+    if (navigator.userAgent.indexOf("Android") != -1) return "Android";
+    if (navigator.userAgent.indexOf("like Mac") != -1) return "iOS";
+   }
   }
 };
