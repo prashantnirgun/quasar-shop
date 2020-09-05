@@ -1,5 +1,5 @@
 <template>
-  <div class="row wrap justify-evenly q-pa-sm items-start q-gutter-md">
+  <div class="row wrap justify-evenly items-start q-gutter-sm">
     <q-card
       v-for="data in lists"
       :key="data.category_id"

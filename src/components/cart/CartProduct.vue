@@ -109,4 +109,11 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+::v-deep .custom-control
+  & .q-field__control
+    padding: 0
+
+  input
+    text-align: center
+</style>

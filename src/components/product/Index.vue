@@ -68,7 +68,7 @@
                 >{{ data.mrp | currency }}</span
               >
               <span class="q-ml-md text-subtitle1 text-red q-mt-md"
-                >{{ data.saving }} % off</span
+                >{{ (data.mrp - data.sale_rate) | currency }} Saving</span
               >
             </div>
             <div class="q-mt-sm text-weight-bold">
@@ -112,7 +112,7 @@
               <q-btn
                 v-if="orderQty === 0"
                 class="q-mt-md"
-                color="orange-9"
+                color="green-6"
                 icon="shopping_cart"
                 label="Add to cart"
                 @click="increment"
@@ -154,7 +154,7 @@
 
               <q-btn
                 class="q-mt-md q-ml-md"
-                color="orange-8"
+                color="green-7"
                 icon="shopping_cart"
                 label="Buy now"
                 @click="$router.push(`/shopping-cart`)"
@@ -277,8 +277,8 @@
           :breakpoint="0"
         >
           <q-tab name="Specifications" label="Description" />
-          <q-tab name="Bought together" label="Benefit" />
-          <q-tab name="Similar products" label="How to Use" />
+          <q-tab name="Benefit" label="Benefit" />
+          <q-tab name="How to Use" label="How to Use" />
           <q-tab name="Ratings & Reviews" label="Ratings & Reviews" />
           <q-tab name="Recently Viewed" label="Recently Viewed" />
         </q-tabs>
@@ -292,21 +292,14 @@
                   >
                   <q-item>
                     <q-item-section v-html="data.description" />
-                    <!-- {{ data.description }}
-                    </q-item-section> -->
                   </q-item>
                 </q-list>
               </div>
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <q-list bordered class="rounded-borders" style="">
-                  <q-item-label class="text-weight-bolder" header
-                    >Benefit</q-item-label
-                  >
-                  <q-item>
-                    <q-item-section v-html="data.benefits" />
-                  </q-item>
-                </q-list>
-              </div>
+            </div>
+          </q-tab-panel>
+
+          <q-tab-panel name="How to Use">
+            <div class="row">
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
@@ -314,6 +307,21 @@
                   >
                   <q-item>
                     <q-item-section v-html="data.how_to_use" />
+                  </q-item>
+                </q-list>
+              </div>
+            </div>
+          </q-tab-panel>
+
+          <q-tab-panel name="Benefit">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <q-list bordered class="rounded-borders" style="">
+                  <q-item-label class="text-weight-bolder" header
+                    >Benefit</q-item-label
+                  >
+                  <q-item>
+                    <q-item-section v-html="data.benefits" />
                   </q-item>
                 </q-list>
               </div>
@@ -626,4 +634,12 @@ export default {
 .q-panel
   height: 80%
   width: 100%
+
+
+::v-deep .custom-control
+  & .q-field__control
+    padding: 0
+
+  input
+    text-align: center
 </style>

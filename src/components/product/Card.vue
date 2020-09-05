@@ -1,7 +1,7 @@
 <template>
   <q-card>
     <card-info :data="current" :horizontal="horizontal" />
-    <div class="bg-grey-4">
+    <div class="bg-yellow-3">
       <card-options
         :data="data.children"
         @updatedItem="runme"

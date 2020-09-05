@@ -46,7 +46,7 @@
           {{ data.product_name }}
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
-          <div class="col-5">
+          <div class="col-6">
             <q-rating
               v-model="stars"
               color="orange"
@@ -56,21 +56,21 @@
             ></q-rating>
           </div>
 
-          <div class="col-3 text-green text-bold">Our Price</div>
+          <div class="col-2 text-green text-bold float-rigth">Price</div>
           <div class="col-4 text-right text-green text-bold q-pr-sm">
             {{ data.sale_rate | currency }}
           </div>
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
-          <div class="col-5"></div>
-          <div class="col-3">MRP</div>
+          <div class="col-6"></div>
+          <div class="col-2">MRP</div>
           <div class="col-4 text-strike text-right q-pr-sm">
             {{ data.mrp | currency }}
           </div>
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
-          <div class="col-5"></div>
-          <div class="col-3 text-red">Saving</div>
+          <div class="col-6"></div>
+          <div class="col-2 text-red">Saving</div>
           <div class="col-4 text-right text-red q-pr-sm">
             {{ (data.mrp - data.sale_rate) | currency }}
           </div>
@@ -80,20 +80,22 @@
     <div :class="['row', 'q-pa-sm', { hidden: horizontal }]">
       <div class="col-12 row ">
         <div class="col-4">
-          <div class="text-green-8 text-h7 text-bold">Price</div>
-          <div class="text-green-8 text-h7 text-bold">
+          <div class="text-green-8 text-h7 text-bold text-center">
+            Our Price
+          </div>
+          <div class="text-green-8 text-h7 text-bold  text-center">
             {{ data.sale_rate | currency }}
           </div>
         </div>
         <div class="col-4">
-          <div class="text-grey-10 text-h7 text-bold">MRP</div>
-          <div class="text-grey-10 text-h7 text-strike">
+          <div class="text-grey-10 text-h7 text-bold  text-center">MRP</div>
+          <div class="text-grey-10 text-h7 text-strike  text-center">
             {{ data.mrp | currency }}
           </div>
         </div>
         <div class="col-4">
-          <div class="text-h7 text-bold">Saving</div>
-          <div class="text-h7">
+          <div class="text-h7 text-bold text-red text-center">Saving</div>
+          <div class="text-h7 text-red text-center">
             {{ (data.mrp - data.sale_rate) | currency }}
           </div>
         </div>
