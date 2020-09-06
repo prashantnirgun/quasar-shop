@@ -82,9 +82,9 @@ module.exports = function(/* ctx */) {
       config: {
         loading: {
           spinnerSize: 140,
-          spinner: 'QSpinnerFacebook',
-          spinnerColor: 'purple',
-          delay: 100
+          spinner: 'QSpinnerPuff',
+          spinnerColor: 'blue'
+          //delay: 100
         }
       },
 

@@ -98,6 +98,8 @@ export default {
         //console.log('response', response);
         this.$q.loading.hide();
         if (response.data.token) {
+          this.username = '';
+          this.password = '';
           setAxiosHeaders(response.data.token);
           this.setToken(response.data.token);
           this.setUser(response.data.user);
@@ -116,6 +118,8 @@ export default {
       });
     },
     close(payload) {
+      this.username = '';
+      this.password = '';
       this.$emit('close');
     }
   },

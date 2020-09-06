@@ -47,6 +47,17 @@
             <q-item-label>{{ cartsummary.cartTotal | currency }} </q-item-label>
           </q-item-section>
         </q-item>
+        <q-separator />
+        <q-item class="text-red text-h6">
+          <q-item-section>
+            <q-item-label>Total Savings</q-item-label>
+          </q-item-section>
+          <q-item-section side>
+            <q-item-label class="text-red"
+              >{{ cartsummary.savingAmount | currency }}
+            </q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </div>
   </q-card>
@@ -60,6 +71,9 @@ export default {
   },
   computed: {
     ...mapGetters('cart', ['cartsummary'])
+  },
+  mounted() {
+    console.log('summary', this.cartsummary);
   }
 };
 </script>

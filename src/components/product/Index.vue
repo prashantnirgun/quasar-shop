@@ -111,7 +111,7 @@
             <div class="q-mt-md row">
               <q-btn
                 v-if="orderQty === 0"
-                class="q-mt-md"
+                class="q-ma-sm"
                 color="green-6"
                 icon="shopping_cart"
                 label="Add to cart"
@@ -122,7 +122,7 @@
                 v-else
                 v-model.number="orderQty"
                 color="green-6"
-                style="width: 135px; height : 30px;"
+                style="width: 135px; height : 20px;"
                 dense
                 outlined
                 class="custom-control q-mt-md"
@@ -153,7 +153,7 @@
               </q-input>
 
               <q-btn
-                class="q-mt-md q-ml-md"
+                class="q-ma-sm"
                 color="green-7"
                 icon="shopping_cart"
                 label="Buy now"
@@ -616,12 +616,13 @@ export default {
     DataService.get(`product/${slug}`)
       .then(response => {
         this.data = response.data.rows[0];
-        console.log('dadata', this.data);
-        // this.data = response.data.filter(
-        //   row => parseInt(row.product_id) === product_id
-        // )[0];
-        // console.log('data', this.data, response.data);
-        //console.timeEnd('Timer name');
+
+        let cartItem = this.findItem(this.data.product_id);
+        if (cartItem) {
+          this.orderQty = cartItem.quantity;
+        } else {
+          this.orderQty = 0;
+        }
       })
       .catch(error => {
         console.log('DataService.get Error', error);
