@@ -114,6 +114,12 @@
         "icon": "add_location",
         "to": "/delivery-places",
         "level": 1
+      },
+      {
+        "label": "Device Info",
+        "icon": "important_devices",
+        "to": "/device",
+        "level": 1
       }
     ]
   }

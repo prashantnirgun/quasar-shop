@@ -167,6 +167,7 @@ export default {
   },
   created() {
     this.column = parseInt(this.displaySize);
+    console.log('No of column', this.column);
     this.getData();
   }
 };

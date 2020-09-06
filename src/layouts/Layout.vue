@@ -53,7 +53,8 @@
         <q-btn
           round
           v-if="!isUserLoggedIn"
-          icon="input"
+          icon="fas fa-sign-in-alt"
+          size="12px"
           @click="showMenu1 = true"
           class="q-mr-xs"
         />
@@ -81,7 +82,7 @@
               <q-separator />
               <q-item clickable class="text-purple" @click="logout">
                 <q-item-section>Logout</q-item-section>
-                <q-icon name="cloud_off" size="md"></q-icon>
+                <q-icon name="fas fa-sign-out-alt" size="sm"></q-icon>
               </q-item>
             </q-list>
           </q-menu>
@@ -162,7 +163,14 @@
 
     <q-page-container style="background-color:#f1f2f6">
       <router-view />
-
+      <!-- place QPageScroller at end of page -->
+      <q-page-scroller
+        position="bottom-left"
+        :scroll-offset="150"
+        :offset="[18, 18]"
+      >
+        <q-btn fab icon="keyboard_arrow_up" color="accent" />
+      </q-page-scroller>
       <site-footer />
     </q-page-container>
     <pincode :showPincode="showPincode" @close="showPincode = false" />

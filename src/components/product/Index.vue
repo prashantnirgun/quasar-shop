@@ -108,7 +108,7 @@
               </div>
             </div>
 
-            <div class="q-mt-md">
+            <div class="q-mt-md row">
               <q-btn
                 v-if="orderQty === 0"
                 class="q-mt-md"
@@ -125,7 +125,7 @@
                 style="width: 135px; height : 30px;"
                 dense
                 outlined
-                class="custom-control col-4"
+                class="custom-control q-mt-md"
               >
                 <template v-slot:prepend>
                   <q-btn
