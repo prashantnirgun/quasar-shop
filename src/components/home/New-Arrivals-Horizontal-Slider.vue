@@ -1,6 +1,6 @@
 <template>
-  <div class="col-12 q-pa-sm">
-    <q-ribbon
+  <div class="col-12 q-mt-sm">
+    <!-- <q-ribbon
       position="left"
       color="#000000"
       background-color="#e3df02"
@@ -8,8 +8,12 @@
       size="full"
     >
       New Arrivals
-    </q-ribbon>
+    </q-ribbon> -->
     <!-- <div> -->
+    <div class="" style="color: #1f509e;">
+      New Arrival
+    </div>
+
     <q-carousel
       v-model="latest_slide"
       ref="new_arival_carousel"
@@ -18,21 +22,16 @@
       swipeable
       animated
       infinite
-      height="350px"
+      height="290px"
     >
-      <q-carousel-slide name="one">
+      <q-carousel-slide name="one" class="q-pa-none">
         <div class="row justify-evenly items-center no-wrap">
           <q-card
             v-for="row in lists"
             :key="row.product_id"
-            class="q-ma-sm bg-yellow-5 rounded-borders hover_border_grey text-center cursor-pointer"
+            class="q-ma-xs rounded-borders hover_border_grey text-center cursor-pointer"
             @click="$router.push(`/product/${row.slug}`)"
           >
-            <q-item>
-              <q-item-section>
-                <q-item-label>{{ row.product_name }}</q-item-label>
-              </q-item-section>
-            </q-item>
             <q-img
               class="rounded-borders cursor-pointer"
               :src="row.image_filename"
@@ -56,10 +55,33 @@
 
             <q-item>
               <q-item-section>
-                <q-item-label
+                <q-item-label>{{ row.product_name }}</q-item-label>
+                <!-- </q-item-section>
+            </q-item>
+            <q-item> 
+              <q-item-section>-->
+                <q-item-label>
+                  <q-rating
+                    v-model="row.rating"
+                    max="5"
+                    size="1.2em"
+                    color="orange"
+                    icon="star_border"
+                    icon-selected="star"
+                    icon-half="star_half"
+                    no-dimming
+                    readonly
+                  />
+                </q-item-label>
+                <!-- </q-item-section>
+            </q-item>
+
+            <q-item class="q-ma-none">
+              <q-item-section class="q-ma-none"> -->
+                <q-item-label class="text-green-6"
                   >{{ row.sale_rate | currency
                   }}<span
-                    class="q-ml-sm text-grey-6"
+                    class="q-ml-sm text-black"
                     style="text-decoration: line-through"
                     >{{ row.mrp | currency }}</span
                   ></q-item-label
@@ -72,25 +94,26 @@
 
       <template v-slot:control>
         <q-carousel-control
-          position="bottom-right"
-          :offset="[18, 18]"
+          position="bottom-left"
+          :offset="[5, 160]"
           class="q-gutter-xs"
         >
           <q-btn
-            push
             round
-            dense
-            color="orange"
-            text-color="black"
+            text-color="blue"
             icon="arrow_left"
             @click="goToPage('previous')"
           />
+        </q-carousel-control>
+
+        <q-carousel-control
+          position="bottom-right"
+          :offset="[10, 160]"
+          class="q-gutter-xs"
+        >
           <q-btn
-            push
             round
-            dense
-            color="orange"
-            text-color="black"
+            text-color="blue"
             icon="arrow_right"
             @click="goToPage('next')"
           />

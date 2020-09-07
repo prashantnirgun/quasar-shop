@@ -1,5 +1,5 @@
 <template>
-  <div class="row q-col-gutter-sm">
+  <div class="row ">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <q-carousel
         :class="$q.platform.is.desktop ? 'q-ml-sm' : ''"
@@ -8,7 +8,7 @@
         autoplay
         infinite
         v-model="slide"
-        height="250px"
+        :height="getHeight"
       >
         <q-carousel-slide
           v-for="slide in data"
@@ -32,13 +32,21 @@
 </template>
 <script>
 import slide from 'src/config/slider.json';
+import device_mixin from 'src/mixins/device_mixin';
 
 export default {
+  mixins: [device_mixin],
   data() {
     return {
       slide: 'first',
       data: slide
     };
+  },
+  computed: {
+    getHeight() {
+      console.log('inside banner', this.isDesktop);
+      return this.isDesktop ? '250px' : '230px';
+    }
   }
 };
 </script>

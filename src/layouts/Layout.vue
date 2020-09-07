@@ -13,12 +13,15 @@
           v-if="isMobile"
         />
 
-        <img
+        <q-img
           @click="$router.push('/')"
           class="cursor-pointer"
           src="/images/logo.png"
           style="width: 38px"
-        />
+        >
+          <tooltip>Home</tooltip>
+        </q-img>
+
         <q-toolbar-title>
           <span
             class="float-left q-mt-xs text-h6 text-weight-bold"
@@ -35,12 +38,16 @@
           icon="location_on"
           class="q-mr-md"
           @click="showPincode = true"
-        />
+        >
+          <tooltip>Set Area / Location for faster delivery</tooltip>
+        </q-btn>
         <q-btn class="q-mr-md" dense round flat icon="shopping_cart">
           <q-badge color="red" class="text-bold" floating transparent>
             {{ cartCount }}
           </q-badge>
           <mini-cart />
+
+          <tooltip>Show Mini Cart</tooltip>
         </q-btn>
         <q-btn
           flat
@@ -49,7 +56,9 @@
           icon="settings"
           class="q-mr-md"
           v-if="isDesktop"
-        />
+        >
+          <tooltip>Settings</tooltip>
+        </q-btn>
         <q-btn
           round
           v-if="!isUserLoggedIn"
@@ -57,7 +66,9 @@
           size="12px"
           @click="showMenu1 = true"
           class="q-mr-xs"
-        />
+        >
+          <tooltip>Login / Register</tooltip>
+        </q-btn>
 
         <q-btn v-if="isUserLoggedIn" flat icon="account_circle">
           <q-menu auto-close transition-show="scale" transition-hide="scale">
@@ -86,6 +97,7 @@
               </q-item>
             </q-list>
           </q-menu>
+          <tooltip>Account</tooltip>
         </q-btn>
         <!--
         <q-btn
@@ -201,6 +213,7 @@ export default {
     };
   },
   components: {
+    tooltip: () => import('components/BaseTooltip'),
     'search-bar': () => import('src/layouts/SearchBar'),
     'mini-cart': () => import('components/cart/Mini_cart'),
     pincode: () => import('components/Pincode'),

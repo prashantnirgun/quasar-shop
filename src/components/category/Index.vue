@@ -39,7 +39,8 @@
             color="primary"
             icon="list"
             @click="horizontal = true"
-          />
+          >
+          </q-btn>
 
           <q-btn
             dense
@@ -339,11 +340,12 @@ export default {
     applySort(value) {
       this.selection = [];
       this.selection[0] = value;
-      this.sort(value, JSON.parse(JSON.stringify(this.Lists)));
+      //console.log('sort', value, this.selection);
+      this.sort(value, JSON.parse(JSON.stringify(this.lists)));
     },
     sort(value, lists) {
       let data = [];
-      //console.log('sort', value);
+      //console.log('sort', value, lists);
       switch (value) {
         case 'sale_rate':
           data = lists.sort(
@@ -375,7 +377,8 @@ export default {
       rawData.map(row => {
         if (row.primary_product_id === 0) {
           let index = datas.findIndex(
-            data => parseInt(data.product_id) === parseInt(row.product_id)
+            data =>
+              parseInt(data.primary_product_id) === parseInt(row.product_id)
           );
           //if not found then insert
           if (index === -1) {
@@ -432,7 +435,8 @@ export default {
         if (parseInt(first.size) > parseInt(next.size)) return 1;
         if (parseInt(first.size) < parseInt(next.size)) return -1;
       });
-      //console.log('packings', this.packings);
+
+      console.log('datas', datas);
       this.sortedLists = datas;
     }
   },

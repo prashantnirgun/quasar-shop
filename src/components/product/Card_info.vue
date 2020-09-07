@@ -40,24 +40,27 @@
         </q-img>
         <!-- </div> -->
       </div>
-
+      <!-- horizontal -->
       <div :class="[horizontal ? 'col-8' : 'col-12']">
-        <div class="q-pa-sm text-h6">
+        <div
+          class="q-pa-sm text-h6 cursor-pointer"
+          @click="$router.push(`/product/${data.slug}`)"
+        >
           {{ data.product_name }}
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
           <div class="col-6">
-            <q-rating
+            <!-- <q-rating
               v-model="stars"
               color="orange"
               :max="5"
               readonly
               size="14px"
-            ></q-rating>
+            ></q-rating> -->
           </div>
 
-          <div class="col-2 text-green text-bold float-rigth">Price</div>
-          <div class="col-4 text-right text-green text-bold q-pr-sm">
+          <div class="col-2 text-green-6 text-bold float-rigth">Price</div>
+          <div class="col-4 text-right text-green-6 text-bold q-pr-sm">
             {{ data.sale_rate | currency }}
           </div>
         </div>
@@ -72,18 +75,23 @@
           <div class="col-6"></div>
           <div class="col-2 text-red">Saving</div>
           <div class="col-4 text-right text-red q-pr-sm">
-            {{ (data.mrp - data.sale_rate) | currency }}
+            {{
+              orderQty > 0
+                ? data.mrp * orderQty - data.sale_rate * orderQty
+                : (data.mrp - data.sale_rate) | currency
+            }}
           </div>
         </div>
       </div>
     </div>
+    <!-- Vertical -->
     <div :class="['row', 'q-pa-sm', { hidden: horizontal }]">
       <div class="col-12 row ">
         <div class="col-4">
-          <div class="text-green-8 text-h7 text-bold text-center">
+          <div class="text-green-6 text-h7 text-bold text-center">
             Our Price
           </div>
-          <div class="text-green-8 text-h7 text-bold  text-center">
+          <div class="text-green-6 text-h7 text-bold  text-center">
             {{ data.sale_rate | currency }}
           </div>
         </div>
@@ -96,7 +104,11 @@
         <div class="col-4">
           <div class="text-h7 text-bold text-red text-center">Saving</div>
           <div class="text-h7 text-red text-center">
-            {{ (data.mrp - data.sale_rate) | currency }}
+            {{
+              orderQty > 0
+                ? data.mrp * orderQty - data.sale_rate * orderQty
+                : (data.mrp - data.sale_rate) | currency
+            }}
           </div>
         </div>
       </div>
@@ -104,16 +116,19 @@
 
     <div class="row q-pa-sm q-mb-sm items-evenly">
       <q-rating
-        v-if="data.product_id % 2 === 0"
         class="col-6"
-        v-model="stars"
+        v-model="data.rating"
+        max="5"
+        size="1.2em"
         color="orange"
-        :max="5"
+        icon="star_border"
+        icon-selected="star"
+        icon-half="star_half"
+        no-dimming
         readonly
-        size="17px"
       ></q-rating>
 
-      <q-badge v-else class="transparent no-margin no-padding">
+      <!-- <q-badge v-else class="transparent no-margin no-padding">
         <q-chip
           icon="star"
           color="yellow"
@@ -121,7 +136,7 @@
           class="col-6 ellipsis"
           >{{ data.tag }}</q-chip
         >
-      </q-badge>
+      </q-badge> -->
 
       <q-space />
       <q-btn
@@ -142,6 +157,7 @@
         dense
         outlined
         class="custom-control col-4"
+        @blur="setQuantity"
       >
         <template v-slot:prepend>
           <q-btn
@@ -193,9 +209,8 @@ export default {
   },
   methods: {
     ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
-    increment() {
-      this.orderQty++;
-
+    setQuantity() {
+      //console.log('blur event fire', this.orderQty);
       this.addProductToCart({
         product_id: this.data.product_id,
         category_id: this.data.category_id,
@@ -210,17 +225,35 @@ export default {
           this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
       });
     },
+    increment() {
+      this.orderQty++;
+      this.setQuantity();
+      // this.addProductToCart({
+      //   product_id: this.data.product_id,
+      //   category_id: this.data.category_id,
+      //   product_name: this.data.product_name,
+      //   category_name: this.data.category_name,
+      //   rate: this.data.sale_rate,
+      //   quantity: this.orderQty,
+      //   amount: this.orderQty * this.data.sale_rate,
+      //   mrp: this.data.mrp,
+      //   image_filename: this.data.image_filename,
+      //   saving:
+      //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+      // });
+    },
     decrement() {
       this.orderQty--;
-      this.updateProductQuantity({
-        product_id: this.data.product_id,
-        product_name: this.data.product_name,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
-        message: false
-      });
+      this.setQuantity();
+      // this.updateProductQuantity({
+      //   product_id: this.data.product_id,
+      //   product_name: this.data.product_name,
+      //   quantity: this.orderQty,
+      //   amount: this.orderQty * this.data.sale_rate,
+      //   saving:
+      //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+      //   message: false
+      // });
     }
   },
   computed: {

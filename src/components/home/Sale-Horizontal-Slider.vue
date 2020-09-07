@@ -1,6 +1,6 @@
 <template>
-  <div class="col-12 q-pa-md">
-    <q-ribbon
+  <div class="col-12 q-mt-sm">
+    <!-- <q-ribbon
       position="left"
       color="#ffffff"
       background-color="#027BE3"
@@ -8,32 +8,34 @@
       size="full"
     >
       Sales
-    </q-ribbon>
-
+    </q-ribbon> -->
+    <div class="" style="color: #1f509e;">
+      Hot Deal
+    </div>
     <q-carousel
       v-model="latest_slide"
       ref="sale_carousel"
-      transition-prev="slide-right"
-      transition-next="slide-left"
+      transition-prev="scale"
+      transition-next="scale"
       swipeable
       animated
       control-color="primary"
       infinite
-      height="350px"
+      height="300px"
     >
-      <q-carousel-slide name="one">
+      <q-carousel-slide name="one" class="q-pa-none">
         <div class="row justify-evenly items-center no-wrap">
           <q-card
             v-for="row in lists"
             :key="row.product_id"
-            class="q-mx-xs bg-green-13 rounded-borders hover_border_grey text-center cursor-pointer"
+            class="q-mx-xs rounded-borders hover_border_grey text-center cursor-pointer"
             @click="$router.push(`/product/${row.slug}`)"
           >
-            <q-item>
+            <!-- <q-item>
               <q-item-section>
                 <q-item-label>{{ row.product_name }}</q-item-label>
               </q-item-section>
-            </q-item>
+            </q-item> -->
 
             <q-img
               class="rounded-borders cursor-pointer"
@@ -58,18 +60,39 @@
 
             <q-item>
               <q-item-section>
-                <q-item-label
+                <q-item-label>{{ row.product_name }}</q-item-label>
+                <!-- </q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section> -->
+
+                <q-item-label>
+                  <q-rating
+                    v-model="row.rating"
+                    max="5"
+                    size="1.2em"
+                    color="orange"
+                    icon="star_border"
+                    icon-selected="star"
+                    icon-half="star_half"
+                    no-dimming
+                    readonly
+                  />
+                </q-item-label>
+
+                <q-item-label class="text-green-6"
                   >{{ row.sale_rate | currency
                   }}<span
-                    class="q-ml-sm text-blue-6"
+                    class="q-ml-sm text-black"
                     style="text-decoration: line-through"
                     >{{ row.mrp | currency }}</span
                   ></q-item-label
                 >
-                <q-item-label class="text-deep-purple">
-                  <countdown :end-time="new Date('2020-08-15')">
+                <q-item-label class="text-red">
+                  <countdown :end-time="new Date('2020-09-30')">
                     <template v-slot:process="anyYouWantedScopName">
-                      <span>
+                      <span :class="{ 'text-caption': isMobile }">
                         {{
                           `Day : ${anyYouWantedScopName.timeObj.d}
            Time : ${anyYouWantedScopName.timeObj.h} :
@@ -89,27 +112,51 @@
         </div>
       </q-carousel-slide>
 
+      <!-- <template v-slot:navigation-icon="{ active, btnProps, onClick }">
+        <q-btn
+          size="lg"
+          icon="home"
+          color="yellow"
+          flat
+          round
+          dense
+          @click="goToPage('previous')"
+        />
+        {{ btnProps }}
+        {{ onClick }}
+        <q-btn
+          size="sm"
+          :icon="btnProps.icon"
+          color="white"
+          flat
+          round
+          dense
+          @click="goToPage('next')"
+        />
+      </template> -->
+
       <template v-slot:control>
         <q-carousel-control
-          position="bottom-right"
-          :offset="[18, 18]"
+          position="bottom-left"
+          :offset="[5, 160]"
           class="q-gutter-xs"
         >
           <q-btn
-            push
             round
-            dense
-            color="orange"
-            text-color="black"
+            text-color="blue"
             icon="arrow_left"
             @click="goToPage('previous')"
           />
+        </q-carousel-control>
+
+        <q-carousel-control
+          position="bottom-right"
+          :offset="[10, 160]"
+          class="q-gutter-xs"
+        >
           <q-btn
-            push
             round
-            dense
-            color="orange"
-            text-color="black"
+            text-color="blue"
             icon="arrow_right"
             @click="goToPage('next')"
           />
@@ -149,7 +196,7 @@ export default {
         this.page = this.page > 1 ? this.page - 1 : this.pages;
       }
       this.offset = this.page * this.column;
-      console.log('go to/', direction, this.page, this.offset, this.pages);
+      //console.log('go to/', direction, this.page, this.offset, this.pages);
       this.getData();
     },
     getData() {
@@ -167,7 +214,7 @@ export default {
   },
   created() {
     this.column = parseInt(this.displaySize);
-    console.log('No of column', this.column);
+    //console.log('No of column', this.column);
     this.getData();
   }
 };

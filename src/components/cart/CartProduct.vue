@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-4">{{ data.mrp | currency }}</div>
         <div class="col-4">{{ data.rate | currency }}</div>
-        <div class="col-4">{{ data.amount | currency }}</div>
+        <div class="col-4">{{ (data.amount * orderQty) | currency }}</div>
       </div>
 
       <div class="row q-ma-sm content-center">
@@ -37,6 +37,7 @@
             dense
             outlined
             class="custom-control col-4"
+            @blur="setQuantity"
           >
             <template v-slot:prepend>
               <q-btn
@@ -92,6 +93,22 @@ export default {
     decrement() {
       this.orderQty--;
       this.setProduct();
+    },
+    setQuantity() {
+      //console.log('blur event fire', this.orderQty);
+      this.addProductToCart({
+        product_id: this.data.product_id,
+        category_id: this.data.category_id,
+        product_name: this.data.product_name,
+        category_name: this.data.category_name,
+        rate: this.data.sale_rate,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        mrp: this.data.mrp,
+        image_filename: this.data.image_filename,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+      });
     },
     setProduct() {
       this.updateProductQuantity({

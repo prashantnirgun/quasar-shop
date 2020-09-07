@@ -68,7 +68,12 @@
                 >{{ data.mrp | currency }}</span
               >
               <span class="q-ml-md text-subtitle1 text-red q-mt-md"
-                >{{ (data.mrp - data.sale_rate) | currency }} Saving</span
+                >{{
+                  orderQty > 0
+                    ? data.mrp * orderQty - data.sale_rate * orderQty
+                    : (data.mrp - data.sale_rate) | currency
+                }}
+                Saving</span
               >
             </div>
             <div class="q-mt-sm text-weight-bold">
@@ -126,6 +131,7 @@
                 dense
                 outlined
                 class="custom-control q-mt-md"
+                @blur="setQuantity"
               >
                 <template v-slot:prepend>
                   <q-btn
@@ -154,7 +160,7 @@
 
               <q-btn
                 class="q-ma-sm"
-                color="green-7"
+                color="green-6"
                 icon="shopping_cart"
                 label="Buy now"
                 @click="$router.push(`/shopping-cart`)"
@@ -192,7 +198,7 @@
                   class="q-ml-sm  q-mr-sm"
                   style="margin-top: 5px;"
                   size="13px"
-                  :value="0.9"
+                  :value="rat_5"
                 />
                 <span
                   style="margin-top: 2px"
@@ -207,7 +213,7 @@
                   class="q-ml-sm  q-mr-sm"
                   style="margin-top: 5px;"
                   size="13px"
-                  :value="0.6"
+                  :value="rat_4"
                 />
                 <span
                   style="margin-top: 2px"
@@ -222,7 +228,7 @@
                   class="q-ml-sm  q-mr-sm"
                   style="margin-top: 5px;"
                   size="13px"
-                  :value="0.1"
+                  :value="rat_3"
                 />
                 <span
                   style="margin-top: 2px"
@@ -237,7 +243,7 @@
                   class="q-ml-sm  q-mr-sm"
                   style="margin-top: 5px;"
                   size="13px"
-                  :value="0.1"
+                  :value="rat_2"
                 />
                 <span
                   style="margin-top: 2px"
@@ -252,7 +258,7 @@
                   class="q-ml-sm  q-mr-sm"
                   style="margin-top: 5px;"
                   size="13px"
-                  :value="0.1"
+                  :value="rat_1"
                 />
                 <span
                   style="margin-top: 2px"
@@ -550,11 +556,11 @@ export default {
       slide: 1,
       tab: 'Specifications',
       rating_point: 4.3,
-      rat_5: 5,
-      rat_4: 4,
-      rat_3: 3,
-      rat_2: 2,
-      rat_1: 1,
+      rat_5: 0.9,
+      rat_4: 0.6,
+      rat_3: 0.1,
+      rat_2: 0.1,
+      rat_1: 0.1,
       data: {},
       orderQty: 0
     };
@@ -578,10 +584,8 @@ export default {
     ...mapGetters('cart', ['findItem'])
   },
   methods: {
-    ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
-    increment() {
-      this.orderQty++;
-
+    setQuantity() {
+      //console.log('blur event fire', this.orderQty);
       this.addProductToCart({
         product_id: this.data.product_id,
         category_id: this.data.category_id,
@@ -596,17 +600,37 @@ export default {
           this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
       });
     },
+    ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
+    increment() {
+      this.orderQty++;
+      this.setQuantity();
+      // this.addProductToCart({
+      //   product_id: this.data.product_id,
+      //   category_id: this.data.category_id,
+      //   product_name: this.data.product_name,
+      //   category_name: this.data.category_name,
+      //   rate: this.data.sale_rate,
+      //   quantity: this.orderQty,
+      //   amount: this.orderQty * this.data.sale_rate,
+      //   mrp: this.data.mrp,
+      //   image_filename: this.data.image_filename,
+      //   saving:
+      //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+      // });
+    },
     decrement() {
       this.orderQty--;
-      this.updateProductQuantity({
-        product_id: this.data.product_id,
-        product_name: this.data.product_name,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
-        message: false
-      });
+      this.setQuantity();
+
+      // this.updateProductQuantity({
+      //   product_id: this.data.product_id,
+      //   product_name: this.data.product_name,
+      //   quantity: this.orderQty,
+      //   amount: this.orderQty * this.data.sale_rate,
+      //   saving:
+      //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+      //   message: false
+      // });
     }
   },
   mounted() {
