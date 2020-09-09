@@ -41,7 +41,9 @@
         <div class="text-caption hover_underline_white">FAQ</div>
       </div>
 
-      <div class="col-6 col-md-auto col-lg-auto col-xl-auto q-pa-sm">
+      <div
+        class="desktop-only col-6 col-md-auto col-lg-auto col-xl-auto q-pa-sm"
+      >
         <div class="text-subtitle1 text-weight-bold">
           Registered Office Address:
         </div>

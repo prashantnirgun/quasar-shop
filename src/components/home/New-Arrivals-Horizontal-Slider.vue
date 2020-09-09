@@ -93,28 +93,20 @@
       </q-carousel-slide>
 
       <template v-slot:control>
-        <q-carousel-control
-          position="bottom-left"
-          :offset="[5, 160]"
-          class="q-gutter-xs"
-        >
+        <q-carousel-control position="bottom-left" :offset="[7, 160]">
           <q-btn
             round
             text-color="blue"
-            icon="arrow_left"
+            icon="chevron_left"
             @click="goToPage('previous')"
           />
         </q-carousel-control>
 
-        <q-carousel-control
-          position="bottom-right"
-          :offset="[10, 160]"
-          class="q-gutter-xs"
-        >
+        <q-carousel-control position="bottom-right" :offset="[8, 160]">
           <q-btn
             round
             text-color="blue"
-            icon="arrow_right"
+            icon="chevron_right"
             @click="goToPage('next')"
           />
         </q-carousel-control>
@@ -153,14 +145,30 @@ export default {
       } else {
         this.page = this.page > 1 ? this.page - 1 : this.pages;
       }
-      this.offset = this.page * this.column;
+      // if(this.page === 1) {
+      //   this.offset = 0
+      //   this.co
+      // }
+      this.offset = this.page === 1 ? 0 : (this.page - 1) * this.column;
+
+      // console.log(
+      //   'go to/',
+      //   direction,
+      //   'limit',
+      //   this.column,
+      //   'offset',
+      //   this.offset,
+      //   'page',
+      //   this.page
+      // );
       this.getData();
     },
     getData() {
       DataService.get(
-        `slider?limit=${this.column}&offset=${this.offset}where: tag like {New}&total_rows=true`
+        `slider?limit=${this.column}&offset=${this.offset}&where=tag like {New}&total_rows=true`
       )
         .then(response => {
+          console.log('total rows', response.data.total_rows);
           this.lists = response.data.rows;
           this.pages = response.data.total_rows / this.column;
         })

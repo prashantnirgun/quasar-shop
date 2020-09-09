@@ -374,6 +374,26 @@ export default {
     buildList(rawData) {
       let datas = [];
       let count = 0;
+      rawData
+        .filter(data => parseInt(data.primary_product_id) === 0)
+        .map(data => {
+          datas.push({ ...data, children: [data] });
+        });
+
+      rawData
+        .filter(data => parseInt(data.primary_product_id) > 0)
+        .map(data => {
+          datas
+            .find(
+              row =>
+                parseInt(row.product_id) === parseInt(data.primary_product_id)
+            )
+            .children.push(data);
+        });
+
+      console.log('data', datas);
+
+      /*
       rawData.map(row => {
         if (row.primary_product_id === 0) {
           let index = datas.findIndex(
@@ -382,12 +402,18 @@ export default {
           );
           //if not found then insert
           if (index === -1) {
+            if (parseInt(row.product_id) === 154) {
+              console.log('new record not found', row);
+            }
             const obj = JSON.parse(JSON.stringify(row));
             obj.children = [JSON.parse(JSON.stringify(row))];
             datas.push(obj);
           }
           // If found then 01 update and 02 insert himself as child rows
           else {
+            if (parseInt(row.product_id) === 154) {
+              console.log('new record found', row);
+            }
             //01 Updating values
             Object.keys(row).map(col => {
               datas[index][col] = row[col];
@@ -410,8 +436,14 @@ export default {
 
             obj.children = [JSON.parse(JSON.stringify(row))];
             datas.push(obj);
+            if (parseInt(row.primary_product_id) === 154) {
+              console.log('not found going to insert', row, datas);
+            }
           } else {
             datas[index].children.push(JSON.parse(JSON.stringify(row)));
+            if (parseInt(row.primary_product_id) === 154) {
+              console.log('found going to insert', row, datas);
+            }
           }
         }
 
@@ -429,6 +461,7 @@ export default {
           });
         }
       });
+*/
       this.packings.sort((first, next) => {
         if (first.unit_name > next.unit_name) return 1;
         if (first.unit_name < next.unit_name) return -1;

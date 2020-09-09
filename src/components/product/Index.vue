@@ -1,10 +1,17 @@
 <template>
   <div>
-    <div class="row bg-white q-mt-sm">
+    <div class="row ">
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-        <div class="q-pa-md">
-          <q-carousel swipeable animated v-model="slide" thumbnails infinite>
-            <q-carousel-slide :name="1" :img-src="data.image_filename" />
+        <div class="">
+          <img :src="data.image_filename" height="500px" width="500px" />
+
+          <!-- <q-carousel swipeable animated v-model="slide" thumbnails infinite>
+            <q-carousel-slide
+              :name="1"
+              :img-src="data.image_filename"
+              style="height: 400px; width: 400px"
+            />
+
             <q-carousel-slide
               :name="2"
               img-src="https://placeimg.com/500/300/nature"
@@ -17,23 +24,11 @@
               :name="4"
               img-src="https://cdn.quasar.dev/img/quasar.jpg"
             />
-
-            <!-- <div class="row justify-center">
-              <q-btn-toggle
-                glossy
-                v-model="slide"
-                :options="[
-                  { label: 'Soft Jazz', value: 'soft-jazz' },
-                  { label: 'Rihanna', value: 'Rihanna' },
-                  { label: 'Chill Mix', value: 'chill-mix' }
-                ]"
-              />
-            </div> -->
-          </q-carousel>
+          </q-carousel> -->
         </div>
       </div>
+
       <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-        <!--<q-scroll-area :style="{'height':(win_height-200)+'px'}">-->
         <div class="row">
           <div
             class="col-lg-7 col-md-7 col-sm-12 col-xs-12"
@@ -173,8 +168,10 @@
             <div class="text-subtitle2">Customer rating</div>
             <div class="text-h3">{{ data.rating }}</div>
             <div>
+              <!-- todo : please remove the warning -->
               <q-rating
                 v-model="data.rating"
+                :value="data.rating"
                 max="5"
                 size="2em"
                 color="orange"
@@ -269,8 +266,6 @@
             </q-list>
           </div>
         </div>
-
-        <!--</q-scroll-area>-->
       </div>
     </div>
     <div class="row q-mt-sm">
@@ -291,7 +286,7 @@
         <q-tab-panels style="border: 1px solid lightgrey" v-model="tab">
           <q-tab-panel name="Specifications">
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
                     >Description</q-item-label
@@ -306,7 +301,7 @@
 
           <q-tab-panel name="How to Use">
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
                     >How to Use</q-item-label
@@ -321,7 +316,7 @@
 
           <q-tab-panel name="Benefit">
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <div class="col-12">
                 <q-list bordered class="rounded-borders" style="">
                   <q-item-label class="text-weight-bolder" header
                     >Benefit</q-item-label
@@ -657,7 +652,7 @@ export default {
 
 <style lang="sass" scoped>
 .q-panel
-  height: 80%
+  height: 100%
   width: 100%
 
 

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
-    <div class="col-3">
-      <img :src="data.image_filename" height="116px" width="116px" />
+    <div class="col-3 q-pa-none">
+      <img :src="data.image_filename" height="100px" width="100px" />
     </div>
 
     <div class="col-9">

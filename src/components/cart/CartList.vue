@@ -19,8 +19,8 @@
 <script>
 export default {
   components: {
-    'cart-category-list': () => import('./CartCategoryList'),
-    'cart-product-list': () => import('./CartProductList')
+    'cart-product-list': () => import('./CartProductList'),
+    'cart-category-list': () => import('./CartCategoryList')
   },
   data() {
     return {

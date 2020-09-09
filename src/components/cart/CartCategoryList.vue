@@ -56,9 +56,10 @@ export default {
     // }
   },
   mounted() {
+    console.log('category list mounted', this.categoryList);
     if (this.categoryList.length > 0) {
       this.link = this.categoryList[0].category_id;
-      console.log('inside cartCategory mounted', this.link);
+      console.log('inside cartCategory mounted sending request===>', this.link);
       bus.$emit('update_product_cart', this.link);
       //this.$emit('categorySelected', this.link);
     }
