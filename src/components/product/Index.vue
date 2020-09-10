@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="row ">
+    <div class="row bg-white">
       <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
         <div class="">
-          <img :src="data.image_filename" height="500px" width="500px" />
+          <img :src="data.image_filename" :height="getSize" :width="getSize" />
 
           <!-- <q-carousel swipeable animated v-model="slide" thumbnails infinite>
             <q-carousel-slide
@@ -546,6 +546,7 @@ import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'details.vue',
+  mixins: [device_mixin],
   data() {
     return {
       slide: 1,
@@ -576,7 +577,11 @@ export default {
       return date.formatDate(newDate, 'ddd, MMM D ');
     },
     ...mapState(['cart']),
-    ...mapGetters('cart', ['findItem'])
+    ...mapGetters('cart', ['findItem']),
+    getSize() {
+      console.log(this.isDesktop);
+      return this.isDesktop ? '500px' : '360px';
+    }
   },
   methods: {
     setQuantity() {

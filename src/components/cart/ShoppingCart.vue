@@ -23,10 +23,16 @@
         title="Billing Information"
         icon="receipt"
         :done="step > 2"
-        style="min-height: 200px;"
+        style="min-height: 400px;"
       >
-        An ad group contains one or more ads which target a shared set of
-        keywords.
+        <div class="fit row wrap justify-evenly" style="overflow: hidden;">
+          <div class="col-8">
+            <cart-billing />
+          </div>
+          <div class="col-4 ">
+            <cart-overview />
+          </div>
+        </div>
       </q-step>
 
       <q-step
@@ -108,7 +114,8 @@
 export default {
   components: {
     'cart-overview': () => import('./CartOverview'),
-    'cart-list': () => import('./CartList')
+    'cart-list': () => import('./CartList'),
+    'cart-billing': () => import('./CartBilling')
   },
   data() {
     return {

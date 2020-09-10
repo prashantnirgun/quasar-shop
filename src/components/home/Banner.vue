@@ -3,11 +3,12 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <q-carousel
         :class="$q.platform.is.desktop ? 'q-ml-sm' : ''"
+        v-model="slide"
         arrows
+        swipeable
         animated
         autoplay
         infinite
-        v-model="slide"
         :height="getHeight"
       >
         <q-carousel-slide
