@@ -211,23 +211,7 @@ export default {
     ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
     setQuantity() {
       //console.log('blur event fire', this.orderQty);
-      this.addProductToCart({
-        product_id: this.data.product_id,
-        category_id: this.data.category_id,
-        product_name: this.data.product_name,
-        category_name: this.data.category_name,
-        rate: this.data.sale_rate,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
-        mrp: this.data.mrp,
-        image_filename: this.data.image_filename,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
-      });
-    },
-    increment() {
-      this.orderQty++;
-      this.setQuantity();
+      this.decrement();
       // this.addProductToCart({
       //   product_id: this.data.product_id,
       //   category_id: this.data.category_id,
@@ -242,18 +226,37 @@ export default {
       //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
       // });
     },
+    increment() {
+      this.orderQty++;
+      //message is showing add even in decrement so keept it sepratee
+      //this.setQuantity();
+      this.addProductToCart({
+        product_id: this.data.product_id,
+        category_id: this.data.category_id,
+        product_name: this.data.product_name,
+        category_name: this.data.category_name,
+        rate: this.data.sale_rate,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        mrp: this.data.mrp,
+        image_filename: this.data.image_filename,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+      });
+    },
     decrement() {
       this.orderQty--;
-      this.setQuantity();
-      // this.updateProductQuantity({
-      //   product_id: this.data.product_id,
-      //   product_name: this.data.product_name,
-      //   quantity: this.orderQty,
-      //   amount: this.orderQty * this.data.sale_rate,
-      //   saving:
-      //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
-      //   message: false
-      // });
+      //message is showing add even in decrement so keept it sepratee
+      //this.setQuantity();
+      this.updateProductQuantity({
+        product_id: this.data.product_id,
+        product_name: this.data.product_name,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+        message: false
+      });
     }
   },
   computed: {

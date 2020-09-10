@@ -20,7 +20,7 @@
       swipeable
       animated
       infinite
-      :height="isDesktop ? '312px' : '250px'"
+      :height="isDesktop ? '312px' : '280px'"
       class="text-blue rounded-borders"
       control-text-color="blue"
     >
@@ -41,7 +41,7 @@
               @click="$router.push(`/product/${row.slug}`)"
             >
               <q-img
-                class="rounded-borders cursor-pointer"
+                class="rounded-borders"
                 :src="row.image_filename"
                 :height="getSize"
                 :width="getSize"
@@ -49,7 +49,7 @@
                 placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
                 :alt="row.alternative_text"
               >
-                <q-badge class="content-start transparent no-margin no-padding">
+                <q-badge class="content-start transparent  rotate-45">
                   <q-chip
                     size="12px"
                     color="primary"

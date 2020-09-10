@@ -37,16 +37,6 @@
 
       <q-step
         :name="3"
-        title="Shipping Information"
-        icon="local_shipping"
-        disable
-        style="min-height: 200px;"
-      >
-        This step won't show up because it is disabled.
-      </q-step>
-
-      <q-step
-        :name="4"
         title="Payment"
         icon="payment"
         disable
@@ -56,7 +46,7 @@
       </q-step>
 
       <q-step
-        :name="5"
+        :name="4"
         title="Confirmation"
         icon="done"
         style="min-height: 200px;"
@@ -72,7 +62,7 @@
           <q-btn
             @click="$refs.stepper.next()"
             color="primary"
-            :label="step === 4 ? 'Finish' : 'Continue'"
+            :label="step === 3 ? 'Finish' : 'Continue'"
           />
           <q-btn
             v-if="step > 1"
@@ -97,10 +87,6 @@
         <q-banner v-else-if="step === 3" class="bg-green-8 text-white q-px-lg">
           <q-icon name="local_shipping" size="lg" />
           Shipping Information
-        </q-banner>
-        <q-banner v-else-if="step === 4" class="bg-blue-8 text-white q-px-lg">
-          <q-icon name="payment" size="lg" />
-          Payment
         </q-banner>
         <q-banner v-else class="bg-blue-8 text-white q-px-lg">
           <q-icon name="verified" size="lg" />

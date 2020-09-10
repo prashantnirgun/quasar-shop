@@ -21,7 +21,7 @@
       swipeable
       animated
       infinite
-      :height="isDesktop ? '312px' : '280px'"
+      :height="isDesktop ? '312px' : '200px'"
       class="text-blue rounded-borders"
       control-text-color="blue"
     >

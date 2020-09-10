@@ -11,10 +11,11 @@ const axiosInstance = axios.create({
   //timeout: 10000
 });
 
-// export default ({ store }) => {
-//   axios.defaults.headers.common['Authorization'] =
-//     'Bearer ' + store.state.token;
-// };
+export default ({ store }) => {
+  console.log('token===>', store.state.user.token);
+  axios.defaults.headers.common['Authorization'] =
+    'Bearer ' + store.state.user.token;
+};
 
 Vue.prototype.$axios = axiosInstance;
 
