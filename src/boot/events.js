@@ -4,7 +4,8 @@ const bus = new Vue();
 import VueGtag from 'vue-gtag';
 
 Vue.use(VueGtag, {
-  config: { id: 'UA-176056037-1' }
+  config: { id: 'UA-176056037-1' },
+  router
 });
 
 export default bus;

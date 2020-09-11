@@ -16,7 +16,10 @@ const routes = [
         path: '/change_request',
         component: () => import('pages/change_request.vue')
       },
-      { path: '/my_profile', component: () => import('pages/my_profile.vue') },
+      {
+        path: '/profile',
+        component: () => import('components/auth/UserProfile.vue')
+      },
       {
         name: 'category',
         path: '/category/:category_slug',
@@ -38,10 +41,10 @@ const routes = [
         component: () => import('components/cart/ShoppingCart.vue')
       },
       {
-      name: 'device',
-      path: '/device',
-      component: () => import('pages/Device.vue')
-    }
+        name: 'device',
+        path: '/device',
+        component: () => import('pages/Device.vue')
+      }
       // {
       //   path: '/dashboard',
       //   component: () => import('pages/dashboard.vue')

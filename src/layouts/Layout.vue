@@ -86,10 +86,19 @@
             </q-item>
 
             <q-list style="min-width: 100px;">
-              <q-item clickable>
-                <q-item-section>Feedback</q-item-section>
+              <q-item clickable to="profile">
+                <q-item-section>Profile</q-item-section>
+                <q-item-section avatar>
+                  <q-icon name="face" color="blue" size="md"></q-icon>
+                </q-item-section>
               </q-item>
-              <q-item> Version {{ version }} </q-item>
+
+              <q-item>
+                <q-item-section>Version {{ version }} </q-item-section>
+                <q-item-section avatar>
+                  <q-icon name="verified" size="md"></q-icon>
+                </q-item-section>
+              </q-item>
               <q-separator />
               <q-item clickable class="text-purple" @click="logout">
                 <q-item-section>Logout</q-item-section>

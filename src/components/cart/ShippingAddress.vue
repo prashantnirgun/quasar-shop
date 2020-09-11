@@ -50,9 +50,12 @@
           label="Delivered to this address"
           color="primary"
           class="q-ma-sm"
-          icon="create"
+          icon="local_shipping"
         />
+      </div>
+      <div class="row">
         <q-btn label="Edit" color="primary" class="q-ma-sm" icon="create" />
+        <q-space />
         <q-btn
           label="Delete"
           color="deep-orange"
