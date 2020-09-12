@@ -6,28 +6,41 @@
           <q-card-section horizontal>
             <q-card-section class="q-pt-xs">
               <div class="text-overline">US Region</div>
-              <div class="text-h5 q-mt-sm q-mb-xs">Mayur Patel</div>
+              <div class="text-h5 q-mt-sm q-mb-xs">{{ user.full_name }}</div>
               <div class="text-caption text-grey">
                 Sales and Marketing Executive | Graduate and past committee |
                 Keynote speaker on Selling and Recruiting Topics
               </div>
             </q-card-section>
 
-            <q-card-section class="col-5 flex flex-center">
-              <q-img
-                class="rounded-borders"
-                src="https://cdn.quasar.dev/img/boy-avatar.png"
+            <q-card-section
+              class="col-5 flex flex-center cursor-pointer"
+              @click="selectFile"
+            >
+              <q-avatar size="200px">
+                <q-img
+                  class="rounded-borders"
+                  :src="imgUrl"
+                  @mouseover="mouseOver = true"
+                  @mouseleave="mouseOver = false"
+                >
+                  <div
+                    class="absolute-bottom text-subtitle1 text-center"
+                    v-if="mouseOver"
+                  >
+                    Upload
+                  </div>
+                </q-img>
+              </q-avatar>
+              <q-file
+                v-show="false"
+                ref="file_upload"
+                @input="uploadFile"
+                v-model="image_filename"
+                accept=".jpg, image/*"
               />
             </q-card-section>
           </q-card-section>
-
-          <!-- <q-separator />
-
-          <q-card-section>
-            Assessing clients needs and present suitable promoted products.
-            Liaising with and persuading targeted doctors to prescribe our
-            products utilizing effective sales skills.
-          </q-card-section> -->
         </q-card>
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 q-mt-sm">
@@ -39,29 +52,17 @@
               <q-item class="col-12">
                 <q-item-section>
                   <q-input
-                    type="password"
-                    dense
-                    outlined
-                    v-model="password_dict.current_password"
-                    label="Current Password"
-                  />
-                </q-item-section>
-              </q-item>
-
-              <q-item class="col-12">
-                <q-item-section>
-                  <q-input
-                    v-model="password_dict.password"
+                    v-model="password.current"
                     outlined
                     dense
                     label="New Password"
-                    :type="isPwd ? 'password' : 'text'"
+                    :type="isPwdCurrent ? 'password' : 'text'"
                   >
                     <template v-slot:append>
                       <q-icon
-                        :name="isPwd ? 'visibility_off' : 'visibility'"
+                        :name="isPwdCurrent ? 'visibility_off' : 'visibility'"
                         class="cursor-pointer"
-                        @click="isPwd = !isPwd"
+                        @click="isPwdCurrent = !isPwdCurrent"
                       />
                     </template>
                   </q-input>
@@ -71,12 +72,40 @@
               <q-item class="col-12">
                 <q-item-section>
                   <q-input
-                    type="password"
-                    dense
+                    v-model="password.new"
                     outlined
-                    v-model="password_dict.confirm_new_password"
-                    label="Confirm New Password"
-                  />
+                    dense
+                    label="New Password"
+                    :type="isPwdNew ? 'password' : 'text'"
+                  >
+                    <template v-slot:append>
+                      <q-icon
+                        :name="isPwdNew ? 'visibility_off' : 'visibility'"
+                        class="cursor-pointer"
+                        @click="isPwdNew = !isPwdNew"
+                      />
+                    </template>
+                  </q-input>
+                </q-item-section>
+              </q-item>
+
+              <q-item class="col-12">
+                <q-item-section>
+                  <q-input
+                    v-model="password.confirm"
+                    outlined
+                    dense
+                    label="Confirm Password"
+                    :type="isPwdConfirm ? 'password' : 'text'"
+                  >
+                    <template v-slot:append>
+                      <q-icon
+                        :name="isPwdConfirm ? 'visibility_off' : 'visibility'"
+                        class="cursor-pointer"
+                        @click="isPwdConfirm = !isPwdConfirm"
+                      />
+                    </template>
+                  </q-input>
                 </q-item-section>
               </q-item>
             </q-card-section>
@@ -96,24 +125,26 @@
               <q-input
                 outlined
                 dense
-                v-model="user.first_name"
+                v-model="user.full_name"
                 label="Full Name"
                 lazy-rules
               />
               <div class="row">
-                <q-input
-                  outlined
+                <q-select
                   dense
-                  v-model="user.last_name"
+                  outlined
+                  v-model="user_profile.gender_id"
+                  :options="genderOptions"
                   label="Gender"
-                  lazy-rules
-                  class="col-6 q-pr-xs"
+                  emit-value
+                  map-options
+                  class="col-6"
                 />
 
                 <q-input
                   dense
                   outlined
-                  v-model="user.dob"
+                  v-model="user_profile.dob"
                   mask="date"
                   :rules="['date']"
                   class="col-6 q-pa-xs"
@@ -125,7 +156,7 @@
                         transition-show="scale"
                         transition-hide="scale"
                       >
-                        <q-date v-model="date">
+                        <q-date v-model="user_profile.dob">
                           <div class="row items-center justify-end">
                             <q-btn
                               v-close-popup
@@ -144,7 +175,7 @@
                 <q-input
                   outlined
                   dense
-                  v-model="user.email"
+                  v-model="user.email_id"
                   label="Register Email"
                   lazy-rules
                   class="col-6 q-pr-xs"
@@ -152,7 +183,7 @@
                 <q-input
                   outlined
                   dense
-                  v-model="user.phone"
+                  v-model="user.mobile"
                   label="Phone"
                   lazy-rules
                   class="col-6"
@@ -161,21 +192,21 @@
               <q-input
                 outlined
                 dense
-                v-model="user.email"
+                v-model="user_profile.gmail"
                 label="Google"
                 lazy-rules
               />
               <q-input
                 outlined
                 dense
-                v-model="user.email"
+                v-model="user_profile.facebook"
                 label="Facebook"
                 lazy-rules
               />
               <q-input
                 outlined
                 dense
-                v-model="user.email"
+                v-model="user_profile.linkedin"
                 label="LinkedIn"
                 lazy-rules
               />
@@ -198,20 +229,105 @@
 </template>
 
 <script>
+import DataService from 'src/services/DataService';
+import { date } from 'quasar';
+import { mapGetters } from 'vuex';
+
 export default {
   data() {
     return {
-      user: {
-        first_name: 'Mayur',
-        last_name: 'Patel',
-        age: 30,
-        email: 'm******@****.com',
-        phone: '97******92',
-        dob: '2020/01/01'
+      user: {},
+      user_profile: {},
+      password: {
+        new: null,
+        current: null,
+        confirm: null
       },
-      password_dict: {},
-      isPwd: true
+      mouseOver: false,
+      image_filename: [],
+      isPwdCurrent: true,
+      isPwdNew: true,
+      isPwdConfirm: true,
+      genderOptions: [
+        {
+          label: 'Male',
+          value: 'M'
+        },
+        {
+          label: 'Female',
+          value: 'F'
+        }
+      ]
     };
+  },
+  computed: {
+    ...mapGetters('user', ['companyId']),
+    imgUrl() {
+      return this.user_profile.image_filename &&
+        this.user_profile.image_filename.length > 5
+        ? `${process.env.STATIC}users/${this.companyId}/${this.user_profile.image_filename}`
+        : 'https://cdn.quasar.dev/img/boy-avatar.png';
+    }
+  },
+  methods: {
+    selectFile() {
+      this.$refs.file_upload.pickFiles();
+    },
+    uploadFile(value) {
+      const fileData = new FormData();
+      fileData.append('folder', 'users');
+      fileData.append('user_profile_id', this.user_profile.user_profile_id);
+      fileData.append('file', this.image_filename);
+
+      DataService.put(`avatar`, fileData)
+        .then(response => {
+          this.user_profile.image_filename = value.name;
+        })
+        .catch(error => {
+          console.log('mixin/ddlb Error', error);
+        });
+    },
+    updateProfile() {
+      const data = {
+        user: this.user,
+        user_profile: this.user_profile
+      };
+      DataService.post(`profile`, data)
+        .then(response => {
+          console.log('profile', response);
+        })
+        .catch(error => {
+          console.log('mixin/ddlb Error', error);
+        });
+    }
+  },
+  created() {
+    DataService.get(`profile`)
+      .then(response => {
+        const data = response.data.rows;
+        this.user = {
+          full_name: data[0].full_name,
+          email: data[0].email_id,
+          mobile: data[0].mobile
+        };
+        this.user_profile = {
+          user_profile_id: data[0].user_profile_id,
+          dob:
+            data[0].dob == null
+              ? date.formatDate(Date.now(), 'YYYY-MM-DD')
+              : data[0].dob,
+          gender_id: data[0].gender_id == null ? 'M' : data[0].gender_id,
+          image_filename: data[0].image_filename,
+          gmail: data[0].gmail,
+          facebook: data[0].facebook,
+          linkedin: data[0].linkedin
+        };
+        // this.image_filename = [data[0].image_filename];
+        //console.log('profile', data, this.user_profile);
+      })
+      .catch(error => {
+        console.log('mixin/ddlb Error', error);
+      });
   }
 };
 </script>

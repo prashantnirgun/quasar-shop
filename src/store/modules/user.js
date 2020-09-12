@@ -10,6 +10,9 @@ export default {
   getters: {
     user: state => {
       return state.user;
+    },
+    companyId: state => {
+      return state.user.company_id;
     }
   },
 
