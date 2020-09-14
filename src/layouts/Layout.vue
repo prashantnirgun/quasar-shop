@@ -270,21 +270,20 @@ export default {
       return process.env.SITE_NAME;
     },
     full_name() {
-      console.log('this.user', this.user);
       return !!this.user ? this.user.full_name : 'Guest';
     }
   },
   mounted() {
     /* eslint-disable no-console */
-    console.log(
-      `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,
-      'version',
-      this.version,
-      'user',
-      this.user,
-      'isLogedIn',
-      this.isUserLoggedIn
-    );
+    // console.log(
+    //   `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,
+    //   'version',
+    //   this.version,
+    //   'user',
+    //   this.user,
+    //   'isLogedIn',
+    //   this.isUserLoggedIn
+    // );
   },
   created() {
     //this.$q.addressbarColor.set('#228b22');

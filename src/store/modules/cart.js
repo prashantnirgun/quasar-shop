@@ -27,7 +27,6 @@ export default {
       return state.cart.filter(item => item.category_id === category_id);
     },
     cartsummary: state => {
-      console.log('cart summary is changed');
       return {
         productAmount: state.productAmount,
         productQuantity: state.productQuantity,
@@ -38,7 +37,6 @@ export default {
       };
     },
     categoryList: state => {
-      console.log('cart Category List is updated');
       let caregory = [];
       state.cart.map(item => {
         let found = caregory.find(obj => obj.category_id === item.category_id);
@@ -150,15 +148,5 @@ export default {
       commit('UPDATE_PRODUCT_QUANTITY', payload);
       commit('UPDATE_TOTALS');
     }
-
-    // fetchProduct({ context, commit }, payload) {
-    //   DataService.get('index/product')
-    //     .then(response => {
-    //       commit('SET_PRODUCT', response.data.rows);
-    //     })
-    //     .catch(error => {
-    //       console.log('mixin/ddlb Error', error);
-    //     });
-    // }
   }
 };

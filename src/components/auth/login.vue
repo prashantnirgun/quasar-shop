@@ -100,14 +100,11 @@ export default {
         if (response.data.token) {
           this.username = '';
           this.password = '';
+          console.log('login successfull', response.data);
           setAxiosHeaders(response.data.token);
           this.setToken(response.data.token);
           this.setUser(response.data.user);
           this.setRememberMe(this.rememberMe);
-          //this.$store.dispatch('setToken', response.data.token);
-          //this.$store.dispatch('setUser', response.data.user);
-          //this.$store.dispatch('setRememberMe', this.rememberMe);
-          //this.$router.push({ name: 'home' });
           this.$emit('close');
         } else {
           this.$q.notify({

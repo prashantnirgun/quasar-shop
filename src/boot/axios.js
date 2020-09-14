@@ -12,7 +12,6 @@ const axiosInstance = axios.create({
 });
 
 export default ({ store }) => {
-  console.log('token===>', store.state.user.token);
   axios.defaults.headers.common['Authorization'] =
     'Bearer ' + store.state.user.token;
 };

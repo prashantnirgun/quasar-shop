@@ -129,23 +129,13 @@ export default {
     }
   },
   methods: {
-    // goToPage(direction) {
-    //   if (direction === 'next') {
-    //     this.page = this.pages > this.page ? this.page + 1 : 1;
-    //   } else {
-    //     this.page = this.page > 1 ? this.page - 1 : this.pages;
-    //   }
-    //   this.offset = this.page === 1 ? 0 : (this.page - 1) * this.column;
-    //   this.getData();
-    // },
     getData() {
       DataService.get(
         //`slider?limit=${this.column}&offset=${this.offset}&where=tag like {New}&total_rows=true`
         `slider?where=tag like {New}&total_rows=true`
       )
         .then(response => {
-          //this.lists = response.data.rows;
-          const counter = response.data.total_rows / this.column - 1;
+          const counter = parseInt(response.data.total_rows / this.column - 1);
           this.pages = [...Array(counter).keys()];
           this.lists = this.chunk(response.data.rows, this.column);
         })

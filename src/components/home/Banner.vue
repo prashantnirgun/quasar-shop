@@ -45,7 +45,6 @@ export default {
   },
   computed: {
     getHeight() {
-      console.log('inside banner', this.isDesktop);
       return this.isDesktop ? '250px' : '230px';
     }
   }

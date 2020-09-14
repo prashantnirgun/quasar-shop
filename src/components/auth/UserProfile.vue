@@ -6,7 +6,9 @@
           <q-card-section horizontal>
             <q-card-section class="q-pt-xs">
               <div class="text-overline">US Region</div>
-              <div class="text-h5 q-mt-sm q-mb-xs">{{ user.full_name }}</div>
+              <div class="text-h5 q-mt-sm q-mb-xs">
+                {{ data.user.full_name }}
+              </div>
               <div class="text-caption text-grey">
                 Sales and Marketing Executive | Graduate and past committee |
                 Keynote speaker on Selling and Recruiting Topics
@@ -125,7 +127,7 @@
               <q-input
                 outlined
                 dense
-                v-model="user.full_name"
+                v-model="data.user.full_name"
                 label="Full Name"
                 lazy-rules
               />
@@ -133,7 +135,7 @@
                 <q-select
                   dense
                   outlined
-                  v-model="user_profile.gender_id"
+                  v-model="data.user_profile.gender_id"
                   :options="genderOptions"
                   label="Gender"
                   emit-value
@@ -144,7 +146,7 @@
                 <q-input
                   dense
                   outlined
-                  v-model="user_profile.dob"
+                  v-model="data.user_profile.dob"
                   mask="date"
                   :rules="['date']"
                   class="col-6 q-pa-xs"
@@ -156,7 +158,7 @@
                         transition-show="scale"
                         transition-hide="scale"
                       >
-                        <q-date v-model="user_profile.dob">
+                        <q-date v-model="data.user_profile.dob">
                           <div class="row items-center justify-end">
                             <q-btn
                               v-close-popup
@@ -175,7 +177,7 @@
                 <q-input
                   outlined
                   dense
-                  v-model="user.email_id"
+                  v-model="data.user.email_id"
                   label="Register Email"
                   lazy-rules
                   class="col-6 q-pr-xs"
@@ -183,7 +185,7 @@
                 <q-input
                   outlined
                   dense
-                  v-model="user.mobile"
+                  v-model="data.user.mobile"
                   label="Phone"
                   lazy-rules
                   class="col-6"
@@ -192,21 +194,21 @@
               <q-input
                 outlined
                 dense
-                v-model="user_profile.gmail"
+                v-model="data.user_profile.gmail"
                 label="Google"
                 lazy-rules
               />
               <q-input
                 outlined
                 dense
-                v-model="user_profile.facebook"
+                v-model="data.user_profile.facebook"
                 label="Facebook"
                 lazy-rules
               />
               <q-input
                 outlined
                 dense
-                v-model="user_profile.linkedin"
+                v-model="data.user_profile.linkedin"
                 label="LinkedIn"
                 lazy-rules
               />
@@ -231,13 +233,15 @@
 <script>
 import DataService from 'src/services/DataService';
 import { date } from 'quasar';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   data() {
     return {
-      user: {},
-      user_profile: {},
+      data: {
+        user: {},
+        user_profile: {}
+      },
       password: {
         new: null,
         current: null,
@@ -261,15 +265,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('user', ['companyId']),
+    ...mapGetters('user', ['user']),
     imgUrl() {
-      return this.user_profile.image_filename &&
-        this.user_profile.image_filename.length > 5
-        ? `${process.env.STATIC}users/${this.companyId}/${this.user_profile.image_filename}`
+      return this.user.image_filename && this.user.image_filename.length > 5
+        ? `${process.env.STATIC}users/${this.user.company_id}/${this.user.image_filename}`
         : 'https://cdn.quasar.dev/img/boy-avatar.png';
     }
   },
   methods: {
+    ...mapActions('user', ['setUser', 'setImage']),
     selectFile() {
       this.$refs.file_upload.pickFiles();
     },
@@ -282,6 +286,7 @@ export default {
       DataService.put(`avatar`, fileData)
         .then(response => {
           this.user_profile.image_filename = value.name;
+          this.setImage(value.name);
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);
@@ -289,8 +294,8 @@ export default {
     },
     updateProfile() {
       const data = {
-        user: this.user,
-        user_profile: this.user_profile
+        user: this.data.user,
+        user_profile: this.data.user_profile
       };
       DataService.post(`profile`, data)
         .then(response => {
@@ -305,12 +310,12 @@ export default {
     DataService.get(`profile`)
       .then(response => {
         const data = response.data.rows;
-        this.user = {
+        this.data.user = {
           full_name: data[0].full_name,
           email: data[0].email_id,
           mobile: data[0].mobile
         };
-        this.user_profile = {
+        this.data.user_profile = {
           user_profile_id: data[0].user_profile_id,
           dob:
             data[0].dob == null

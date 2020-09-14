@@ -193,15 +193,21 @@ export default {
     //   this.getData();
     // },
     getData() {
-      DataService.get(
-        //`slider?limit=${this.column}&offset=${this.offset}&where=tag like {Sale}&total_rows=true`
-        `slider?where=tag like {Sale}&total_rows=true`
-      )
+      DataService.get(`slider?where=tag like {Hot Deals}&total_rows=true`)
         .then(response => {
-          //this.lists = response.data.rows;
-          const counter = response.data.total_rows / this.column - 1;
+          const counter = parseInt(response.data.total_rows / this.column - 1);
           this.pages = [...Array(counter).keys()];
           this.lists = this.chunk(response.data.rows, this.column);
+          // console.log(
+          //   'data',
+          //   this.lists,
+          //   'pages',
+          //   this.pages,
+          //   'no of cards',
+          //   this.column,
+          //   'length',
+          //   response.data.total_rows
+          // );
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);
