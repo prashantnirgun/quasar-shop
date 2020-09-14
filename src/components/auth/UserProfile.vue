@@ -47,75 +47,81 @@
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 q-mt-sm">
           <q-card class="my-card" flat bordered>
-            <q-card-section class="text-h6 q-pa-sm">
-              <div class="text-h6">Change Password</div>
-            </q-card-section>
-            <q-card-section class="q-pa-sm row">
-              <q-item class="col-12">
-                <q-item-section>
-                  <q-input
-                    v-model="password.current"
-                    outlined
-                    dense
-                    label="New Password"
-                    :type="isPwdCurrent ? 'password' : 'text'"
-                  >
-                    <template v-slot:append>
-                      <q-icon
-                        :name="isPwdCurrent ? 'visibility_off' : 'visibility'"
-                        class="cursor-pointer"
-                        @click="isPwdCurrent = !isPwdCurrent"
-                      />
-                    </template>
-                  </q-input>
-                </q-item-section>
-              </q-item>
+            <q-form class="q-gutter-md" @submit.prevent.stop="onUpdatePassword">
+              <q-card-section class="text-h6 q-pa-sm">
+                <div class="text-h6">Change Password</div>
+              </q-card-section>
+              <q-card-section class="q-pa-sm row">
+                <q-item class="col-12">
+                  <q-item-section>
+                    <q-input
+                      v-model="password.current"
+                      outlined
+                      dense
+                      label="Current Password"
+                      :type="isPwdCurrent ? 'password' : 'text'"
+                    >
+                      <template v-slot:append>
+                        <q-icon
+                          :name="isPwdCurrent ? 'visibility_off' : 'visibility'"
+                          class="cursor-pointer"
+                          @click="isPwdCurrent = !isPwdCurrent"
+                        />
+                      </template>
+                    </q-input>
+                  </q-item-section>
+                </q-item>
 
-              <q-item class="col-12">
-                <q-item-section>
-                  <q-input
-                    v-model="password.new"
-                    outlined
-                    dense
-                    label="New Password"
-                    :type="isPwdNew ? 'password' : 'text'"
-                  >
-                    <template v-slot:append>
-                      <q-icon
-                        :name="isPwdNew ? 'visibility_off' : 'visibility'"
-                        class="cursor-pointer"
-                        @click="isPwdNew = !isPwdNew"
-                      />
-                    </template>
-                  </q-input>
-                </q-item-section>
-              </q-item>
+                <q-item class="col-12">
+                  <q-item-section>
+                    <q-input
+                      v-model="password.new"
+                      outlined
+                      dense
+                      label="New Password"
+                      :type="isPwdNew ? 'password' : 'text'"
+                    >
+                      <template v-slot:append>
+                        <q-icon
+                          :name="isPwdNew ? 'visibility_off' : 'visibility'"
+                          class="cursor-pointer"
+                          @click="isPwdNew = !isPwdNew"
+                        />
+                      </template>
+                    </q-input>
+                  </q-item-section>
+                </q-item>
 
-              <q-item class="col-12">
-                <q-item-section>
-                  <q-input
-                    v-model="password.confirm"
-                    outlined
-                    dense
-                    label="Confirm Password"
-                    :type="isPwdConfirm ? 'password' : 'text'"
-                  >
-                    <template v-slot:append>
-                      <q-icon
-                        :name="isPwdConfirm ? 'visibility_off' : 'visibility'"
-                        class="cursor-pointer"
-                        @click="isPwdConfirm = !isPwdConfirm"
-                      />
-                    </template>
-                  </q-input>
-                </q-item-section>
-              </q-item>
-            </q-card-section>
-            <q-card-actions align="right">
-              <q-btn class="text-capitalize" color="primary"
-                >Change Password</q-btn
-              >
-            </q-card-actions>
+                <q-item class="col-12">
+                  <q-item-section>
+                    <q-input
+                      v-model="password.confirm"
+                      outlined
+                      dense
+                      label="Confirm Password"
+                      :type="isPwdConfirm ? 'password' : 'text'"
+                      :rules="[passwordRule]"
+                    >
+                      <template v-slot:append>
+                        <q-icon
+                          :name="isPwdConfirm ? 'visibility_off' : 'visibility'"
+                          class="cursor-pointer"
+                          @click="isPwdConfirm = !isPwdConfirm"
+                        />
+                      </template>
+                    </q-input>
+                  </q-item-section>
+                </q-item>
+              </q-card-section>
+              <q-card-actions align="right">
+                <q-btn
+                  class="text-capitalize"
+                  color="primary"
+                  type="submit"
+                  label="Change Password"
+                />
+              </q-card-actions>
+            </q-form>
           </q-card>
         </div>
       </div>
@@ -123,7 +129,7 @@
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <q-card>
           <q-card-section>
-            <q-form class="q-gutter-md">
+            <q-form class="q-gutter-md" @submit.prevent.stop="onSubmit">
               <q-input
                 outlined
                 dense
@@ -234,8 +240,10 @@
 import DataService from 'src/services/DataService';
 import { date } from 'quasar';
 import { mapGetters, mapActions } from 'vuex';
+import common_mixin from 'src/mixins/common_mixin';
 
 export default {
+  mixins: [common_mixin],
   data() {
     return {
       data: {
@@ -265,7 +273,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('user', ['user']),
+    ...mapGetters('user', ['user', 'token']),
     imgUrl() {
       return this.user.image_filename && this.user.image_filename.length > 5
         ? `${process.env.STATIC}users/${this.user.company_id}/${this.user.image_filename}`
@@ -292,7 +300,7 @@ export default {
           console.log('mixin/ddlb Error', error);
         });
     },
-    updateProfile() {
+    onSubmit() {
       const data = {
         user: this.data.user,
         user_profile: this.data.user_profile
@@ -300,10 +308,43 @@ export default {
       DataService.post(`profile`, data)
         .then(response => {
           console.log('profile', response);
+          this.popupMessage('positive', 'Profile Updated Successfully.');
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);
+          this.popupMessage('negative', 'Profile Failed to Updated.');
         });
+    },
+    onUpdatePassword() {
+      const data = {
+        passwordNew: this.password.new,
+        passwordCurrent: this.password.current
+      };
+      //console.log('before updating password', data, this.token);
+      DataService.post(`user/update-password`, data)
+        .then(response => {
+          console.log('profile', response);
+          if (response.data.status === 'success') {
+            this.popupMessage('positive', 'Password Updated Successfully.');
+          } else {
+            this.popupMessage('negative', 'Password Failed to Updated.');
+          }
+          this.password.new = '';
+          this.password.current = '';
+          this.password.confirm = '';
+        })
+        .catch(error => {
+          console.log('mixin/ddlb Error', error);
+          this.popupMessage('negative', 'Password Failed to Updated.');
+        });
+    },
+    passwordRule(value) {
+      if (value.length <= 7) {
+        return 'Please enter at least 8 characters!';
+      }
+      if (value !== this.password.new) {
+        return 'Password must be the same with the newly created password';
+      }
     }
   },
   created() {

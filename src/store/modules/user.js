@@ -13,6 +13,9 @@ export default {
     },
     companyId: state => {
       return state.user.company_id;
+    },
+    token: state => {
+      return state.token;
     }
   },
 
