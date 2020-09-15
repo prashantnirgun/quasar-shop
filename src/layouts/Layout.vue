@@ -72,10 +72,10 @@
 
         <q-btn v-if="isUserLoggedIn" flat icon="account_circle">
           <q-menu auto-close transition-show="scale" transition-hide="scale">
-            <q-item clickable v-ripple>
+            <q-item clickable v-ripple to="profile">
               <q-item-section side>
                 <q-avatar rounded size="48px">
-                  <img src="https://cdn.quasar.dev/img/avatar.png" />
+                  <img :src="imgUrl" />
                   <q-badge floating color="teal">new</q-badge>
                 </q-avatar>
               </q-item-section>
@@ -86,12 +86,12 @@
             </q-item>
 
             <q-list style="min-width: 100px;">
-              <q-item clickable to="profile">
+              <!-- <q-item clickable to="profile">
                 <q-item-section>Profile</q-item-section>
                 <q-item-section avatar>
                   <q-icon name="face" color="blue" size="md"></q-icon>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
 
               <q-item>
                 <q-item-section>Version {{ version }} </q-item-section>
@@ -271,6 +271,11 @@ export default {
     },
     full_name() {
       return !!this.user ? this.user.full_name : 'Guest';
+    },
+    imgUrl() {
+      return this.user.image_filename && this.user.image_filename.length > 5
+        ? `${process.env.STATIC}users/${this.user.company_id}/${this.user.image_filename}`
+        : 'https://cdn.quasar.dev/img/boy-avatar.png';
     }
   },
   mounted() {

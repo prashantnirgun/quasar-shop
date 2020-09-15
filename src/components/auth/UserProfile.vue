@@ -10,8 +10,7 @@
                 {{ data.user.full_name }}
               </div>
               <div class="text-caption text-grey">
-                Sales and Marketing Executive | Graduate and past committee |
-                Keynote speaker on Selling and Recruiting Topics
+                ???
               </div>
             </q-card-section>
 
@@ -19,7 +18,7 @@
               class="col-5 flex flex-center cursor-pointer"
               @click="selectFile"
             >
-              <q-avatar size="200px">
+              <q-avatar :size="getImageSize">
                 <q-img
                   class="rounded-borders"
                   :src="imgUrl"
@@ -45,7 +44,7 @@
           </q-card-section>
         </q-card>
 
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 q-mt-sm">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <q-card class="my-card" flat bordered>
             <q-form class="q-gutter-md" @submit.prevent.stop="onUpdatePassword">
               <q-card-section class="text-h6 q-pa-sm">
@@ -115,6 +114,7 @@
               </q-card-section>
               <q-card-actions align="right">
                 <q-btn
+                  :disable="!passwordForm"
                   class="text-capitalize"
                   color="primary"
                   type="submit"
@@ -125,8 +125,7 @@
           </q-card>
         </div>
       </div>
-
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 q-mt-sm">
         <q-card>
           <q-card-section>
             <q-form class="q-gutter-md" @submit.prevent.stop="onSubmit">
@@ -153,8 +152,8 @@
                   dense
                   outlined
                   v-model="data.user_profile.dob"
-                  mask="date"
-                  :rules="['date']"
+                  mask="##-##-####"
+                  :rules="['isDateValid']"
                   class="col-6 q-pa-xs"
                 >
                   <template v-slot:append>
@@ -164,7 +163,10 @@
                         transition-show="scale"
                         transition-hide="scale"
                       >
-                        <q-date v-model="data.user_profile.dob">
+                        <q-date
+                          v-model="data.user_profile.dob"
+                          mask="DD-MM-YYYY"
+                        >
                           <div class="row items-center justify-end">
                             <q-btn
                               v-close-popup
@@ -241,9 +243,11 @@ import DataService from 'src/services/DataService';
 import { date } from 'quasar';
 import { mapGetters, mapActions } from 'vuex';
 import common_mixin from 'src/mixins/common_mixin';
+import device_mixin from 'src/mixins/device_mixin';
+import { isDateValid } from 'src/services/Validation';
 
 export default {
-  mixins: [common_mixin],
+  mixins: [common_mixin, device_mixin],
   data() {
     return {
       data: {
@@ -255,6 +259,7 @@ export default {
         current: null,
         confirm: null
       },
+      passwordForm: false,
       mouseOver: false,
       image_filename: [],
       isPwdCurrent: true,
@@ -278,9 +283,13 @@ export default {
       return this.user.image_filename && this.user.image_filename.length > 5
         ? `${process.env.STATIC}users/${this.user.company_id}/${this.user.image_filename}`
         : 'https://cdn.quasar.dev/img/boy-avatar.png';
+    },
+    getImageSize() {
+      return this.isDesktop ? '200px' : '125px';
     }
   },
   methods: {
+    isDateValid,
     ...mapActions('user', ['setUser', 'setImage']),
     selectFile() {
       this.$refs.file_upload.pickFiles();
@@ -288,12 +297,15 @@ export default {
     uploadFile(value) {
       const fileData = new FormData();
       fileData.append('folder', 'users');
-      fileData.append('user_profile_id', this.user_profile.user_profile_id);
+      fileData.append(
+        'user_profile_id',
+        this.data.user_profile.user_profile_id
+      );
       fileData.append('file', this.image_filename);
 
       DataService.put(`avatar`, fileData)
         .then(response => {
-          this.user_profile.image_filename = value.name;
+          this.data.user_profile.image_filename = value.name;
           this.setImage(value.name);
         })
         .catch(error => {
@@ -301,13 +313,30 @@ export default {
         });
     },
     onSubmit() {
+      var parts = this.data.user_profile.dob.split('-');
+
       const data = {
         user: this.data.user,
-        user_profile: this.data.user_profile
+        user_profile: {
+          ...this.data.user_profile,
+          dob: date.formatDate(
+            new Date(parts[2], parts[1] - 1, parts[0]),
+            'YYYY-MM-DD'
+          )
+        }
       };
+
+      // console.log(
+      //   'before saving',
+      //   data.user_profile.dob,
+      //   date.formatDate(Date.now(), 'YYYY-MM-DD'),
+      //   date.formatDate(new Date(data.user_profile.dob), 'YYYY-MM-DD'),
+      //   parts,
+      //   new Date(parts[2], parts[1] - 1, parts[0])
+      // );
       DataService.post(`profile`, data)
         .then(response => {
-          console.log('profile', response);
+          //console.log('profile', response);
           this.popupMessage('positive', 'Profile Updated Successfully.');
         })
         .catch(error => {
@@ -316,6 +345,11 @@ export default {
         });
     },
     onUpdatePassword() {
+      // if (this.password.new === this.password.current) {
+      //   this.passwordForm = true;
+      // } else {
+      //   this.passwordForm = false;
+      // }
       const data = {
         passwordNew: this.password.new,
         passwordCurrent: this.password.current
@@ -329,9 +363,9 @@ export default {
           } else {
             this.popupMessage('negative', 'Password Failed to Updated.');
           }
-          this.password.new = '';
-          this.password.current = '';
-          this.password.confirm = '';
+          this.password.new = null;
+          this.password.current = null;
+          this.password.confirm = null;
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);
@@ -343,7 +377,10 @@ export default {
         return 'Please enter at least 8 characters!';
       }
       if (value !== this.password.new) {
+        this.passwordForm = false;
         return 'Password must be the same with the newly created password';
+      } else {
+        this.passwordForm = true;
       }
     }
   },
@@ -353,7 +390,7 @@ export default {
         const data = response.data.rows;
         this.data.user = {
           full_name: data[0].full_name,
-          email: data[0].email_id,
+          email_id: data[0].email_id,
           mobile: data[0].mobile
         };
         this.data.user_profile = {

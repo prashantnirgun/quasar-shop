@@ -585,21 +585,19 @@ export default {
   },
   methods: {
     setQuantity() {
-      //console.log('blur event fire', this.orderQty);
-      this.decrement();
-      // this.addProductToCart({
-      //   product_id: this.data.product_id,
-      //   category_id: this.data.category_id,
-      //   product_name: this.data.product_name,
-      //   category_name: this.data.category_name,
-      //   rate: this.data.sale_rate,
-      //   quantity: this.orderQty,
-      //   amount: this.orderQty * this.data.sale_rate,
-      //   mrp: this.data.mrp,
-      //   image_filename: this.data.image_filename,
-      //   saving:
-      //     this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
-      // });
+      this.updateProductQuantity({
+        product_id: this.data.product_id,
+        category_id: this.data.category_id,
+        product_name: this.data.product_name,
+        category_name: this.data.category_name,
+        rate: this.data.sale_rate,
+        quantity: this.orderQty,
+        amount: this.orderQty * this.data.sale_rate,
+        mrp: this.data.mrp,
+        image_filename: this.data.image_filename,
+        saving:
+          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+      });
     },
     ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
     increment() {
