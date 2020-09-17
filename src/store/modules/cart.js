@@ -10,7 +10,9 @@ export default {
     shippingCharges: 0,
     savingAmount: 0,
     taxAmount: 0,
-    cartTotal: 0
+    cartTotal: 0,
+    deliveryAddressId: 0,
+    defaultAddressId: 0
   },
 
   getters: {
@@ -55,6 +57,12 @@ export default {
         }
       });
       return caregory;
+    },
+    deliveryAddress: state => {
+      return state.deliveryAddressId;
+    },
+    defaultAddress: state => {
+      return state.defaultAddressId;
     }
   },
 
@@ -132,6 +140,12 @@ export default {
 
       state.cartTotal =
         state.productAmount + state.shippingCharges + state.taxAmount;
+    },
+    UPDATE_DELIVERY_ADDRESS(state, payload) {
+      state.deliveryAddressId = payload;
+    },
+    UPDATE_DEFAULT_DELIVERY_ADDRESS(state, payload) {
+      state.defaultAddressId = payload;
     }
   },
 
@@ -147,6 +161,12 @@ export default {
     updateProductQuantity({ commit }, payload) {
       commit('UPDATE_PRODUCT_QUANTITY', payload);
       commit('UPDATE_TOTALS');
+    },
+    updateDeliveryAddress({ commit }, payload) {
+      commit('UPDATE_DELIVERY_ADDRESS', payload);
+    },
+    updateDefaultDeliveryAddress({ commit }, payload) {
+      commit('UPDATE_DEFAULT_DELIVERY_ADDRESS', payload);
     }
   }
 };

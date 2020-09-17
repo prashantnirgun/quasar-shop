@@ -26,7 +26,7 @@
             outlined
             type="text"
             v-model="data.apartment"
-            label="Apartment*"
+            label="House No / Apartment*"
             :rules="[required]"
           />
         </div>
@@ -38,20 +38,14 @@
             outlined
             type="text"
             v-model="data.area"
-            label="Area"
+            label="Area*"
             :rules="[required]"
           />
         </div>
       </div>
       <div class="row q-px-sm q-pt-sm">
         <div class="col-12">
-          <q-input
-            dense
-            outlined
-            v-model="data.landmark"
-            label="Landmark"
-            :rules="[required]"
-          />
+          <q-input dense outlined v-model="data.landmark" label="Landmark" />
         </div>
       </div>
 
@@ -115,7 +109,7 @@ import form_mixin from 'src/mixins/form_mixin';
 
 const tableName = 'address';
 export default {
-  props: ['show', 'closeAction', 'id'],
+  props: ['show'],
   mixins: [form_mixin],
   components: {
     modal: () => import('components/BaseModal')
@@ -150,22 +144,24 @@ export default {
       let payload = { action: false };
       if (ans) {
         let data = this.data;
-        console.log('before saving', this.data);
-        //payload = { data, action: true };
         DataService.post(`address`, { ...data })
-          .then(response => {})
+          .then(response => {
+            payload = { action: true };
+            this.close(payload);
+          })
           .catch(error => {
             console.log('mixin/ddlb Error', error);
           });
+      } else {
+        this.close(payload);
       }
-      this.close(payload);
     },
     close(payload) {
       this.data = this.newData();
       this.$emit('close', !payload ? { action: false } : payload);
     },
     newData() {
-      const company_id = this.$store.state.user.company_id;
+      const company_id = this.$store.state.user.user.company_id;
       this.primary = [];
       return {
         address_id: 0,
@@ -183,6 +179,9 @@ export default {
         email: null,
         is_default: 'N'
       };
+    },
+    updateData(data) {
+      this.data = data;
     }
   }
 };

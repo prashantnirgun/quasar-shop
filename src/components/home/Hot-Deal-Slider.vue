@@ -37,7 +37,7 @@
         >
           <div class="q-ma-xs">
             <q-card
-              class="rounded-borders hover_border_grey text-center cursor-pointer"
+              class="rounded-borders  text-center cursor-pointer my-card"
               @click="$router.push(`/product/${row.slug}`)"
             >
               <q-img
@@ -222,4 +222,9 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.my-card
+  box-shadow: none
+  &:hover
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important;
+</style>

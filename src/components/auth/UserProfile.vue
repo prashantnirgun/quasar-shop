@@ -10,7 +10,10 @@
                 {{ data.user.full_name }}
               </div>
               <div class="text-caption text-grey">
-                ???
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Architecto asperiores debitis officiis deserunt voluptate. Neque
+                a veritatis quo optio temporibus consectetur adipisci esse
+                deserunt, excepturi quasi velit totam ab unde.
               </div>
             </q-card-section>
 
@@ -313,16 +316,13 @@ export default {
         });
     },
     onSubmit() {
-      var parts = this.data.user_profile.dob.split('-');
+      //var parts = this.data.user_profile.dob.split('-');
 
       const data = {
         user: this.data.user,
         user_profile: {
           ...this.data.user_profile,
-          dob: date.formatDate(
-            new Date(parts[2], parts[1] - 1, parts[0]),
-            'YYYY-MM-DD'
-          )
+          dob: this.mysqlDate(this.data.user_profile.dob)
         }
       };
 
@@ -345,11 +345,6 @@ export default {
         });
     },
     onUpdatePassword() {
-      // if (this.password.new === this.password.current) {
-      //   this.passwordForm = true;
-      // } else {
-      //   this.passwordForm = false;
-      // }
       const data = {
         passwordNew: this.password.new,
         passwordCurrent: this.password.current
@@ -411,6 +406,8 @@ export default {
       .catch(error => {
         console.log('mixin/ddlb Error', error);
       });
+
+    //console.log('mysql date', this.mysqlDate('14-09-2020'));
   }
 };
 </script>

@@ -76,96 +76,56 @@
               <q-item-section side>
                 <q-avatar rounded size="48px">
                   <img :src="imgUrl" />
-                  <q-badge floating color="teal">new</q-badge>
                 </q-avatar>
               </q-item-section>
               <q-item-section>
                 <q-item-label>{{ full_name }}</q-item-label>
-                <q-item-label caption>2 new messages</q-item-label>
+                <q-item-label caption>Account</q-item-label>
               </q-item-section>
             </q-item>
 
             <q-list style="min-width: 100px;">
-              <!-- <q-item clickable to="profile">
-                <q-item-section>Profile</q-item-section>
-                <q-item-section avatar>
-                  <q-icon name="face" color="blue" size="md"></q-icon>
+              <q-item
+                dense
+                clickable
+                to="profile"
+                @click="$router.push(`/shopping-cart`)"
+              >
+                <q-item-section>Shopping Cart</q-item-section>
+                <q-item-section avatar class="text-purple">
+                  <q-icon name="shopping_cart" color="purpul" size="md" />
                 </q-item-section>
-              </q-item> -->
+              </q-item>
 
-              <q-item>
+              <q-item dense clickable to="profile">
+                <q-item-section>Order History</q-item-section>
+                <q-item-section avatar class="text-purple">
+                  <q-icon name="card_giftcard" size="md" />
+                </q-item-section>
+              </q-item>
+
+              <q-item dense clickable to="profile">
+                <q-item-section>Your Wish List</q-item-section>
+                <q-item-section avatar class="text-purple">
+                  <q-icon name="favorite" size="md" />
+                </q-item-section>
+              </q-item>
+
+              <!-- <q-item>
                 <q-item-section>Version {{ version }} </q-item-section>
                 <q-item-section avatar>
                   <q-icon name="verified" size="md"></q-icon>
                 </q-item-section>
-              </q-item>
+              </q-item> -->
               <q-separator />
-              <q-item clickable class="text-purple" @click="logout">
+              <q-item dense clickable class="text-purple" @click="logout">
                 <q-item-section>Logout</q-item-section>
-                <q-icon name="fas fa-sign-out-alt" size="sm"></q-icon>
+                <q-icon name="fas fa-sign-out-alt" size="sm" />
               </q-item>
             </q-list>
           </q-menu>
           <tooltip>Account</tooltip>
         </q-btn>
-        <!--
-        <q-btn
-          v-if="isUserLoggedIn"
-          flat
-          round
-          dense
-          icon="fas fa-sign-out-alt"
-          @click="showMenu1 = true"
-        >
-           <q-menu
-            v-model="showing"
-            auto-close
-            class="q-mt-none"
-            @mouseleave="showing = false"
-          >
-            <q-list>
-              <q-item clickable @click="showMenu1 = true">
-                <q-item-section>
-                  <q-item-label>Login</q-item-label>
-                  <q-item-label caption
-                    >Standard Login Dialog with image</q-item-label
-                  >
-                </q-item-section>
-              </q-item>
-
-              <q-separator spaced inset />
-
-              <q-item clickable @click="showMenu2 = true">
-                <q-item-section>
-                  <q-item-label>Accordian</q-item-label>
-                  <q-item-label caption>Accordian / Collapsiblee</q-item-label>
-                </q-item-section>
-              </q-item>
-
-              <q-separator spaced inset />
-
-              <q-item clickable @click="showMenu3 = true">
-                <q-item-section>
-                  <q-item-label>Horizontal Tab</q-item-label>
-                  <q-item-label caption
-                    >Horizontal Tabs Login Dialog</q-item-label
-                  >
-                </q-item-section>
-              </q-item>
-
-              <q-separator spaced inset />
-
-              <q-item clickable @click="showMenu4 = true">
-                <q-item-section>
-                  <q-item-label>Vertical Tab</q-item-label>
-                  <q-item-label caption
-                    >Vertical Tabs Login Dialog</q-item-label
-                  >
-                </q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu> 
-        </q-btn>-->
       </q-toolbar>
       <desktop-menu v-if="isDesktop" />
     </q-header>
