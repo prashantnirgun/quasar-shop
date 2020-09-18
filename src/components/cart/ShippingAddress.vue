@@ -1,11 +1,6 @@
 <template>
   <!-- <div class="q-pa-md row items-start q-gutter-md"> -->
-  <q-card
-    class="col-6 col-sm-12 col-xs-12 shadow-4"
-    flat
-    bordered
-    style="min-height: 200px;"
-  >
+  <q-card class="shadow-4" flat bordered style="min-height: 200px;">
     <q-card-section>
       <div align="right">
         <q-chip

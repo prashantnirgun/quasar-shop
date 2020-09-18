@@ -20,14 +20,16 @@
                 label="Full Name"
               />
               <div class="row">
-                <q-input
-                  dense
-                  class="col-6 q-pa-xs"
-                  clearable
-                  outlined
-                  v-model="user.mobile"
-                  label="Telephone No"
-                />
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <q-input
+                    dense
+                    class="col-6 q-pa-xs"
+                    clearable
+                    outlined
+                    v-model="user.mobile"
+                    label="Telephone No"
+                  />
+                </div>
                 <!-- <q-input
                 dense
                   class="col-6 q-pa-xs"
@@ -38,43 +40,47 @@
                 /> -->
               </div>
               <div class="row">
-                <q-input
-                  dense
-                  class="col-6 q-pa-xs"
-                  clearable
-                  outlined
-                  v-model="user.email_id"
-                  label="Email"
-                />
-                <q-input
-                  dense
-                  outlined
-                  v-model="user.dob"
-                  mask="##-##-####"
-                  :rules="['isDateValid']"
-                  class="col-6 q-pa-xs"
-                >
-                  <template v-slot:append>
-                    <q-icon name="event" class="cursor-pointer">
-                      <q-popup-proxy
-                        ref="qDateProxy"
-                        transition-show="scale"
-                        transition-hide="scale"
-                      >
-                        <q-date v-model="user.date" mask="DD-MM-YYYY">
-                          <div class="row items-center justify-end">
-                            <q-btn
-                              v-close-popup
-                              label="Close"
-                              color="primary"
-                              flat
-                            />
-                          </div>
-                        </q-date>
-                      </q-popup-proxy>
-                    </q-icon>
-                  </template>
-                </q-input>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <q-input
+                    dense
+                    class="col-6 q-pa-xs"
+                    clearable
+                    outlined
+                    v-model="user.email_id"
+                    label="Email"
+                  />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <q-input
+                    dense
+                    outlined
+                    v-model="user.dob"
+                    mask="##-##-####"
+                    :rules="['isDateValid']"
+                    class="col-6 q-pa-xs"
+                  >
+                    <template v-slot:append>
+                      <q-icon name="event" class="cursor-pointer">
+                        <q-popup-proxy
+                          ref="qDateProxy"
+                          transition-show="scale"
+                          transition-hide="scale"
+                        >
+                          <q-date v-model="user.date" mask="DD-MM-YYYY">
+                            <div class="row items-center justify-end">
+                              <q-btn
+                                v-close-popup
+                                label="Close"
+                                color="primary"
+                                flat
+                              />
+                            </div>
+                          </q-date>
+                        </q-popup-proxy>
+                      </q-icon>
+                    </template>
+                  </q-input>
+                </div>
               </div>
             </q-card-section>
             <!-- <q-card-section>
@@ -157,14 +163,14 @@
             />
           </div>
           <div class="row wrap q-ma-sm" v-if="this.address.length > 0">
-            <div v-for="(row, index) in this.address" :key="index">
-              <shipping-address
-                :data="row"
-                @editAddress="doAction"
-                class="q-ma-sm"
-              />
+            <div
+              v-for="(row, index) in this.address"
+              :key="index"
+              class="col-md-6 col-lg-6 col-sm-12 col-xs-12"
+            >
+              <shipping-address :data="row" @editAddress="doAction" class="" />
             </div>
-            <shipping-address />
+            <!-- <shipping-address /> -->
           </div>
         </q-expansion-item>
       </q-list>

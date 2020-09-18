@@ -1,18 +1,18 @@
 <template>
-  <div class="q-pa-md">
+  <div class="">
     <q-stepper v-model="step" ref="stepper" color="primary" animated>
       <q-step
         :name="1"
-        title="Shopping Cart"
-        icon="shopping_cart"
+        title="Cart"
+        icon="looks_one"
         :done="step > 1"
         style="min-height: 300px;"
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
-          <div class="col-8">
+          <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
             <cart-list />
           </div>
-          <div class="col-4 ">
+          <div class="col-4" v-if="isDesktop">
             <cart-overview />
           </div>
         </div>
@@ -20,16 +20,16 @@
 
       <q-step
         :name="2"
-        title="Billing Information"
-        icon="receipt"
+        title="Address"
+        icon="looks_two"
         :done="step > 2"
         style="min-height: 400px;"
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
-          <div class="col-8">
+          <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
             <cart-billing />
           </div>
-          <div class="col-4 ">
+          <div class="col-4" v-if="isDesktop">
             <cart-overview />
           </div>
         </div>
@@ -38,24 +38,18 @@
       <q-step
         :name="3"
         title="Payment"
-        icon="payment"
-        disable
+        icon="looks_3"
         style="min-height: 200px;"
       >
-        This step won't show up because it is disabled.
+        Choose payment options
       </q-step>
 
-      <q-step
-        :name="4"
-        title="Confirmation"
-        icon="done"
-        style="min-height: 200px;"
-      >
+      <!-- <q-step :name="4" icon="looks_4" style="min-height: 200px;">
         Try out different ad text to see what brings in the most customers, and
         learn how to enhance your ads using features like ad extensions. If you
         run into any problems with your ads, find out how to tell if they're
         running and how to resolve approval issues.
-      </q-step>
+      </q-step> -->
 
       <template v-slot:navigation>
         <q-stepper-navigation>
@@ -80,14 +74,15 @@
           <q-icon name="shopping_cart" size="lg" />
           Shopping Cart
         </q-banner>
-        <q-banner v-else-if="step === 2" class="bg-orange-8 text-white q-px-lg">
-          <q-icon name="receipt" size="lg" />
-          Billing Information
-        </q-banner>
-        <q-banner v-else-if="step === 3" class="bg-green-8 text-white q-px-lg">
+        <q-banner v-else-if="step === 2" class="bg-green-8 text-white q-px-lg">
           <q-icon name="local_shipping" size="lg" />
           Shipping Information
         </q-banner>
+        <q-banner v-else-if="step === 3" class="bg-orange-8 text-white q-px-lg">
+          <q-icon name="receipt" size="lg" />
+          Payment
+        </q-banner>
+
         <q-banner v-else class="bg-blue-8 text-white q-px-lg">
           <q-icon name="verified" size="lg" />
           Confirmation
@@ -97,7 +92,9 @@
   </div>
 </template>
 <script>
+import device_mixin from 'src/mixins/device_mixin';
 export default {
+  mixins: [device_mixin],
   components: {
     'cart-overview': () => import('./CartOverview'),
     'cart-list': () => import('./CartList'),
@@ -110,4 +107,13 @@ export default {
   }
 };
 </script>
-<style lang="sass"></style>
+<style lang="sass">
+.q-stepper__step-inner
+    padding: 0px !important;
+
+.q-stepper__tab
+    padding: 8px 8px;
+    font-size: 14px;
+
+    flex-direction: row;
+</style>
