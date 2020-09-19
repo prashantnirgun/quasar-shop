@@ -152,15 +152,15 @@ export default {
   actions: {
     addProductToCart({ commit }, payload) {
       commit('ADD_TO_CART', payload);
-      commit('UPDATE_TOTALS');
+      //commit('UPDATE_TOTALS');
     },
     removeFromCart({ commit }, payload) {
       commit('REMOVE_FROM_CART', payload);
-      commit('UPDATE_TOTALS');
+      //commit('UPDATE_TOTALS');
     },
     updateProductQuantity({ commit }, payload) {
       commit('UPDATE_PRODUCT_QUANTITY', payload);
-      commit('UPDATE_TOTALS');
+      //commit('UPDATE_TOTALS');
     },
     updateDeliveryAddress({ commit }, payload) {
       commit('UPDATE_DELIVERY_ADDRESS', payload);

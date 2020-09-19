@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="q-pa-md row items-start q-gutter-md"> -->
-  <q-card class="shadow-4" flat bordered style="min-height: 200px;">
+  <q-card class="q-mx-xs shadow-4" flat bordered style="min-height: 200px;">
     <q-card-section>
       <div align="right">
         <q-chip
@@ -76,7 +76,7 @@
           <tooltip>Update delivery address click here</tooltip>
         </q-btn>
 
-        <q-btn flat color="primary" size="12px"
+        <q-btn flat color="primary" size="12px" @click="removeAction"
           >Delete
           <tooltip
             >If you no longer required this address click here to remove from
@@ -104,6 +104,12 @@ export default {
     ]),
     editAction() {
       this.$emit('editAddress', { data: this.data, action: 'Edit' });
+    },
+    removeAction() {
+      this.$emit('removeAddress', {
+        action: 'Remove',
+        address_id: this.data.address_id
+      });
     },
     updateAddressState(value) {
       if (value === true) {

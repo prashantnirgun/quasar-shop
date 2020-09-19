@@ -52,12 +52,14 @@
           <div>
             <q-separator inset></q-separator>
             <div class="q-pa-sm">
-              <q-btn flat label="Login" @click="login"></q-btn>
+              <q-btn flat label="Login" @click="login" />
+
+              <q-toggle v-model="value" :label="mode" class="text-subtitle1" />
               <q-btn
                 flat
                 class="float-right text-blue-9 text-capitalize"
                 label="Sign Up"
-              ></q-btn>
+              />
             </div>
           </div>
         </div>
@@ -81,7 +83,8 @@ export default {
     return {
       username: null,
       password: null,
-      rememberMe: false
+      rememberMe: false,
+      value: false
     };
   },
 
@@ -123,6 +126,9 @@ export default {
   computed: {
     siteName() {
       return process.env.SITE_NAME;
+    },
+    mode() {
+      return this.value ? 'Login' : 'Register';
     }
   }
 };

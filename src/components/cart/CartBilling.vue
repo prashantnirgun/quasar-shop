@@ -166,9 +166,14 @@
             <div
               v-for="(row, index) in this.address"
               :key="index"
-              class="col-md-6 col-lg-6 col-sm-12 col-xs-12"
+              class="col-md-6 col-lg-6 col-sm-12 col-xs-12 q-my-xs"
             >
-              <shipping-address :data="row" @editAddress="doAction" class="" />
+              <shipping-address
+                :data="row"
+                @editAddress="doAction"
+                class=""
+                @removeAddress="doAction"
+              />
             </div>
             <!-- <shipping-address /> -->
           </div>
@@ -211,12 +216,35 @@ export default {
       'updateDefaultDeliveryAddress'
     ]),
     doAction(payload) {
-      this.show = true;
-      if (payload.action === 'New') {
-        this.$refs.shippingAddressCreateUpdate.newData();
-      } else {
-        this.$refs.shippingAddressCreateUpdate.updateData(payload.data);
+      switch (payload.action) {
+        case 'New':
+          this.show = true;
+          this.$refs.shippingAddressCreateUpdate.newData();
+          break;
+        case 'Remove':
+          //console.log('delete', payload);
+          this.deleteAddress(payload.address_id);
+          break;
+        default:
+          this.show = true;
+          this.$refs.shippingAddressCreateUpdate.updateData(payload.data);
+          break;
       }
+
+      // if (payload.action === 'New') {
+      //   this.$refs.shippingAddressCreateUpdate.newData();
+      // } else {
+      //   this.$refs.shippingAddressCreateUpdate.updateData(payload.data);
+      // }
+    },
+    deleteAddress(address_id) {
+      DataService.delete(`address?address_id=${address_id}`)
+        .then(response => {
+          this.getAddress();
+        })
+        .catch(error => {
+          console.log('mixin/ddlb Error', error);
+        });
     },
     getAddress() {
       DataService.get(`address`)

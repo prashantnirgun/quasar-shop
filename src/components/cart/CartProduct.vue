@@ -16,7 +16,7 @@
       <div class="row">
         <div class="col-4">{{ data.mrp | currency }}</div>
         <div class="col-4">{{ data.rate | currency }}</div>
-        <div class="col-4">{{ (data.amount * orderQty) | currency }}</div>
+        <div class="col-4">{{ data.amount | currency }}</div>
       </div>
 
       <div class="row q-ma-sm content-center">
@@ -88,11 +88,11 @@ export default {
     ]),
     increment() {
       this.orderQty++;
-      this.setProduct();
+      this.setQuantity();
     },
     decrement() {
       this.orderQty--;
-      this.setProduct();
+      this.setQuantity();
     },
     setQuantity() {
       //console.log('blur event fire', this.orderQty);
@@ -101,13 +101,12 @@ export default {
         category_id: this.data.category_id,
         product_name: this.data.product_name,
         category_name: this.data.category_name,
-        rate: this.data.sale_rate,
+        rate: this.data.rate,
         quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
+        amount: this.orderQty * this.data.rate,
         mrp: this.data.mrp,
         image_filename: this.data.image_filename,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+        saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate
       });
     },
     setProduct() {

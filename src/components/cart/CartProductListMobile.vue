@@ -1,7 +1,7 @@
 <template>
   <q-list class="">
     <q-card v-for="cart in cartList" :key="cart.product_id" class="">
-      <cart-product-mobile :data="cart" />
+      <cart-product-mobile :data="cart" class="" />
     </q-card>
   </q-list>
 </template>
