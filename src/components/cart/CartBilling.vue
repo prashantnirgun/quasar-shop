@@ -66,7 +66,7 @@
                           transition-show="scale"
                           transition-hide="scale"
                         >
-                          <q-date v-model="user.date" mask="DD-MM-YYYY">
+                          <q-date v-model="user.dob" mask="DD-MM-YYYY">
                             <div class="row items-center justify-end">
                               <q-btn
                                 v-close-popup
@@ -269,6 +269,7 @@ export default {
   },
   created() {
     this.getAddress();
+    window.scrollTo(0, 0);
   }
 };
 </script>
