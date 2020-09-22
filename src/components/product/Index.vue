@@ -580,7 +580,7 @@ export default {
     ...mapGetters('cart', ['findItem']),
     getSize() {
       console.log(this.isDesktop);
-      return this.isDesktop ? '500px' : '360px';
+      return this.isDesktop ? '510px' : '360px';
     }
   },
   methods: {
