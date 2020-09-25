@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <q-input
-      class="q-pa-xs col-12"
+      class="q-ma-xs col-12"
       dense
       outlined
       v-model="username"
@@ -10,12 +10,13 @@
     ></q-input>
     <q-input
       dense
-      class="q-pa-xs col-12"
+      class="q-ma-xs col-12"
       type="password"
       outlined
       v-model="password"
       label="Password*"
       lazy-rules
+      autocomplete="on"
     ></q-input>
     <q-checkbox
       class="text-grey-8"

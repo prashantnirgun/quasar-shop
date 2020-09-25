@@ -156,9 +156,9 @@
     </q-page-container>
     <pincode :showPincode="showPincode" @close="showPincode = false" />
     <login1 :show="showMenu1" @close="close" />
-    <login2 :show="showMenu2" @close="close" />
+    <!-- <login2 :show="showMenu2" @close="close" />
     <login3 :show="showMenu3" @close="close" />
-    <login4 :show="showMenu4" @close="close" />
+    <login4 :show="showMenu4" @close="close" /> -->
   </q-layout>
 </template>
 
@@ -172,9 +172,9 @@ export default {
   data() {
     return {
       showMenu1: false,
-      showMenu2: false,
-      showMenu3: false,
-      showMenu4: false,
+      // showMenu2: false,
+      // showMenu3: false,
+      // showMenu4: false,
       showing: false,
       showPincode: false,
       leftDrawerOpen: false,
@@ -189,18 +189,18 @@ export default {
     'site-footer': () => import('src/layouts/Footer'),
     'desktop-menu': () => import('src/layouts/DesktopMenu'),
     Sidebar: () => import('./Drawer'),
-    login1: () => import('components/auth/login'),
-    login2: () => import('components/auth/loginAccordian'),
-    login3: () => import('components/auth/loginHorizontalTab'),
-    login4: () => import('components/auth/loginVerticalTab')
+    login1: () => import('components/auth/login')
+    // login2: () => import('components/auth/loginAccordian'),
+    // login3: () => import('components/auth/loginHorizontalTab'),
+    // login4: () => import('components/auth/loginVerticalTab')
   },
   methods: {
     ...mapActions('user', ['setToken', 'setUser']),
     close() {
       this.showMenu1 = false;
-      this.showMenu2 = false;
-      this.showMenu3 = false;
-      this.showMenu4 = false;
+      // this.showMenu2 = false;
+      // this.showMenu3 = false;
+      // this.showMenu4 = false;
     },
     logout() {
       this.setToken(null);
@@ -222,6 +222,7 @@ export default {
   computed: {
     ...mapGetters('cart', ['cartCount']),
     ...mapGetters('user', ['user']),
+    ...mapGetters(['loginPrompt']),
     ...mapState(['isUserLoggedIn', 'version', 'rememberMe']),
 
     //...mapState(['isUserLoggedIn', 'version']),
@@ -239,6 +240,7 @@ export default {
     }
   },
   mounted() {
+    console.log('proptlogin', this.loginPrompt);
     /* eslint-disable no-console */
     // console.log(
     //   `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,

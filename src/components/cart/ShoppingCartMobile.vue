@@ -26,17 +26,17 @@
         style="min-height: 400px;"
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
-          <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
-            <cart-billing />
-          </div>
-          <div class="col-4" v-if="isDesktop">
+          <!-- <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12"> -->
+          <cart-billing />
+          <!-- </div> -->
+          <!-- <div class="col-4" v-if="isDesktop">
             <cart-overview />
-          </div>
+          </div> -->
         </div>
       </q-step>
 
       <q-step :name="3" title="Order" icon="looks_3" style="min-height: 200px;">
-        Choose payment options
+        <cart-overview />
       </q-step>
 
       <q-step :name="4" icon="looks_4" title="Pay" style="min-height: 200px;">

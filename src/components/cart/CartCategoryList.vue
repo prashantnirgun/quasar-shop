@@ -10,9 +10,7 @@
       active-class="bg-yellow"
     >
       <q-item-section>
-        <q-item-label
-          >{{ category.category_name }} {{ category.category_id }}</q-item-label
-        >
+        <q-item-label>{{ category.category_name }} </q-item-label>
         <q-item-label caption
           >Total
           {{ category.totalAmount | currency }}

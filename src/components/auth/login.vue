@@ -24,51 +24,28 @@
             </q-card-section>
             <div class="q-ml-md" v-if="isDesktop">{{ slogen }}</div>
             <q-separator v-if="isDesktop" />
-            <q-card-section style="height: 250px">
+            <q-card-section
+              :style="{ height: getSize }"
+              class="no-padding no-margin"
+            >
               <sign-in v-if="!value" @close="close" />
-              <sign-up v-else />
+              <sign-up v-else @close="close" />
             </q-card-section>
-
-            <!-- <q-input
-              class="q-ma-sm"
-              dense
-              outlined
-              v-model="username"
-              label="Username"
-              lazy-rules
-            ></q-input>
-            <q-input
-              dense
-              class="q-ma-sm"
-              type="password"
-              outlined
-              v-model="password"
-              label="Password"
-              lazy-rules
-            ></q-input>
-            <q-checkbox
-              class="text-grey-8"
-              dense
-              v-model="rememberMe"
-              label="Remember me"
-            ></q-checkbox> -->
           </div>
           <div>
             <q-separator inset></q-separator>
             <div class="q-pa-sm">
-              <!-- <q-btn flat label="Login" @click="login" /> -->
-              <q-item clickable>
-                <q-item-label
-                  >Login
-                  <q-toggle v-model="value" class="text-subtitle1" />
-                  Register
-                </q-item-label>
+              <q-item dense clickable>
+                <q-item-section class="text-right" @click="value = false">
+                  <q-item-label dense>Login </q-item-label>
+                </q-item-section>
+                <q-item-section>
+                  <q-toggle v-model="value" dense width="50px" />
+                </q-item-section>
+                <q-item-section class="float-left" @click="value = true">
+                  <q-item-label dense>Register </q-item-label>
+                </q-item-section>
               </q-item>
-              <!-- <q-btn
-                flat
-                class="float-right text-blue-9 text-capitalize"
-                label="Sign Up"
-              /> -->
             </div>
           </div>
         </div>
@@ -112,6 +89,9 @@ export default {
     },
     mode() {
       return this.value ? 'Login' : 'Register';
+    },
+    getSize() {
+      return this.isDesktop ? '350px' : '250px';
     }
   }
 };

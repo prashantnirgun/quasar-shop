@@ -191,7 +191,7 @@
 <script>
 import DataService from 'src/services/DataService';
 import { isDateValid } from 'src/services/Validation';
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   components: {
@@ -209,7 +209,9 @@ export default {
       // defaultAddressId: 0
     };
   },
-  computed: {},
+  computed: {
+    ...mapState(['isUserLoggedIn'])
+  },
   methods: {
     ...mapActions('cart', [
       'updateDeliveryAddress',
@@ -267,9 +269,14 @@ export default {
       }
     }
   },
-  created() {
-    this.getAddress();
-    window.scrollTo(0, 0);
+  mounted() {
+    console.log('isUserLoggedIn', this.isUserLoggedIn);
+    if (this.isUserLoggedIn) {
+      this.getAddress();
+      window.scrollTo(0, 0);
+    } else {
+      console.log('not loggedin user dont fetech rows');
+    }
   }
 };
 </script>

@@ -24,7 +24,8 @@ const Store = new Vuex.Store({
   state: {
     rememberMe: false,
     isUserLoggedIn: false,
-    version: '0.0.1'
+    version: '0.0.2',
+    loginPrompt: false
   },
   modules: {
     cart,
@@ -43,7 +44,8 @@ const Store = new Vuex.Store({
   getters: {
     rememberMe: state => {
       return !!state.rememberMe ? state.rememberMe : false;
-    }
+    },
+    loginPrompt: state => state.loginPrompt
   },
   // enable strict mode (adds overhead!)
   // for dev mode only
