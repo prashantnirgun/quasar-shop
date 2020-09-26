@@ -1,6 +1,25 @@
 <template>
   <div>
-    <div>
+    <div v-if="!proceedCart">
+      <div>
+        You don't have login to website Do you wish to Login for recurring
+        customer OR Continue as Guest ?
+      </div>
+      <q-btn
+        color="primary"
+        label="Login / Sigun Up"
+        class="q-ma-lg"
+        @click="loginRequest('Login')"
+      />
+
+      <q-btn
+        outline
+        color="primary"
+        label="Guest"
+        @click="loginRequest('Guest')"
+      />
+    </div>
+    <div v-if="isUserLoggedIn">
       <q-list bordered class="rounded-borders">
         <q-expansion-item
           expand-separator
@@ -180,7 +199,7 @@
         </q-expansion-item>
       </q-list>
     </div>
-
+    <guest-user v-if="guest" />
     <shipping-address-create-update
       :show="show"
       @close="closeModal"
@@ -194,29 +213,51 @@ import { isDateValid } from 'src/services/Validation';
 import { mapActions, mapState } from 'vuex';
 
 export default {
+  // props: ['guestValidation'],
+  watch: {
+    isUserLoggedIn(newVal) {
+      newVal ? this.getAddress() : null;
+    }
+  },
   components: {
     'shipping-address': () => import('./ShippingAddress'),
     'shipping-address-create-update': () =>
-      import('./ShippingAddressCreateUpdate')
+      import('./ShippingAddressCreateUpdate'),
+    'guest-user': () => import('./CartBillingGuest')
   },
   data() {
     return {
       text: null,
       show: false,
       address: [],
+      guest: this.guestLogin,
       user: { full_name: null, dob: null, mobile: null, email_id: null }
       // deliveryAddressId: 0,
       // defaultAddressId: 0
     };
   },
   computed: {
-    ...mapState(['isUserLoggedIn'])
+    ...mapState(['isUserLoggedIn', 'guestLogin']),
+    proceedCart() {
+      return this.isUserLoggedIn || this.guest;
+    }
   },
   methods: {
     ...mapActions('cart', [
       'updateDeliveryAddress',
       'updateDefaultDeliveryAddress'
     ]),
+    ...mapActions(['setLoginRequest', 'setGuestLogin']),
+
+    loginRequest(method) {
+      if (method === 'Login') {
+        this.setLoginRequest(true);
+      } else {
+        this.guest = true;
+        this.setGuestLogin(true);
+        //this.setGuestValidation(false);
+      }
+    },
     doAction(payload) {
       switch (payload.action) {
         case 'New':
@@ -270,10 +311,11 @@ export default {
     }
   },
   mounted() {
-    console.log('isUserLoggedIn', this.isUserLoggedIn);
+    this.guest = this.guestLogin;
+    console.log('inside mounted', 'isUserLoggedIn', this.isUserLoggedIn);
+    window.scrollTo(0, 0);
     if (this.isUserLoggedIn) {
       this.getAddress();
-      window.scrollTo(0, 0);
     } else {
       console.log('not loggedin user dont fetech rows');
     }

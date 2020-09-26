@@ -25,7 +25,10 @@ const Store = new Vuex.Store({
     rememberMe: false,
     isUserLoggedIn: false,
     version: '0.0.2',
-    loginPrompt: false
+    loginPrompt: false,
+    guestValidation: true,
+    guestLogin: false,
+    guestValidationCounter: 0
   },
   modules: {
     cart,
@@ -34,18 +37,45 @@ const Store = new Vuex.Store({
   mutations: {
     SET_REMEMBER_ME(state, rememberMe) {
       state.rememberMe = rememberMe;
+    },
+    LOGIN_REQUEST(state, action) {
+      state.loginPrompt = action;
+    },
+    GUEST_VALIDATION(state, action) {
+      state.guestValidation = action;
+    },
+    GUEST_LOGIN(state, action) {
+      state.guestLogin = action;
+    },
+    GUEST_VALIDATION_COUNTER(state, action) {
+      state.guestValidationCounter++;
     }
   },
   actions: {
     setRememberMe({ commit }, rememberMe) {
       commit('SET_REMEMBER_ME', rememberMe);
+    },
+    setLoginRequest({ commit }, action) {
+      commit('LOGIN_REQUEST', action);
+    },
+    setGuestLogin({ commit }, action) {
+      commit('GUEST_LOGIN', action);
+    },
+    setGuestValidation({ commit }, action) {
+      commit('GUEST_VALIDATION', action);
+    },
+    setGuestValidationCounter({ commit }) {
+      commit('GUEST_VALIDATION_COUNTER');
     }
   },
   getters: {
     rememberMe: state => {
       return !!state.rememberMe ? state.rememberMe : false;
     },
-    loginPrompt: state => state.loginPrompt
+    loginPrompt: state => state.loginPrompt,
+    guestLogin: state => state.guestLogin,
+    guestValidation: state => state.guestValidation,
+    guestValidationCounter: state => state.guestValidationCounter
   },
   // enable strict mode (adds overhead!)
   // for dev mode only

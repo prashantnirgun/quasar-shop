@@ -194,9 +194,19 @@ export default {
     // login3: () => import('components/auth/loginHorizontalTab'),
     // login4: () => import('components/auth/loginVerticalTab')
   },
+  watch: {
+    loginPrompt(newVal) {
+      console.log('loginPrompt changed to', newVal);
+      if (newVal) {
+        this.showMenu1 = true;
+      }
+    }
+  },
   methods: {
     ...mapActions('user', ['setToken', 'setUser']),
+    ...mapActions(['setLoginRequest']),
     close() {
+      this.setLoginRequest(false);
       this.showMenu1 = false;
       // this.showMenu2 = false;
       // this.showMenu3 = false;
@@ -223,7 +233,7 @@ export default {
     ...mapGetters('cart', ['cartCount']),
     ...mapGetters('user', ['user']),
     ...mapGetters(['loginPrompt']),
-    ...mapState(['isUserLoggedIn', 'version', 'rememberMe']),
+    ...mapState(['isUserLoggedIn', 'version', 'rememberMe', 'loginPrompt']),
 
     //...mapState(['isUserLoggedIn', 'version']),
     siteName() {
@@ -240,7 +250,7 @@ export default {
     }
   },
   mounted() {
-    console.log('proptlogin', this.loginPrompt);
+    //console.log('proptlogin', this.loginPrompt);
     /* eslint-disable no-console */
     // console.log(
     //   `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,

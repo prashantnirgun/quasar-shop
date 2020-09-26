@@ -161,7 +161,9 @@ export default {
       this.$emit('close', !payload ? { action: false } : payload);
     },
     newData() {
-      const company_id = this.$store.state.user.user.company_id;
+      const company_id = this.$store.state.user.user
+        ? this.$store.state.user.user.company_id
+        : 0;
       this.primary = [];
       return {
         address_id: 0,

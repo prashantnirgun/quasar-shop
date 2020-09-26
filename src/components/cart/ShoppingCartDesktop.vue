@@ -27,7 +27,7 @@
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
           <div class="col-8">
-            <cart-billing />
+            <cart-billing ref="cartBilling" />
           </div>
           <div class="col-4 ">
             <cart-overview />
@@ -60,7 +60,7 @@
       <template v-slot:navigation>
         <q-stepper-navigation>
           <q-btn
-            @click="$refs.stepper.next()"
+            @click="pageSkip('Next')"
             color="primary"
             :label="step === 3 ? 'Finish' : 'Continue'"
           />
@@ -68,7 +68,7 @@
             v-if="step > 1"
             flat
             color="primary"
-            @click="$refs.stepper.previous()"
+            @click="pageSkip('Previous')"
             label="Back"
             class="q-ml-sm"
           />
@@ -97,6 +97,7 @@
   </div>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex';
 export default {
   components: {
     'cart-overview': () => import('./CartOverview'),
@@ -107,6 +108,24 @@ export default {
     return {
       step: 1
     };
+  },
+  methods: {
+    ...mapActions(['setGuestValidationCounter']),
+    pageSkip(action) {
+      if (action === 'Next') {
+        if (this.step === 2 && this.guestLogin === true) {
+          this.setGuestValidationCounter();
+          this.guestValidation ? this.$refs.stepper.next() : null;
+        } else {
+          this.$refs.stepper.next();
+        }
+      } else {
+        this.$refs.stepper.previous();
+      }
+    }
+  },
+  computed: {
+    ...mapGetters(['guestLogin'])
   }
 };
 </script>
