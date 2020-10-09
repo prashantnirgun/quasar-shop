@@ -89,7 +89,7 @@
                 dense
                 clearable
                 outlined
-                v-model="user.mobile1"
+                v-model="user.telephone"
                 label="Telephone No"
                 :rules="[required]"
               />
@@ -114,7 +114,7 @@
 import { required } from 'src/services/Validation';
 import DataService from 'src/services/DataService';
 import form_mixin from 'src/mixins/form_mixin';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   //  props: ['guestValidation'],
@@ -123,8 +123,9 @@ export default {
     return {
       form: 'form_guest',
       user: {
+        address_id: 0,
         full_name: null,
-        mobile1: null,
+        telephone: null,
         mobile2: null,
         email_id: null,
         country_id: 101,
@@ -138,34 +139,26 @@ export default {
     };
   },
   watch: {
-    // guestValidation(newVal, oldVal) {
-    //   console.log('going to call validation', newVal);
-    //   if (newVal) {
-    //     this.onSubmit();
-    //   }
-    // },
     guestValidationCounter(newVal, oldVal) {
-      console.log('going to call validation', newVal);
+      //console.log('going to call validation', newVal);
       if (newVal) {
         this.onSubmit();
       }
     }
   },
   methods: {
+    ...mapActions('cart', ['updateDeliveryAddress', 'updateBillingAddress']),
     required,
     async onSubmit() {
       const ans = await this.validateForm();
       let payload = { action: false };
       if (ans) {
-        let data = this.data;
-        DataService.post(`address`, { ...data })
-          .then(response => {
-            payload = { action: true };
-            this.close(payload);
-          })
-          .catch(error => {
-            console.log('mixin/ddlb Error', error);
-          });
+        console.log('validation successfull going to emit', payload);
+        this.updateDeliveryAddress(this.user);
+        this.updateBillingAddress(this.user);
+        this.$emit('guestValidation', true);
+      } else {
+        this.$emit('guestValidation', false);
       }
     }
   },

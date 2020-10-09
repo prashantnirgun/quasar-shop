@@ -11,13 +11,14 @@ export default {
     savingAmount: 0,
     taxAmount: 0,
     cartTotal: 0,
-    deliveryAddressId: 0,
-    defaultAddressId: 0
+    deliveryAddress: null,
+    billingAddress: null,
+    customerID: 0
   },
 
   getters: {
     cartCount: state => {
-      return state.cart.length;
+      return state.cart ? state.cart.length : 0;
     },
     allItems: state => {
       return state.cart;
@@ -59,10 +60,10 @@ export default {
       return caregory;
     },
     deliveryAddress: state => {
-      return state.deliveryAddressId;
+      return state.deliveryAddress;
     },
     defaultAddress: state => {
-      return state.defaultAddressId;
+      return state.defaultAddress;
     }
   },
 
@@ -142,14 +143,29 @@ export default {
         state.productAmount + state.shippingCharges + state.taxAmount;
     },
     UPDATE_DELIVERY_ADDRESS(state, payload) {
-      state.deliveryAddressId = payload;
+      state.deliveryAddress = payload;
     },
-    UPDATE_DEFAULT_DELIVERY_ADDRESS(state, payload) {
-      state.defaultAddressId = payload;
+    UPDATE_BILLING_ADDRESS(state, payload) {
+      state.billingAddress = payload;
+    },
+    UPDATE_CUSTOMER_ID(state, payload) {
+      state.customerID = payload;
+    },
+    RESET_CART(state) {
+      state.cart = null;
+      state.productAmount = 0;
+      state.productQuantity = 0;
+      state.shippingCharges = 0;
+      state.savingAmount = 0;
+      state.taxAmount = 0;
+      state.cartTotal = 0;
     }
   },
 
   actions: {
+    cartReset({ commit }) {
+      commit('RESET_CART');
+    },
     addProductToCart({ commit }, payload) {
       commit('ADD_TO_CART', payload);
       commit('UPDATE_TOTALS');
@@ -163,10 +179,22 @@ export default {
       commit('UPDATE_TOTALS');
     },
     updateDeliveryAddress({ commit }, payload) {
+      console.log('updateDeliveryAddress Payload', payload);
       commit('UPDATE_DELIVERY_ADDRESS', payload);
     },
-    updateDefaultDeliveryAddress({ commit }, payload) {
-      commit('UPDATE_DEFAULT_DELIVERY_ADDRESS', payload);
+    updateBillingAddress({ commit }, payload) {
+      console.log('updateBillingAddress Payload', payload);
+      commit('UPDATE_BILLING_ADDRESS', payload);
+    },
+    async updateCustomerId({ commit }, payload) {
+      commit('UPDATE_CUSTOMER_ID', payload);
+    },
+    async findGuestId({ commit }) {
+      let result = await DataService.get(
+        'company_default?where=label like {Guest%20Customer}'
+      );
+      let payload = result.data.rows[0].default_id;
+      commit('UPDATE_CUSTOMER_ID', payload);
     }
   }
 };

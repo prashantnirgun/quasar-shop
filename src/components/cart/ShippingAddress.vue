@@ -98,10 +98,7 @@ export default {
   },
 
   methods: {
-    ...mapActions('cart', [
-      'updateDeliveryAddress',
-      'updateDefaultDeliveryAddress'
-    ]),
+    ...mapActions('cart', ['updateDeliveryAddress', 'updateBillingAddress']),
     editAction() {
       this.$emit('editAddress', { data: this.data, action: 'Edit' });
     },
@@ -113,7 +110,9 @@ export default {
     },
     updateAddressState(value) {
       if (value === true) {
-        this.updateDeliveryAddress(this.data.address_id);
+        console.log('going to update delivery address', this.data);
+        this.updateDeliveryAddress(this.data);
+        //this.updateBillingAddress(this.data);
         //console.log('val method', val);
       }
     }

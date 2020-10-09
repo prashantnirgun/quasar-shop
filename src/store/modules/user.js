@@ -16,6 +16,9 @@ export default {
     },
     token: state => {
       return state.token;
+    },
+    general_ledger_id: state => {
+      return state.user ? state.user.general_ledger_id : 0;
     }
   },
 
@@ -44,6 +47,7 @@ export default {
     },
 
     setUser({ commit }, user) {
+      console.log('inside user/actions');
       commit('SET_USER', user);
     },
 

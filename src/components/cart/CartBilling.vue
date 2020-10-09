@@ -199,7 +199,10 @@
         </q-expansion-item>
       </q-list>
     </div>
-    <guest-user v-if="guest" />
+    <guest-user
+      v-if="guest"
+      @guestValidation="$emit('guestValidation', $event)"
+    />
     <shipping-address-create-update
       :show="show"
       @close="closeModal"
@@ -210,7 +213,7 @@
 <script>
 import DataService from 'src/services/DataService';
 import { isDateValid } from 'src/services/Validation';
-import { mapActions, mapState } from 'vuex';
+import { mapGetters, mapActions, mapState } from 'vuex';
 
 export default {
   // props: ['guestValidation'],
@@ -238,24 +241,31 @@ export default {
   },
   computed: {
     ...mapState(['isUserLoggedIn', 'guestLogin']),
+    ...mapGetters('user', ['general_ledger_id']),
     proceedCart() {
       return this.isUserLoggedIn || this.guest;
     }
   },
   methods: {
+    guestValidation1(payload) {
+      console.log('payload received', payload);
+    },
     ...mapActions('cart', [
       'updateDeliveryAddress',
-      'updateDefaultDeliveryAddress'
+      'updateBillingAddress',
+      'findGuestId',
+      'updateCustomerId'
     ]),
     ...mapActions(['setLoginRequest', 'setGuestLogin']),
 
     loginRequest(method) {
+      let customerId = 0;
       if (method === 'Login') {
         this.setLoginRequest(true);
       } else {
         this.guest = true;
         this.setGuestLogin(true);
-        //this.setGuestValidation(false);
+        this.findGuestId();
       }
     },
     doAction(payload) {
@@ -294,10 +304,17 @@ export default {
         .then(response => {
           this.user = response.data.user.rows[0];
           this.address = response.data.address.rows;
-          const id = this.address.find(obj => obj.is_default === 'Y')
-            .address_id;
-          this.updateDeliveryAddress(id);
-          this.updateDefaultDeliveryAddress(id);
+          const defaultAddress = this.address.find(
+            obj => obj.is_default === 'Y'
+          );
+          this.updateDeliveryAddress({
+            ...defaultAddress,
+            email_id: this.user.email_id
+          });
+          this.updateBillingAddress({
+            ...defaultAddress,
+            email_id: this.user.email_id
+          });
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);
@@ -312,10 +329,17 @@ export default {
   },
   mounted() {
     this.guest = this.guestLogin;
-    console.log('inside mounted', 'isUserLoggedIn', this.isUserLoggedIn);
+    console.log(
+      'inside mounted',
+      'isUserLoggedIn',
+      this.isUserLoggedIn,
+      'general_ledger_id',
+      this.general_ledger_id
+    );
     window.scrollTo(0, 0);
     if (this.isUserLoggedIn) {
       this.getAddress();
+      this.updateCustomerId(this.general_ledger_id);
     } else {
       console.log('not loggedin user dont fetech rows');
     }

@@ -166,7 +166,7 @@
 import device_mixin from 'src/mixins/device_mixin';
 import root from 'src/config/menu.json';
 import { mapState, mapGetters, mapActions } from 'vuex';
-
+import { LocalStorage, SessionStorage } from 'quasar';
 export default {
   mixins: [device_mixin],
   data() {
@@ -204,6 +204,7 @@ export default {
   },
   methods: {
     ...mapActions('user', ['setToken', 'setUser']),
+    ...mapActions('cart', ['updateCustomerId']),
     ...mapActions(['setLoginRequest']),
     close() {
       this.setLoginRequest(false);
@@ -215,10 +216,11 @@ export default {
     logout() {
       this.setToken(null);
       this.setUser(null);
+      this.updateCustomerId(0);
       //this.$store.dispatch('setToken', null);
       //this.$store.dispatch('setUser', null);
       if (this.rememberMe === false) {
-        localStorage.clear();
+        //localStorage.clear();
       } else {
         console.log('storage not cleared', this.rememberMe);
       }
@@ -237,7 +239,6 @@ export default {
 
     //...mapState(['isUserLoggedIn', 'version']),
     siteName() {
-      //console.log('site', `${process.env.SITE_NAME`);
       return process.env.SITE_NAME;
     },
     full_name() {

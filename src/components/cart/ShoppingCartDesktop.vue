@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md">
-    <q-stepper v-model="step" ref="stepper" color="primary" animated>
+    <q-stepper v-model="step" ref="stepper" color="primary" animated keep-alive>
       <q-step
         :name="1"
         title="Shopping Cart"
@@ -27,7 +27,10 @@
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
           <div class="col-8">
-            <cart-billing ref="cartBilling" />
+            <cart-billing
+              ref="cartBilling"
+              @guestValidation="guestValidation = $event"
+            />
           </div>
           <div class="col-4 ">
             <cart-overview />
@@ -39,10 +42,23 @@
         :name="3"
         title="Payment"
         icon="payment"
-        disable
         style="min-height: 200px;"
       >
-        This step won't show up because it is disabled.
+        <div>
+          <q-btn
+            color="primary"
+            label="Cash on Delivery"
+            class="q-ma-lg"
+            @click="getData"
+          />
+
+          <q-btn
+            outline
+            color="primary"
+            label="Payment Gateway"
+            @click="payNow"
+          />
+        </div>
       </q-step>
 
       <q-step
@@ -86,7 +102,7 @@
         </q-banner>
         <q-banner v-else-if="step === 3" class="bg-green-8 text-white q-px-lg">
           <q-icon name="local_shipping" size="lg" />
-          Shipping Information
+          Final Payment
         </q-banner>
         <q-banner v-else class="bg-blue-8 text-white q-px-lg">
           <q-icon name="verified" size="lg" />
@@ -97,7 +113,8 @@
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import DataService from 'src/services/DataService';
+import { mapActions, mapGetters, mapState } from 'vuex';
 export default {
   components: {
     'cart-overview': () => import('./CartOverview'),
@@ -106,14 +123,40 @@ export default {
   },
   data() {
     return {
-      step: 1
+      step: 1,
+      guestValidation: false
     };
   },
   methods: {
+    getData() {
+      console.log('cart data', this.cart);
+    },
+    payNow() {
+      DataService.post('pay', { ...this.cart }).then(response => {
+        console.log('resp', response.data);
+        window.location.href = response.data;
+      });
+    },
+    s(val) {
+      console.log('value final value receied as payload', val);
+    },
     ...mapActions(['setGuestValidationCounter']),
     pageSkip(action) {
       if (action === 'Next') {
-        if (this.step === 2 && this.guestLogin === true) {
+        console.log(
+          'step',
+          this.step,
+          'guestLogin',
+          this.guestLogin,
+          'validation',
+          this.guestValidation,
+          this.guestValidation === false
+        );
+        if (
+          this.step === 2 &&
+          this.guestLogin === true &&
+          this.guestValidation === false
+        ) {
           this.setGuestValidationCounter();
           this.guestValidation ? this.$refs.stepper.next() : null;
         } else {
@@ -125,7 +168,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['guestLogin'])
+    ...mapGetters(['guestLogin']),
+    ...mapState(['cart'])
   }
 };
 </script>

@@ -12,6 +12,7 @@ Vue.use(Vuex);
 const dataState = new createPersistedState({
   paths: ['cart', 'user', 'isUserLoggedIn', 'rememberMe', 'token'],
   storage: {
+    //remember here key is 'vuex'
     getItem: key => LocalStorage.getItem(key),
     setItem: (key, value) => LocalStorage.set(key, value),
     removeItem: key => LocalStorage.remove(key)
