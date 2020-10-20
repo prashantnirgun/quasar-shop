@@ -11,13 +11,20 @@
     <q-input
       dense
       class="q-ma-xs col-12"
-      type="password"
+      :type="isPwdNew ? 'password' : 'text'"
       outlined
       v-model="password"
       label="Password*"
       lazy-rules
       autocomplete="on"
-    ></q-input>
+    >
+      <template v-slot:append>
+        <q-icon
+          :name="isPwdNew ? 'visibility_off' : 'visibility'"
+          @click="isPwdNew = !isPwdNew"
+        />
+      </template>
+    </q-input>
     <q-checkbox
       class="text-grey-8"
       dense
@@ -44,7 +51,8 @@ export default {
       username: null,
       password: null,
       rememberMe: false,
-      value: false
+      value: false,
+      isPwdNew: true
     };
   },
   methods: {

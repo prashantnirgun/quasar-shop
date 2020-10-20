@@ -26,7 +26,7 @@
             size="md"
             flat
             class="full-height"
-            @click="remove"
+            @click="removeFromCart({ product_id: data.product_id })"
           />
         </div>
         <div class="col-6">
@@ -37,11 +37,11 @@
             dense
             outlined
             class="custom-control col-4"
-            @blur="setQuantity"
+            @blur="setQuantity(data, orderQty)"
           >
             <template v-slot:prepend>
               <q-btn
-                @click="decrement"
+                @click="decrement(data, --orderQty)"
                 color="green-6"
                 icon="remove"
                 size="md"
@@ -53,7 +53,7 @@
 
             <template v-slot:append>
               <q-btn
-                @click="increment"
+                @click="increment(data, ++orderQty)"
                 color="green-6"
                 icon="add"
                 size="md"
@@ -69,9 +69,11 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
+//import { mapActions } from 'vuex';
+import cart_mixin from 'src/mixins/cart_mixin';
 export default {
   props: ['data'],
+  mixins: [cart_mixin],
   data() {
     return {
       orderQty: this.data.quantity
@@ -81,46 +83,46 @@ export default {
     //    ...mapGetters('cart', ['findItemByCategory'])
   },
   methods: {
-    ...mapActions('cart', [
-      'addProductToCart',
-      'updateProductQuantity',
-      'removeFromCart'
-    ]),
-    increment() {
-      this.orderQty++;
-      this.setQuantity();
-    },
-    decrement() {
-      this.orderQty--;
-      this.setQuantity();
-    },
-    setQuantity() {
-      //console.log('blur event fire', this.orderQty);
-      this.addProductToCart({
-        product_id: this.data.product_id,
-        category_id: this.data.category_id,
-        product_name: this.data.product_name,
-        category_name: this.data.category_name,
-        rate: this.data.rate,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.rate,
-        mrp: this.data.mrp,
-        image_filename: this.data.image_filename,
-        saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-      });
-    },
-    setProduct() {
-      this.updateProductQuantity({
-        product_id: this.data.product_id,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.rate,
-        saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate,
-        message: false
-      });
-    },
-    remove() {
-      this.removeFromCart({ product_id: this.data.product_id });
-    }
+    // ...mapActions('cart', [
+    //   'addProductToCart',
+    //   'updateProductQuantity',
+    //   'removeFromCart'
+    // ]),
+    // increment() {
+    //   this.orderQty++;
+    //   this.setQuantity();
+    // },
+    // decrement() {
+    //   this.orderQty--;
+    //   this.setQuantity();
+    // },
+    // setQuantity() {
+    //   //console.log('blur event fire', this.orderQty);
+    //   this.addProductToCart({
+    //     product_id: this.data.product_id,
+    //     category_id: this.data.category_id,
+    //     product_name: this.data.product_name,
+    //     category_name: this.data.category_name,
+    //     rate: this.data.rate,
+    //     quantity: this.orderQty,
+    //     amount: this.orderQty * this.data.rate,
+    //     mrp: this.data.mrp,
+    //     image_filename: this.data.image_filename,
+    //     saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate
+    //   });
+    // },
+    // setProduct() {
+    //   this.updateProductQuantity({
+    //     product_id: this.data.product_id,
+    //     quantity: this.orderQty,
+    //     amount: this.orderQty * this.data.rate,
+    //     saving: this.orderQty * this.data.mrp - this.orderQty * this.data.rate,
+    //     message: false
+    //   });
+    // },
+    // remove() {
+    //   this.removeFromCart({ product_id: this.data.product_id });
+    // }
   }
 };
 </script>

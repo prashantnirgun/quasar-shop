@@ -2,7 +2,7 @@
   <q-menu
     transition-show="scale"
     transition-hide="scale"
-    v-if="allItems.length > 0"
+    v-if="allItems && allItems.length > 0"
   >
     <q-list>
       <div v-for="item in allItems" :key="item.product_id">

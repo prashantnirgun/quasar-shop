@@ -19,7 +19,8 @@ export default {
     },
     general_ledger_id: state => {
       return state.user ? state.user.general_ledger_id : 0;
-    }
+    },
+    quotationPartyId: state => (state.user ? state.user.quotation_party_id : 0)
   },
 
   mutations: {

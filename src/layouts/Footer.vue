@@ -34,7 +34,14 @@
         <div class="text-caption hover_underline_white q-mt-sm">
           Payments
         </div>
-        <div class="text-caption hover_underline_white">Shipping</div>
+        <!-- <div class="text-caption hover_underline_white"> -->
+        <router-link
+          to="city"
+          tag="div"
+          class="text-caption hover_underline_white cursor-pointer"
+          >Area of operation</router-link
+        >
+        <!-- </div> -->
         <div class="text-caption hover_underline_white">
           Cancellation & Returns
         </div>

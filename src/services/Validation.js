@@ -1,3 +1,8 @@
+import { date } from 'quasar';
+/*
+//Note : do not use rules in quotes
+<q-input v-model="user.full_name" :rules="[required]" />
+*/
 const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/;
 
 export const emailRule = val =>
@@ -13,6 +18,11 @@ export const positiveDecimal = val =>
 
 export const isNumber = val => Number(val) == val || 'Enter Numeric Value';
 
+export const isPhoneNumber = val => {
+  //console.log('isphone', val, val.length);
+  return (Number(val) == val && val.length >= 10) || 'Enter Numeric Value';
+};
+
 export const isDateValid = v => {
   if (v.length < 10) {
     return 'Invalid Date';
@@ -25,5 +35,6 @@ export const isDateValid = v => {
     .reverse()
     .join('-');
   // console.log('date', Quasar.utils.date.formatDate(standardizedDate, 'MM/DD/YYYY'))
-  return Quasar.utils.date.isValid(standardizedDate) || 'Invalid Date';
+  //return Quasar.utils.date.isValid(standardizedDate) || 'Invalid Date';
+  return date.isValid(standardizedDate) || 'Invalid Date';
 };

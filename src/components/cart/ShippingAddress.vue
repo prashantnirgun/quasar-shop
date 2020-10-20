@@ -1,15 +1,8 @@
 <template>
-  <!-- <div class="q-pa-md row items-start q-gutter-md"> -->
   <q-card class="q-mx-xs shadow-4" flat bordered style="min-height: 200px;">
     <q-card-section>
-      <div align="right">
-        <q-chip
-          dense
-          outline
-          color="orange"
-          icon-right="star"
-          v-if="defaultAddress === data.address_id"
-        >
+      <div align="right" v-if="isDefault">
+        <q-chip dense outline color="orange" icon-right="star">
           Default
         </q-chip>
       </div>
@@ -17,10 +10,6 @@
       <div class="q-px-sm text-weight-bold">
         {{ data.full_name }}
       </div>
-
-      <!-- <div class="q-px-sm text-weight-bold">
-        {{ data.full_name }}
-      </div> -->
 
       <div class="row">
         <div class="q-px-sm">
@@ -52,13 +41,10 @@
         </div>
       </div>
       <div class="row">
-        <!-- <div class="q-px-sm">
-          {{ data.state_id }}
-        </div> -->
-
         <div class="q-px-sm">Phone : {{ data.telephone }}</div>
       </div>
       <div class="row q-mt-sm">
+        {{ deliveryAddressState }}
         <q-toggle
           :value="deliveryAddressState"
           label="Delivery to this Address"
@@ -66,11 +52,6 @@
         />
       </div>
       <div class="row">
-        <!-- <q-btn flat color="primary" size="12px">
-          Delivered to
-          <tooltip>To delivered to this address click here</tooltip>
-        </q-btn> -->
-
         <q-btn flat color="primary" size="12px" @click="editAction"
           >Edit
           <tooltip>Update delivery address click here</tooltip>
@@ -86,7 +67,6 @@
       </div>
     </q-card-section>
   </q-card>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -119,9 +99,19 @@ export default {
   },
   computed: {
     ...mapGetters('cart', ['deliveryAddress', 'defaultAddress']),
+    isDefault() {
+      return this.data.is_default === 'Y' ? true : false;
+    },
     deliveryAddressState() {
-      return this.deliveryAddress === this.data.address_id;
+      console.log('deliveryAddressState', !!this.deliveryAddress);
+      return (
+        !!this.deliveryAddress &&
+        this.deliveryAddress.address_id === this.data.address_id
+      );
     }
+  },
+  mounted() {
+    console.log('address data received', !!this.deliveryAddress);
   }
 };
 </script>

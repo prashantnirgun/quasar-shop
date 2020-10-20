@@ -29,7 +29,7 @@
           <div class="col-8">
             <cart-billing
               ref="cartBilling"
-              @guestValidation="guestValidation = $event"
+              @addressValidation="addressValidation = $event"
             />
           </div>
           <div class="col-4 ">
@@ -49,14 +49,14 @@
             color="primary"
             label="Cash on Delivery"
             class="q-ma-lg"
-            @click="getData"
+            @click="payNow('CASH ON DELIVERY')"
           />
 
           <q-btn
             outline
             color="primary"
             label="Payment Gateway"
-            @click="payNow"
+            @click="payNow('PREPAID')"
           />
         </div>
       </q-step>
@@ -76,6 +76,7 @@
       <template v-slot:navigation>
         <q-stepper-navigation>
           <q-btn
+            :disable="validation"
             @click="pageSkip('Next')"
             color="primary"
             :label="step === 3 ? 'Finish' : 'Continue'"
@@ -121,18 +122,37 @@ export default {
     'cart-list': () => import('./CartList'),
     'cart-billing': () => import('./CartBilling')
   },
+  watch: {
+    deliveryAddressStatus(newVal) {
+      console.log(
+        'controlling behaviour',
+        newVal,
+        newVal == false,
+        newVal == true
+      );
+      if (this.step === 2 && newVal == false) {
+        this.validation = true;
+      } else {
+        this.validation = false;
+      }
+    }
+  },
   data() {
     return {
       step: 1,
-      guestValidation: false
+      addressValidation: false,
+      validation: false
     };
   },
   methods: {
-    getData() {
-      console.log('cart data', this.cart);
-    },
-    payNow() {
-      DataService.post('pay', { ...this.cart }).then(response => {
+    ...mapActions(['setAddressValidationCounter']),
+    ...mapActions('cart', ['updateBillType']),
+    payNow(paymentMode) {
+      const mode = paymentMode === 'PREPAID' ? 'PR' : 'CD';
+      this.updateBillType(mode);
+
+      //DataService.post('pay', { ...this.cart }).then(response => {
+      DataService.post('payment', { ...this.cart }).then(response => {
         console.log('resp', response.data);
         window.location.href = response.data;
       });
@@ -140,35 +160,44 @@ export default {
     s(val) {
       console.log('value final value receied as payload', val);
     },
-    ...mapActions(['setGuestValidationCounter']),
+
     pageSkip(action) {
       if (action === 'Next') {
-        console.log(
-          'step',
-          this.step,
-          'guestLogin',
-          this.guestLogin,
-          'validation',
-          this.guestValidation,
-          this.guestValidation === false
-        );
+        switch (this.step) {
+          case 2:
+            this.addressValidation
+              ? this.$refs.stepper.next()
+              : this.setAddressValidationCounter();
+            console.log('inside', this.step, this.addressValidation);
+            break;
+          default:
+            this.$refs.stepper.next();
+            break;
+        }
+        /*
         if (
           this.step === 2 &&
           this.guestLogin === true &&
-          this.guestValidation === false
+          this.addressValidation === false
         ) {
-          this.setGuestValidationCounter();
-          this.guestValidation ? this.$refs.stepper.next() : null;
+          this.setAddressValidationCounter();
+          this.addressValidation ? this.$refs.stepper.next() : null;
         } else {
-          this.$refs.stepper.next();
+          this.setAddressValidationCounter();
+          console.log('here step ', this.step, ' and login');
+          //this.$refs.stepper.next();
+          this.addressValidation ? this.$refs.stepper.next() : null;
         }
       } else {
         this.$refs.stepper.previous();
+      }
+      */
       }
     }
   },
   computed: {
     ...mapGetters(['guestLogin']),
+    ...mapGetters('cart', ['deliveryAddressStatus']),
     ...mapState(['cart'])
   }
 };

@@ -37,6 +37,9 @@ export default ({ store, commit, dispatch, app, router, Vue, Vuex }) => {
         console.log('inside router', router);
         console.log('inside Vue', Vue);
         store.dispatch('user/setUser', null);
+        store.dispatch('user/setToken', null);
+        //token is handling isUserLoggedIn
+        //store.dispatch('setisUserLoggedIn', false);
 
         //this.setUser(null);
         //router.push(’/login’)

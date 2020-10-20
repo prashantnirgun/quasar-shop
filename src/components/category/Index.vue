@@ -171,6 +171,7 @@
 <script>
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
+import { mapGetters } from 'vuex';
 
 export default {
   mixins: [device_mixin],
@@ -271,6 +272,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters('user', ['quotationPartyId']),
     selectedOffers() {
       return this.offers.filter(obj => obj.apply === true);
     },
@@ -477,7 +479,10 @@ export default {
     const category_slug = this.$route.params.category_slug;
 
     this.horizontal = !!this.isMobile;
-    DataService.get(`category/${category_slug}`)
+    DataService.get(
+      `category/${category_slug}?quotation_party_id=${this.quotationPartyId}`
+    )
+      //DataService.get(`guest`)
       .then(response => {
         this.loading = false;
         //console.log('raw data', JSON.parse(JSON.stringify(response.data.rows)));

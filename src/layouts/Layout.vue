@@ -97,7 +97,7 @@
                 </q-item-section>
               </q-item>
 
-              <q-item dense clickable to="profile">
+              <q-item dense clickable to="orders">
                 <q-item-section>Order History</q-item-section>
                 <q-item-section avatar class="text-purple">
                   <q-icon name="card_giftcard" size="md" />

@@ -115,7 +115,7 @@
                 color="green-6"
                 icon="shopping_cart"
                 label="Add to cart"
-                @click="increment"
+                @click="increment(data, ++orderQty)"
               />
 
               <q-input
@@ -126,11 +126,11 @@
                 dense
                 outlined
                 class="custom-control q-mt-md"
-                @blur="setQuantity"
+                @blur="setQuantity(data, orderQty)"
               >
                 <template v-slot:prepend>
                   <q-btn
-                    @click="decrement"
+                    @click="decrement(data, --orderQty)"
                     color="green-6"
                     icon="remove"
                     size="md"
@@ -142,7 +142,7 @@
 
                 <template v-slot:append>
                   <q-btn
-                    @click="increment"
+                    @click="increment(data, ++orderQty)"
                     color="green-6"
                     icon="add"
                     size="md"
@@ -166,12 +166,13 @@
             class="col-lg-5 col-md-5 col-sm-12 col-xs-12 q-mt-md q-pt-xs q-pl-lg"
           >
             <div class="text-subtitle2">Customer rating</div>
-            <div class="text-h3">{{ data.rating }}</div>
+            <div class="text-h3">
+              {{ data.rating }}
+            </div>
             <div>
               <!-- todo : please remove the warning -->
               <q-rating
-                v-model="data.rating"
-                :value="data.rating"
+                v-model.number="data.rating"
                 max="5"
                 size="2em"
                 color="orange"
@@ -540,13 +541,14 @@
 <script>
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
+import cart_mixin from 'src/mixins/cart_mixin';
 import { date } from 'quasar';
 let timeStamp = Date.now();
-import { mapActions, mapState, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'details.vue',
-  mixins: [device_mixin],
+  mixins: [cart_mixin, device_mixin],
   data() {
     return {
       slide: 1,
@@ -576,63 +578,66 @@ export default {
       let newDate = date.addToDate(new Date(), { days: 2 });
       return date.formatDate(newDate, 'ddd, MMM D ');
     },
-    ...mapState(['cart']),
-    ...mapGetters('cart', ['findItem']),
+    //...mapState(['cart']),
+    ...mapGetters('cart', ['findItemInCart']),
     getSize() {
       console.log(this.isDesktop);
       return this.isDesktop ? '510px' : '360px';
     }
   },
   methods: {
-    setQuantity() {
-      this.updateProductQuantity({
-        product_id: this.data.product_id,
-        category_id: this.data.category_id,
-        product_name: this.data.product_name,
-        category_name: this.data.category_name,
-        rate: this.data.sale_rate,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
-        mrp: this.data.mrp,
-        image_filename: this.data.image_filename,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
-      });
-    },
-    ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
-    increment() {
-      this.orderQty++;
-      //message is showing add even in decrement so keept it sepratee
-      //this.setQuantity();
-      this.addProductToCart({
-        product_id: this.data.product_id,
-        category_id: this.data.category_id,
-        product_name: this.data.product_name,
-        category_name: this.data.category_name,
-        rate: this.data.sale_rate,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
-        mrp: this.data.mrp,
-        image_filename: this.data.image_filename,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
-      });
-    },
-    decrement() {
-      this.orderQty--;
-      //message is showing add even in decrement so keept it sepratee
-      //this.setQuantity();
-
-      this.updateProductQuantity({
-        product_id: this.data.product_id,
-        product_name: this.data.product_name,
-        quantity: this.orderQty,
-        amount: this.orderQty * this.data.sale_rate,
-        saving:
-          this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
-        message: false
-      });
-    }
+    // add() {
+    //   this.orderQty++;
+    //   this.increment(this.data);
+    // }
+    // setQuantity() {
+    //   this.updateProductQuantity({
+    //     product_id: this.data.product_id,
+    //     category_id: this.data.category_id,
+    //     product_name: this.data.product_name,
+    //     category_name: this.data.category_name,
+    //     rate: this.data.sale_rate,
+    //     quantity: this.orderQty,
+    //     amount: this.orderQty * this.data.sale_rate,
+    //     mrp: this.data.mrp,
+    //     image_filename: this.data.image_filename,
+    //     saving:
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+    //   });
+    // },
+    // ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
+    // increment() {
+    //   this.orderQty++;
+    //   //message is showing add even in decrement so keept it sepratee
+    //   //this.setQuantity();
+    //   this.addProductToCart({
+    //     product_id: this.data.product_id,
+    //     category_id: this.data.category_id,
+    //     product_name: this.data.product_name,
+    //     category_name: this.data.category_name,
+    //     rate: this.data.sale_rate,
+    //     quantity: this.orderQty,
+    //     amount: this.orderQty * this.data.sale_rate,
+    //     mrp: this.data.mrp,
+    //     image_filename: this.data.image_filename,
+    //     saving:
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+    //   });
+    // },
+    // decrement() {
+    //   this.orderQty--;
+    //   //message is showing add even in decrement so keept it sepratee
+    //   //this.setQuantity();
+    //   this.updateProductQuantity({
+    //     product_id: this.data.product_id,
+    //     product_name: this.data.product_name,
+    //     quantity: this.orderQty,
+    //     amount: this.orderQty * this.data.sale_rate,
+    //     saving:
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+    //     message: false
+    //   });
+    // }
   },
   mounted() {
     const slug = this.$route.params.slug;
@@ -641,8 +646,8 @@ export default {
     DataService.get(`product/${slug}`)
       .then(response => {
         this.data = response.data.rows[0];
-
-        let cartItem = this.findItem(this.data.product_id);
+        this.rating_point = parse.Float(response.data.rows[0].rating);
+        let cartItem = this.findItemInCart(this.data.product_id);
         if (cartItem) {
           this.orderQty = cartItem.quantity;
         } else {

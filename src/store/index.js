@@ -27,9 +27,9 @@ const Store = new Vuex.Store({
     isUserLoggedIn: false,
     version: '0.0.2',
     loginPrompt: false,
-    guestValidation: true,
+    addressValidation: true,
     guestLogin: false,
-    guestValidationCounter: 0
+    addressValidationCounter: 0
   },
   modules: {
     cart,
@@ -43,13 +43,16 @@ const Store = new Vuex.Store({
       state.loginPrompt = action;
     },
     GUEST_VALIDATION(state, action) {
-      state.guestValidation = action;
+      state.addressValidation = action;
     },
     GUEST_LOGIN(state, action) {
       state.guestLogin = action;
     },
-    GUEST_VALIDATION_COUNTER(state, action) {
-      state.guestValidationCounter++;
+    ADDRESS_VALIDATION_COUNTER(state, action) {
+      state.addressValidationCounter++;
+    },
+    IS_USER_LOGGED_IN(steate, action) {
+      state.isUserLoggedIn = action;
     }
   },
   actions: {
@@ -62,11 +65,14 @@ const Store = new Vuex.Store({
     setGuestLogin({ commit }, action) {
       commit('GUEST_LOGIN', action);
     },
-    setGuestValidation({ commit }, action) {
-      commit('GUEST_VALIDATION', action);
+    setAddressValidation({ commit }, action) {
+      commit('ADDRESS_VALIDATION', action);
     },
-    setGuestValidationCounter({ commit }) {
-      commit('GUEST_VALIDATION_COUNTER');
+    setAddressValidationCounter({ commit }) {
+      commit('ADDRESS_VALIDATION_COUNTER');
+    },
+    setisUserLoggedIn({ commit }) {
+      commit('IS_USER_LOGGED_IN');
     }
   },
   getters: {
@@ -75,8 +81,8 @@ const Store = new Vuex.Store({
     },
     loginPrompt: state => state.loginPrompt,
     guestLogin: state => state.guestLogin,
-    guestValidation: state => state.guestValidation,
-    guestValidationCounter: state => state.guestValidationCounter
+    addressValidation: state => state.addressValidation,
+    addressValidationCounter: state => state.addressValidationCounter
   },
   // enable strict mode (adds overhead!)
   // for dev mode only

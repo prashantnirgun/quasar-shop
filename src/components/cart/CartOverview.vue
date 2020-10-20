@@ -21,10 +21,10 @@
 
         <q-item>
           <q-item-section>
-            <q-item-label>Tax Amount </q-item-label>
+            <q-item-label>GST Amount </q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-item-label>{{ cartsummary.taxAmount | currency }} </q-item-label>
+            <q-item-label>{{ gstAmount | currency }} </q-item-label>
           </q-item-section>
         </q-item>
 
@@ -33,9 +33,7 @@
             <q-item-label>Delivery Charges </q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-item-label
-              >{{ cartsummary.shippingCharges | currency }}
-            </q-item-label>
+            <q-item-label>{{ deliveryCharges | currency }} </q-item-label>
           </q-item-section>
         </q-item>
         <q-separator />
@@ -70,7 +68,17 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters('cart', ['cartsummary'])
+    ...mapGetters('cart', ['cartsummary']),
+    gstAmount() {
+      return this.cartsummary.taxes.find(tax => tax.name === 'GST').tax_amount;
+    },
+    deliveryCharges() {
+      const amount = this.cartsummary.taxes.find(
+        tax => tax.name === 'Delivery Charges'
+      );
+      return amount ? amount.tax_amount : 0;
+      pp0;
+    }
   },
   mounted() {
     console.log('summary', this.cartsummary);

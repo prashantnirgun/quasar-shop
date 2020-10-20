@@ -114,11 +114,12 @@
 import { required } from 'src/services/Validation';
 import DataService from 'src/services/DataService';
 import form_mixin from 'src/mixins/form_mixin';
+import common_mixin from 'src/mixins/common_mixin';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  //  props: ['guestValidation'],
-  mixins: [form_mixin],
+  //  props: ['addressValidation'],
+  mixins: [form_mixin, common_mixin],
   data() {
     return {
       form: 'form_guest',
@@ -139,7 +140,7 @@ export default {
     };
   },
   watch: {
-    guestValidationCounter(newVal, oldVal) {
+    addressValidationCounter(newVal, oldVal) {
       //console.log('going to call validation', newVal);
       if (newVal) {
         this.onSubmit();
@@ -150,23 +151,61 @@ export default {
     ...mapActions('cart', ['updateDeliveryAddress', 'updateBillingAddress']),
     required,
     async onSubmit() {
+      // console.log('pincode is', this.user.pincode);
+      // const result = await DataService.get(
+      //   `verify-pincode?pincode=${this.user.pincode}`
+      // );
+      // console.log('pincode status', result);
+      this.$q.loading.show();
       const ans = await this.validateForm();
       let payload = { action: false };
       if (ans) {
+        const result = await DataService.get(
+          `verify-pincode?pincode=${this.user.pincode}`
+        );
+        console.log('pincode status', result.data.rows[0]);
         console.log('validation successfull going to emit', payload);
-        this.updateDeliveryAddress(this.user);
-        this.updateBillingAddress(this.user);
-        this.$emit('guestValidation', true);
+        if (
+          result.data.total_rows > 0 &&
+          result.data.rows[0].status === 'Open'
+        ) {
+          this.user.status = result.data.rows[0].status;
+          this.user.delivery_charges_type =
+            result.data.rows[0].delivery_charges_type;
+          this.user.delivery_charges = result.data.rows[0].delivery_charges;
+
+          this.updateDeliveryAddress(this.user);
+          this.updateBillingAddress(this.user);
+          this.$emit('addressValidation', true);
+        } else {
+          this.$q.notify({
+            type: 'warning',
+            icon: 'no_transfer',
+            color: 'primary',
+            message:
+              'Sorry we are not delivering to this pincode choose different city.',
+            actions: [
+              {
+                label: 'Area of Operation',
+                color: 'white',
+                handler: () => {
+                  this.$router.push('city');
+                }
+              }
+            ]
+          });
+        }
       } else {
-        this.$emit('guestValidation', false);
+        this.$emit('addressValidation', false);
       }
+      this.$q.loading.hide();
     }
   },
   computed: {
-    ...mapGetters(['guestValidationCounter'])
+    ...mapGetters(['addressValidationCounter'])
   },
   mounted() {
-    console.log('mounted guestValidation', this.guestValidation);
+    console.log('mounted addressValidation', this.addressValidation);
   }
 };
 </script>

@@ -4,13 +4,29 @@ const routes = [
     component: () => import('layouts/Layout.vue'),
     children: [
       {
+        name: 'test',
+        path: '/test',
+        component: () => import('pages/Test.vue')
+      },
+      {
         name: 'home',
         path: '/',
         component: () => import('components/home/Index.vue')
       },
       {
-        path: '/customer_management',
-        component: () => import('pages/customer_management.vue')
+        path: '/confirmation',
+        name: 'confirmation',
+        component: () => import('pages/Confirmation.vue')
+      },
+      {
+        path: '/orders',
+        name: 'orders',
+        component: () => import('pages/Orders.vue')
+      },
+      {
+        path: '/city',
+        name: 'city',
+        component: () => import('pages/City.vue')
       },
       {
         path: '/change_request',
