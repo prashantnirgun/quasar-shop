@@ -82,7 +82,7 @@
                   </q-item-label>
 
                   <q-item-label class="text-green-6"
-                    >{{ row.sale_rate | currency
+                    >{{ row.rate | currency
                     }}<span
                       class="q-ml-sm text-black"
                       style="text-decoration: line-through"

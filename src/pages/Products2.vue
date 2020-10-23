@@ -211,7 +211,7 @@
                 </div>
                 <div class="col-3 text-green text-bold">Our Price</div>
                 <div class="col-3 text-right text-green text-bold q-pr-sm">
-                  {{ props.row.sale_rate }}
+                  {{ props.row.rate }}
                 </div>
               </div>
               <div :class="[!horizontal ? 'hidden' : 'row']">

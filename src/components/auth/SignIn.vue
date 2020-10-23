@@ -58,6 +58,7 @@ export default {
   methods: {
     ...mapActions('user', ['setToken', 'setUser']),
     ...mapActions(['setRememberMe']),
+    ...mapActions('cart', ['updateCustomerId']),
     login() {
       this.$q.loading.show();
       //request to server
@@ -74,6 +75,7 @@ export default {
           setAxiosHeaders(response.data.token);
           this.setToken(response.data.token);
           this.setUser(response.data.user);
+          this.updateCustomerId(response.data.user.general_ledger_id);
           this.setRememberMe(this.rememberMe);
           this.$emit('close');
         } else {

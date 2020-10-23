@@ -61,7 +61,7 @@
 
           <div class="col-2 text-green-6 text-bold float-rigth">Price</div>
           <div class="col-4 text-right text-green-6 text-bold q-pr-sm">
-            {{ data.sale_rate | currency }}
+            {{ data.rate | currency }}
           </div>
         </div>
         <div :class="[!horizontal ? 'hidden' : 'row']">
@@ -77,8 +77,8 @@
           <div class="col-4 text-right text-red q-pr-sm">
             {{
               orderQty > 0
-                ? data.mrp * orderQty - data.sale_rate * orderQty
-                : (data.mrp - data.sale_rate) | currency
+                ? data.mrp * orderQty - data.rate * orderQty
+                : (data.mrp - data.rate) | currency
             }}
           </div>
         </div>
@@ -92,7 +92,7 @@
             Our Price
           </div>
           <div class="text-green-6 text-h7 text-bold  text-center">
-            {{ data.sale_rate | currency }}
+            {{ data.rate | currency }}
           </div>
         </div>
         <div class="col-4">
@@ -106,8 +106,8 @@
           <div class="text-h7 text-red text-center">
             {{
               orderQty > 0
-                ? data.mrp * orderQty - data.sale_rate * orderQty
-                : (data.mrp - data.sale_rate) | currency
+                ? data.mrp * orderQty - data.rate * orderQty
+                : (data.mrp - data.rate) | currency
             }}
           </div>
         </div>
@@ -217,7 +217,7 @@ export default {
     //   console.log(
     //     'amount',
     //     this.data,
-    //     this.removeGST(d.quantity * d.sale_rate, this.data.gst_rate)
+    //     this.removeGST(d.quantity * d.rate, this.data.gst_rate)
     //   );
     // }
     // ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
@@ -227,14 +227,14 @@ export default {
     //     category_id: this.data.category_id,
     //     product_name: this.data.product_name,
     //     category_name: this.data.category_name,
-    //     rate: this.data.sale_rate,
+    //     rate: this.data.rate,
     //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.sale_rate,
+    //     amount: this.orderQty * this.data.rate,
     //     gst_rate: this.data.gst_rate,
     //     mrp: this.data.mrp,
     //     image_filename: this.data.image_filename,
     //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
     //   });
     // },
     // increment() {
@@ -246,14 +246,14 @@ export default {
     //     category_id: this.data.category_id,
     //     product_name: this.data.product_name,
     //     category_name: this.data.category_name,
-    //     rate: this.data.sale_rate,
+    //     rate: this.data.rate,
     //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.sale_rate,
+    //     amount: this.orderQty * this.data.rate,
     //     gst_rate: this.data.gst_rate,
     //     mrp: this.data.mrp,
     //     image_filename: this.data.image_filename,
     //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
     //   });
     // },
     // decrement() {
@@ -264,9 +264,9 @@ export default {
     //     product_id: this.data.product_id,
     //     product_name: this.data.product_name,
     //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.sale_rate,
+    //     amount: this.orderQty * this.data.rate,
     //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate,
     //     message: false
     //   });
     // }

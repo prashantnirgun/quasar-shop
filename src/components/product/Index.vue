@@ -56,7 +56,7 @@
               <div class="text-caption text-green-8 text-weight-bolder q-mt-sm">
                 Special Price
               </div>
-              <span class="text-h6">{{ data.sale_rate | currency }}</span
+              <span class="text-h6">{{ data.rate | currency }}</span
               ><span
                 class="q-ml-sm text-subtitle1"
                 style="text-decoration: line-through"
@@ -65,8 +65,8 @@
               <span class="q-ml-md text-subtitle1 text-red q-mt-md"
                 >{{
                   orderQty > 0
-                    ? data.mrp * orderQty - data.sale_rate * orderQty
-                    : (data.mrp - data.sale_rate) | currency
+                    ? data.mrp * orderQty - data.rate * orderQty
+                    : (data.mrp - data.rate) | currency
                 }}
                 Saving</span
               >
@@ -564,6 +564,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters('user', ['quotationPartyId']),
     win_width() {
       return this.$q.screen.width - 59;
     },
@@ -596,13 +597,13 @@ export default {
     //     category_id: this.data.category_id,
     //     product_name: this.data.product_name,
     //     category_name: this.data.category_name,
-    //     rate: this.data.sale_rate,
+    //     rate: this.data.rate,
     //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.sale_rate,
+    //     amount: this.orderQty * this.data.rate,
     //     mrp: this.data.mrp,
     //     image_filename: this.data.image_filename,
     //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
     //   });
     // },
     // ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
@@ -615,13 +616,13 @@ export default {
     //     category_id: this.data.category_id,
     //     product_name: this.data.product_name,
     //     category_name: this.data.category_name,
-    //     rate: this.data.sale_rate,
+    //     rate: this.data.rate,
     //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.sale_rate,
+    //     amount: this.orderQty * this.data.rate,
     //     mrp: this.data.mrp,
     //     image_filename: this.data.image_filename,
     //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
     //   });
     // },
     // decrement() {
@@ -632,9 +633,9 @@ export default {
     //     product_id: this.data.product_id,
     //     product_name: this.data.product_name,
     //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.sale_rate,
+    //     amount: this.orderQty * this.data.rate,
     //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.sale_rate,
+    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate,
     //     message: false
     //   });
     // }
@@ -643,11 +644,15 @@ export default {
     const slug = this.$route.params.slug;
     //console.time('Timer name');
     //DataService.get('data/product.json')
-    DataService.get(`product/${slug}`)
+    DataService.get(
+      `product/${slug}?quotation_party_id=${this.quotationPartyId}`
+    )
       .then(response => {
         this.data = response.data.rows[0];
-        this.rating_point = parse.Float(response.data.rows[0].rating);
+        //this.rating_point = parse.Float(response.data.rows[0].rating);
+        this.rating_point = response.data.rows[0].rating;
         let cartItem = this.findItemInCart(this.data.product_id);
+        console.log('cart found', cartItem);
         if (cartItem) {
           this.orderQty = cartItem.quantity;
         } else {

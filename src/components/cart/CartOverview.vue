@@ -70,18 +70,18 @@ export default {
   computed: {
     ...mapGetters('cart', ['cartsummary']),
     gstAmount() {
-      return this.cartsummary.taxes.find(tax => tax.name === 'GST').tax_amount;
+      const tax = this.cartsummary.taxes.find(tax => tax.name === 'GST');
+      return !!tax ? tax.tax_amount : 0;
     },
     deliveryCharges() {
       const amount = this.cartsummary.taxes.find(
         tax => tax.name === 'Delivery Charges'
       );
       return amount ? amount.tax_amount : 0;
-      pp0;
     }
   },
   mounted() {
-    console.log('summary', this.cartsummary);
+    //console.log('summary', this.cartsummary);
   }
 };
 </script>

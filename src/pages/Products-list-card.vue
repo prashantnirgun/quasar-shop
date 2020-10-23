@@ -63,7 +63,7 @@
                   <div>
                     Our Price&nbsp;&nbsp;
                   </div>
-                  <span>₹{{ props.row.sale_rate }}</span>
+                  <span>₹{{ props.row.rate }}</span>
                 </q-item>
                 <q-item class="text-h6 text-orange-6 text-weight-bolder">
                   <div>
@@ -91,7 +91,7 @@
               <div class="text-caption text-green-8 text-weight-bolder">
                 Special Price
               </div>
-              <span class="text-h6">₹{{ props.row.sale_rate }}</span
+              <span class="text-h6">₹{{ props.row.rate }}</span
               ><span
                 class="q-ml-sm text-grey-6"
                 style="text-decoration: line-through"

@@ -1,9 +1,8 @@
 import DataService from 'src/services/DataService';
 import { Notify } from 'quasar';
 
-export default {
-  namespaced: true,
-  state: {
+const getDefaultState = () => {
+  return {
     cart: [],
     billType: 'PR',
     productAmount: 0,
@@ -12,11 +11,16 @@ export default {
     savingAmount: 0,
     taxAmount: 0,
     cartTotal: 0,
-    deliveryAddress: null,
-    billingAddress: null,
+    deliveryAddress: {},
+    billingAddress: {},
     customerID: 0,
     taxes: [] //{name : 'xx' , tax_amount : 0}
-  },
+  };
+};
+
+export default {
+  namespaced: true,
+  state: getDefaultState(),
 
   getters: {
     cartCount: state => {
@@ -92,7 +96,7 @@ export default {
       if (state.deliveryAddress && state.deliveryAddress.status === 'Open') {
         if (state.deliveryAddress.delivery_charges_type === 'F') {
           let found = state.taxes.find(tax => tax.name === 'Delivery Charges');
-          console.log('value of found', found, found ? 'True' : 'False');
+          //console.log('value of found', found, found ? 'True' : 'False');
           found
             ? (found.tax_amount = state.deliveryAddress.delivery_charges)
             : state.taxes.push({
@@ -124,9 +128,10 @@ export default {
     },
 
     REMOVE_FROM_CART(state, payload) {
-      let index = state.cart.find(
+      let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
+      //console.log('remove_from_cart', payload, index);
       let name = state.cart[index].product_name;
       if (index != -1) {
         state.cart.splice(index, 1);
@@ -143,9 +148,10 @@ export default {
     },
 
     UPDATE_PRODUCT_QUANTITY(state, payload) {
-      let index = state.cart.findItemInCart(
+      let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
+      console.log('update_product_quantity', payload, index);
       if (payload.quantity > 0) {
         state.cart[index].quantity = payload.quantity;
         state.cart[index].amount = payload.amount;
@@ -195,12 +201,12 @@ export default {
       });
 
       //Delivery charges calculation
-      if (state.deliveryAddress) {
+      if (state.deliveryAddress && state.deliveryAddress.delivery_charges > 0) {
         if (state.deliveryAddress.delivery_charges_type === 'F') {
           deliveryCharges = state.deliveryAddress.delivery_charges;
         } else {
           deliveryCharges =
-            state.deliveryAddress.delivery_charges * productQuantity;
+            state.deliveryAddress.delivery_charges * state.productQuantity;
         }
       }
       //GST is all inclusing so add only delviery charges
@@ -232,9 +238,15 @@ export default {
       }
     },
     UPDATE_BILLING_ADDRESS(state, payload) {
-      Object.keys(payload).map(
-        key => (state.billingAddress[key] = payload[key])
+      console.log(
+        'update_billing_address payload is',
+        payload,
+        !!state.billingAddress
       );
+      Object.keys(payload).map(key => {
+        console.log('key', key, state, payload[key]);
+        state.billingAddress[key] = payload[key];
+      });
     },
     UPDATE_CUSTOMER_ID(state, payload) {
       state.customerID = payload;
@@ -251,6 +263,11 @@ export default {
       state.taxAmount = 0;
       state.cartTotal = 0;
       state.taxes = null;
+    },
+    RESET_STATE(state) {
+      // Merge rather than replace so we don't lose observers
+      // https://github.com/vuejs/vuex/issues/1118
+      Object.assign(state, getDefaultState());
     }
   },
 
@@ -291,6 +308,9 @@ export default {
     },
     async updateBillType({ commit }, payload) {
       commit('UPDATE_BILL_TYPE', payload);
+    },
+    resetCartState({ commit }) {
+      commit('RESET_STATE');
     }
   }
 };

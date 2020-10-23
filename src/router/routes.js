@@ -14,11 +14,6 @@ const routes = [
         component: () => import('components/home/Index.vue')
       },
       {
-        path: '/confirmation',
-        name: 'confirmation',
-        component: () => import('pages/Confirmation.vue')
-      },
-      {
         path: '/orders',
         name: 'orders',
         component: () => import('pages/Orders.vue')
@@ -53,13 +48,19 @@ const routes = [
       },
       {
         name: 'shopping-cart',
-        path: '/shopping-cart',
+        path: '/shopping-cart/:stage?',
+        props: true,
         component: () => import('components/cart/ShoppingCart.vue')
       },
       {
         name: 'device',
         path: '/device',
         component: () => import('pages/Device.vue')
+      },
+      {
+        name: 'kill',
+        path: '/kill',
+        component: () => import('pages/Kill.vue')
       }
       // {
       //   path: '/dashboard',

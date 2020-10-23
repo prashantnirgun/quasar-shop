@@ -74,10 +74,10 @@
                     color="blue"
                     label="Price Low to High"
                     v-model="selection"
-                    val="sale_rate"
+                    val="rate"
                     checked-icon="check"
                     unchecked-icon="clear"
-                    @input="applySort('sale_rate')"
+                    @input="applySort('rate')"
                   />
                 </q-item-section>
               </q-item>
@@ -89,10 +89,10 @@
                     color="blue"
                     label="Price High to Low"
                     v-model="selection"
-                    val="sale_rate desc"
+                    val="rate desc"
                     checked-icon="check"
                     unchecked-icon="clear"
-                    @input="applySort('sale_rate desc')"
+                    @input="applySort('rate desc')"
                   />
                 </q-item-section>
               </q-item>
@@ -306,8 +306,8 @@ export default {
         if (payload.rates.length > 0) {
           rate_filter = payload.rates.find(
             obj =>
-              parseFloat(item.sale_rate) >= parseFloat(obj.min) &&
-              parseFloat(item.sale_rate) <= parseFloat(obj.max)
+              parseFloat(item.rate) >= parseFloat(obj.min) &&
+              parseFloat(item.rate) <= parseFloat(obj.max)
           );
         } else {
           rate_filter = true;
@@ -349,15 +349,11 @@ export default {
       let data = [];
       //console.log('sort', value, lists);
       switch (value) {
-        case 'sale_rate':
-          data = lists.sort(
-            (a, b) => parseFloat(a.sale_rate) - parseFloat(b.sale_rate)
-          );
+        case 'rate':
+          data = lists.sort((a, b) => parseFloat(a.rate) - parseFloat(b.rate));
           break;
-        case 'sale_rate desc':
-          data = lists.sort(
-            (a, b) => parseFloat(b.sale_rate) - parseFloat(a.sale_rate)
-          );
+        case 'rate desc':
+          data = lists.sort((a, b) => parseFloat(b.rate) - parseFloat(a.rate));
           break;
         case 'saving':
           data = lists.sort(
@@ -499,7 +495,7 @@ export default {
           }
 
           let a = this.price_range.find(el => {
-            if (data.sale_rate >= el.min && data.sale_rate <= el.max) {
+            if (data.rate >= el.min && data.rate <= el.max) {
               el.counter++;
               el.apply = false;
               el.disable = false;

@@ -14,13 +14,13 @@ export default {
       //   category_id: data.category_id,
       //   product_name: data.product_name,
       //   category_name: data.category_name,
-      //   rate: data.sale_rate,
+      //   rate: data.rate,
       //   quantity: quanatity,
-      //   amount: quanatity * data.sale_rate,
+      //   amount: quanatity * data.rate,
       //   gst_rate: data.gst_rate,
       //   mrp: data.mrp,
       //   image_filename: data.image_filename,
-      //   saving: quanatity * data.mrp - quanatity * data.sale_rate
+      //   saving: quanatity * data.mrp - quanatity * data.rate
       // });
     },
     increment(data, quantity) {
@@ -30,14 +30,14 @@ export default {
       //   category_id: data.category_id,
       //   product_name: data.product_name,
       //   category_name: data.category_name,
-      //   rate: data.sale_rate,
+      //   rate: data.rate,
       //   quantity,
-      //   amount: quantity * data.sale_rate,
-      //   baseAmount: this.removeGST(quantity * data.sale_rate, data.gst_rate),
+      //   amount: quantity * data.rate,
+      //   baseAmount: this.removeGST(quantity * data.rate, data.gst_rate),
       //   gst_rate: data.gst_rate,
       //   mrp: data.mrp,
       //   image_filename: data.image_filename,
-      //   saving: quantity * data.mrp - quantity * data.sale_rate
+      //   saving: quantity * data.mrp - quantity * data.rate
       // });
     },
     decrement(data, quantity) {
@@ -46,8 +46,8 @@ export default {
       //   product_id: data.product_id,
       //   product_name: data.product_name,
       //   quantity,
-      //   amount: quantity * data.sale_rate,
-      //   saving: quantity * data.mrp - quantity * data.sale_rate,
+      //   amount: quantity * data.rate,
+      //   saving: quantity * data.mrp - quantity * data.rate,
       //   message: false
       // });
     },
@@ -60,19 +60,20 @@ export default {
       }
     },
     extractData(data, quantity) {
+      console.log('extactData', data);
       return {
         product_id: data.product_id,
         category_id: data.category_id,
         product_name: data.product_name,
         category_name: data.category_name,
-        rate: data.sale_rate,
+        rate: data.rate,
         quantity,
-        amount: quantity * data.sale_rate,
-        baseAmount: this.removeGST(quantity * data.sale_rate, data.gst_rate),
+        amount: quantity * data.rate,
+        baseAmount: this.removeGST(quantity * data.rate, data.gst_rate),
         gst_rate: data.gst_rate,
         mrp: data.mrp,
         image_filename: data.image_filename,
-        saving: quantity * data.mrp - quantity * data.sale_rate
+        saving: quantity * data.mrp - quantity * data.rate
       };
     }
   }

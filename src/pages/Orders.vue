@@ -61,28 +61,14 @@
         />
       </template>
 
-      <template v-slot:body-cell-bill_status="props">
+      <template v-slot:body-cell-c_bill_status="props">
         <q-td :props="props">
-          <q-chip
-            :color="
-              props.row.bill_status == 'Delivered'
-                ? 'green'
-                : props.row.status == 'Not Confirmed'
-                ? 'yellow'
-                : 'blue'
-            "
-            text-color="white"
-            dense
-            class="text-weight-bolder"
-            square
-            >{{ props.row.bill_status }}
-          </q-chip>
+          <q-badge color="primary">{{ props.row.c_bill_status }} </q-badge>
         </q-td>
       </template>
 
       <template v-slot:body-cell-actions="props">
         <q-td :props="props">
-          {{ props.row.delivery_date }}
           <q-btn dense round flat color="primary" icon="receipt">
             <tooltip>Invoice Copy</tooltip>
           </q-btn>
@@ -101,13 +87,17 @@
             flat
             color="secondary"
             icon="follow_the_signs"
-            @click="show = true"
+            @click="displayEvents(props.row.bill_no)"
             ><tooltip>Track Order</tooltip></q-btn
           >
         </q-td>
       </template>
     </q-table>
-    <order-track :show="show" @close="show = false" />
+    <order-track
+      :show="show"
+      :sales_bill_id="salesBillId"
+      @close="show = false"
+    />
   </q-page>
 </template>
 
@@ -135,6 +125,7 @@ export default {
       filter: '',
       mode: 'list',
       show: false,
+      salesBillId: 0,
       columns: [
         {
           name: 'bill_no',
@@ -150,7 +141,7 @@ export default {
           label: 'Bill Date',
           field: 'bill_date',
           sortable: true,
-          format: val => date.formatDate(new Date(), 'DD-MM-YYYY hh:mm A')
+          format: val => date.formatDate(new Date(val), 'DD-MM-YYYY hh:mm A')
         },
         {
           name: 'delivery_date',
@@ -161,13 +152,14 @@ export default {
           format: val =>
             val == null
               ? 'Not Dlivered'
-              : date.formatDate(new Date(), 'DD-MM-YYYY hh:mm A')
+              : date.formatDate(new Date(val), 'DD-MM-YYYY hh:mm A')
         },
         {
-          name: 'bill_status',
+          name: 'c_bill_status',
           align: 'left',
           label: 'Status',
-          field: 'bill_status',
+          field: 'c_bill_status',
+
           sortable: true
         },
         {
@@ -199,6 +191,10 @@ export default {
     };
   },
   methods: {
+    displayEvents(id) {
+      this.salesBillId = id;
+      this.show = true;
+    },
     exportTable() {
       // naive encoding to csv format
       const content = [this.columns.map(col => wrapCsvValue(col.label))]

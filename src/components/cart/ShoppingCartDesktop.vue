@@ -67,10 +67,7 @@
         icon="done"
         style="min-height: 200px;"
       >
-        Try out different ad text to see what brings in the most customers, and
-        learn how to enhance your ads using features like ad extensions. If you
-        run into any problems with your ads, find out how to tell if they're
-        running and how to resolve approval issues.
+        <cart-confirmation />
       </q-step>
 
       <template v-slot:navigation>
@@ -79,6 +76,7 @@
             :disable="validation"
             @click="pageSkip('Next')"
             color="primary"
+            v-if="step <= 2"
             :label="step === 3 ? 'Finish' : 'Continue'"
           />
           <q-btn
@@ -117,10 +115,12 @@
 import DataService from 'src/services/DataService';
 import { mapActions, mapGetters, mapState } from 'vuex';
 export default {
+  props: ['stage'],
   components: {
     'cart-overview': () => import('./CartOverview'),
     'cart-list': () => import('./CartList'),
-    'cart-billing': () => import('./CartBilling')
+    'cart-billing': () => import('./CartBilling'),
+    'cart-confirmation': () => import('./CartConfirmation')
   },
   watch: {
     deliveryAddressStatus(newVal) {
@@ -157,9 +157,9 @@ export default {
         window.location.href = response.data;
       });
     },
-    s(val) {
-      console.log('value final value receied as payload', val);
-    },
+    // s(val) {
+    //   console.log('value final value receied as payload', val);
+    // },
 
     pageSkip(action) {
       if (action === 'Next') {
@@ -199,6 +199,12 @@ export default {
     ...mapGetters(['guestLogin']),
     ...mapGetters('cart', ['deliveryAddressStatus']),
     ...mapState(['cart'])
+  },
+  mounted() {
+    console.log('sopping carddesktop', this.stage);
+    if (this.stage === 'confirmation') {
+      this.step = 4;
+    }
   }
 };
 </script>

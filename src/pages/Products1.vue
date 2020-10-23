@@ -63,7 +63,7 @@
             <div class="text-caption text-green-8 text-weight-bolder">
               Special Price
             </div>
-            <span class="text-h6">₹{{ data.sale_rate }}</span
+            <span class="text-h6">₹{{ data.rate }}</span
             ><span
               class="q-ml-sm text-grey-6"
               style="text-decoration: line-through"
@@ -74,7 +74,7 @@
               >{{
                 (
                   100 -
-                  (parseInt(data.sale_rate) * 100) / parseInt(data.mrp)
+                  (parseInt(data.rate) * 100) / parseInt(data.mrp)
                 ).toFixed()
               }}% off</span
             >

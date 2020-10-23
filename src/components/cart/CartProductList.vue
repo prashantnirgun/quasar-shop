@@ -76,12 +76,12 @@ export default {
     event_listner() {
       bus.$on('update_product_cart', category_id => {
         this.cartList = this.findItemByCategory(category_id);
-        console.log('event capture', category_id);
+        //console.log('event capture', category_id);
       });
     }
   },
   created() {
-    console.log('started listning');
+    //console.log('started listning');
     this.event_listner();
   }
 };

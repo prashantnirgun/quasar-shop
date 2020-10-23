@@ -35,7 +35,7 @@
             ><span
               class="q-ml-sm text-grey-6"
               style="text-decoration: line-through"
-              >₹{{ data.sale_rate }}</span
+              >₹{{ data.rate }}</span
             >
             <span
               class="q-ml-md text-caption text-green-8 text-weight-bolder q-mt-md"
