@@ -8,6 +8,7 @@
 import device_mixin from 'src/mixins/device_mixin';
 export default {
   props: ['stage'],
+
   mixins: [device_mixin],
   components: {
     'shopping-cart-desktop': () => import('./ShoppingCartDesktop'),

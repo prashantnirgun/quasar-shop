@@ -69,6 +69,7 @@
                 type="text"
                 v-model="user.pincode"
                 label="Pincode*"
+                :rules="[required]"
               />
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -176,7 +177,7 @@ export default {
 
           this.updateDeliveryAddress(this.user);
           this.updateBillingAddress(this.user);
-          this.$emit('addressValidation', true);
+          this.$emit('addressValidation', ans);
         } else {
           this.$q.notify({
             type: 'warning',

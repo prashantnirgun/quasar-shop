@@ -70,12 +70,13 @@ export default {
   computed: {
     ...mapGetters('cart', ['cartsummary']),
     gstAmount() {
-      const tax = this.cartsummary.taxes.find(tax => tax.name === 'GST');
+      const tax = this.cartsummary.taxes.find(tax => tax.tax_name === 'GST');
+      //console.log('gst tax found', tax, this.cartsummary.taxes);
       return !!tax ? tax.tax_amount : 0;
     },
     deliveryCharges() {
       const amount = this.cartsummary.taxes.find(
-        tax => tax.name === 'Delivery Charges'
+        tax => tax.tax_name === 'Delivery Charges'
       );
       return amount ? amount.tax_amount : 0;
     }

@@ -135,6 +135,17 @@ export default {
       } else {
         this.validation = false;
       }
+    },
+    addressValidation(newVal) {
+      //console.log('inside addressValidation watcher', oldVal, newVal);
+      if (newVal === true) {
+        this.step = 3;
+        //this.payNow('Next');
+      }
+    },
+    stage(newVal) {
+      console.log('inside stage watch', newVal);
+      this.step = 4;
     }
   },
   data() {
@@ -153,8 +164,15 @@ export default {
 
       //DataService.post('pay', { ...this.cart }).then(response => {
       DataService.post('payment', { ...this.cart }).then(response => {
-        console.log('resp', response.data);
-        window.location.href = response.data;
+        if (response.data.status && response.data.status === 'success') {
+          console.log('please put me to success route', response.data);
+          this.$router.push({
+            name: 'shopping-cart',
+            params: { stage: 'confirmation' }
+          });
+        } else {
+          window.location.href = response.data;
+        }
       });
     },
     // s(val) {
@@ -174,24 +192,8 @@ export default {
             this.$refs.stepper.next();
             break;
         }
-        /*
-        if (
-          this.step === 2 &&
-          this.guestLogin === true &&
-          this.addressValidation === false
-        ) {
-          this.setAddressValidationCounter();
-          this.addressValidation ? this.$refs.stepper.next() : null;
-        } else {
-          this.setAddressValidationCounter();
-          console.log('here step ', this.step, ' and login');
-          //this.$refs.stepper.next();
-          this.addressValidation ? this.$refs.stepper.next() : null;
-        }
       } else {
         this.$refs.stepper.previous();
-      }
-      */
       }
     }
   },
@@ -201,7 +203,6 @@ export default {
     ...mapState(['cart'])
   },
   mounted() {
-    console.log('sopping carddesktop', this.stage);
     if (this.stage === 'confirmation') {
       this.step = 4;
     }

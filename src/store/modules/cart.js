@@ -14,6 +14,7 @@ const getDefaultState = () => {
     deliveryAddress: {},
     billingAddress: {},
     customerID: 0,
+    currentCategoryDisplay: 0,
     taxes: [] //{name : 'xx' , tax_amount : 0}
   };
 };
@@ -76,35 +77,42 @@ export default {
           : false
         : false;
     },
-    defaultAddress: state => {
-      return state.defaultAddress;
-    }
+    defaultAddress: state => state.defaultAddress,
+    currentCategoryDisplay: state => state.currentCategoryDisplay
   },
 
   mutations: {
-    // ADD_SHIPPING_CHARGES(state, tax_amount) {
-    //   //if (state.cart.taxes.length > 0) {
-    //     let found = state.taxes.find(tax => tax.name === 'Delivery Charges');
-    //   //}
-    //   console.log('value of found', found, found ? 'True' : 'False')
-    //   found ? found.tax_amount = tax_amount :
-    //     state.taxes.push({name : 'Delivery Charges', tax_amount })
-
-    // },
     CALCULATE_SHIPPING_CHARGES(state) {
-      console.log('inside caluclateshipping', state.deliveryAddress);
-      if (state.deliveryAddress && state.deliveryAddress.status === 'Open') {
+      let deliveryCharges = 0;
+      if (
+        !!state.deliveryAddress &&
+        state.deliveryAddress.status === 'Open' &&
+        parseFloat(state.deliveryAddress.delivery_charges) > 0
+      ) {
         if (state.deliveryAddress.delivery_charges_type === 'F') {
-          let found = state.taxes.find(tax => tax.name === 'Delivery Charges');
-          //console.log('value of found', found, found ? 'True' : 'False');
-          found
-            ? (found.tax_amount = state.deliveryAddress.delivery_charges)
-            : state.taxes.push({
-                name: 'Delivery Charges',
-                tax_amount: state.deliveryAddress.delivery_charges
-              });
+          deliveryCharges = state.deliveryAddress.delivery_charges;
         } else {
+          deliveryCharges =
+            state.deliveryAddress.delivery_charges * state.productQuantity;
         }
+
+        if (deliveryCharges > 0) {
+          let found = state.taxes.find(
+            tax => tax.tax_name === 'Delivery Charges'
+          );
+          if (found) {
+            found.tax_amount = deliveryCharges;
+          } else {
+            state.taxes.push({
+              tax_name: 'Delivery Charges',
+              tax_amount: deliveryCharges
+            });
+          }
+        }
+
+        //GST is all inclusing so add only delviery charges
+        //state.taxAmount = gstTaxAmount + deliveryCharges;
+        state.cartTotal = state.productAmount + deliveryCharges;
       }
     },
     ADD_TO_CART(state, payload) {
@@ -151,7 +159,7 @@ export default {
       let index = state.cart.findIndex(
         item => item.product_id === payload.product_id
       );
-      console.log('update_product_quantity', payload, index);
+      //console.log('update_product_quantity', payload, index);
       if (payload.quantity > 0) {
         state.cart[index].quantity = payload.quantity;
         state.cart[index].amount = payload.amount;
@@ -185,20 +193,23 @@ export default {
         state.savingAmount += item.quantity * item.mrp - item.amount;
         //GST Taxes Calculation begin
         if (item.gst_rate > 0) {
-          let gst_tax = state.taxes.find(tax => (tax.name = 'GST'));
-          let tax_amount = ((item.baseAmount * item.gst_rate) / 100).toFixed(2);
-          if (gst_tax) {
-            gst_tax.tax_amount = gst_tax.tax_amount + tax_amount;
-          } else {
-            state.taxes.push({
-              tax_name: 'GST',
-              //tax_rate: item.tax_rate,
-              tax_amount
-            });
-          }
-          gstTaxAmount += taxAmount;
+          gstTaxAmount =
+            parseFloat(gstTaxAmount) +
+            ((item.baseAmount * item.gst_rate) / 100).toFixed(2);
         }
       });
+
+      if (gstTaxAmount > 0) {
+        let gst_tax = state.taxes.find(tax => tax.tax_name === 'GST');
+        if (gst_tax) {
+          gst_tax.tax_amount = gstTaxAmount;
+        } else {
+          state.taxes.push({
+            tax_name: 'GST',
+            tax_amount: gstTaxAmount
+          });
+        }
+      }
 
       //Delivery charges calculation
       if (state.deliveryAddress && state.deliveryAddress.delivery_charges > 0) {
@@ -238,13 +249,13 @@ export default {
       }
     },
     UPDATE_BILLING_ADDRESS(state, payload) {
-      console.log(
-        'update_billing_address payload is',
-        payload,
-        !!state.billingAddress
-      );
+      // console.log(
+      //   'update_billing_address payload is',
+      //   payload,
+      //   !!state.billingAddress
+      // );
       Object.keys(payload).map(key => {
-        console.log('key', key, state, payload[key]);
+        //console.log('key', key, state, payload[key]);
         state.billingAddress[key] = payload[key];
       });
     },
@@ -268,6 +279,9 @@ export default {
       // Merge rather than replace so we don't lose observers
       // https://github.com/vuejs/vuex/issues/1118
       Object.assign(state, getDefaultState());
+    },
+    CURRENT_CATEGORY_DISPLAY(state, payload) {
+      state.currentCategoryDisplay = payload;
     }
   },
 
@@ -288,12 +302,10 @@ export default {
       commit('UPDATE_TOTALS');
     },
     updateDeliveryAddress({ commit }, payload) {
-      console.log('updateDeliveryAddress Payload', payload);
       commit('UPDATE_DELIVERY_ADDRESS', payload);
       commit('CALCULATE_SHIPPING_CHARGES');
     },
     updateBillingAddress({ commit }, payload) {
-      console.log('updateBillingAddress Payload', payload);
       commit('UPDATE_BILLING_ADDRESS', payload);
     },
     async updateCustomerId({ commit }, payload) {
@@ -311,6 +323,10 @@ export default {
     },
     resetCartState({ commit }) {
       commit('RESET_STATE');
+    },
+    setCurrentCategoryDisplay({ commit }, payload) {
+      console.log('inside setCurrentCategoryDisplay', payload);
+      commit('CURRENT_CATEGORY_DISPLAY', payload);
     }
   }
 };

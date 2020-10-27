@@ -1,14 +1,14 @@
 <template>
-  <div></div>
+  <div>
+    Test
+  </div>
 </template>
 
 <script>
 import DataService from 'src/services/DataService';
 export default {
   mounted() {
-    DataService.get('guest').then(response => {
-      console.log('resp', response.data);
-    });
+    console.log('date', new Date());
   }
 };
 </script>

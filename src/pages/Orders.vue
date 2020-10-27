@@ -182,6 +182,13 @@ export default {
               currency: 'INR'
             })
         },
+        {
+          name: 'count',
+          align: 'right',
+          label: 'Item Count',
+          field: 'count',
+          sortable: true
+        },
         { name: 'actions', label: 'Actions', field: '', align: 'center' }
       ],
       data: [],

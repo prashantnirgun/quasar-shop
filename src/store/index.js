@@ -82,7 +82,8 @@ const Store = new Vuex.Store({
     loginPrompt: state => state.loginPrompt,
     guestLogin: state => state.guestLogin,
     addressValidation: state => state.addressValidation,
-    addressValidationCounter: state => state.addressValidationCounter
+    addressValidationCounter: state => state.addressValidationCounter,
+    isUserLoggedIn: state => state.isUserLoggedIn
   },
   // enable strict mode (adds overhead!)
   // for dev mode only

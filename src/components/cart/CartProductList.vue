@@ -69,20 +69,30 @@ export default {
       cartList: []
     };
   },
-  computed: {
-    ...mapGetters('cart', ['findItemByCategory'])
-  },
-  methods: {
-    event_listner() {
-      bus.$on('update_product_cart', category_id => {
-        this.cartList = this.findItemByCategory(category_id);
-        //console.log('event capture', category_id);
-      });
+  watch: {
+    currentCategoryDisplay(oldVal, newVal) {
+      console.log('new category is', oldVal, newVal);
+      this.cartList = this.findItemByCategory(newVal);
     }
   },
+  computed: {
+    ...mapGetters('cart', ['findItemByCategory', 'currentCategoryDisplay'])
+  },
+  methods: {
+    // event_listner() {
+    //   bus.$on('update_product_cart', category_id => {
+    //     this.cartList = this.findItemByCategory(category_id);
+    //     console.log('event capture', category_id);
+    //   });
+    // }
+  },
+  mounted() {
+    console.log('mounted', this.currentCategoryDisplay);
+    this.cartList = this.findItemByCategory(this.currentCategoryDisplay);
+  },
   created() {
-    //console.log('started listning');
-    this.event_listner();
+    console.log('created', this.currentCategoryDisplay);
+    //this.event_listner();
   }
 };
 </script>

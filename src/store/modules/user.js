@@ -48,7 +48,6 @@ export default {
     },
 
     setUser({ commit }, user) {
-      console.log('inside user/actions');
       commit('SET_USER', user);
     },
 
