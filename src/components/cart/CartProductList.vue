@@ -70,15 +70,22 @@ export default {
     };
   },
   watch: {
-    currentCategoryDisplay(oldVal, newVal) {
-      console.log('new category is', oldVal, newVal);
-      this.cartList = this.findItemByCategory(newVal);
+    currentCategoryDisplay: {
+      immediate: true,
+      handler(current) {
+        console.log('new category is', current);
+        this.cartList = this.findItemByCategory(current.category_id);
+      }
     }
   },
   computed: {
     ...mapGetters('cart', ['findItemByCategory', 'currentCategoryDisplay'])
   },
   methods: {
+    // cartUpdated() {
+    //   console.log('cart is updated let build prouduct list');
+    //   this.cartList = this.findItemByCategory(this.currentCategoryDisplay);
+    // }
     // event_listner() {
     //   bus.$on('update_product_cart', category_id => {
     //     this.cartList = this.findItemByCategory(category_id);
@@ -87,8 +94,14 @@ export default {
     // }
   },
   mounted() {
-    console.log('mounted', this.currentCategoryDisplay);
-    this.cartList = this.findItemByCategory(this.currentCategoryDisplay);
+    this.cartList = this.findItemByCategory(
+      this.currentCategoryDisplay.category_id
+    );
+    console.log(
+      'mounted',
+      this.currentCategoryDisplay.category_id,
+      this.cartList
+    );
   },
   created() {
     console.log('created', this.currentCategoryDisplay);

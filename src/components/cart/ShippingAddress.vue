@@ -90,7 +90,7 @@ export default {
     },
     updateAddressState(value) {
       if (value === true) {
-        console.log('going to update delivery address', this.data);
+        //console.log('going to update delivery address', this.data);
         this.updateDeliveryAddress(this.data);
         //this.updateBillingAddress(this.data);
         //console.log('val method', val);

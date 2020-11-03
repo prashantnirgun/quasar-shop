@@ -14,7 +14,8 @@ const getDefaultState = () => {
     deliveryAddress: {},
     billingAddress: {},
     customerID: 0,
-    currentCategoryDisplay: 0,
+    user_type: 'G',
+    currentCategoryDisplay: { category_id: 0, totalItem: 0 },
     taxes: [] //{name : 'xx' , tax_amount : 0}
   };
 };
@@ -78,7 +79,8 @@ export default {
         : false;
     },
     defaultAddress: state => state.defaultAddress,
-    currentCategoryDisplay: state => state.currentCategoryDisplay
+    currentCategoryDisplay: state => state.currentCategoryDisplay,
+    productAmount: state => state.productAmount
   },
 
   mutations: {
@@ -122,9 +124,9 @@ export default {
 
       if (productInCart) {
         productInCart.quantity = payload.quantity;
-        productInCart.amount = payload.amount;
-        productInCart.baseAmount = payload.baseAmount;
-        productInCart.saving = payload.saving;
+        productInCart.amount = parseFloat(payload.amount);
+        productInCart.baseAmount = parseFloat(payload.baseAmount);
+        productInCart.saving = parseFloat(payload.saving);
       } else {
         state.cart.push({ ...payload });
       }
@@ -144,7 +146,7 @@ export default {
       if (index != -1) {
         state.cart.splice(index, 1);
       }
-
+      console.log('inside remove_from_cart mutation', state.cart);
       Notify.create({
         type: 'warning',
         message: `${name} was removed from cart.`
@@ -162,9 +164,9 @@ export default {
       //console.log('update_product_quantity', payload, index);
       if (payload.quantity > 0) {
         state.cart[index].quantity = payload.quantity;
-        state.cart[index].amount = payload.amount;
-        state.cart[index].baseAmount = payload.baseAmount;
-        state.cart[index].saving = payload.saving;
+        state.cart[index].amount = parseFloat(payload.amount);
+        state.cart[index].baseAmount = parseFloat(payload.baseAmount);
+        state.cart[index].saving = parseFloat(payload.saving);
       } else {
         state.cart.splice(index, 1);
       }
@@ -192,10 +194,16 @@ export default {
         //state.shippingCharges:
         state.savingAmount += item.quantity * item.mrp - item.amount;
         //GST Taxes Calculation begin
+        console.log(
+          'inside update_totals 1',
+          gstTaxAmount,
+          typeof gstTaxAmount
+        );
         if (item.gst_rate > 0) {
-          gstTaxAmount =
-            parseFloat(gstTaxAmount) +
-            ((item.baseAmount * item.gst_rate) / 100).toFixed(2);
+          let amt = parseFloat((item.baseAmount * item.gst_rate) / 100).toFixed(
+            2
+          );
+          gstTaxAmount += parseFloat(amt);
         }
       });
 
@@ -261,19 +269,13 @@ export default {
     },
     UPDATE_CUSTOMER_ID(state, payload) {
       state.customerID = payload;
+      state.user_tpye = payload > 0 ? 'U' : 'G';
     },
     UPDATE_BILL_TYPE(state, payload) {
       state.billType = payload;
     },
     RESET_CART(state) {
-      state.cart = null;
-      state.productAmount = 0;
-      state.productQuantity = 0;
-      state.shippingCharges = 0;
-      state.savingAmount = 0;
-      state.taxAmount = 0;
-      state.cartTotal = 0;
-      state.taxes = null;
+      Object.assign(state, getDefaultState());
     },
     RESET_STATE(state) {
       // Merge rather than replace so we don't lose observers
@@ -281,6 +283,7 @@ export default {
       Object.assign(state, getDefaultState());
     },
     CURRENT_CATEGORY_DISPLAY(state, payload) {
+      //console.log('CURRENT_CATEGORY_DISPLAY mutation', payload);
       state.currentCategoryDisplay = payload;
     }
   },

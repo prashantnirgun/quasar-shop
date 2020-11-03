@@ -2,9 +2,10 @@ import { date } from 'quasar';
 
 export default {
   methods: {
-    popupMessage(action, message) {
+    popupMessage(action, message, position = 'bottom') {
       this.$q.notify({
         type: action,
+        position,
         message: message
       });
     },
@@ -16,5 +17,11 @@ export default {
         'YYYY-MM-DD'
       );
     }
+    // localDate: val =>
+    //   val.toLocaleString('en-IN', {
+    //     maximumFractionDigits: 2,
+    //     style: 'currency',
+    //     currency: 'INR'
+    //   })
   }
 };

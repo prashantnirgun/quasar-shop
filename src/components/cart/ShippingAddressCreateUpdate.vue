@@ -179,7 +179,7 @@ export default {
         landmark: null,
         city: null,
         email: null,
-        is_default: 'N'
+        is_default: 'Y'
       };
     },
     updateData(data) {

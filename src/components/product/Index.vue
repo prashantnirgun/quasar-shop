@@ -130,7 +130,9 @@
               >
                 <template v-slot:prepend>
                   <q-btn
-                    @click="decrement(data, --orderQty)"
+                    @click="
+                      decrement(data, orderQty > 1 ? --orderQty : orderQty)
+                    "
                     color="green-6"
                     icon="remove"
                     size="md"

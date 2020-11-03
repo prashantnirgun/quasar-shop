@@ -24,7 +24,7 @@ export const isPhoneNumber = val => {
 };
 
 export const isDateValid = v => {
-  if (v.length < 10) {
+  if (v == null || v.length < 10) {
     return 'Invalid Date';
   }
   // ISO standard YYYY-MM-DD

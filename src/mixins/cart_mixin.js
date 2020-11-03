@@ -56,7 +56,7 @@ export default {
         return amount;
       } else {
         const gstAmount = amount - amount * (100 / (100 + gstRate));
-        return (amount - gstAmount).toFixed(2);
+        return parseFloat(amount - gstAmount).toFixed(2);
       }
     },
     extractData(data, quantity) {
@@ -66,14 +66,16 @@ export default {
         category_id: data.category_id,
         product_name: data.product_name,
         category_name: data.category_name,
-        rate: data.rate,
+        rate: parseFloat(data.rate),
         quantity,
-        amount: quantity * data.rate,
-        baseAmount: this.removeGST(quantity * data.rate, data.gst_rate),
-        gst_rate: data.gst_rate,
+        amount: parseFloat(quantity * data.rate),
+        baseAmount: parseFloat(
+          this.removeGST(quantity * data.rate, data.gst_rate)
+        ),
+        gst_rate: parseFloat(data.gst_rate),
         mrp: data.mrp,
         image_filename: data.image_filename,
-        saving: quantity * data.mrp - quantity * data.rate
+        saving: parseFloat(quantity * data.mrp - quantity * data.rate)
       };
     }
   }

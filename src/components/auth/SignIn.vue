@@ -25,6 +25,16 @@
         />
       </template>
     </q-input>
+
+    <q-input
+      class="q-ma-xs col-12"
+      dense
+      outlined
+      v-model="otp"
+      label="OTP*"
+      lazy-rules
+    ></q-input>
+
     <q-checkbox
       class="text-grey-8"
       dense
@@ -32,7 +42,7 @@
       label="Remember me"
     ></q-checkbox>
     <q-space />
-    <q-btn color="teal" label="Login" @click="login" />
+    <q-btn color="teal" label="Login" @click="login" class="q-mt-sm" />
   </div>
 </template>
 
@@ -52,7 +62,8 @@ export default {
       password: null,
       rememberMe: false,
       value: false,
-      isPwdNew: true
+      isPwdNew: true,
+      opt: null
     };
   },
   methods: {

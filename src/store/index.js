@@ -25,7 +25,7 @@ const Store = new Vuex.Store({
   state: {
     rememberMe: false,
     isUserLoggedIn: false,
-    version: '0.0.2',
+    version: '0.0.3',
     loginPrompt: false,
     addressValidation: true,
     guestLogin: false,

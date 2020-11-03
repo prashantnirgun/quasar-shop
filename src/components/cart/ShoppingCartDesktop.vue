@@ -114,8 +114,11 @@
 <script>
 import DataService from 'src/services/DataService';
 import { mapActions, mapGetters, mapState } from 'vuex';
+import common_mixin from 'src/mixins/common_mixin';
+
 export default {
   props: ['stage'],
+  mixins: [common_mixin],
   components: {
     'cart-overview': () => import('./CartOverview'),
     'cart-list': () => import('./CartList'),
@@ -182,6 +185,17 @@ export default {
     pageSkip(action) {
       if (action === 'Next') {
         switch (this.step) {
+          case 1:
+            console.log('on first page please check cart total');
+            if (this.productAmount >= 1000) {
+              this.$refs.stepper.next();
+            } else {
+              this.popupMessage(
+                'warning',
+                'Cart Minimum amount should be Rs 1,000/-',
+                'center'
+              );
+            }
           case 2:
             this.addressValidation
               ? this.$refs.stepper.next()
@@ -198,8 +212,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['guestLogin']),
-    ...mapGetters('cart', ['deliveryAddressStatus']),
+    ...mapGetters(['guestLogin', 'isUserLoggedIn']),
+    ...mapGetters('cart', ['deliveryAddressStatus', 'productAmount']),
     ...mapState(['cart'])
   },
   mounted() {

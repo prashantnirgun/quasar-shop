@@ -1,5 +1,5 @@
 import Vue from 'vue';
-
+import { date } from 'quasar';
 import Vue2Filters from 'vue2-filters';
 
 var Vue2FiltersConfig = {
@@ -35,6 +35,24 @@ var Vue2FiltersConfig = {
   }
 };
 Vue.use(Vue2Filters, Vue2FiltersConfig);
+
+Vue.filter('localDate', function(value) {
+  if (!value) return '';
+  value = value.toString();
+  return date.formatDate(new Date(value), 'DD-MM-YYYY');
+});
+
+Vue.filter('localDateTime', function(value) {
+  if (!value) return '';
+  value = value.toString();
+  return date.formatDate(new Date(value), 'DD-MM-YYYY hh:mm A');
+});
+
+Vue.filter('localTime', function(value) {
+  if (!value) return '';
+  value = value.toString();
+  return date.formatDate(new Date(value), 'hh:mm A');
+});
 
 import vueAwesomeCountdown from 'vue-awesome-countdown';
 

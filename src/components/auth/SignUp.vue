@@ -28,7 +28,7 @@
         label="Password*"
         :type="isPwdNew1 ? 'password' : 'text'"
         lazy-rules
-        :rules="[passwordRule]"
+        :rules="[required, passwordRule]"
       >
         <template v-slot:append>
           <q-icon
@@ -71,6 +71,7 @@
         outlined
         type="number"
         v-model.number="mobile"
+        :rules="[required]"
         label="Mobile Number*"
         lazy-rules
       ></q-input>
@@ -78,7 +79,7 @@
       <q-btn
         label="Signup"
         color="teal"
-        class="text-capitalized float-right q-ma-sm"
+        class="text-capitalized float-right q-mx-sm"
         type="submit"
       />
     </q-form>
@@ -105,17 +106,18 @@ export default {
       full_name: null,
       username: null,
       password1: null,
-      //   password2: null,
+      //password2: null,
       email_id: null,
       mobile: null,
       error: '',
       isPwdNew1: true
-      // isPwdNew2: true
+      //isPwdNew2: true
     };
   },
   methods: {
     required,
     ...mapActions('user', ['setToken', 'setUser']),
+    ...mapActions('cart', ['updateCustomerId']),
     uniqueNameRule(value) {
       return this.isUniqueName('user', 0, 'user_name', value);
     },
@@ -148,10 +150,12 @@ export default {
 
           AuthenticationService.register({ ...columns })
             .then(response => {
+              console.log('response received', response);
               setAxiosHeaders(response.data.token);
               this.setToken(response.data.token);
-              this.setUser(response.data.user.rows);
-              //this.$router.push({ name: 'root' });
+              this.setUser(response.data.user);
+              this.updateCustomerId(response.data.user.general_ledger_id);
+              //this.$router.push({ name: 'home' });
               this.$emit('close');
             })
             .catch(error => {

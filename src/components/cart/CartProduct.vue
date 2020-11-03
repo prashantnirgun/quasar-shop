@@ -38,10 +38,11 @@
             outlined
             class="custom-control col-4"
             @blur="setQuantity(data, orderQty)"
+            @input="$emit('cart-updated')"
           >
             <template v-slot:prepend>
               <q-btn
-                @click="decrement(data, --orderQty)"
+                @click="decrement(data, orderQty > 1 ? --orderQty : orderQty)"
                 color="green-6"
                 icon="remove"
                 size="md"
@@ -71,6 +72,7 @@
 <script>
 //import { mapActions } from 'vuex';
 import cart_mixin from 'src/mixins/cart_mixin';
+
 export default {
   props: ['data'],
   mixins: [cart_mixin],

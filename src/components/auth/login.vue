@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="show" persistent>
+  <q-dialog v-model="modalShow" persistent>
     <q-card style="min-width: 40vw">
       <div class="row">
         <div
@@ -8,11 +8,16 @@
         >
           <div class="row items-center justify-center full-height">
             <div class="col-xs-12 text-center">
-              <img src="/images/logo.png" width="30%" />
-              <div class="text-weight-bolder text-white text-h6">
+              <img :src="getLogo" width="30%" height="50px" />
+              <div
+                v-if="isDesktop"
+                class="text-weight-bolder text-white text-h6"
+              >
                 {{ siteName }}
               </div>
-              <div class="text-caption text-white">{{ site_full_name }}</div>
+              <div v-if="isDesktop" class="text-caption text-white">
+                {{ site_full_name }}
+              </div>
             </div>
           </div>
         </div>
@@ -60,8 +65,15 @@ import device_mixin from 'src/mixins/device_mixin';
 export default {
   props: ['show', 'closeAction'],
   mixins: [device_mixin],
+  watch: {
+    show(newVal) {
+      console.log('inside show watcher', newVal);
+      this.modalShow = newVal;
+    }
+  },
   data() {
     return {
+      modalShow: this.show,
       // username: null,
       // password: null,
       // rememberMe: false,
@@ -74,10 +86,16 @@ export default {
   },
   methods: {
     close() {
+      this.modalShow = false;
       this.$emit('close');
     }
   },
   computed: {
+    getLogo() {
+      return this.isDesktop
+        ? '/images/logo.png'
+        : '/images/logo-horizontal.png';
+    },
     siteName() {
       return process.env.SITE_NAME;
     },
@@ -91,7 +109,7 @@ export default {
       return this.value ? 'Login' : 'Register';
     },
     getSize() {
-      return this.isDesktop ? '350px' : '250px';
+      return this.isDesktop ? '350px' : '350px';
     }
   }
 };

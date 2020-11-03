@@ -19,6 +19,12 @@ const routes = [
         component: () => import('pages/Orders.vue')
       },
       {
+        path: '/order/:id',
+        name: 'order',
+        props: true,
+        component: () => import('pages/Order.vue')
+      },
+      {
         path: '/city',
         name: 'city',
         component: () => import('pages/City.vue')

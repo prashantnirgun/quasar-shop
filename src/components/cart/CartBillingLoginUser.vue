@@ -222,23 +222,32 @@ export default {
           const defaultAddress = this.address.find(
             obj => obj.is_default === 'Y'
           );
-          console.log('address received', defaultAddress);
-          if (defaultAddress.status === 'Close') {
-            console.log(
-              'delivery address not reachable',
-              defaultAddress.status
+
+          if (!!defaultAddress) {
+            console.log('address received', defaultAddress);
+            if (defaultAddress.status === 'Close') {
+              console.log(
+                'delivery address not reachable',
+                defaultAddress.status
+              );
+            }
+
+            this.updateDeliveryAddress({
+              ...defaultAddress,
+              email_id: this.user.email_id
+            });
+
+            this.updateBillingAddress({
+              ...defaultAddress,
+              email_id: this.user.email_id
+            });
+          } else {
+            popupMessage(
+              'warning',
+              'Please select the address of delivery',
+              'center'
             );
           }
-
-          this.updateDeliveryAddress({
-            ...defaultAddress,
-            email_id: this.user.email_id
-          });
-
-          this.updateBillingAddress({
-            ...defaultAddress,
-            email_id: this.user.email_id
-          });
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);

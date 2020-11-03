@@ -72,7 +72,7 @@
 
         <q-btn v-if="isUserLoggedIn" flat icon="account_circle">
           <q-menu auto-close transition-show="scale" transition-hide="scale">
-            <q-item clickable v-ripple to="profile">
+            <q-item clickable v-ripple to="/profile">
               <q-item-section side>
                 <q-avatar rounded size="48px">
                   <img :src="imgUrl" />
@@ -85,19 +85,14 @@
             </q-item>
 
             <q-list style="min-width: 100px;">
-              <q-item
-                dense
-                clickable
-                to="profile"
-                @click="$router.push(`/shopping-cart`)"
-              >
+              <q-item dense clickable to="/shopping-cart">
                 <q-item-section>Shopping Cart</q-item-section>
                 <q-item-section avatar class="text-purple">
                   <q-icon name="shopping_cart" color="purpul" size="md" />
                 </q-item-section>
               </q-item>
 
-              <q-item dense clickable to="orders">
+              <q-item dense clickable to="/orders">
                 <q-item-section>Order History</q-item-section>
                 <q-item-section avatar class="text-purple">
                   <q-icon name="card_giftcard" size="md" />
