@@ -19,8 +19,10 @@ export const positiveDecimal = val =>
 export const isNumber = val => Number(val) == val || 'Enter Numeric Value';
 
 export const isPhoneNumber = val => {
-  console.log('isphone', val, val.length);
-  return (Number(val) == val && val.length >= 10) || 'Enter Numeric Value';
+  return (
+    (val != null && Number(val) == val && val.length >= 10) ||
+    'Enter valid mobile number'
+  );
 };
 
 export const isDateValid = v => {

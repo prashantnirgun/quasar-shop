@@ -71,7 +71,7 @@
         outlined
         type="number"
         v-model.number="mobile"
-        :rules="[required]"
+        :rules="[isPhoneNumber]"
         label="Mobile Number*"
         lazy-rules
       ></q-input>
@@ -90,7 +90,7 @@
 import AuthenticationService from 'src/services/AuthenticationService';
 import auth_mixin from 'src/mixins/auth_mixin';
 import { mapActions } from 'vuex';
-import { required } from 'src/services/Validation';
+import { required, isPhoneNumber } from 'src/services/Validation';
 import axios from 'axios';
 function setAxiosHeaders(token) {
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
@@ -116,6 +116,7 @@ export default {
   },
   methods: {
     required,
+    isPhoneNumber,
     ...mapActions('user', ['setToken', 'setUser']),
     ...mapActions('cart', ['updateCustomerId']),
     uniqueNameRule(value) {

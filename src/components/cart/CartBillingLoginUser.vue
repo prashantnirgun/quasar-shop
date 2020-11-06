@@ -211,14 +211,25 @@ export default {
           console.log('mixin/ddlb Error', error);
         });
     },
+    getUser() {
+      this.$q.loading.show();
+      DataService.get(`profile`)
+        .then(response => {
+          this.$q.loading.hide();
+          console.log('address received', response.data);
+          this.user = response.data.rows[0];
+        })
+        .catch(error => {
+          console.log('mixin/ddlb Error', error);
+        });
+    },
     getAddress() {
       this.$q.loading.show();
       DataService.get(`address`)
         .then(response => {
           this.$q.loading.hide();
-          console.log('address received', response.data);
-          this.user = response.data.user[0];
-          this.address = response.data.address;
+
+          this.address = response.data.rows;
           const defaultAddress = this.address.find(
             obj => obj.is_default === 'Y'
           );
@@ -261,6 +272,7 @@ export default {
     }
   },
   mounted() {
+    this.getUser();
     this.getAddress();
     this.updateCustomerId(this.general_ledger_id);
   }

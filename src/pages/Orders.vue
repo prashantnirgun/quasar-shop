@@ -60,6 +60,14 @@
           no-caps
           @click="exportTable"
         />
+
+        <q-btn
+          color="secondary"
+          icon="print"
+          label="List"
+          class="q-ml-sm"
+          @click="exportPdf"
+        />
       </template>
 
       <template v-slot:body-cell-c_bill_status="props">
@@ -136,6 +144,52 @@ import { exportFile, date } from 'quasar';
 import DataService from 'src/services/DataService';
 import { mapGetters } from 'vuex';
 import cart_mixin from 'src/mixins/cart_mixin';
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+//var testImage = 'https://picsum.photos/seed/picsum/200/300';
+
+var docDefinition = {
+  pageSize: 'A4',
+  pageOrientation: 'portrait',
+  pageMargins: [20, 50, 20, 20],
+  // eslint-disable-next-line no-unused-vars
+  footer: function(page, pages) {
+    return {
+      text: [
+        { text: 'Page No ' + pages.toString(), style: 'defaultStyle' },
+        { text: ' / ' + page.toString(), style: 'defaultStyle' }
+      ],
+      margin: [10, 0]
+    };
+  },
+  images: {
+    //testImage: 'https://picsum.photos/seed/picsum/200/300',
+    testImage: process.env.DOMAIN + '/images/logo-horizontal.png'
+  },
+  header: {
+    stack: [
+      {
+        image: 'testImage',
+        width: 80,
+        height: 40,
+        alignment: 'left',
+        absolutePosition: { x: 15, y: 5 }
+      },
+      {
+        text: 'SKE',
+        style: { Size: 18, bold: true },
+        alignment: 'center',
+        margin: [0, 5, 0, 0]
+      },
+      {
+        text: 'Order List',
+        style: { Size: 12 },
+        alignment: 'center'
+      }
+    ]
+  }
+};
 
 function wrapCsvValue(val, formatFn) {
   let formatted = formatFn !== void 0 ? formatFn(val) : val;
@@ -243,6 +297,106 @@ export default {
     ...mapGetters('user', ['quotationPartyId'])
   },
   methods: {
+    formatCurrency(value) {
+      return value.toLocaleString('en-IN', {
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR'
+      });
+    },
+    exportPdf() {
+      docDefinition['content'] = [];
+      let tbody = [];
+      let trow = [];
+      //Adding Table Headings
+      /*
+
+      this.columns.map(column => {
+        trow.push({ text: column.label, style: "defaultStyle" });
+      });
+
+      */
+      trow = [
+        { text: 'Bill No', style: 'tableHeader' },
+        { text: 'Bill Date', style: 'tableHeader' },
+        { text: 'Delivery Date', style: 'tableHeader' },
+        { text: 'Status', style: 'tableHeader' },
+        { text: 'Amount', style: 'tableHeader' }
+      ];
+
+      tbody.push(trow);
+      //Adding Table Data
+      this.data.map(row => {
+        let columns = [
+          {
+            text: row['bill_no'],
+            style: 'defaultStyle'
+          },
+          {
+            text: date.formatDate(new Date(row['bill_date']), 'DD-MM-YYYY'),
+            style: 'defaultStyle'
+          },
+          {
+            text:
+              row['delivery_date'] == null
+                ? ''
+                : date.formatDate(new Date(row['delivery_date']), 'DD-MM-YYYY'),
+            style: 'defaultStyle'
+          },
+          {
+            text: row['c_bill_status'],
+            alignment: 'left'
+          },
+          {
+            text: this.formatCurrency(row['net_amount']),
+            style: 'defaultStyle',
+            alignment: 'right'
+          }
+        ];
+        /*
+        Object.keys(row).map(column => {
+          columns.push({ text: row[column], style: "defaultStyle" });
+        });
+        */
+        tbody.push(columns);
+      });
+
+      // Adding Tables to content
+      docDefinition.content.push({
+        style: 'tableExample',
+        table: {
+          headerRows: 1,
+          widths: ['*', '*', '*', '*', '*'],
+          body: tbody
+        }
+      });
+
+      //Adding Styles
+      docDefinition.styles = {
+        header: {
+          fontSize: 18,
+          bold: true,
+          alignment: 'center'
+        },
+        subheader: {
+          fontSize: 16,
+          bold: true,
+          margin: [0, 10, 0, 5]
+        },
+        tableExample: {
+          margin: [0, 0, 0, 0]
+        },
+        tableHeader: {
+          bold: true,
+          fontSize: 12,
+          color: 'black'
+        },
+        defaultStyle: { alignment: 'center' }
+      };
+
+      pdfMake.createPdf(docDefinition).download('Order-List.pdf');
+    },
+
     doAction(row) {
       switch (row.action) {
         case 'VO': //View Order
