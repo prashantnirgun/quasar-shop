@@ -31,6 +31,7 @@
 <script>
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
+import { mapActions } from 'vuex';
 
 export default {
   props: ['device'],
@@ -40,11 +41,24 @@ export default {
       lists: []
     };
   },
+  methods: {
+    ...mapActions(['updateSidebar'])
+  },
   mounted() {
     DataService.get('category')
       .then(response => {
         this.lists = response.data.rows;
-        //console.log('data', this.lists);
+        console.log('category data', this.lists);
+        const option = this.lists.map(item => {
+          return {
+            label: item.category_name,
+            to: '/category/' + item.slug,
+            level: 0,
+            icon: 'info'
+          };
+        });
+
+        this.updateSidebar({ label: 'Category', list: option, icon: 'list' });
       })
       .catch(error => {
         console.log('DataService.get Error', error);

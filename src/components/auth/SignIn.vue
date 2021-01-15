@@ -63,7 +63,7 @@ export default {
       rememberMe: false,
       value: false,
       isPwdNew: true,
-      opt: null
+      opt: ''
     };
   },
   methods: {

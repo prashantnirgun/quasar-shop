@@ -19,8 +19,12 @@ export const positiveDecimal = val =>
 export const isNumber = val => Number(val) == val || 'Enter Numeric Value';
 
 export const isPhoneNumber = val => {
+  let value = val;
+  if (typeof val === 'number') {
+    value = val.toString();
+  }
   return (
-    (val != null && Number(val) == val && val.length >= 10) ||
+    (Number(value) == value && value.length >= 10) ||
     'Enter valid mobile number'
   );
 };

@@ -109,7 +109,7 @@
 import array from 'src/mixins/array_mixin';
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
-
+import { mapActions } from 'vuex';
 export default {
   props: ['device'],
   mixins: [array, device_mixin],
@@ -129,6 +129,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['updateSidebar']),
     getData() {
       DataService.get(
         //`slider?limit=${this.column}&offset=${this.offset}&where=tag like {New}&total_rows=true`
@@ -138,6 +139,20 @@ export default {
           const counter = parseInt(response.data.total_rows / this.column - 1);
           this.pages = [...Array(counter).keys()];
           this.lists = this.chunk(response.data.rows, this.column);
+          const option = response.data.rows.map(item => {
+            return {
+              label: item.product_name,
+              to: '/product/' + item.slug,
+              level: 0
+            };
+          });
+
+          //console.log('hot-deal data', this.lists, option);
+          this.updateSidebar({
+            label: 'New Arrival',
+            list: option,
+            icon: 'alarm_on'
+          });
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);

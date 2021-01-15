@@ -33,8 +33,6 @@
                     :rules="[isPhoneNumber]"
                   />
                 </div>
-              </div>
-              <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <q-input
                     dense
@@ -45,7 +43,9 @@
                     label="Email"
                   />
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              </div>
+              <div class="row">
+                <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                   <q-input
                     dense
                     outlined
@@ -75,7 +75,7 @@
                       </q-icon>
                     </template>
                   </q-input>
-                </div>
+                </div> -->
               </div>
             </q-card-section>
           </q-card>

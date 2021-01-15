@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   name: 'Drawer',
   props: ['model', 'depth'],
@@ -32,19 +33,17 @@ export default {
     return {
       expanded: false,
       start: 0
+      //   model: []
     };
   },
-  watch: {
-    model: {
-      handler(val) {
-        console.log('inside watch', model, val);
-        // do stuff
-      },
-      deep: true
-    }
+
+  computed: {
+    //   ...mapGetters(['sidebar'])
   },
-  mounted() {
-    console.log('inside drawer', this.model);
+  created() {
+    console.log('inside sidebar created', this.model);
+    //this.model = this.sidbar;
+    // console.log('inside drawer created', this.model);
   }
 };
 </script>

@@ -162,6 +162,7 @@
 import array from 'src/mixins/array_mixin';
 import DataService from 'src/services/DataService';
 import device_mixin from 'src/mixins/device_mixin';
+import { mapActions } from 'vuex';
 
 export default {
   props: ['device'],
@@ -182,6 +183,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['updateSidebar']),
     // goToPage(direction) {
     //   if (direction === 'next') {
     //     this.page = this.pages > this.page ? this.page + 1 : 1;
@@ -198,16 +200,21 @@ export default {
           const counter = parseInt(response.data.total_rows / this.column - 1);
           this.pages = [...Array(counter).keys()];
           this.lists = this.chunk(response.data.rows, this.column);
-          // console.log(
-          //   'data',
-          //   this.lists,
-          //   'pages',
-          //   this.pages,
-          //   'no of cards',
-          //   this.column,
-          //   'length',
-          //   response.data.total_rows
-          // );
+          const option = response.data.rows.map(item => {
+            return {
+              label: item.product_name,
+              to: '/product/' + item.slug,
+              level: 0,
+              icon: 'label_important'
+            };
+          });
+
+          //console.log('hot-deal data', this.lists, option);
+          this.updateSidebar({
+            label: 'Hot Deal',
+            list: option,
+            icon: 'card_giftcard'
+          });
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);

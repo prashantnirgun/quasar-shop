@@ -10,24 +10,24 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
+    "@quasar/extras": "^1.9.10",
     "axios": "^0.18.1",
-    "core-js": "^3.6.5",
+    "core-js": "^3.7.0",
     "node-sass": "^4.14.1",
     "pdfmake": "^0.1.68",
-    "quasar": "^1.0.0",
+    "quasar": "^1.14.3",
     "vue-awesome-countdown": "^1.1.2",
-    "vue-gtag": "^1.8.0",
+    "vue-gtag": "^1.10.0",
     "vue2-filters": "^0.11.0",
     "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.8",
+    "@quasar/app": "^2.1.6",
     "@quasar/quasar-app-extension-dotenv": "^1.0.5",
     "@quasar/quasar-app-extension-qribbon": "^1.0.0-beta.15",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-vue": "^6.1.2"
   },

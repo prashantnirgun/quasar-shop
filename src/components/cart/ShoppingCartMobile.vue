@@ -6,7 +6,7 @@
         title="Cart"
         icon="looks_one"
         :done="step > 1"
-        style="min-height: 300px;"
+        style="min-height: 400px;"
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
           <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
@@ -27,7 +27,10 @@
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
           <!-- <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12"> -->
-          <cart-billing />
+          <cart-billing
+            ref="cartBilling"
+            @addressValidation="addressValidation = $event"
+          />
           <!-- </div> -->
           <!-- <div class="col-4" v-if="isDesktop">
             <cart-overview />
@@ -37,6 +40,24 @@
 
       <q-step :name="3" title="Order" icon="looks_3" style="min-height: 200px;">
         <cart-overview />
+
+        <div>
+          <q-btn
+            color="primary"
+            label="Cash on Delivery"
+            class="q-ma-lg"
+            @click="payNow('CASH ON DELIVERY')"
+            :disable="processing"
+          />
+
+          <q-btn
+            outline
+            color="primary"
+            label="Payment Gateway"
+            @click="payNow('PREPAID')"
+            :disable="processing"
+          />
+        </div>
       </q-step>
 
       <q-step :name="4" icon="looks_4" title="Pay" style="min-height: 200px;">
@@ -49,15 +70,16 @@
       <template v-slot:navigation>
         <q-stepper-navigation>
           <q-btn
-            @click="$refs.stepper.next()"
+            @click="pageSkip('Next')"
             color="primary"
+            v-if="step <= 1 || guestLogin || isUserLoggedIn"
             :label="step === 4 ? 'Finish' : 'Continue'"
           />
           <q-btn
             v-if="step > 1"
             flat
             color="primary"
-            @click="$refs.stepper.previous()"
+            @click="pageSkip('Previous')"
             label="Back"
             class="q-ml-sm"
           />
@@ -87,9 +109,14 @@
   </div>
 </template>
 <script>
+import DataService from 'src/services/DataService';
+import { mapActions, mapGetters, mapState } from 'vuex';
 import device_mixin from 'src/mixins/device_mixin';
+import common_mixin from 'src/mixins/common_mixin';
+
 export default {
-  mixins: [device_mixin],
+  props: ['stage'],
+  mixins: [device_mixin, common_mixin],
   components: {
     'cart-overview': () => import('./CartOverview'),
     'cart-list': () => import('./CartList'),
@@ -97,8 +124,115 @@ export default {
   },
   data() {
     return {
-      step: 1
+      step: 1,
+      processing: true,
+      addressValidation: false
     };
+  },
+  watch: {
+    deliveryAddressStatus(newVal) {
+      console.log(
+        'controlling behaviour',
+        newVal,
+        newVal == false,
+        newVal == true
+      );
+      if (this.step === 2 && newVal == false) {
+        this.validation = true;
+      } else {
+        this.validation = false;
+      }
+    },
+    addressValidation(newVal) {
+      if (newVal === true) {
+        this.step = 3;
+      }
+    }
+  },
+  computed: {
+    ...mapGetters(['guestLogin', 'isUserLoggedIn']),
+    ...mapGetters('cart', ['deliveryAddressStatus', 'productAmount'])
+  },
+  methods: {
+    ...mapActions(['setAddressValidationCounter']),
+    ...mapActions('cart', ['updateBillType']),
+    async payNow(paymentMode) {
+      const mode = paymentMode === 'PREPAID' ? 'PR' : 'CD';
+      this.updateBillType(mode);
+      this.$q.loading.show();
+      this.processing = true;
+      try {
+        let response = await DataService.post('payment', { ...this.cart });
+        console.log('wait let me check response', response);
+        if (response.data.status && response.data.status === 'success') {
+          console.log('please put me to success route', response.data);
+          // this.$router.push({
+          //   name: 'shopping-cart',
+          //   params: { stage: 'confirmation' }
+          // });
+        } else {
+          console.log('else');
+          window.location.href = response.data;
+        }
+      } catch (error) {
+        console.log('data', result.data.rows);
+        this.$q.notify({
+          message: 'Sorry its seems you have not logged in to system',
+          color: 'negative',
+          icon: 'warning'
+        });
+      } finally {
+        this.$q.loading.hide();
+        this.processing = true;
+      }
+    },
+    pageSkip(action) {
+      if (action === 'Next') {
+        switch (this.step) {
+          case 1:
+            if (this.productAmount >= 1000) {
+              console.log('on first page please check cart total');
+              // if (this.isUserLoggedIn) {
+              //   this.$refs.continueButton.visible = false;
+              // } else {
+              //   this.$refs.continueButton.visible = true;
+              //   }
+              this.$refs.stepper.next();
+            } else {
+              this.popupMessage(
+                'warning',
+                'Cart Minimum amount should be Rs 1,000/-',
+                'center'
+              );
+            }
+
+          case 2:
+            this.addressValidation
+              ? this.$refs.stepper.next()
+              : this.setAddressValidationCounter();
+            console.log('inside', this.step, this.addressValidation);
+            break;
+          default:
+            this.$refs.stepper.next();
+            break;
+        }
+      } else {
+        this.$refs.stepper.previous();
+      }
+    }
+  },
+  mounted() {
+    switch (this.stage) {
+      case 'confirmation':
+        this.step = 4;
+        break;
+      case 'failed':
+        this.popupMessage('negative', 'Payment Failed', 'center');
+        this.step = 3;
+        break;
+      default:
+        break;
+    }
   }
 };
 </script>

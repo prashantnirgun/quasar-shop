@@ -1,8 +1,8 @@
 <template>
-  <div class="column">
+  <div class="row">
+    <!-- <q-btn flat padding="" label="" class="mx-lg" /> -->
     <q-input
-      class="float-left q-ml-xl"
-      style="width: 300px;"
+      class="float-left q-ml-xl col-md-10"
       bg-color="white"
       dense
       outlined

@@ -10,7 +10,7 @@ import { LocalStorage } from 'quasar';
 Vue.use(Vuex);
 
 const dataState = new createPersistedState({
-  paths: ['cart', 'user', 'isUserLoggedIn', 'rememberMe', 'token'],
+  paths: ['cart', 'user', 'isUserLoggedIn', 'rememberMe', 'token', 'sidebar'],
   storage: {
     //remember here key is 'vuex'
     getItem: key => LocalStorage.getItem(key),
@@ -29,7 +29,15 @@ const Store = new Vuex.Store({
     loginPrompt: false,
     addressValidation: true,
     guestLogin: false,
-    addressValidationCounter: 0
+    addressValidationCounter: 0,
+    sidebar: [
+      {
+        label: 'Home',
+        icon: 'home',
+        to: '/',
+        level: 1
+      }
+    ]
   },
   modules: {
     cart,
@@ -51,8 +59,30 @@ const Store = new Vuex.Store({
     ADDRESS_VALIDATION_COUNTER(state, action) {
       state.addressValidationCounter++;
     },
-    IS_USER_LOGGED_IN(steate, action) {
+    IS_USER_LOGGED_IN(state, action) {
       state.isUserLoggedIn = action;
+    },
+    UPDATE_SIDEBAR(state, payload) {
+      const found = state.sidebar.find(menu => menu.label === payload.label);
+      const children = [];
+      console.log('inside update_sidebar', found, payload);
+      if (found == undefined) {
+        // payload.list.map(item => {
+        //   children.push({
+        //     label: item.category_name,
+        //     to: '/category/' + item.slug,
+        //     level: 0
+        //   });
+        // });
+        const obj = {
+          label: payload.label,
+          icon: payload.icon,
+          level: 0,
+          children: payload.list
+        };
+        state.sidebar.push(obj);
+      }
+      console.log('category found in sidebar', payload);
     }
   },
   actions: {
@@ -73,6 +103,9 @@ const Store = new Vuex.Store({
     },
     setisUserLoggedIn({ commit }) {
       commit('IS_USER_LOGGED_IN');
+    },
+    updateSidebar({ commit }, payload) {
+      commit('UPDATE_SIDEBAR', payload);
     }
   },
   getters: {
@@ -83,7 +116,8 @@ const Store = new Vuex.Store({
     guestLogin: state => state.guestLogin,
     addressValidation: state => state.addressValidation,
     addressValidationCounter: state => state.addressValidationCounter,
-    isUserLoggedIn: state => state.isUserLoggedIn
+    isUserLoggedIn: state => state.isUserLoggedIn,
+    sidebar: state => state.sidebar
   },
   // enable strict mode (adds overhead!)
   // for dev mode only

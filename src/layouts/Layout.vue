@@ -28,7 +28,9 @@
             style="font-size: 17px;"
             >{{ siteName }}</span
           >
-          <search-bar v-if="isDesktop" />
+          <!-- <center>
+            <search-bar v-if="isDesktop" />
+          </center> -->
         </q-toolbar-title>
 
         <q-btn
@@ -133,12 +135,13 @@
       content-class="bg-ornage"
     >
       <q-list bordered class="rounded-borders">
-        <Sidebar :model="root" depth="0" />
+        <!-- <Sidebar :model="root" depth="0" /> -->
+        <Sidebar v-if="isMobile" :model="root" />
       </q-list>
     </q-drawer>
 
     <q-page-container style="background-color:#f1f2f6">
-      <router-view />
+      <router-view :key="$route.fullPath" />
       <!-- place QPageScroller at end of page -->
       <q-page-scroller
         position="bottom-left"
@@ -159,7 +162,7 @@
 
 <script>
 import device_mixin from 'src/mixins/device_mixin';
-import root from 'src/config/menu.json';
+//import root from 'src/config/menu.json';
 import { mapState, mapGetters, mapActions } from 'vuex';
 import { LocalStorage, SessionStorage } from 'quasar';
 export default {
@@ -173,17 +176,18 @@ export default {
       showing: false,
       showPincode: false,
       leftDrawerOpen: false,
-      root
+      root: this.sidebar
     };
   },
   components: {
     tooltip: () => import('components/BaseTooltip'),
-    'search-bar': () => import('src/layouts/SearchBar'),
+    // 'search-bar': () => import('src/layouts/SearchBar'),
     'mini-cart': () => import('components/cart/Mini_cart'),
     pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
     'desktop-menu': () => import('src/layouts/DesktopMenu'),
-    Sidebar: () => import('./Drawer'),
+    //Sidebar: () => import('./Drawer'),
+    Sidebar: () => import('./SideBar'),
     login1: () => import('components/auth/login')
     // login2: () => import('components/auth/loginAccordian'),
     // login3: () => import('components/auth/loginHorizontalTab'),
@@ -199,7 +203,7 @@ export default {
   },
   methods: {
     ...mapActions('user', ['setToken', 'setUser']),
-    ...mapActions('cart', ['updateCustomerId']),
+    ...mapActions('cart', ['updateCustomerId', 'updateDeliveryAddress']),
     ...mapActions(['setLoginRequest']),
     close() {
       this.setLoginRequest(false);
@@ -212,6 +216,7 @@ export default {
       this.setToken(null);
       this.setUser(null);
       this.updateCustomerId(0);
+      this.updateDeliveryAddress({});
       //this.$store.dispatch('setToken', null);
       //this.$store.dispatch('setUser', null);
       if (this.rememberMe === false) {
@@ -224,17 +229,21 @@ export default {
       //Go to home page
       //this.$router.replace('/');
       this.$router.push({ name: 'home' }).catch(err => {});
+      location.reload();
     }
   },
   computed: {
     ...mapGetters('cart', ['cartCount']),
     ...mapGetters('user', ['user']),
-    ...mapGetters(['loginPrompt']),
+    ...mapGetters(['loginPrompt', 'sidebar']),
     ...mapState(['isUserLoggedIn', 'version', 'rememberMe', 'loginPrompt']),
 
     //...mapState(['isUserLoggedIn', 'version']),
     siteName() {
-      return process.env.SITE_NAME;
+      console.log('sitename', this.isDesktop, process.env.SITE_FULL_NAME);
+      return this.isDesktop
+        ? process.env.SITE_FULL_NAME
+        : process.env.SITE_NAME;
     },
     full_name() {
       return !!this.user ? this.user.full_name : 'Guest';
@@ -248,17 +257,15 @@ export default {
   mounted() {
     //console.log('proptlogin', this.loginPrompt);
     /* eslint-disable no-console */
-    // console.log(
-    //   `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,
-    //   'version',
-    //   this.version,
-    //   'user',
-    //   this.user,
-    //   'isLogedIn',
-    //   this.isUserLoggedIn
-    // );
+    console.log(
+      `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,
+      'sidebar',
+      this.sidbar
+    );
   },
   created() {
+    this.root = this.sidebar;
+    console.log('inside layout cread', this.root);
     //this.$q.addressbarColor.set('#228b22');
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="!proceedCart">
-      <div>
+      <div class="q-ma-md">
         You don't have login to website Do you wish to Login for recurring
         customer OR Continue as Guest ?
       </div>
@@ -68,7 +68,8 @@ export default {
         this.guest = true;
         this.setGuestLogin(true);
         this.findGuestId();
-        this.setUserType('G');
+        //I think this method is deleted
+        //this.setUserType('G');
       }
     }
   },

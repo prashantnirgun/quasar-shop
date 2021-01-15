@@ -9,6 +9,16 @@
           <div class="row items-center justify-center full-height">
             <div class="col-xs-12 text-center">
               <img :src="getLogo" width="30%" height="50px" />
+
+              <q-btn
+                icon="close"
+                v-if="isMobile"
+                flat
+                round
+                color="white"
+                class="float-right"
+                @click="close"
+              />
               <div
                 v-if="isDesktop"
                 class="text-weight-bolder text-white text-h6"

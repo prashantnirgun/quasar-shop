@@ -14,7 +14,7 @@ const getDefaultState = () => {
     deliveryAddress: {},
     billingAddress: {},
     customerID: 0,
-    user_type: 'G',
+    user_type: 'XX',
     currentCategoryDisplay: { category_id: 0, totalItem: 0 },
     taxes: [] //{name : 'xx' , tax_amount : 0}
   };
@@ -97,25 +97,22 @@ export default {
           deliveryCharges =
             state.deliveryAddress.delivery_charges * state.productQuantity;
         }
-
-        if (deliveryCharges > 0) {
-          let found = state.taxes.find(
-            tax => tax.tax_name === 'Delivery Charges'
-          );
-          if (found) {
-            found.tax_amount = deliveryCharges;
-          } else {
-            state.taxes.push({
-              tax_name: 'Delivery Charges',
-              tax_amount: deliveryCharges
-            });
-          }
-        }
-
-        //GST is all inclusing so add only delviery charges
-        //state.taxAmount = gstTaxAmount + deliveryCharges;
-        state.cartTotal = state.productAmount + deliveryCharges;
       }
+      //if (deliveryCharges > 0) {
+      let found = state.taxes.find(tax => tax.tax_name === 'Delivery Charges');
+      if (found) {
+        found.tax_amount = deliveryCharges;
+      } else {
+        state.taxes.push({
+          tax_name: 'Delivery Charges',
+          tax_amount: deliveryCharges
+        });
+      }
+      //}
+
+      //GST is all inclusing so add only delviery charges
+      //state.taxAmount = gstTaxAmount + deliveryCharges;
+      state.cartTotal = state.productAmount + deliveryCharges;
     },
     ADD_TO_CART(state, payload) {
       let productInCart =
@@ -269,7 +266,7 @@ export default {
     },
     UPDATE_CUSTOMER_ID(state, payload) {
       state.customerID = payload;
-      state.user_tpye = payload > 0 ? 'U' : 'G';
+      state.user_type = payload > 0 ? 'U' : 'G';
     },
     UPDATE_BILL_TYPE(state, payload) {
       state.billType = payload;

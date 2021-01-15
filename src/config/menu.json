@@ -1,12 +1,12 @@
 [
   {
-    "label": "Dashboard",
+    "label": "Home",
     "icon": "home",
-    "to": "/dashboard",
+    "to": "/",
     "level": 1
   },
   {
-    "label": "Product Management",
+    "label": "Hot Deals",
     "icon": "menu_book",
     "level": 0.5,
     "children": [
@@ -49,7 +49,7 @@
     ]
   },
   {
-    "label": "Account",
+    "label": "Category",
     "icon": "account_balance",
     "level": 0.5,
     "children": [
