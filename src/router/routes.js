@@ -67,6 +67,16 @@ const routes = [
         name: 'kill',
         path: '/kill',
         component: () => import('pages/Kill.vue')
+      },
+      {
+        name: 'thank-you',
+        path: '/thank-you',
+        component: () => import('pages/ThankYou.vue')
+      },
+      {
+        name: 'contact-us',
+        path: '/contact-us',
+        component: () => import('pages/ContactUs.vue')
       }
       // {
       //   path: '/dashboard',

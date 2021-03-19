@@ -213,7 +213,7 @@ export default {
           this.updateSidebar({
             label: 'Hot Deal',
             list: option,
-            icon: 'card_giftcard'
+            icon: 'alarm_on'
           });
         })
         .catch(error => {

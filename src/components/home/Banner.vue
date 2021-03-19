@@ -1,8 +1,7 @@
 <template>
-  <div class="row ">
+  <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <q-carousel
-        :class="$q.platform.is.desktop ? 'q-ml-sm' : ''"
         v-model="slide"
         arrows
         swipeable
@@ -17,7 +16,7 @@
           :name="slide.name"
           :img-src="slide.img"
         >
-          <div class="absolute-bottom custom-caption">
+          <!-- <div class="absolute-bottom custom-caption">
             <div
               v-bind:class="caption.class"
               v-for="caption in slide.captions"
@@ -25,7 +24,7 @@
             >
               {{ caption.text }}
             </div>
-          </div>
+          </div> -->
         </q-carousel-slide>
       </q-carousel>
     </div>

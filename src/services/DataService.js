@@ -5,6 +5,7 @@ export default {
     return axiosInstance.get(route);
   },
   post(route, data) {
+    //console.log('route', route);
     return axiosInstance.post(route, data);
   },
   put(route, data) {

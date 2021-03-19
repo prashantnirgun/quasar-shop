@@ -1,9 +1,11 @@
 <template>
-  <div class="bg-primary text-white" style="overflow: hidden;">
+  <div v-if="isDesktop" class="bg-primary text-white" style="overflow: hidden;">
     <div class="row wrap justify-center items-start" style="overflow: hidden;">
       <div class="col-6 col-md-2 col-lg-2 col-xl-12 q-pa-sm">
         <div class="text-subtitle1 text-weight-bold">About</div>
-        <div class="text-caption hover_underline_white">About Us</div>
+        <div class="text-caption hover_underline_white">
+          About Us
+        </div>
         <div class="text-caption hover_underline_white">Careers</div>
         <div class="text-caption hover_underline_white">Our Stories</div>
         <div class="text-caption hover_underline_white">Press</div>
@@ -63,4 +65,24 @@
       </div>
     </div>
   </div>
+  <div v-else class="bg-primary text-white q-py-md" style="overflow: hidden;">
+    <div class="row wrap justify-center items-start" style="overflow: hidden;">
+      <a
+        href="tel:02227831775"
+        class="text-white"
+        style="text-decoration: none;"
+        >Customer Care 022-27831775</a
+      >
+    </div>
+  </div>
 </template>
+
+<script>
+import device_mixin from 'src/mixins/device_mixin';
+export default {
+  mixins: [device_mixin],
+  mounted() {
+    console.log('from footer', this.isDesktop);
+  }
+};
+</script>

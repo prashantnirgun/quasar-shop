@@ -7,6 +7,7 @@
       v-model="username"
       label="Username*"
       lazy-rules
+      :disable="islogin"
     ></q-input>
     <q-input
       dense
@@ -17,6 +18,7 @@
       label="Password*"
       lazy-rules
       autocomplete="on"
+      :disable="islogin"
     >
       <template v-slot:append>
         <q-icon
@@ -33,6 +35,7 @@
       v-model="otp"
       label="OTP*"
       lazy-rules
+      v-if="islogin"
     ></q-input>
 
     <q-checkbox
@@ -63,7 +66,8 @@ export default {
       rememberMe: false,
       value: false,
       isPwdNew: true,
-      opt: ''
+      otp: '',
+      islogin: false
     };
   },
   methods: {
@@ -75,25 +79,33 @@ export default {
       //request to server
       DataService.post('user/login', {
         user_name: this.username,
-        password: this.password
+        password: this.password,
+        otp: this.otp
       }).then(response => {
         //console.log('response', response);
         this.$q.loading.hide();
-        if (response.data.token) {
-          this.username = '';
-          this.password = '';
-          console.log('login successfull', response.data);
-          setAxiosHeaders(response.data.token);
-          this.setToken(response.data.token);
-          this.setUser(response.data.user);
-          this.updateCustomerId(response.data.user.general_ledger_id);
-          this.setRememberMe(this.rememberMe);
-          this.$emit('close');
-        } else {
+        if (response.data.status === 'failed') {
           this.$q.notify({
             type: 'negative',
             message: `Wrong user Name or Password`
           });
+        } else {
+          if (this.otp.length < 6) {
+            this.islogin = true;
+          } else {
+            this.islogin = false;
+            if (response.data.token) {
+              this.username = '';
+              this.password = '';
+              //console.log('login successfull', response.data);
+              setAxiosHeaders(response.data.token);
+              this.setToken(response.data.token);
+              this.setUser(response.data.user);
+              this.updateCustomerId(response.data.user.general_ledger_id);
+              this.setRememberMe(this.rememberMe);
+              this.$emit('close');
+            }
+          }
         }
       });
     },

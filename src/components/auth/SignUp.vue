@@ -17,7 +17,7 @@
         v-model="user_name"
         label="Username*"
         lazy-rules
-        :rules="[uniqueNameRule]"
+        :rules="[required, uniqueNameRule]"
       ></q-input>
       <!-- <div class="row"> -->
       <q-input
@@ -71,7 +71,7 @@
         outlined
         type="number"
         v-model.number="mobile"
-        :rules="[isPhoneNumber]"
+        :rules="[isPhoneNumber, uniquePhoneRule]"
         label="Mobile Number*"
         lazy-rules
       ></q-input>
@@ -120,10 +120,13 @@ export default {
     ...mapActions('user', ['setToken', 'setUser']),
     ...mapActions('cart', ['updateCustomerId']),
     uniqueNameRule(value) {
-      return this.isUniqueName('user', 0, 'user_name', value);
+      return this.isUserAvailable('user_name', value);
     },
     uniqueEmailRule(value) {
-      return this.isUniqueName('user', 0, 'email_id', value);
+      return this.isUserAvailable('email_id', value);
+    },
+    uniquePhoneRule(value) {
+      return this.isUserAvailable('mobile', value);
     },
     passwordRule(value) {
       if (value.length <= 7) {
@@ -146,7 +149,9 @@ export default {
             full_name: this.full_name,
             email_id: this.email_id,
             general_ledger_id: 0,
-            mobile: this.mobile
+            mobile: this.mobile,
+            company_id: process.env.COMPANY_ID,
+            company_type_id: process.env.COMPANY_TYPE
           };
 
           AuthenticationService.register({ ...columns })

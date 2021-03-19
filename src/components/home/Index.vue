@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-mt-sm">
+  <q-page class="">
     <banner />
     <sliders :device="deviceInfo" />
     <sub-footer />

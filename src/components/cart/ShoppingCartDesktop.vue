@@ -57,7 +57,7 @@
             outline
             color="primary"
             label="Payment Gateway"
-            @click="payNow('PREPAID')"
+            @click="payNow('PAYMENT GATEWAY')"
             :disable="processing"
           />
         </div>
@@ -159,19 +159,20 @@ export default {
     ...mapActions(['setAddressValidationCounter']),
     ...mapActions('cart', ['updateBillType']),
     async payNow(paymentMode) {
-      const mode = paymentMode === 'PREPAID' ? 'PR' : 'CD';
-      this.updateBillType(mode);
+      //const mode = paymentMode === 'PREPAID' ? 'PG' : 'CD';
+      console.log('inside payNow', paymentMode);
+      this.updateBillType(paymentMode);
       this.$q.loading.show();
       this.processing = true;
+
       try {
         let response = await DataService.post('payment', { ...this.cart });
         console.log('wait let me check response', response);
         if (response.data.status && response.data.status === 'success') {
           console.log('please put me to success route', response.data);
-          // this.$router.push({
-          //   name: 'shopping-cart',
-          //   params: { stage: 'confirmation' }
-          // });
+          this.$router.push({
+            name: 'thank-you'
+          });
         } else {
           console.log('else');
           window.location.href = response.data;
@@ -187,6 +188,9 @@ export default {
         this.$q.loading.hide();
         this.processing = true;
       }
+
+      //this.$q.loading.hide();
+      //this.processing = true;
     },
     // s(val) {
     //   console.log('value final value receied as payload', val);

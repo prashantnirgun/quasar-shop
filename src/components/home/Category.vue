@@ -54,7 +54,7 @@ export default {
             label: item.category_name,
             to: '/category/' + item.slug,
             level: 0,
-            icon: 'info'
+            icon: 'label_important'
           };
         });
 

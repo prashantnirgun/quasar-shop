@@ -4,7 +4,7 @@ import { Notify } from 'quasar';
 const getDefaultState = () => {
   return {
     cart: [],
-    billType: 'PR',
+    billType: 'PAYMENT GATEWAY',
     productAmount: 0,
     productBaseAmount: 0,
     productQuantity: 0,
@@ -70,6 +70,17 @@ export default {
     },
     deliveryAddress: state => {
       return state.deliveryAddress;
+    },
+    deliveryAddressFull: state => {
+      return (
+        state.deliveryAddress.apartment +
+        ', ' +
+        state.deliveryAddress.area +
+        ', ' +
+        state.deliveryAddress.city +
+        ', ' +
+        state.deliveryAddress.landmark
+      );
     },
     deliveryAddressStatus: state => {
       return state.deliveryAddress

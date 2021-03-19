@@ -143,7 +143,8 @@ export default {
             return {
               label: item.product_name,
               to: '/product/' + item.slug,
-              level: 0
+              level: 0,
+              icon: 'label_important'
             };
           });
 
@@ -151,7 +152,7 @@ export default {
           this.updateSidebar({
             label: 'New Arrival',
             list: option,
-            icon: 'alarm_on'
+            icon: 'card_giftcard'
           });
         })
         .catch(error => {

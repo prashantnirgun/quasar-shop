@@ -1,8 +1,9 @@
 <template>
   <div>
-    <q-list class="rounded-borders" v-for="option in model" :key="option.label">
+    <q-list class="" v-for="option in model" :key="option.label" bordered>
       <q-expansion-item
         v-if="!!option.children"
+        class="text-weight-bold"
         expand-separator
         :icon="option.icon"
         :label="option.label"
@@ -17,7 +18,9 @@
           <q-item-section avatar>
             <q-icon :name="option.icon" />
           </q-item-section>
-          <q-item-section>{{ option.label }}</q-item-section>
+          <q-item-section class="text-weight-regular">{{
+            option.label
+          }}</q-item-section>
         </q-item>
       </q-list>
     </q-list>

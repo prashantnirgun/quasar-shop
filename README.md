@@ -33,19 +33,25 @@ Its forked from [quasar-shoping](https://github.com/mayur091193/quasar-shopping)
 
 ## Features Not Completed or WIP List
 
-|  #  | Features                        | Completed | Description                                                                                       |
-| :-: | ------------------------------- | :-------: | ------------------------------------------------------------------------------------------------- |
-|  1  | Two factor Authentication       |    No     | Need to build two factor authentification like OTP, recaptch or Human detection                   |
-|  2  | Protected Routes                |    No     | Only allowed to registered user                                                                   |
-|  3  | Product Search                  |    No     | Product search is not yet build                                                                   |
-|  4  | Order Cancellation              |    No     | Needs to build this feature                                                                       |
-|  5  | Order Refund                    |    No     | Needs to build this feature, needs to decide refund policy                                        |
-|  6  | Quick Bill                      |    No     | For retail customer has more than 20 items to be purchased need some fast billing system like POS |
-|  7  | Ticketing, Support              |    No     | Needs to build ticketing or support forum                                                         |
-|  8  | i18n                            |    No     | But surely going to use this feature                                                              |
-|  9  | Encrypt Local Storage           |    No     | Need to encrypt local storage                                                                     |
-| 10  | Front page Slider Customisation |    No     | Need user to decide which banner and its sequesnse feature needs to build                         |
-| 11  | Multiple Images of Product      |    No     | Needs to modifiy backend to allow multiple images of the product                                  |
+|  #  | Features                         | Completed | Description                                                                                       |
+| :-: | -------------------------------- | :-------: | ------------------------------------------------------------------------------------------------- |
+|  1  | Two factor Authentication        |    No     | Need to build two factor authentification like OTP, recaptch or Human detection                   |
+|  2  | Protected Routes                 |    No     | Only allowed to registered user                                                                   |
+|  3  | Product Search                   |    No     | Product search is not yet build                                                                   |
+|  4  | Timmer                           |    No     |                                                                                                   |
+|  5  | Payment Gateway                  |    No     |                                                                                                   |
+|  6  | Cash on Delivery                 |    No     |                                                                                                   |
+|  7  | Sales Bill in store portal       |    No     |                                                                                                   |
+|  8  | Pincode slow                     |    No     |                                                                                                   |
+|  9  | Order Cancellation               |    No     | Needs to build this feature                                                                       |
+| 10  | Order Refund                     |    No     | Needs to build this feature, needs to decide refund policy                                        |
+| 11  | Quick Bill                       |    No     | For retail customer has more than 20 items to be purchased need some fast billing system like POS |
+| 12  | Product Page Mobile Image Center |    No     |                                                                                                   |
+| 13  | All Cart Pages finalize          |    no     |                                                                                                   |
+| 14  | Encrypt Local Storage            |    No     | Need to encrypt local storage                                                                     |
+| 15  | Front page Slider Customisation  |    No     | Need user to decide which banner and its sequesnse feature needs to build                         |
+| 16  | Multiple Images of Product       |    No     | Needs to modifiy backend to allow multiple images of the product                                  |
+| 17  | Delivery Person Update Status    |    No     |                                                                                                   |
 
 ## Mobile Features List
 

@@ -1,7 +1,7 @@
 [
   {
     "name": "first",
-    "img": "https://ske.cloudapmc.com/banner/carousel_image_6.jpg",
+    "img": "https://saikrupaenterprises.in/banner/carousel_image_6.jpg",
     "captions": [
       { "text": "First stop", "class": "text-subtitle1" },
       { "text": "Mountains", "class": "text-caption" }
@@ -10,7 +10,7 @@
 
   {
     "name": "second",
-    "img": "https://ske.cloudapmc.com/banner/carousel_image_2.jpg",
+    "img": "https://saikrupaenterprises.in/banner/carousel_image_2.jpg",
     "captions": [
       { "text": "Second stop", "class": "text-subtitle1" },
       { "text": "Famous City", "class": "text-caption" }
@@ -18,7 +18,7 @@
   },
   {
     "name": "third",
-    "img": "https://ske.cloudapmc.com/banner/carousel_image_3.jpg",
+    "img": "https://saikrupaenterprises.in/banner/carousel_image_3.jpg",
     "captions": [
       { "text": "Third stop", "class": "text-subtitle1" },
       { "text": "Famous Bridge", "class": "text-caption" }
@@ -26,11 +26,11 @@
   },
   {
     "name": "fourth",
-    "img": "https://ske.cloudapmc.com/banner/carousel_image_4.jpg"
+    "img": "https://saikrupaenterprises.in/banner/carousel_image_4.jpg"
   },
 
   {
     "name": "fifth",
-    "img": "https://ske.cloudapmc.com/banner/carousel_image_5.jpg"
+    "img": "https://saikrupaenterprises.in/banner/carousel_image_5.jpg"
   }
 ]

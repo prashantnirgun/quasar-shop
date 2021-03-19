@@ -38,41 +38,65 @@
         </div>
       </q-step>
 
-      <q-step :name="3" title="Order" icon="looks_3" style="min-height: 200px;">
+      <q-step
+        :name="3"
+        title="Payment"
+        icon="looks_3"
+        style="min-height: 200px;"
+      >
         <cart-overview />
 
-        <div>
+        <div class="row wrap justify-evenly q-ma-md">
           <q-btn
-            color="primary"
-            label="Cash on Delivery"
-            class="q-ma-lg"
-            @click="payNow('CASH ON DELIVERY')"
-            :disable="processing"
-          />
+            color="indigo-10"
+            @click="payNow('PAYMENT GATEWAY')"
+            :disable="!processing"
+          >
+            <div class="row items-center no-wrap">
+              <div class="text-center">Payment<br />Gateway</div>
+            </div>
+          </q-btn>
 
           <q-btn
+            color="indigo-10"
             outline
+            @click="payNow('CASH ON DELIVERY')"
+            :disable="!processing"
+          >
+            <div class="row items-center no-wrap">
+              <div class="text-center">Cash on<br />Delivery</div>
+            </div>
+          </q-btn>
+
+          <!-- <q-btn
             color="primary"
-            label="Payment Gateway"
-            @click="payNow('PREPAID')"
+            label="Cash on<br>Delivery"
+            class="q-ma-sm"
+            @click="payNow('CASH ON DELIVERY')"
             :disable="processing"
-          />
+          /> -->
         </div>
       </q-step>
 
-      <q-step :name="4" icon="looks_4" title="Pay" style="min-height: 200px;">
+      <!-- <q-step :name="4" icon="looks_4" title="Pay" style="min-height: 200px;">
         Try out different ad text to see what brings in the most customers, and
         learn how to enhance your ads using features like ad extensions. If you
         run into any problems with your ads, find out how to tell if they're
         running and how to resolve approval issues.
-      </q-step>
+      </q-step> -->
 
       <template v-slot:navigation>
-        <q-stepper-navigation>
-          <q-btn
+        <q-stepper-navigation class="q-mt-md">
+          <!-- <q-btn
             @click="pageSkip('Next')"
             color="primary"
             v-if="step <= 1 || guestLogin || isUserLoggedIn"
+            :label="step === 4 ? 'Finish' : 'Continue'"
+          /> -->
+          <q-btn
+            @click="pageSkip('Next')"
+            color="primary"
+            v-if="step <= 2"
             :label="step === 4 ? 'Finish' : 'Continue'"
           />
           <q-btn
@@ -151,14 +175,19 @@ export default {
   },
   computed: {
     ...mapGetters(['guestLogin', 'isUserLoggedIn']),
-    ...mapGetters('cart', ['deliveryAddressStatus', 'productAmount'])
+    ...mapGetters('cart', ['deliveryAddressStatus', 'productAmount']),
+    ...mapState(['cart'])
   },
   methods: {
     ...mapActions(['setAddressValidationCounter']),
     ...mapActions('cart', ['updateBillType']),
     async payNow(paymentMode) {
-      const mode = paymentMode === 'PREPAID' ? 'PR' : 'CD';
-      this.updateBillType(mode);
+      console.log('inside paynow', paymentMode, this.processing);
+      //const mode = paymentMode === 'PREPAID' ? 'PR' : 'CD';
+
+      console.log({ ...this.cart });
+
+      this.updateBillType(paymentMode);
       this.$q.loading.show();
       this.processing = true;
       try {
@@ -166,16 +195,15 @@ export default {
         console.log('wait let me check response', response);
         if (response.data.status && response.data.status === 'success') {
           console.log('please put me to success route', response.data);
-          // this.$router.push({
-          //   name: 'shopping-cart',
-          //   params: { stage: 'confirmation' }
-          // });
+          this.$router.push({
+            name: 'thank-you'
+          });
         } else {
           console.log('else');
           window.location.href = response.data;
         }
       } catch (error) {
-        console.log('data', result.data.rows);
+        console.log('payNow() catch', error);
         this.$q.notify({
           message: 'Sorry its seems you have not logged in to system',
           color: 'negative',

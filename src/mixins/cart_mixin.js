@@ -41,6 +41,7 @@ export default {
       // });
     },
     decrement(data, quantity) {
+      console.log('inside decrement', quantity);
       this.updateProductQuantity(this.extractData(data, quantity));
       // this.updateProductQuantity({
       //   product_id: data.product_id,

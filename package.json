@@ -1,8 +1,8 @@
 {
-  "name": "quasar-shop",
+  "name": "Saikrupa Enterprises",
   "version": "0.0.1",
-  "description": "Quasar Ecommerce Project",
-  "productName": "Quasar Shop",
+  "description": "Saikrupa Enterprises Online Portal",
+  "productName": "Saikrupa Enterprises",
   "author": "Prashant Nirgun",
   "private": true,
   "scripts": {
