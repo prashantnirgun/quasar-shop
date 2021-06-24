@@ -136,16 +136,15 @@ export default {
     'shipping-address-create-update': () =>
       import('./ShippingAddressCreateUpdate')
   },
+
+  mixins: [common_mixin, form_mixin],
   watch: {
-    addressValidationCounter(newVal, oldVal) {
-      console.log('going to call validation', newVal);
-      if (newVal) {
-        this.onSubmit();
-      }
+    pageIndex(newVal) {
+      console.log('insdie cartBillingLoginUser watch', newVal);
+      this.getAddress();
+      this.updateCustomerId(this.general_ledger_id);
     }
   },
-  mixins: [common_mixin, form_mixin],
-
   data() {
     return {
       form: 'form_logged_user_address',
@@ -158,7 +157,7 @@ export default {
   computed: {
     ...mapState(['isUserLoggedIn', 'guestLogin']),
     ...mapGetters('user', ['general_ledger_id']),
-    ...mapGetters(['addressValidationCounter']),
+    ...mapGetters('cart', ['deliveryAddress', 'pageIndex']),
     proceedCart() {
       return this.isUserLoggedIn || this.guest;
     }
@@ -185,7 +184,7 @@ export default {
       'findGuestId',
       'updateCustomerId'
     ]),
-    ...mapActions(['setLoginRequest', 'setGuestLogin']),
+    ...mapActions(['setLoginRequest', 'setGuestLogin', 'setAddressValidation']),
 
     doAction(payload) {
       switch (payload.action) {
@@ -211,18 +210,20 @@ export default {
           console.log('mixin/ddlb Error', error);
         });
     },
+
     getUser() {
       this.$q.loading.show();
-      DataService.get(`profile`)
+      DataService.get(`user/profile`)
         .then(response => {
           this.$q.loading.hide();
-          console.log('address received', response.data);
+          console.log('profile received', response.data);
           this.user = response.data.rows[0];
         })
         .catch(error => {
           console.log('mixin/ddlb Error', error);
         });
     },
+
     getAddress() {
       this.$q.loading.show();
       DataService.get(`address`)
@@ -241,6 +242,8 @@ export default {
                 'delivery address not reachable',
                 defaultAddress.status
               );
+            } else {
+              this.setAddressValidation(true);
             }
 
             this.updateDeliveryAddress({
@@ -253,11 +256,7 @@ export default {
               email_id: this.user.email_id
             });
           } else {
-            popupMessage(
-              'warning',
-              'Please select the address of delivery',
-              'center'
-            );
+            this.setAddressValidation(false);
           }
         })
         .catch(error => {
@@ -272,6 +271,7 @@ export default {
     }
   },
   mounted() {
+    console.log('cartBilling LoginUser Mounted');
     this.getUser();
     this.getAddress();
     this.updateCustomerId(this.general_ledger_id);

@@ -12,9 +12,6 @@
           <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
             <cart-list />
           </div>
-          <!-- <div class="col-4" v-if="isDesktop">
-            <cart-overview />
-          </div> -->
         </div>
       </q-step>
 
@@ -26,15 +23,10 @@
         style="min-height: 400px;"
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
-          <!-- <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12"> -->
           <cart-billing
             ref="cartBilling"
             @addressValidation="addressValidation = $event"
           />
-          <!-- </div> -->
-          <!-- <div class="col-4" v-if="isDesktop">
-            <cart-overview />
-          </div> -->
         </div>
       </q-step>
 
@@ -46,58 +38,35 @@
       >
         <cart-overview />
 
-        <div class="row wrap justify-evenly q-ma-md">
-          <q-btn
-            color="indigo-10"
-            @click="payNow('PAYMENT GATEWAY')"
-            :disable="!processing"
-          >
-            <div class="row items-center no-wrap">
-              <div class="text-center">Payment<br />Gateway</div>
-            </div>
-          </q-btn>
+        <div>
+          <div class="text-center">NEFT & UPA payments are free</div>
+          <div class="row wrap justify-evenly q-ma-md">
+            <q-btn color="indigo-10" @click="payNow('PAYMENT GATEWAY')">
+              <div class="row items-center no-wrap">
+                <div class="text-center">Payment<br />Gateway</div>
+              </div>
+            </q-btn>
 
-          <q-btn
-            color="indigo-10"
-            outline
-            @click="payNow('CASH ON DELIVERY')"
-            :disable="!processing"
-          >
-            <div class="row items-center no-wrap">
-              <div class="text-center">Cash on<br />Delivery</div>
-            </div>
-          </q-btn>
-
-          <!-- <q-btn
-            color="primary"
-            label="Cash on<br>Delivery"
-            class="q-ma-sm"
-            @click="payNow('CASH ON DELIVERY')"
-            :disable="processing"
-          /> -->
+            <q-btn
+              color="indigo-10"
+              outline
+              @click="payNow('CASH ON DELIVERY')"
+            >
+              <div class="row items-center no-wrap">
+                <div class="text-center">Cash on<br />Delivery</div>
+              </div>
+            </q-btn>
+          </div>
         </div>
       </q-step>
 
-      <!-- <q-step :name="4" icon="looks_4" title="Pay" style="min-height: 200px;">
-        Try out different ad text to see what brings in the most customers, and
-        learn how to enhance your ads using features like ad extensions. If you
-        run into any problems with your ads, find out how to tell if they're
-        running and how to resolve approval issues.
-      </q-step> -->
-
       <template v-slot:navigation>
         <q-stepper-navigation class="q-mt-md">
-          <!-- <q-btn
-            @click="pageSkip('Next')"
-            color="primary"
-            v-if="step <= 1 || guestLogin || isUserLoggedIn"
-            :label="step === 4 ? 'Finish' : 'Continue'"
-          /> -->
           <q-btn
             @click="pageSkip('Next')"
             color="primary"
             v-if="step <= 2"
-            :label="step === 4 ? 'Finish' : 'Continue'"
+            label="Continue"
           />
           <q-btn
             v-if="step > 1"
@@ -146,64 +115,71 @@ export default {
     'cart-list': () => import('./CartList'),
     'cart-billing': () => import('./CartBilling')
   },
-  data() {
-    return {
-      step: 1,
-      processing: true,
-      addressValidation: false
-    };
-  },
   watch: {
-    deliveryAddressStatus(newVal) {
-      console.log(
-        'controlling behaviour',
-        newVal,
-        newVal == false,
-        newVal == true
-      );
-      if (this.step === 2 && newVal == false) {
-        this.validation = true;
-      } else {
-        this.validation = false;
-      }
-    },
-    addressValidation(newVal) {
-      if (newVal === true) {
-        this.step = 3;
+    pageIndex: {
+      immediate: true,
+      handler(newVal, oldVal) {
+        console.log('pageIndex', newVal, oldVal);
+        if (newVal > oldVal) {
+          this.$refs.stepper.next();
+        } else if (oldVal > 1) {
+          this.$refs.stepper.previous();
+        }
       }
     }
   },
+  data() {
+    return {
+      step: 1,
+      validation: false,
+      processing: true,
+      maxAmount: 10
+    };
+  },
+
   computed: {
-    ...mapGetters(['guestLogin', 'isUserLoggedIn']),
-    ...mapGetters('cart', ['deliveryAddressStatus', 'productAmount']),
+    ...mapGetters([
+      'guestLogin',
+      'isUserLoggedIn',
+      'addressValidation',
+      'addressUpdatedCounter'
+    ]),
+    ...mapGetters('cart', ['productAmount', 'deliveryAddress', 'pageIndex']),
+    ...mapGetters('user', ['user']),
     ...mapState(['cart'])
   },
   methods: {
-    ...mapActions(['setAddressValidationCounter']),
-    ...mapActions('cart', ['updateBillType']),
+    ...mapActions('cart', ['updateBillType', 'updatePageIndex']),
+    ...mapActions(['setaddressUpdatedCounter']),
     async payNow(paymentMode) {
-      console.log('inside paynow', paymentMode, this.processing);
-      //const mode = paymentMode === 'PREPAID' ? 'PR' : 'CD';
-
-      console.log({ ...this.cart });
-
       this.updateBillType(paymentMode);
       this.$q.loading.show();
       this.processing = true;
+
       try {
-        let response = await DataService.post('payment', { ...this.cart });
-        console.log('wait let me check response', response);
-        if (response.data.status && response.data.status === 'success') {
-          console.log('please put me to success route', response.data);
-          this.$router.push({
-            name: 'thank-you'
-          });
+        let cartData = { ...this.cart };
+        cartData.billingAddress.telephone = this.user.mobile;
+        cartData.billingAddress.email_id = this.user.email_id;
+        cartData.billingAddress.full_name = this.user.full_name;
+        //console.log('mobile', this.user.mobile, cartData);
+        if (cartData.billingAddress.telephone.length === 10) {
+          let response = await DataService.post('payment', cartData);
+          console.log('wait let me check response', response.data);
+          if (paymentMode === 'PAYMENT GATEWAY') {
+            window.location.href = response.data;
+          } else {
+            this.$router.push({
+              name: 'thank-you'
+            });
+          }
         } else {
-          console.log('else');
-          window.location.href = response.data;
+          this.popupmessage(
+            'Warning',
+            'Mobile Number should be exact 10',
+            'center'
+          );
         }
       } catch (error) {
-        console.log('payNow() catch', error);
         this.$q.notify({
           message: 'Sorry its seems you have not logged in to system',
           color: 'negative',
@@ -218,67 +194,64 @@ export default {
       if (action === 'Next') {
         switch (this.step) {
           case 1:
-            if (this.productAmount >= 1000) {
-              console.log('on first page please check cart total');
-              // if (this.isUserLoggedIn) {
-              //   this.$refs.continueButton.visible = false;
-              // } else {
-              //   this.$refs.continueButton.visible = true;
-              //   }
+            if (this.productAmount >= this.maxAmount) {
               this.$refs.stepper.next();
             } else {
               this.popupMessage(
                 'warning',
-                'Cart Minimum amount should be Rs 1,000/-',
+                'Cart Minimum amount should be Rs ' + this.maxAmount + '/-',
                 'center'
               );
             }
-
+            break;
           case 2:
-            this.addressValidation
-              ? this.$refs.stepper.next()
-              : this.setAddressValidationCounter();
-            console.log('inside', this.step, this.addressValidation);
+            if (this.guestLogin) {
+              if (this.addressValidation) {
+                console.log('pageIndex', this.pageIndex);
+                this.updatePageIndex(this.pageIndex + 1);
+              } else {
+                this.setaddressUpdatedCounter(this.addressUpdatedCounter + 1);
+              }
+            } else {
+              if (this.addressValidation) {
+                this.updatePageIndex(this.pageIndex + 1);
+              } else {
+                this.$q.notify({
+                  message: 'Please fill delivery address',
+                  color: 'negative',
+                  icon: 'warning'
+                });
+              }
+            }
             break;
           default:
+            this.updatePageIndex(this.step++);
             this.$refs.stepper.next();
             break;
         }
       } else {
         this.$refs.stepper.previous();
+        this.updatePageIndex(this.step);
       }
-    }
-  },
-  mounted() {
-    switch (this.stage) {
-      case 'confirmation':
-        this.step = 4;
-        break;
-      case 'failed':
-        this.popupMessage('negative', 'Payment Failed', 'center');
-        this.step = 3;
-        break;
-      default:
-        break;
     }
   }
 };
 </script>
 <style lang="sass">
 .q-stepper__step-inner
-    padding: 0px !important;
+    padding: 0px !important
 
 .q-stepper__tab
-    padding: 8px 8px;
-    font-size: 14px;
-    flex-direction: row;
+    padding: 8px 8px
+    font-size: 14px
+    flex-direction: row
 
 .q-stepper__line:after
-    position: absolute;
-    top: 50%;
-    width: 0px !important;
+    position: absolute
+    top: 50%
+    width: 0px !important
 
 .q-stepper--horizontal .q-stepper__line:before, .q-stepper--horizontal .q-stepper__line:after
-    position: absolute;
-    height: 1px;
+    position: absolute
+    height: 1px
 </style>

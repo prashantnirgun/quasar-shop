@@ -1,9 +1,41 @@
 import Vue from 'vue';
-import { mapActions } from 'vuex';
 import axios from 'axios';
-//import store from 'src/store';
-import { LocalStorage } from 'quasar'; // make sure you edit quasar.conf.js
+import store from 'src/store';
+//import { LocalStorage } from 'quasar'; // make sure you edit quasar.conf.js
 
+//let newToken = '';
+/*
+const interceptor = axios.interceptors.response.use(
+  response => response,
+  error => {
+    console.log('inside interceptors');
+    // Reject promise if usual error
+    if (errorResponse.status !== 403) {
+      return Promise.reject(error);
+    }
+
+
+    axios.interceptors.response.eject(interceptor);
+
+    return axios
+      .post('/api/refresh_token', {
+        refresh_token: this._getToken('refresh_token')
+      })
+      .then(response => {
+        saveToken();
+        error.response.config.headers['Authorization'] =
+          'Bearer ' + response.data.access_token;
+        return axios(error.response.config);
+      })
+      .catch(error => {
+        destroyToken();
+        this.router.push('/login');
+        return Promise.reject(error);
+      })
+      .finally(createAxiosResponseInterceptor);
+  }
+);
+*/
 const axiosInstance = axios.create({
   baseURL: process.env.API,
   headers: {
@@ -14,44 +46,49 @@ const axiosInstance = axios.create({
   //timeout: 10000
 });
 
-// axiosInstance.interceptors.request.use(req => {
-//   console.log(`Request ${req.method} ${req.url}`);
-//   // Important: request interceptors **must** return the request.
-//   return req;
-// });
-
-export default ({ store, commit, dispatch, app, router, Vue, Vuex }) => {
-  //...mapActions('user', ['setUser']),
+export default ({ store }) => {
   if (store.state.user && store.state.user.token) {
     axios.defaults.headers.common['Authorization'] =
       'Bearer ' + store.state.user.token;
   }
 
-  axiosInstance.interceptors.response.use(
+  const interceptor = axiosInstance.interceptors.response.use(
     response => response,
     error => {
-      if (error.response.status === 403) {
-        //console.log('inside error response', error.response);
-        //console.log('inside store', store.state.user);
-        console.log('inside app', app);
-        console.log('inside router', router);
-        console.log('inside Vue', Vue);
-        store.dispatch('user/setUser', null);
-        store.dispatch('user/setToken', null);
-        //token is handling isUserLoggedIn
-        //store.dispatch('setisUserLoggedIn', false);
-
-        //this.setUser(null);
-        //router.push(’/login’)
-        //store.state.user.set_user(null);
-        //store.state.user.dispatch('SET_TOKEN', null);
-        //store.state.user.commit('SET_TOKEN', null);
-        // store.state.user.commit('SET_USER', null);
-        // store.state.user.commit('LOGIN_REQUEST', true);
-        //localStorage.clear();
-      } else {
+      const status = error.response ? error.response.status : null;
+      // Reject promise if usual error
+      console.log('inside interceptors', error.response.config);
+      if (status !== 403) {
         return Promise.reject(error);
       }
+
+      axiosInstance.interceptors.response.eject(interceptor);
+
+      return (
+        axiosInstance
+          .get('/refresh-token')
+          .then(response => {
+            store.dispatch('user/setToken', response.data.token);
+
+            //store.state.user.token = response.data.token;
+            //console.log('refresh-token-response old', store.state.user.token);
+            console.log('refresh-token-response new', error.response.config);
+
+            //saveToken();
+            error.response.config.headers['Authorization'] =
+              'Bearer ' + response.data.token;
+            //          window.location.reload();
+            return axiosInstance(error.response.config);
+          })
+          .catch(error => {
+            console.log('error in axios Interceptors', error);
+            //destroyToken();
+            //this.router.push('/login');
+            return Promise.reject(error);
+          })
+          //.finally(createAxiosResponseInterceptor);
+          .finally(interceptor)
+      );
     }
   );
 };

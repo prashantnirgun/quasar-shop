@@ -44,7 +44,6 @@
         <div class="q-px-sm">Phone : {{ data.telephone }}</div>
       </div>
       <div class="row q-mt-sm">
-        {{ deliveryAddressState }}
         <q-toggle
           :value="deliveryAddressState"
           label="Delivery to this Address"

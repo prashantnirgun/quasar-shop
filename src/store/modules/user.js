@@ -3,24 +3,24 @@ import DataService from 'src/services/DataService';
 export default {
   namespaced: true,
   state: {
-    user: null,
     token: null
   },
 
   getters: {
     user: state => {
-      return state.user;
+      return state;
     },
     companyId: state => {
-      return state.user.company_id;
+      return state.company_id;
     },
     token: state => {
       return state.token;
     },
     general_ledger_id: state => {
-      return state.user ? state.user.general_ledger_id : 0;
+      return !!state.general_ledger_id ? state.general_ledger_id : 0;
     },
-    quotationPartyId: state => (state.user ? state.user.quotation_party_id : 0)
+    quotationPartyId: state =>
+      !!state.quotation_party_id ? state.quotation_party_id : 0
   },
 
   mutations: {
@@ -34,11 +34,20 @@ export default {
     },
 
     SET_USER(state, user) {
-      state.user = user;
+      //console.log(state.user, user, !!state.user);
+      if (!!user) {
+        Object.keys(user).map(key => {
+          //       console.log('inside set_user', key, user[key]);
+          state[key] = user[key];
+        });
+      } else {
+        //console.log('set_user', user);
+        state = {};
+      }
     },
 
     SET_IMAGE(state, image) {
-      state.user.image_filename = image;
+      state.image_filename = image;
     }
   },
 

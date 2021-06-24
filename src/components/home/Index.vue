@@ -12,13 +12,14 @@ export default {
   mixins: [device_mixin],
   components: {
     banner: () => import('components/home/Banner'),
+    //banner: () => import('components/home/Banner-old'),
     sliders: () => import('components/home/Sliders'),
     'sub-footer': () => import('components/home/Sub-Footer')
   },
   computed: {
     deviceInfo() {
       let b = !!this.isDesktop ? 'Desktop' : 'Mobile';
-      console.log('device info', b);
+      //console.log('device info', b);
       return b;
     }
   }

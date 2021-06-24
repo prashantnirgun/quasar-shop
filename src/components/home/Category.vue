@@ -48,7 +48,7 @@ export default {
     DataService.get('category')
       .then(response => {
         this.lists = response.data.rows;
-        console.log('category data', this.lists);
+        console.log('category got data');
         const option = this.lists.map(item => {
           return {
             label: item.category_name,
@@ -76,5 +76,5 @@ export default {
 .my-card
   box-shadow: none
   &:hover
-    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important
 </style>

@@ -39,7 +39,6 @@
         <!-- <div class="text-caption hover_underline_white"> -->
         <router-link
           to="city"
-          tag="div"
           class="text-caption hover_underline_white cursor-pointer"
           >Area of operation</router-link
         >
@@ -80,9 +79,6 @@
 <script>
 import device_mixin from 'src/mixins/device_mixin';
 export default {
-  mixins: [device_mixin],
-  mounted() {
-    console.log('from footer', this.isDesktop);
-  }
+  mixins: [device_mixin]
 };
 </script>

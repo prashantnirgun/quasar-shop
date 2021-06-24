@@ -51,7 +51,7 @@
 
           <tooltip>Show Mini Cart</tooltip>
         </q-btn>
-        <q-btn
+        <!-- <q-btn
           flat
           round
           dense
@@ -60,7 +60,7 @@
           v-if="isDesktop"
         >
           <tooltip>Settings</tooltip>
-        </q-btn>
+        </q-btn> -->
         <q-btn
           round
           v-if="!isUserLoggedIn"
@@ -87,7 +87,7 @@
             </q-item>
 
             <q-list style="min-width: 100px;">
-              <q-item dense clickable to="/shopping-cart">
+              <q-item dense clickable to="/shopping-cart/1">
                 <q-item-section>Shopping Cart</q-item-section>
                 <q-item-section avatar class="text-indigo">
                   <q-icon name="shopping_cart" color="purpul" size="md" />
@@ -171,7 +171,9 @@
     </q-drawer>
 
     <q-page-container style="background-color:#f1f2f6" class="no-class">
+      <!-- <keep-alive> -->
       <router-view :key="$route.fullPath" />
+      <!-- </keep-alive> -->
       <!-- place QPageScroller at end of page -->
       <q-page-scroller
         position="bottom-right"
@@ -182,7 +184,7 @@
       </q-page-scroller>
       <site-footer />
     </q-page-container>
-    <pincode :showPincode="showPincode" @close="showPincode = false" />
+    <!-- <pincode :showPincode="showPincode" @close="showPincode = false" /> -->
     <login1 :show="showMenu1" @close="close" />
     <!-- <login2 :show="showMenu2" @close="close" />
     <login3 :show="showMenu3" @close="close" />
@@ -213,7 +215,7 @@ export default {
     tooltip: () => import('components/BaseTooltip'),
     //'search-bar': () => import('src/layouts/SearchBar'),
     'mini-cart': () => import('components/cart/Mini_cart'),
-    pincode: () => import('components/Pincode'),
+    //pincode: () => import('components/Pincode'),
     'site-footer': () => import('src/layouts/Footer'),
     'desktop-menu': () => import('src/layouts/DesktopMenu'),
     Sidebar: () => import('./SideBar'),
@@ -255,7 +257,7 @@ export default {
       //Go to home page
       //this.$router.replace('/');
       this.$router.push({ name: 'home' }).catch(err => {});
-      location.reload();
+      window.location.reload();
     }
   },
   computed: {
@@ -266,7 +268,7 @@ export default {
 
     //...mapState(['isUserLoggedIn', 'version']),
     siteName() {
-      console.log('sitename', this.isDesktop, process.env.SITE_FULL_NAME);
+      //console.log('sitename', this.isDesktop, process.env.SITE_FULL_NAME);
       return this.isDesktop
         ? process.env.SITE_FULL_NAME
         : process.env.SITE_NAME;
@@ -275,7 +277,8 @@ export default {
       return !!this.user ? this.user.full_name : 'Guest';
     },
     imgUrl() {
-      return !!this.user &&
+      return process.env.NODE_ENV === 'production' &&
+        !!this.user &&
         this.user.image_filename &&
         this.user.image_filename.length > 5
         ? `${process.env.STATIC}users/${this.user.company_id}/${this.user.image_filename}`
@@ -285,15 +288,17 @@ export default {
   mounted() {
     //console.log('proptlogin', this.loginPrompt);
     /* eslint-disable no-console */
+    /*
     console.log(
       `Dotenv Test: (TEST: ${process.env.SITE_NAME}, ${process.env.NODE_ENV})`,
       'sidebar',
       this.sidbar
     );
+    */
   },
   created() {
     this.root = this.sidebar;
-    console.log('inside layout cread', this.root);
+    //console.log('inside layout cread', this.root);
     //this.$q.addressbarColor.set('#228b22');
   }
 };
@@ -320,14 +325,11 @@ export default {
 .hover_underline_white {
   &:hover {
     text-decoration: underline !important;
-    cursor: pointer;
   }
 }
 .hover_border_grey {
   &:hover {
     border: 1px solid lightgrey;
-    cursor: pointer;
-    border-radius: 3px;
   }
 }
 </style>

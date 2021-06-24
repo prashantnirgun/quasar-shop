@@ -57,7 +57,7 @@
         <q-btn
           color="green"
           label="Go To Cart"
-          @click="$router.push(`/shopping-cart`)"
+          :to="{ name: 'shopping-cart', params: { stage: 1 } }"
         />
       </q-item-section>
     </q-item>

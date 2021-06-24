@@ -24,7 +24,7 @@ export const isPhoneNumber = val => {
     value = val.toString();
   }
   return (
-    (Number(value) == value && value.length >= 10) ||
+    (Number(value) == value && value.length === 10) ||
     'Enter valid mobile number'
   );
 };

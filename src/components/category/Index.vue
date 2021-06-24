@@ -273,6 +273,7 @@ export default {
   },
   computed: {
     ...mapGetters('user', ['quotationPartyId']),
+
     selectedOffers() {
       return this.offers.filter(obj => obj.apply === true);
     },
@@ -389,7 +390,7 @@ export default {
             .children.push(data);
         });
 
-      console.log('data', datas);
+      //console.log('data', datas);
 
       /*
       rawData.map(row => {
@@ -467,7 +468,7 @@ export default {
         if (parseInt(first.size) < parseInt(next.size)) return -1;
       });
 
-      console.log('datas', datas);
+      //console.log('datas', datas);
       this.sortedLists = datas;
     }
   },
@@ -521,8 +522,4 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-img
-    max-width: 100%
-    max-height: 100%
-</style>
+<style lang="sass" scoped></style>

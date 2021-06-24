@@ -47,20 +47,17 @@
               <sign-up v-else @close="close" />
             </q-card-section>
           </div>
-          <div>
-            <q-separator inset></q-separator>
-            <div class="q-pa-sm">
-              <q-item dense clickable>
-                <q-item-section class="text-right" @click="value = false">
-                  <q-item-label dense>Login </q-item-label>
-                </q-item-section>
-                <q-item-section>
-                  <q-toggle v-model="value" dense width="50px" />
-                </q-item-section>
-                <q-item-section class="float-left" @click="value = true">
-                  <q-item-label dense>Register </q-item-label>
-                </q-item-section>
-              </q-item>
+
+          <q-separator inset></q-separator>
+          <div class="row content-around q-gutter-md q-pa-md">
+            <div dense class="col cursor-pointer" @click="value = false">
+              Login
+            </div>
+            <div class="col">
+              <q-toggle v-model="value" dense />
+            </div>
+            <div dense class="col cursor-pointer" @click="value = true">
+              Register
             </div>
           </div>
         </div>
@@ -119,7 +116,7 @@ export default {
       return this.value ? 'Login' : 'Register';
     },
     getSize() {
-      return this.isDesktop ? '350px' : '350px';
+      return this.isDesktop ? '375px' : '350px';
     }
   }
 };

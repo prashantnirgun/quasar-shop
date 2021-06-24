@@ -158,7 +158,7 @@
                 color="green-6"
                 icon="shopping_cart"
                 label="Buy now"
-                @click="$router.push(`/shopping-cart`)"
+                :to="{ name: 'shopping-cart', params: { stage: 1 } }"
               />
             </div>
           </div>
@@ -563,8 +563,24 @@ export default {
       orderQty: 0
     };
   },
+  watch: {
+    cartUpdateCounter(newVal) {
+      let cartItem = this.findItemInCart(this.data.product_id);
+      console.log(
+        'cart updated',
+        newVal,
+        this.data.product_id,
+        cartItem,
+        !!cartItem
+      );
+      if (!!cartItem === false) {
+        this.orderQty = 0;
+      }
+    }
+  },
   computed: {
     ...mapGetters('user', ['quotationPartyId']),
+    ...mapGetters('cart', ['findItemInCart', 'cartUpdateCounter']),
     win_width() {
       return this.$q.screen.width - 59;
     },
@@ -579,66 +595,15 @@ export default {
       let newDate = date.addToDate(new Date(), { days: 2 });
       return date.formatDate(newDate, 'ddd, MMM D ');
     },
-    //...mapState(['cart']),
-    ...mapGetters('cart', ['findItemInCart']),
     getSize() {
       console.log(this.isDesktop);
       return this.isDesktop ? '510px' : '360px';
+    },
+    getItem() {
+      let abc = this.findItemInCart(this.data.product_id);
+      console.log('result', abc);
+      return abc;
     }
-  },
-  methods: {
-    // add() {
-    //   this.orderQty++;
-    //   this.increment(this.data);
-    // }
-    // setQuantity() {
-    //   this.updateProductQuantity({
-    //     product_id: this.data.product_id,
-    //     category_id: this.data.category_id,
-    //     product_name: this.data.product_name,
-    //     category_name: this.data.category_name,
-    //     rate: this.data.rate,
-    //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.rate,
-    //     mrp: this.data.mrp,
-    //     image_filename: this.data.image_filename,
-    //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-    //   });
-    // },
-    // ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
-    // increment() {
-    //   this.orderQty++;
-    //   //message is showing add even in decrement so keept it sepratee
-    //   //this.setQuantity();
-    //   this.addProductToCart({
-    //     product_id: this.data.product_id,
-    //     category_id: this.data.category_id,
-    //     product_name: this.data.product_name,
-    //     category_name: this.data.category_name,
-    //     rate: this.data.rate,
-    //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.rate,
-    //     mrp: this.data.mrp,
-    //     image_filename: this.data.image_filename,
-    //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-    //   });
-    // },
-    // decrement() {
-    //   this.orderQty--;
-    //   //message is showing add even in decrement so keept it sepratee
-    //   //this.setQuantity();
-    //   this.updateProductQuantity({
-    //     product_id: this.data.product_id,
-    //     product_name: this.data.product_name,
-    //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.rate,
-    //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate,
-    //     message: false
-    //   });
-    // }
   },
   mounted() {
     const slug = this.$route.params.slug;

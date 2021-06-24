@@ -67,18 +67,17 @@
             type="number"
             v-model="data.telephone"
             label="Telephone*"
-            :rules="[val => !!val || '* Required']"
+            :rules="[isPhoneNumber]"
           />
         </div>
       </div>
       <div class="row  q-pt-sm">
         <div class="q-px-sm col-6 col-md-6">
-          <q-input
-            dense
-            outlined
-            type="text"
-            v-model="data.pincode"
-            label="Pincode*"
+          <pincode-ddlb
+            title="Pincode List*"
+            :list="pincodeList"
+            :value="data.pincode_id"
+            @changed="data.pincode_id = $event"
           />
         </div>
 
@@ -104,7 +103,7 @@
 
 <script>
 import DataService from 'src/services/DataService';
-import { required } from 'src/services/Validation';
+import { required, isPhoneNumber } from 'src/services/Validation';
 import form_mixin from 'src/mixins/form_mixin';
 
 const tableName = 'address';
@@ -112,7 +111,8 @@ export default {
   props: ['show'],
   mixins: [form_mixin],
   components: {
-    modal: () => import('components/BaseModal')
+    modal: () => import('components/BaseModal'),
+    'pincode-ddlb': () => import('components/BaseDdlb')
   },
   data() {
     return {
@@ -130,11 +130,13 @@ export default {
           value: 'N'
         }
       ],
-      stateList: []
+      stateList: [],
+      pincodeList: []
     };
   },
   methods: {
     required,
+    isPhoneNumber,
     async open() {
       // let response = await this.get(`ddlb/state`);
       // this.stateList = JSON.parse(JSON.stringify(response.rows));
@@ -173,7 +175,7 @@ export default {
         telephone: null,
         country_id: 101,
         state_id: 21,
-        pincode: 0,
+        pincode_id: 0,
         apartment: null,
         area: null,
         landmark: null,
@@ -185,6 +187,12 @@ export default {
     updateData(data) {
       this.data = data;
     }
+  },
+  async mounted() {
+    let response = await DataService.get(
+      `pincode-ddlb?company_id=${process.env.COMPANY_ID}`
+    );
+    this.pincodeList = response.data.rows;
   }
 };
 </script>

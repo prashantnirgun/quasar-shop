@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+//import store from 'src/store';
+import routes from './routes';
 
-import routes from './routes'
-
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 /*
  * If not building with SSR mode, you can
@@ -14,7 +14,8 @@ Vue.use(VueRouter)
  * with the Router instance.
  */
 
-export default function (/* { store, ssrContext } */) {
+//export default function(/* { store, ssrContext } */) {
+export default function({ store }) {
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),
     routes,
@@ -24,7 +25,22 @@ export default function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     mode: process.env.VUE_ROUTER_MODE,
     base: process.env.VUE_ROUTER_BASE
-  })
+  });
 
-  return Router
+  Router.beforeEach((to, from, next) => {
+    to.matched.some(route => {
+      let isLoggedIn = store.getters['isUserLoggedIn'];
+      if (route.meta.requiresAuth) {
+        //console.log('before route', isLoggedIn);
+        if (!isLoggedIn) {
+          next({ path: '/' });
+        }
+      }
+
+      next();
+    });
+  });
+
+  //export default Router;
+  return Router;
 }

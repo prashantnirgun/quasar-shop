@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md">
-    <q-stepper v-model="step" ref="stepper" color="primary" animated keep-alive>
+    <q-stepper v-model="step" ref="stepper" color="primary" animated>
       <q-step
         :name="1"
         title="Shopping Cart"
@@ -27,10 +27,7 @@
       >
         <div class="fit row wrap justify-evenly" style="overflow: hidden;">
           <div class="col-8">
-            <cart-billing
-              ref="cartBilling"
-              @addressValidation="addressValidation = $event"
-            />
+            <cart-billing ref="cartBilling" />
           </div>
           <div class="col-4 ">
             <cart-overview />
@@ -45,12 +42,12 @@
         style="min-height: 200px;"
       >
         <div>
+          <div class="q-ma-lg q-mb-none">NEFT & UPA payments are free</div>
           <q-btn
             color="primary"
             label="Cash on Delivery"
             class="q-ma-lg"
             @click="payNow('CASH ON DELIVERY')"
-            :disable="processing"
           />
 
           <q-btn
@@ -58,28 +55,17 @@
             color="primary"
             label="Payment Gateway"
             @click="payNow('PAYMENT GATEWAY')"
-            :disable="processing"
           />
         </div>
       </q-step>
-
-      <q-step
-        :name="4"
-        title="Confirmation"
-        icon="done"
-        style="min-height: 200px;"
-      >
-        <cart-confirmation />
-      </q-step>
-
       <template v-slot:navigation>
         <q-stepper-navigation>
           <q-btn
             :disable="validation"
             @click="pageSkip('Next')"
             color="primary"
-            v-if="step <= 1 || guestLogin || isUserLoggedIn"
-            :label="step === 3 ? 'Finish' : 'Continue'"
+            v-if="step <= 2"
+            label="Continue"
           />
           <q-btn
             v-if="step > 1"
@@ -124,61 +110,80 @@ export default {
   components: {
     'cart-overview': () => import('./CartOverview'),
     'cart-list': () => import('./CartList'),
-    'cart-billing': () => import('./CartBilling'),
-    'cart-confirmation': () => import('./CartConfirmation')
-  },
-  watch: {
-    deliveryAddressStatus(newVal) {
-      console.log(
-        'controlling behaviour',
-        newVal,
-        newVal == false,
-        newVal == true
-      );
-      if (this.step === 2 && newVal == false) {
-        this.validation = true;
-      } else {
-        this.validation = false;
-      }
-    },
-    addressValidation(newVal) {
-      if (newVal === true) {
-        this.step = 3;
-      }
-    }
+    'cart-billing': () => import('./CartBilling')
   },
   data() {
     return {
       step: 1,
-      //addressValidation: false,
       validation: false,
-      processing: true
+      processing: true,
+      maxAmount: 10
     };
   },
+  watch: {
+    $route(from, to) {
+      console.log('from', from, 'to', to);
+      console.log('stage', this.stage, 'pageindex', this.pageIndex);
+      this.updatePageIndex(this.stage);
+      this.step = this.stage;
+    },
+    pageIndex: {
+      immediate: true,
+      handler(newVal, oldVal) {
+        console.log('pageIndex', newVal, oldVal);
+        if (newVal > oldVal) {
+          this.$refs.stepper.next();
+        } else if (oldVal > 1) {
+          this.$refs.stepper.previous();
+        }
+      }
+    },
+    stage(newVal) {
+      console.log('desktop stage', newVal);
+    }
+  },
   methods: {
-    ...mapActions(['setAddressValidationCounter']),
-    ...mapActions('cart', ['updateBillType']),
+    ...mapActions('cart', ['updateBillType', 'updatePageIndex']),
+    ...mapActions(['setaddressUpdatedCounter']),
     async payNow(paymentMode) {
-      //const mode = paymentMode === 'PREPAID' ? 'PG' : 'CD';
-      console.log('inside payNow', paymentMode);
       this.updateBillType(paymentMode);
       this.$q.loading.show();
       this.processing = true;
 
       try {
-        let response = await DataService.post('payment', { ...this.cart });
-        console.log('wait let me check response', response);
-        if (response.data.status && response.data.status === 'success') {
-          console.log('please put me to success route', response.data);
-          this.$router.push({
-            name: 'thank-you'
-          });
+        let cartData = { ...this.cart };
+        cartData.billingAddress.telephone = this.user.mobile;
+        cartData.billingAddress.email_id = this.user.email_id;
+        cartData.billingAddress.full_name = this.user.full_name;
+        console.log(
+          'mobile',
+          cartData.billingAddress.telephone,
+          cartData.billingAddress.telephone.length,
+          typeof cartData.billingAddress.telephone
+        );
+        if (cartData.billingAddress.telephone.toString().length === 10) {
+          let response = await DataService.post(
+            'payment',
+            cartData,
+            paymentMode
+          );
+          console.log('wait let me check response', response.data);
+          if (paymentMode === 'PAYMENT GATEWAY') {
+            window.location.href = response.data;
+          } else {
+            this.$router.push({
+              name: 'thank-you'
+            });
+          }
         } else {
-          console.log('else');
-          window.location.href = response.data;
+          this.popupMessage(
+            'Warning',
+            'Mobile Number should be exact 10',
+            'center'
+          );
         }
       } catch (error) {
-        console.log('data', result.data.rows);
+        console.log('error', error);
         this.$q.notify({
           message: 'Sorry its seems you have not logged in to system',
           color: 'negative',
@@ -188,81 +193,64 @@ export default {
         this.$q.loading.hide();
         this.processing = true;
       }
-
-      //this.$q.loading.hide();
-      //this.processing = true;
     },
-    // s(val) {
-    //   console.log('value final value receied as payload', val);
-    // },
 
     pageSkip(action) {
       if (action === 'Next') {
         switch (this.step) {
           case 1:
-            if (this.productAmount >= 1000) {
-              console.log('on first page please check cart total');
-              // if (this.isUserLoggedIn) {
-              //   this.$refs.continueButton.visible = false;
-              // } else {
-              //   this.$refs.continueButton.visible = true;
-              //   }
-              this.$refs.stepper.next();
+            if (this.productAmount >= this.maxAmount) {
+              this.step++;
+              this.updatePageIndex(this.step);
             } else {
               this.popupMessage(
                 'warning',
-                'Cart Minimum amount should be Rs 1,000/-',
+                'Cart Minimum amount should be Rs ' + this.maxAmount + '/-',
                 'center'
               );
             }
-
+            break;
           case 2:
-            if (this.addressValidation) {
-              this.processing = false;
-              console.log(
-                'inside',
-                this.step,
-                this.addressValidation,
-                this.processing
-              );
-              this.$refs.stepper.next();
+            if (this.guestLogin) {
+              if (this.addressValidation) {
+                this.updatePageIndex(this.pageIndex + 1);
+              } else {
+                this.setaddressUpdatedCounter(this.addressUpdatedCounter + 1);
+              }
             } else {
-              console.log(
-                'inside',
-                this.step,
-                'Address validation = ',
-                this.addressValidation
-              );
-              this.setAddressValidationCounter();
+              if (this.addressValidation) {
+                this.updatePageIndex(this.pageIndex + 1);
+              } else {
+                this.$q.notify({
+                  message: 'Please fill delivery address',
+                  color: 'negative',
+                  icon: 'warning'
+                });
+              }
             }
 
             break;
           default:
+            this.updatePageIndex(this.step++);
             this.$refs.stepper.next();
             break;
         }
       } else {
         this.$refs.stepper.previous();
+        this.updatePageIndex(this.step);
       }
     }
   },
   computed: {
-    ...mapGetters(['guestLogin', 'isUserLoggedIn', 'addressValidation']),
-    ...mapGetters('cart', ['deliveryAddressStatus', 'productAmount']),
+    ...mapGetters([
+      'guestLogin',
+      'isUserLoggedIn',
+      'addressValidation',
+      'addressUpdatedCounter'
+    ]),
+    ...mapGetters('cart', ['productAmount', 'deliveryAddress', 'pageIndex']),
+    ...mapGetters('user', ['user']),
     ...mapState(['cart'])
-  },
-  mounted() {
-    switch (this.stage) {
-      case 'confirmation':
-        this.step = 4;
-        break;
-      case 'failed':
-        this.popupMessage('negative', 'Payment Failed', 'center');
-        this.step = 3;
-        break;
-      default:
-        break;
-    }
   }
 };
 </script>

@@ -111,36 +111,36 @@ module.exports = function(/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `qshop`,
-        short_name: `qshop`,
-        description: `Quasar Ecommerce Project`,
+        name: `Saikrupa Enterprises`,
+        short_name: `SKE`,
+        description: `Saikrupa Enterprises E-Commerce`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
         theme_color: '#027be3',
         icons: [
           {
-            src: 'icons/icon-128x128.png',
+            src: 'icons/favicon-128x128.png',
             sizes: '128x128',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-192x192.png',
+            src: 'icons/favicon-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-256x256.png',
+            src: 'icons/favicon-256x256.png',
             sizes: '256x256',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-384x384.png',
+            src: 'icons/favicon-384x384.png',
             sizes: '384x384',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-512x512.png',
+            src: 'icons/favicon-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           }
@@ -176,7 +176,7 @@ module.exports = function(/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'quasar-shop'
+        appId: 'ske'
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration

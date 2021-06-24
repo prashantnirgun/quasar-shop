@@ -16,7 +16,6 @@
                 deserunt, excepturi quasi velit totam ab unde.
               </div>
             </q-card-section>
-
             <q-card-section
               class="col-5 flex flex-center cursor-pointer"
               @click="selectFile"
@@ -283,7 +282,9 @@ export default {
   computed: {
     ...mapGetters('user', ['user', 'token']),
     imgUrl() {
-      return this.user.image_filename && this.user.image_filename.length > 5
+      return process.env.NODE_ENV === 'production' &&
+        this.user.image_filename &&
+        this.user.image_filename.length > 5
         ? `${process.env.STATIC}users/${this.user.company_id}/${this.user.image_filename}`
         : 'https://cdn.quasar.dev/img/boy-avatar.png';
     },
@@ -302,22 +303,44 @@ export default {
       fileData.append('folder', 'users');
       fileData.append(
         'user_profile_id',
-        this.data.user_profile.user_profile_id
+        !!this.data.user_profile.user_profile_id
+          ? this.data.user_profile.user_profile_id
+          : 0
       );
       fileData.append('file', this.image_filename);
 
-      DataService.put(`avatar`, fileData)
+      DataService.post(`upload`, fileData)
         .then(response => {
           this.data.user_profile.image_filename = value.name;
+          let data = [
+            {
+              table: 'user_profile',
+              update: [
+                {
+                  image_filename: this.image_filename.name,
+                  user_profile_id: this.data.user_profile.user_profile_id
+                }
+              ]
+            }
+          ];
+          console.log('wait gong to update image_file', data);
           this.setImage(value.name);
+          DataService.post(`crud`, data)
+            .then(response => {
+              console.log('image upload filed updated', response);
+            })
+            .catch(error => {
+              console.log('image_filename Update Error', error);
+            });
         })
         .catch(error => {
-          console.log('mixin/ddlb Error', error);
+          console.log('Upload Error', error);
         });
     },
+
     onSubmit() {
       //var parts = this.data.user_profile.dob.split('-');
-
+      /*
       const data = {
         user: this.data.user,
         user_profile: {
@@ -325,18 +348,54 @@ export default {
           dob: this.mysqlDate(this.data.user_profile.dob)
         }
       };
+      delete data.user_profile.image_filename;
+      */
+      let userProfileData = {};
+      if (
+        this.data.user_profile.user_profile_id == null ||
+        this.data.user_profile.user_profile_id === 0
+      ) {
+        userProfileData = {
+          table: 'user_profile',
+          insert: [
+            {
+              ...this.data.user_profile,
+              dob: this.mysqlDate(this.data.user_profile.dob)
+            }
+          ]
+        };
+      } else {
+        userProfileData = {
+          table: 'user_profile',
+          update: [
+            {
+              ...this.data.user_profile,
+              dob: this.mysqlDate(this.data.user_profile.dob)
+            }
+          ]
+        };
+      }
+      const data = [
+        {
+          table: 'user',
+          update: [{ ...this.data.user }]
+        },
+        { ...userProfileData }
+      ];
 
-      // console.log(
-      //   'before saving',
-      //   data.user_profile.dob,
-      //   date.formatDate(Date.now(), 'YYYY-MM-DD'),
-      //   date.formatDate(new Date(data.user_profile.dob), 'YYYY-MM-DD'),
-      //   parts,
-      //   new Date(parts[2], parts[1] - 1, parts[0])
-      // );
-      DataService.post(`/user/profile`, data)
+      console.log('data before send', this.data.user_profile);
+      DataService.post(`/crud`, data)
         .then(response => {
-          //console.log('profile', response);
+          console.log('profile', response.data);
+
+          this.setUser(data.user);
+          if (
+            this.data.user_profile.user_profile_id == null ||
+            this.data.user_profile.user_profile_id === 0
+          ) {
+            this.data.user_profile.user_profile_id =
+              response.data.rows[1].insertId;
+          }
           this.popupMessage('positive', 'Profile Updated Successfully.');
         })
         .catch(error => {
@@ -380,31 +439,37 @@ export default {
     }
   },
   created() {
-    DataService.get(`profile`)
+    DataService.get(`user/profile`)
       .then(response => {
         const data = response.data.rows;
-        this.data.user = {
-          full_name: data[0].full_name,
-          email_id: data[0].email_id,
-          mobile: data[0].mobile
-        };
-        this.data.user_profile = {
-          user_profile_id: data[0].user_profile_id,
-          dob:
-            data[0].dob == null
-              ? date.formatDate(Date.now(), 'YYYY-MM-DD')
-              : data[0].dob,
-          gender_id: data[0].gender_id == null ? 'M' : data[0].gender_id,
-          image_filename: data[0].image_filename,
-          gmail: data[0].gmail,
-          facebook: data[0].facebook,
-          linkedin: data[0].linkedin
-        };
-        // this.image_filename = [data[0].image_filename];
-        //console.log('profile', data, this.user_profile);
+        if (response.data.rows) {
+          this.data.user = {
+            user_id: data[0].user_id,
+            full_name: data[0].full_name,
+            email_id: data[0].email_id,
+            mobile: data[0].mobile
+          };
+          this.data.user_profile = {
+            user_profile_id: !!data[0].user_profile_id
+              ? data[0].user_profile_id
+              : 0,
+            dob:
+              data[0].dob == null
+                ? date.formatDate(Date.now(), 'YYYY-MM-DD')
+                : data[0].dob,
+            user_id: data[0].user_id,
+            gender_id: data[0].gender_id == null ? 'M' : data[0].gender_id,
+            image_filename: data[0].image_filename,
+            gmail: data[0].gmail,
+            facebook: data[0].facebook,
+            linkedin: data[0].linkedin
+          };
+          // this.image_filename = [data[0].image_filename];
+          //console.log('profile', data, this.user_profile);
+        }
       })
       .catch(error => {
-        console.log('mixin/ddlb Error', error);
+        console.log('Could not fetch user profile', error.message);
       });
 
     //console.log('mysql date', this.mysqlDate('14-09-2020'));

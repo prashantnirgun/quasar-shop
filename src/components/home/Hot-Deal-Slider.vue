@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 q-mt-sm">
+  <div class="col-12 q-mt-sm" v-if="lists.length > 0">
     <!-- <q-ribbon
       position="left"
       color="#ffffff"
@@ -49,14 +49,25 @@
                 placeholder-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWBAMAAADOL2zRAAAAG1BMVEXMzMyWlpaqqqq3t7fFxcW+vr6xsbGjo6OcnJyLKnDGAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABAElEQVRoge3SMW+DMBiE4YsxJqMJtHOTITPeOsLQnaodGImEUMZEkZhRUqn92f0MaTubtfeMh/QGHANEREREREREREREtIJJ0xbH299kp8l8FaGtLdTQ19HjofxZlJ0m1+eBKZcikd9PWtXC5DoDotRO04B9YOvFIXmXLy2jEbiqE6Df7DTleA5socLqvEFVxtJyrpZFWz/pHM2CVte0lS8g2eDe6prOyqPglhzROL+Xye4tmT4WvRcQ2/m81p+/rdguOi8Hc5L/8Qk4vhZzy08DduGt9eVQyP2qoTM1zi0/uf4hvBWf5c77e69Gf798y08L7j0RERERERERERH9P99ZpSVRivB/rgAAAABJRU5ErkJggg=="
                 :alt="row.alternative_text"
               >
-                <q-badge class="content-start transparent  rotate-45">
-                  <q-chip
+                <q-badge
+                  class="content-start transparent  rotate-45 text-purple"
+                  :class="{
+                    bagdeDesktop: isDesktop,
+                    bagdeMobile: !isDesktop
+                  }"
+                >
+                  <!-- <q-chip
+                    v-if="isDesktop"
                     size="12px"
                     color="primary"
                     text-color="white"
                     icon="thumb_up"
                   >
                     {{ row.saving }} % off
+                  </q-chip> -->
+
+                  <q-chip size="12px" color="primary" text-color="white">
+                    {{ row.saving | number('0.00') }} % off
                   </q-chip>
                 </q-badge>
               </q-img>
@@ -90,7 +101,7 @@
                     ></q-item-label
                   >
                   <q-item-label class="text-red q-mb-xs">
-                    <countdown :end-time="new Date('2020-09-30')">
+                    <countdown :end-time="new Date(row.offer_timestamp)">
                       <template v-slot:process="anyYouWantedScopName">
                         <span :class="{ 'text-caption': isMobile }">
                           {{
@@ -102,7 +113,7 @@
                         >
                       </template>
                       <template v-slot:finish>
-                        <span>Done!</span>
+                        <!-- <span>Done!</span> -->
                       </template>
                     </countdown>
                   </q-item-label>
@@ -195,35 +206,45 @@ export default {
     //   this.getData();
     // },
     getData() {
-      DataService.get(`slider?where=tag like {Hot Deals}&total_rows=true`)
+      DataService.get(
+        `slider?where=tag like {Hot Deals} AND offer_timestamp >= now()&total_rows=true`
+      )
         .then(response => {
-          const counter = parseInt(response.data.total_rows / this.column - 1);
-          this.pages = [...Array(counter).keys()];
-          this.lists = this.chunk(response.data.rows, this.column);
-          const option = response.data.rows.map(item => {
-            return {
-              label: item.product_name,
-              to: '/product/' + item.slug,
-              level: 0,
-              icon: 'label_important'
-            };
-          });
+          if (response.data.total_rows > 0) {
+            const counter = parseInt(
+              response.data.total_rows / this.column - 1
+            );
+            this.pages = [...Array(counter).keys()];
+            this.lists = this.chunk(response.data.rows, this.column);
+            const option = response.data.rows.map(item => {
+              return {
+                label: item.product_name,
+                to: '/product/' + item.slug,
+                level: 0,
+                icon: 'label_important'
+              };
+            });
 
-          //console.log('hot-deal data', this.lists, option);
-          this.updateSidebar({
-            label: 'Hot Deal',
-            list: option,
-            icon: 'alarm_on'
-          });
+            //console.log('hot-deal data', this.lists, option);
+            this.updateSidebar({
+              label: 'Hot Deal',
+              list: option,
+              icon: 'alarm_on'
+            });
+          }
         })
         .catch(error => {
-          console.log('mixin/ddlb Error', error);
+          console.log('Could not fetch Hot Deal', error);
         });
     }
   },
   created() {
     this.column = parseInt(this.displaySize);
+    //console.log('hot Deal created');
     //console.log('No of column', this.column);
+  },
+  mounted() {
+    //console.log('hot Deal mounted');
     this.getData();
   }
 };
@@ -233,5 +254,15 @@ export default {
 .my-card
   box-shadow: none
   &:hover
-    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important
+
+.bagdeDesktop
+  margin-top : 0.4em  !important
+  margin-left: 2.2em !important
+  padding-left :0.0em  !important
+
+.bagdeMobile
+  margin-top : 0.4em  !important
+  margin-left: -0.6em !important
+  padding-left :0.0em  !important
 </style>

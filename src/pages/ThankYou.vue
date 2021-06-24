@@ -52,16 +52,12 @@
       <q-separator />
 
       <q-card-actions class="row justify-evenly">
+        <q-btn color="secondary" icon="home" label="Home" to="/" />
         <q-btn
-          color="secondary"
-          icon="home"
-          label="Home"
-          @click="$router.push('/')"
-        />
-        <q-btn
+          v-if="isUserLoggedIn"
           color="primary"
           icon="assignment"
-          @click="$router.push('/orders')"
+          to="/orders"
         >
           Order
         </q-btn>
@@ -83,7 +79,22 @@ export default {
       address: ''
     };
   },
+  /*
+  watch: {
+    $route(to, from) {
+      console.log('route changed', from.name, from);
+      if (from.name === 'thank-you') {
+        console.log('now going to reset cart');
+        this.setAddressValidation(false);
+        this.cartReset();
+      } else {
+        console.log('route not detected ====', from.name);
+      }
+    }
+  },
+  */
   computed: {
+    ...mapGetters(['isUserLoggedIn']),
     ...mapGetters('user', ['user']),
     ...mapGetters('cart', ['deliveryAddressFull']),
     imgUrl() {
@@ -99,10 +110,14 @@ export default {
   },
   mounted() {
     this.address = this.deliveryAddressFull;
-    this.cartReset();
   },
   methods: {
-    ...mapActions('cart', ['cartReset'])
+    ...mapActions('cart', ['cartReset']),
+    ...mapActions(['setAddressValidation'])
+  },
+  destroyed() {
+    this.setAddressValidation(false);
+    this.cartReset();
   }
 };
 </script>

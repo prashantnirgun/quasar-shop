@@ -3,6 +3,8 @@ import { Notify } from 'quasar';
 
 const getDefaultState = () => {
   return {
+    pageIndex: 1,
+    cartUpdateCounter: 0,
     cart: [],
     billType: 'PAYMENT GATEWAY',
     productAmount: 0,
@@ -11,6 +13,7 @@ const getDefaultState = () => {
     savingAmount: 0,
     taxAmount: 0,
     cartTotal: 0,
+    deliveryCharges: 0,
     deliveryAddress: {},
     billingAddress: {},
     customerID: 0,
@@ -25,6 +28,12 @@ export default {
   state: getDefaultState(),
 
   getters: {
+    pageIndex: state => {
+      return state.pageIndex;
+    },
+    cartUpdateCounter: state => {
+      return state.cartUpdateCounter;
+    },
     cartCount: state => {
       return state.cart ? state.cart.length : 0;
     },
@@ -69,6 +78,7 @@ export default {
       return caregory;
     },
     deliveryAddress: state => {
+      console.log('inside store/cart/deliveryAddres', state);
       return state.deliveryAddress;
     },
     deliveryAddressFull: state => {
@@ -82,31 +92,30 @@ export default {
         state.deliveryAddress.landmark
       );
     },
-    deliveryAddressStatus: state => {
-      return state.deliveryAddress
-        ? state.deliveryAddress.status === 'Open'
-          ? true
-          : false
-        : false;
-    },
-    defaultAddress: state => state.defaultAddress,
+
+    // deliveryAddress: state => {
+    //   return state;
+    // },
+    //defaultAddress: state => state.defaultAddress,
     currentCategoryDisplay: state => state.currentCategoryDisplay,
     productAmount: state => state.productAmount
   },
 
   mutations: {
+    UPDATE_PAGE_INDEX(state, payload) {
+      state.pageIndex = payload;
+    },
     CALCULATE_SHIPPING_CHARGES(state) {
       let deliveryCharges = 0;
       if (
         !!state.deliveryAddress &&
-        state.deliveryAddress.status === 'Open' &&
-        parseFloat(state.deliveryAddress.delivery_charges) > 0
+        state.deliveryAddress.c_pincode_status === 'Open' &&
+        parseFloat(state.deliveryCharges) > 0
       ) {
-        if (state.deliveryAddress.delivery_charges_type === 'F') {
-          deliveryCharges = state.deliveryAddress.delivery_charges;
+        if (state.deliveryAddress.c_delivery_charges_type === 'Flat') {
+          deliveryCharges = state.deliveryCharges;
         } else {
-          deliveryCharges =
-            state.deliveryAddress.delivery_charges * state.productQuantity;
+          deliveryCharges = state.deliveryCharges * state.productQuantity;
         }
       }
       //if (deliveryCharges > 0) {
@@ -129,7 +138,7 @@ export default {
       let productInCart =
         state.cart &&
         state.cart.find(item => item.product_id === payload.product_id);
-
+      state.cartUpdateCounter += 1;
       if (productInCart) {
         productInCart.quantity = payload.quantity;
         productInCart.amount = parseFloat(payload.amount);
@@ -154,7 +163,12 @@ export default {
       if (index != -1) {
         state.cart.splice(index, 1);
       }
-      console.log('inside remove_from_cart mutation', state.cart);
+      state.cartUpdateCounter += 1;
+      console.log(
+        'inside remove_from_cart mutation',
+        state.cart,
+        state.cartUpdateCounter
+      );
       Notify.create({
         type: 'warning',
         message: `${name} was removed from cart.`
@@ -162,6 +176,7 @@ export default {
     },
 
     CLEAR_CART_ITEMS(state) {
+      state.cartUpdateCounter = 0;
       state.cart = [];
     },
 
@@ -178,6 +193,7 @@ export default {
       } else {
         state.cart.splice(index, 1);
       }
+      state.cartUpdateCounter += 1;
       if (!!payload.message) {
         Notify.create({
           type: 'warning',
@@ -228,12 +244,11 @@ export default {
       }
 
       //Delivery charges calculation
-      if (state.deliveryAddress && state.deliveryAddress.delivery_charges > 0) {
+      if (state.deliveryAddress && state.deliveryCharges > 0) {
         if (state.deliveryAddress.delivery_charges_type === 'F') {
-          deliveryCharges = state.deliveryAddress.delivery_charges;
+          deliveryCharges = state.deliveryCharges;
         } else {
-          deliveryCharges =
-            state.deliveryAddress.delivery_charges * state.productQuantity;
+          deliveryCharges = state.deliveryCharges * state.productQuantity;
         }
       }
       //GST is all inclusing so add only delviery charges
@@ -242,7 +257,7 @@ export default {
       state.cartTotal = state.productAmount + state.taxAmount;
     },
     UPDATE_DELIVERY_ADDRESS(state, payload) {
-      if (payload.status === 'Close') {
+      if (payload.c_pincode_status === 'Close') {
         Notify.create({
           type: 'warning',
           icon: 'wrong_location',
@@ -261,23 +276,26 @@ export default {
         });
       } else {
         //please calculate shippin charges
+        state.deliveryCharges = payload.delivery_charges;
+        delete payload.delivery_charges;
         state.deliveryAddress = payload;
       }
     },
     UPDATE_BILLING_ADDRESS(state, payload) {
-      // console.log(
-      //   'update_billing_address payload is',
-      //   payload,
-      //   !!state.billingAddress
-      // );
-      Object.keys(payload).map(key => {
-        //console.log('key', key, state, payload[key]);
-        state.billingAddress[key] = payload[key];
-      });
+      //console.log('update_billing_address payload is', payload, !!payload);
+      if (!!payload) {
+        Object.keys(payload).map(key => {
+          //console.log('key', key, payload[key]);
+          state.billingAddress[key] = payload[key];
+        });
+      } else {
+        state.billingAddress = {};
+      }
     },
     UPDATE_CUSTOMER_ID(state, payload) {
-      state.customerID = payload;
-      state.user_type = payload > 0 ? 'U' : 'G';
+      state.customerID = payload.customerID;
+      state.user_type =
+        payload.customerID === 0 ? 'G' : payload.user_type === 'U' ? 'U' : 'G';
     },
     UPDATE_BILL_TYPE(state, payload) {
       state.billType = payload;
@@ -297,6 +315,9 @@ export default {
   },
 
   actions: {
+    updatePageIndex({ commit }, payload) {
+      commit('UPDATE_PAGE_INDEX', payload);
+    },
     cartReset({ commit }) {
       commit('RESET_CART');
     },
@@ -314,19 +335,28 @@ export default {
     },
     updateDeliveryAddress({ commit }, payload) {
       commit('UPDATE_DELIVERY_ADDRESS', payload);
-      commit('CALCULATE_SHIPPING_CHARGES');
+      if (!!payload) {
+        commit('CALCULATE_SHIPPING_CHARGES');
+      }
     },
     updateBillingAddress({ commit }, payload) {
       commit('UPDATE_BILLING_ADDRESS', payload);
     },
-    async updateCustomerId({ commit }, payload) {
+    async updateCustomerId({ commit }, customerID) {
+      let payload = {
+        customerID,
+        user_type: 'U'
+      };
       commit('UPDATE_CUSTOMER_ID', payload);
     },
     async findGuestId({ commit }) {
       let result = await DataService.get(
-        'company_default?where=label like {Guest%20Customer}'
+        `company_default?company_id=${process.env.COMPANY_ID}&where=label like 'Guest%20Customer'`
       );
-      let payload = result.data.rows[0].default_id;
+      let payload = {
+        customerID: result.data.rows[0].default_id,
+        user_type: 'G'
+      };
       commit('UPDATE_CUSTOMER_ID', payload);
     },
     async updateBillType({ commit }, payload) {

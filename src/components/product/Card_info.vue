@@ -208,72 +208,10 @@ export default {
       }
     }
   },
-  methods: {
-    // add() {
-    //   this.orderQty++;
-    //   let d = { ...this.data };
-    //   d.quantity = this.orderQty;
-    //   this.increment(d);
-    //   console.log(
-    //     'amount',
-    //     this.data,
-    //     this.removeGST(d.quantity * d.rate, this.data.gst_rate)
-    //   );
-    // }
-    // ...mapActions('cart', ['addProductToCart', 'updateProductQuantity']),
-    // setQuantity() {
-    //   this.updateProductQuantity({
-    //     product_id: this.data.product_id,
-    //     category_id: this.data.category_id,
-    //     product_name: this.data.product_name,
-    //     category_name: this.data.category_name,
-    //     rate: this.data.rate,
-    //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.rate,
-    //     gst_rate: this.data.gst_rate,
-    //     mrp: this.data.mrp,
-    //     image_filename: this.data.image_filename,
-    //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-    //   });
-    // },
-    // increment() {
-    //   this.orderQty++;
-    //   //message is showing add even in decrement so keept it sepratee
-    //   //this.setQuantity();
-    //   this.addProductToCart({
-    //     product_id: this.data.product_id,
-    //     category_id: this.data.category_id,
-    //     product_name: this.data.product_name,
-    //     category_name: this.data.category_name,
-    //     rate: this.data.rate,
-    //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.rate,
-    //     gst_rate: this.data.gst_rate,
-    //     mrp: this.data.mrp,
-    //     image_filename: this.data.image_filename,
-    //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate
-    //   });
-    // },
-    // decrement() {
-    //   this.orderQty--;
-    //   //message is showing add even in decrement so keept it sepratee
-    //   //this.setQuantity();
-    //   this.updateProductQuantity({
-    //     product_id: this.data.product_id,
-    //     product_name: this.data.product_name,
-    //     quantity: this.orderQty,
-    //     amount: this.orderQty * this.data.rate,
-    //     saving:
-    //       this.orderQty * this.data.mrp - this.orderQty * this.data.rate,
-    //     message: false
-    //   });
-    // }
-  },
+  methods: {},
   computed: {
     //...mapState(['cart']),
-    ...mapGetters('cart', ['findItemInCart']),
+    ...mapGetters('cart', ['findItemInCart', 'cartUpdateCounter']),
     setHeigh() {
       return this.horizontal ? '116px' : '300px';
     }

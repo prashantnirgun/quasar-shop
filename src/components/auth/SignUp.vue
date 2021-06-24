@@ -1,34 +1,44 @@
 <template>
-  <div>
-    <q-form ref="form_register" @submit.prevent.stop="onSubmit">
+  <div class="row justify-end">
+    <q-form
+      ref="form_register"
+      class="full-width"
+      @submit.prevent.stop="onSubmit"
+    >
       <q-input
-        class="q-ma-xs"
+        class="col-12 q-ma-xs"
         dense
         outlined
         v-model="full_name"
         label="Full Name*"
         lazy-rules
         :rules="[required]"
+        hide-hint
+        hide-bottom-space
       ></q-input>
       <q-input
-        class="q-ma-xs"
+        class="col-12 q-ma-xs"
         dense
         outlined
         v-model="user_name"
         label="Username*"
         lazy-rules
         :rules="[required, uniqueNameRule]"
+        hide-hint
+        hide-bottom-space
       ></q-input>
       <!-- <div class="row"> -->
       <q-input
         dense
-        class="q-ma-xs"
+        class="col-12 q-ma-xs"
         outlined
         v-model="password1"
         label="Password*"
         :type="isPwdNew1 ? 'password' : 'text'"
         lazy-rules
         :rules="[required, passwordRule]"
+        hide-hint
+        hide-bottom-space
       >
         <template v-slot:append>
           <q-icon
@@ -57,32 +67,40 @@
       <!-- </div> -->
       <q-input
         dense
-        class="q-ma-xs"
+        class="col-12 q-ma-xs"
         type="email"
         outlined
         v-model="email_id"
         label="Email Address*"
         lazy-rules
         :rules="[uniqueEmailRule]"
+        hide-hint
+        hide-bottom-space
       ></q-input>
       <q-input
         dense
-        class="q-ma-xs"
+        class="col-12 q-ma-xs q-mb-none"
         outlined
         type="number"
         v-model.number="mobile"
-        :rules="[isPhoneNumber, uniquePhoneRule]"
+        :rules="[isPhoneNumber]"
         label="Mobile Number*"
         lazy-rules
+        hide-hint
+        hide-bottom-space
       ></q-input>
 
       <q-btn
         label="Signup"
         color="teal"
-        class="text-capitalized float-right q-mx-sm"
-        type="submit"
+        class="col-3 text-capitalized float-right q-mx-sm"
+        @click="verifyMobile"
       />
     </q-form>
+
+    <otp :show="otpShow" @close="closeModal" :mobile="mobile" :message="message"
+      >{{ full_name }} Mobile Verification</otp
+    >
   </div>
 </template>
 
@@ -98,6 +116,9 @@ function setAxiosHeaders(token) {
 
 export default {
   mixins: [auth_mixin],
+  components: {
+    otp: () => import('components/Otp')
+  },
   data() {
     return {
       status_id: 'A',
@@ -110,8 +131,18 @@ export default {
       email_id: null,
       mobile: null,
       error: '',
-      isPwdNew1: true
+      isPwdNew1: true,
       //isPwdNew2: true
+      otpShow: false,
+      message: {
+        company_id: process.env.COMPANY_ID,
+        template: 'otp',
+        module: 'signup',
+        key_value: null,
+        mobileNo: null,
+        domain: process.env.DOMAIN,
+        dataType: 'number'
+      }
     };
   },
   methods: {
@@ -173,6 +204,15 @@ export default {
         .catch(e => {
           console.error('form validation error');
         });
+    },
+    verifyMobile() {
+      this.message.mobileNo = this.mobile;
+      this.otpShow = true;
+    },
+    closeModal(payload) {
+      //console.log('closeModal payaload', payload);
+      this.otpShow = false;
+      this.onSubmit();
     }
   }
 };

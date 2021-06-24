@@ -27,9 +27,9 @@ const Store = new Vuex.Store({
     isUserLoggedIn: false,
     version: '0.0.3',
     loginPrompt: false,
-    addressValidation: true,
+    addressValidation: false,
+    addressUpdatedCounter: 0,
     guestLogin: false,
-    addressValidationCounter: 0,
     sidebar: [
       {
         label: 'Home',
@@ -50,14 +50,14 @@ const Store = new Vuex.Store({
     LOGIN_REQUEST(state, action) {
       state.loginPrompt = action;
     },
-    GUEST_VALIDATION(state, action) {
+    ADDRESS_VALIDATION(state, action) {
       state.addressValidation = action;
     },
     GUEST_LOGIN(state, action) {
       state.guestLogin = action;
     },
-    ADDRESS_VALIDATION_COUNTER(state, action) {
-      state.addressValidationCounter++;
+    ADDRESS_UPDATED_COUNTER(state, action) {
+      state.addressUpdatedCounter = action;
     },
     IS_USER_LOGGED_IN(state, action) {
       state.isUserLoggedIn = action;
@@ -65,15 +65,7 @@ const Store = new Vuex.Store({
     UPDATE_SIDEBAR(state, payload) {
       const found = state.sidebar.find(menu => menu.label === payload.label);
       const children = [];
-      console.log('inside update_sidebar', found, payload);
       if (found == undefined) {
-        // payload.list.map(item => {
-        //   children.push({
-        //     label: item.category_name,
-        //     to: '/category/' + item.slug,
-        //     level: 0
-        //   });
-        // });
         const obj = {
           label: payload.label,
           icon: payload.icon,
@@ -82,7 +74,6 @@ const Store = new Vuex.Store({
         };
         state.sidebar.push(obj);
       }
-      console.log('category found in sidebar', payload);
     }
   },
   actions: {
@@ -95,11 +86,12 @@ const Store = new Vuex.Store({
     setGuestLogin({ commit }, action) {
       commit('GUEST_LOGIN', action);
     },
+    setaddressUpdatedCounter({ commit }, action) {
+      console.log('counter', action);
+      commit('ADDRESS_UPDATED_COUNTER', action);
+    },
     setAddressValidation({ commit }, action) {
       commit('ADDRESS_VALIDATION', action);
-    },
-    setAddressValidationCounter({ commit }) {
-      commit('ADDRESS_VALIDATION_COUNTER');
     },
     setisUserLoggedIn({ commit }) {
       commit('IS_USER_LOGGED_IN');
@@ -115,7 +107,7 @@ const Store = new Vuex.Store({
     loginPrompt: state => state.loginPrompt,
     guestLogin: state => state.guestLogin,
     addressValidation: state => state.addressValidation,
-    addressValidationCounter: state => state.addressValidationCounter,
+    addressUpdatedCounter: state => state.addressUpdatedCounter,
     isUserLoggedIn: state => state.isUserLoggedIn,
     sidebar: state => state.sidebar
   },

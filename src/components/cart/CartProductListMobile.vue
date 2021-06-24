@@ -27,9 +27,9 @@ export default {
 </script>
 <style lang="sass">
 .q-card__section--vert
-    padding: 16px;
-    padding-top: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
-    padding-left: 4px;
+    padding: 16px
+    padding-top: 4px
+    padding-right: 4px
+    padding-bottom: 4px
+    padding-left: 4px
 </style>

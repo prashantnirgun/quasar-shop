@@ -16,12 +16,14 @@ const routes = [
       {
         path: '/orders',
         name: 'orders',
+        meta: { requiresAuth: true },
         component: () => import('pages/Orders.vue')
       },
       {
         path: '/order/:id',
         name: 'order',
         props: true,
+        meta: { requiresAuth: true },
         component: () => import('pages/Order.vue')
       },
       {
@@ -35,6 +37,8 @@ const routes = [
       },
       {
         path: '/profile',
+        name: 'profile',
+        meta: { requiresAuth: true },
         component: () => import('components/auth/UserProfile.vue')
       },
       {
@@ -54,7 +58,7 @@ const routes = [
       },
       {
         name: 'shopping-cart',
-        path: '/shopping-cart/:stage?',
+        path: '/shopping-cart/:stage',
         props: true,
         component: () => import('components/cart/ShoppingCart.vue')
       },

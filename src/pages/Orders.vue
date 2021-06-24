@@ -5,9 +5,10 @@
       :data="data"
       :hide-header="mode === 'grid'"
       :columns="columns"
+      :visible-columns="visibleColumn"
       dense
       row-key="bill_no"
-      :grid="mode == 'grid'"
+      :grid="mode === 'grid'"
       :filter="filter"
       :pagination.sync="pagination"
     >
@@ -72,7 +73,9 @@
 
       <template v-slot:body-cell-c_bill_status="props">
         <q-td :props="props">
-          <q-badge color="primary">{{ props.row.c_bill_status }} </q-badge>
+          <q-badge color="teal" class="q-py-sm" outline
+            >{{ props.row.c_bill_status }}
+          </q-badge>
         </q-td>
       </template>
 
@@ -237,7 +240,11 @@ export default {
           label: 'Bill Date',
           field: 'bill_date',
           sortable: true,
-          format: val => date.formatDate(new Date(val), 'DD-MM-YYYY hh:mm A')
+          format: val =>
+            date.formatDate(
+              new Date(val),
+              this.$q.platform.is.desktop ? 'DD-MM-YYYY hh:mm A' : 'DD-MM-YY'
+            )
         },
         {
           name: 'delivery_date',
@@ -294,7 +301,23 @@ export default {
     };
   },
   computed: {
-    ...mapGetters('user', ['quotationPartyId'])
+    ...mapGetters('user', ['quotationPartyId']),
+    visibleColumn() {
+      if (this.$q.platform.is.desktop) {
+        return [
+          'bill_no',
+          'bill_date',
+          'delivery_date',
+          'c_bill_status',
+          'pincode',
+          'net_amount',
+          'count',
+          'actions'
+        ];
+      } else {
+        return ['bill_no', 'bill_date', 'c_bill_status', 'actions'];
+      }
+    }
   },
   methods: {
     formatCurrency(value) {
@@ -437,11 +460,11 @@ export default {
             mrp: row.mrp,
             product_id: row.product_id,
             product_name: row.product_name,
-            quantity: row.quantity,
+            quantity: row.quantity_ordered,
             rate: row.rate,
             saving: row.saving
           };
-          this.increment(order, row.quantity);
+          this.increment(order, row.quantity_ordered);
           //console.log('order', order);
         });
         // this.data = result.data.rows;

@@ -85,11 +85,11 @@ export default {
       mode: 'list',
       columns: [
         {
-          name: 'city',
+          name: 'area_name',
           required: true,
-          label: 'Region',
+          label: 'Location',
           align: 'left',
-          field: 'region',
+          field: 'area_name',
           sortable: true
         },
         {
@@ -100,17 +100,10 @@ export default {
           sortable: true
         },
         {
-          name: 'state',
-          align: 'left',
-          label: 'State',
-          field: 'state',
-          sortable: true
-        },
-        {
-          name: 'delivery_charges_type',
+          name: 'c_delivery_charges_type',
           align: 'left',
           label: 'Type of Rate',
-          field: 'delivery_charges_type',
+          field: 'c_delivery_charges_type',
           sortable: true
         },
         {
@@ -180,7 +173,7 @@ export default {
   async mounted() {
     this.$q.loading.show();
     let result = await DataService.get(`city`);
-    //console.log('data', result.data.rows);
+    console.log('data', result.data.rows);
     this.data = result.data.rows;
     this.$q.loading.hide();
   }

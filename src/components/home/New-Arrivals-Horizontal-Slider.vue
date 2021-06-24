@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 q-mt-sm">
+  <div class="col-12 q-mt-sm" v-if="lists.length > 0">
     <!-- <q-ribbon
       position="left"
       color="#000000"
@@ -136,32 +136,41 @@ export default {
         `slider?where=tag like {New}&total_rows=true`
       )
         .then(response => {
-          const counter = parseInt(response.data.total_rows / this.column - 1);
-          this.pages = [...Array(counter).keys()];
-          this.lists = this.chunk(response.data.rows, this.column);
-          const option = response.data.rows.map(item => {
-            return {
-              label: item.product_name,
-              to: '/product/' + item.slug,
-              level: 0,
-              icon: 'label_important'
-            };
-          });
+          //console.log('new arrival got data', response.data);
+          if (response.data.total_rows > 0) {
+            const counter = parseInt(
+              response.data.total_rows / this.column - 1
+            );
+            this.pages = [...Array(counter).keys()];
+            this.lists = this.chunk(response.data.rows, this.column);
+            const option = response.data.rows.map(item => {
+              return {
+                label: item.product_name,
+                to: '/product/' + item.slug,
+                level: 0,
+                icon: 'label_important'
+              };
+            });
 
-          //console.log('hot-deal data', this.lists, option);
-          this.updateSidebar({
-            label: 'New Arrival',
-            list: option,
-            icon: 'card_giftcard'
-          });
+            //console.log('hot-deal data', this.lists, option);
+            this.updateSidebar({
+              label: 'New Arrival',
+              list: option,
+              icon: 'card_giftcard'
+            });
+          }
         })
         .catch(error => {
-          console.log('mixin/ddlb Error', error);
+          console.log('New Arrival could not fetch data', error);
         });
     }
   },
   created() {
     this.column = parseInt(this.displaySize);
+    //console.log('new arrival created');
+  },
+  mounted() {
+    //console.log('new arrival mounted');
     this.getData();
   }
 };
@@ -171,5 +180,5 @@ export default {
 .my-card
   box-shadow: none
   &:hover
-    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14), 0 8px 38px 7px rgba(0, 0, 0, 0.12) !important
 </style>

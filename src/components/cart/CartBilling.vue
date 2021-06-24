@@ -19,8 +19,10 @@
         @click="loginRequest('Guest')"
       />
     </div>
+
     <guest-user
       v-if="guest"
+      :validation="validation"
       @addressValidation="$emit('addressValidation', $event)"
     />
 
@@ -49,9 +51,11 @@ export default {
   },
   computed: {
     ...mapState(['guestLogin']),
-    ...mapGetters(['isUserLoggedIn']),
+    ...mapGetters(['isUserLoggedIn', 'guestLogin']),
     ...mapGetters('user', ['general_ledger_id']),
-    ...mapGetters(['addressValidationCounter']),
+    validation() {
+      return this.guestLogin;
+    },
     proceedCart() {
       return this.isUserLoggedIn || this.guest;
     }
@@ -65,11 +69,10 @@ export default {
       if (method === 'Login') {
         this.setLoginRequest(true);
       } else {
+        console.log('guest login is selected');
         this.guest = true;
         this.setGuestLogin(true);
         this.findGuestId();
-        //I think this method is deleted
-        //this.setUserType('G');
       }
     }
   },

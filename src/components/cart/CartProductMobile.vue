@@ -135,5 +135,5 @@ export default {
     text-align: center
 
 .q-stepper__step-inner
-    padding: 0px !important;
+    padding: 0px !important
 </style>

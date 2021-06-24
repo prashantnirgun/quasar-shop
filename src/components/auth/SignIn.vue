@@ -36,6 +36,12 @@
       label="OTP*"
       lazy-rules
       v-if="islogin"
+      type="number"
+      @input="
+        val => {
+          otp = val.toUpperCase();
+        }
+      "
     ></q-input>
 
     <q-checkbox
@@ -80,7 +86,8 @@ export default {
       DataService.post('user/login', {
         user_name: this.username,
         password: this.password,
-        otp: this.otp
+        otp: this.otp,
+        site: process.env.SITE
       }).then(response => {
         //console.log('response', response);
         this.$q.loading.hide();
