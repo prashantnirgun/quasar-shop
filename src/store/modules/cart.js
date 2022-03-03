@@ -282,10 +282,10 @@ export default {
       }
     },
     UPDATE_BILLING_ADDRESS(state, payload) {
-      //console.log('update_billing_address payload is', payload, !!payload);
+      console.log('update_billing_address payload is', payload, !!payload);
       if (!!payload) {
         Object.keys(payload).map(key => {
-          //console.log('key', key, payload[key]);
+          console.log('updating bill addrss by key', key, payload[key]);
           state.billingAddress[key] = payload[key];
         });
       } else {

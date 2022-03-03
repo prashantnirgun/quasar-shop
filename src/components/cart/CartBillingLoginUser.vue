@@ -140,7 +140,11 @@ export default {
   mixins: [common_mixin, form_mixin],
   watch: {
     pageIndex(newVal) {
-      console.log('insdie cartBillingLoginUser watch', newVal);
+      console.log(
+        'insdie cartBillingLoginUser watch',
+        newVal,
+        this.general_ledger_id
+      );
       this.getAddress();
       this.updateCustomerId(this.general_ledger_id);
     }
@@ -229,7 +233,6 @@ export default {
       DataService.get(`address`)
         .then(response => {
           this.$q.loading.hide();
-
           this.address = response.data.rows;
           const defaultAddress = this.address.find(
             obj => obj.is_default === 'Y'
@@ -271,7 +274,7 @@ export default {
     }
   },
   mounted() {
-    console.log('cartBilling LoginUser Mounted');
+    console.log('cartBilling LoginUser Mounted', this.general_ledger_id);
     this.getUser();
     this.getAddress();
     this.updateCustomerId(this.general_ledger_id);
