@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.9.10",
-    "axios": "^0.18.1",
+    "axios": "^0.21.2",
     "core-js": "^3.7.0",
     "pdfmake": "^0.1.68",
     "quasar": "^1.15.4",
